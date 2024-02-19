@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dobhl2qkc3lx7"]
+
+[ext_resource type="AudioStream" uid="uid://r74k4l8gu665" path="res://music/JourneyThroughForest.ogg" id="1_7mcqv"]
+[ext_resource type="AudioStream" uid="uid://dx83fu7xi4yun" path="res://music/Battle Cutscene.ogg" id="2_3tl2i"]
+
+[node name="JourneyThroughForestMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_7mcqv")
+autoplay = true
+
+[node name="BattleCutscene" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3tl2i")

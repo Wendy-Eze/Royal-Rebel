@@ -1,18 +1,18 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708301725
-icon.svg::CompressedTexture2D::7094550317273180326::1708299455::1708299646::1::::<><>::
-main_scene.tscn::PackedScene::3019524264534136744::1708301435::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
-music.tscn::PackedScene::8144416345753600922::1708301435::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg
-player.tscn::PackedScene::2111898954805969319::1708301435::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/run_0.png<>uid://bx4m21vs7vghf::::res://art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/run_2.png<>uid://bqju0gnrwy5py::::res://art/run_3.png<>uid://eitwksaky742::::res://art/run_4.png<>uid://cpk7iga3sofl4::::res://art/run_5.png
+::res://::1708302101
+icon.svg::CompressedTexture2D::7094550317273180326::1708301933::1708301933::1::::<><>::
+main_scene.tscn::PackedScene::3019524264534136744::1708301933::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
+music.tscn::PackedScene::8144416345753600922::1708301953::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg<>uid://dx83fu7xi4yun::::res://music/Battle Cutscene.ogg
+player.tscn::PackedScene::2111898954805969319::1708301933::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/run_0.png<>uid://bx4m21vs7vghf::::res://art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/run_2.png<>uid://bqju0gnrwy5py::::res://art/run_3.png<>uid://eitwksaky742::::res://art/run_4.png<>uid://cpk7iga3sofl4::::res://art/run_5.png
 README.md::TextFile::-1::1708299399::0::1::::<><>::
-::res://art/::1708301391
-attack_0.png::CompressedTexture2D::4400165950254060026::1708300933::1708301376::1::::<><>::
-run_0.png::CompressedTexture2D::8216809629555615803::1708301360::1708301391::1::::<><>::
-run_1.png::CompressedTexture2D::4061409261493638579::1708301360::1708301391::1::::<><>::
-run_2.png::CompressedTexture2D::3327934958310242486::1708301360::1708301391::1::::<><>::
-run_3.png::CompressedTexture2D::3529280902416447246::1708301360::1708301391::1::::<><>::
-run_4.png::CompressedTexture2D::298463859967403861::1708301360::1708301391::1::::<><>::
-run_5.png::CompressedTexture2D::5848275346053954871::1708301360::1708301391::1::::<><>::
-::res://music/::1708301725
-Battle Cutscene.ogg::AudioStreamOggVorbis::8843440026362623965::1708301689::1708301735::1::::<><>::
-JourneyThroughForest.ogg::AudioStreamOggVorbis::1261050622383952536::1708300451::1708301000::1::::<><>::
+::res://art/::1708301933
+attack_0.png::CompressedTexture2D::4400165950254060026::1708301933::1708301933::1::::<><>::
+run_0.png::CompressedTexture2D::8216809629555615803::1708301933::1708301933::1::::<><>::
+run_1.png::CompressedTexture2D::4061409261493638579::1708301933::1708301933::1::::<><>::
+run_2.png::CompressedTexture2D::3327934958310242486::1708301933::1708301933::1::::<><>::
+run_3.png::CompressedTexture2D::3529280902416447246::1708301933::1708301933::1::::<><>::
+run_4.png::CompressedTexture2D::298463859967403861::1708301933::1708301933::1::::<><>::
+run_5.png::CompressedTexture2D::5848275346053954871::1708301933::1708301933::1::::<><>::
+::res://music/::1708301953
+Battle Cutscene.ogg::AudioStreamOggVorbis::8843440026362623965::1708301953::1708301953::1::::<><>::
+JourneyThroughForest.ogg::AudioStreamOggVorbis::1261050622383952536::1708301933::1708301933::1::::<><>::
