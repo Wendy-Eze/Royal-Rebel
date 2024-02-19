@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dobhl2qkc3lx7"]
+
+[ext_resource type="AudioStream" uid="uid://r74k4l8gu665" path="res://music/JourneyThroughForest.ogg" id="1_7mcqv"]
+
+[node name="JourneyThroughForestMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_7mcqv")
+autoplay = true
