@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dx83fu7xi4yun"
+path="res://.godot/imported/Battle Cutscene.ogg-63d1bd57a6b5f41d66a2c962fb451693.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Battle Cutscene.ogg"
+dest_files=["res://.godot/imported/Battle Cutscene.ogg-63d1bd57a6b5f41d66a2c962fb451693.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
