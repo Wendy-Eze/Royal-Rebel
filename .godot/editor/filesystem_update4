@@ -1,11 +1,1 @@
-<<<<<<< Updated upstream
 res://main_scene.tscn
-res://player.tscn
-res://music.tscn
-=======
-res://player.tscn
-res://character_movement.gd
-res://main_scene.tscn
-res://music.tscn
-res://player.gd
->>>>>>> Stashed changes
