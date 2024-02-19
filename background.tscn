@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmyht6xwqrgay"]
+[gd_scene load_steps=2 format=3 uid="uid://b0upebwgu75kw"]
 
-[ext_resource type="Texture2D" uid="uid://ha7ixo2h05xo" path="res://art/grassback.png" id="1_g107n"]
+[ext_resource type="Texture2D" path="res://art/grassback.png" id="1_g107n"]
 
 [node name="Background" type="TextureRect"]
 offset_right = 40.0
