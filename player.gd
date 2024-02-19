@@ -23,6 +23,7 @@ func get_input():
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = velocity.x < 0
 
 
 func _physics_process(delta):
