@@ -6,6 +6,5 @@
 [node name="Main Scene" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
-position = Vector2(538, 308)
 
-[node name="JourneyThroughForestMusic" parent="." instance=ExtResource("2_4yk7j")]
+[node name="Music" parent="." instance=ExtResource("2_s0o0v")]
