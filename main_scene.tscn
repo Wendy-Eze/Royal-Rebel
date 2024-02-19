@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=4 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
+[ext_resource type="PackedScene" uid="uid://dmyht6xwqrgay" path="res://background.tscn" id="1_yi6ag"]
 [ext_resource type="PackedScene" uid="uid://dobhl2qkc3lx7" path="res://music.tscn" id="2_4yk7j"]
 
 [node name="Main Scene" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource("1_yi6ag")]
+offset_right = 1152.0
+offset_bottom = 648.0
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
 position = Vector2(538, 308)
