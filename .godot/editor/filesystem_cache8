@@ -1,22 +1,30 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708313333
-character_movement.gd::GDScript::-1::1708313310::0::1::::<>CharacterBody2D<>::
-character_movement.tscn::PackedScene::4890716796659907052::1708305953::0::1::::<><>::res://character_movement.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
-icon.svg::CompressedTexture2D::7094550317273180326::1708302709::1708302709::1::::<><>::
-main_scene.tscn::PackedScene::3019524264534136744::1708313310::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
-music.tscn::PackedScene::8144416345753600922::1708302709::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg<>uid://dx83fu7xi4yun::::res://music/Battle Cutscene.ogg
-player.gd::GDScript::-1::1708313310::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2111898954805969319::1708313310::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/run_2.png<>uid://bqju0gnrwy5py::::res://art/run_3.png<>uid://eitwksaky742::::res://art/run_4.png<>uid://cpk7iga3sofl4::::res://art/run_5.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav
-README.md::TextFile::-1::1708299399::0::1::::<><>::
-::res://art/::1708302709
-attack_0.png::CompressedTexture2D::4400165950254060026::1708302709::1708302709::1::::<><>::
-run_0.png::CompressedTexture2D::8216809629555615803::1708302709::1708302709::1::::<><>::
-run_1.png::CompressedTexture2D::4061409261493638579::1708302709::1708302709::1::::<><>::
-run_2.png::CompressedTexture2D::3327934958310242486::1708302709::1708302709::1::::<><>::
-run_3.png::CompressedTexture2D::3529280902416447246::1708302709::1708302709::1::::<><>::
-run_4.png::CompressedTexture2D::298463859967403861::1708302709::1708302709::1::::<><>::
-run_5.png::CompressedTexture2D::5848275346053954871::1708302709::1708302709::1::::<><>::
-::res://music/::1708313310
-Battle Cutscene.ogg::AudioStreamOggVorbis::8843440026362623965::1708302709::1708302709::1::::<><>::
-JourneyThroughForest.ogg::AudioStreamOggVorbis::1261050622383952536::1708302709::1708302709::1::::<><>::
-sfx_step_grass_l.wav::AudioStreamWAV::5545679493045855465::1708313310::1708313335::1::::<><>::
+::res://::1708364682
+background.tscn::PackedScene::4183347314601902050::1708318892::0::1::::<><>::res://art/grassback.png
+character_movement.gd::GDScript::-1::1708309571::0::1::::<>CharacterBody2D<>::
+character_movement.tscn::PackedScene::4890716796659907052::1708304181::0::1::::<><>::res://character_movement.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
+export_presets.cfg::TextFile::-1::1708364614::0::1::::<><>::
+icon.svg::CompressedTexture2D::7094550317273180326::1708299999::1708299999::1::::<><>::
+main_scene.tscn::PackedScene::3019524264534136744::1708364501::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://b0upebwgu75kw::::res://background.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
+music.tscn::PackedScene::8144416345753600922::1708309523::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg<>uid://dx83fu7xi4yun::::res://music/Battle Cutscene.ogg
+player.gd::GDScript::-1::1708318623::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2111898954805969319::1708318801::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/run_2.png<>uid://bqju0gnrwy5py::::res://art/run_3.png<>uid://eitwksaky742::::res://art/run_4.png<>uid://cpk7iga3sofl4::::res://art/run_5.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav
+README.md::TextFile::-1::1708298973::0::1::::<><>::
+::res://art/::1708318708
+attack_0.png::CompressedTexture2D::4400165950254060026::1708300723::1708309210::1::::<><>::
+grassback.png::CompressedTexture2D::493280366487436716::1708318708::1708318708::1::::<><>::
+run_0.png::CompressedTexture2D::8216809629555615803::1708301512::1708301512::1::::<><>::
+run_1.png::CompressedTexture2D::4061409261493638579::1708301512::1708301512::1::::<><>::
+run_2.png::CompressedTexture2D::3327934958310242486::1708301512::1708301512::1::::<><>::
+run_3.png::CompressedTexture2D::3529280902416447246::1708301512::1708301512::1::::<><>::
+run_4.png::CompressedTexture2D::298463859967403861::1708301512::1708301512::1::::<><>::
+run_5.png::CompressedTexture2D::5848275346053954871::1708301512::1708301512::1::::<><>::
+::res://exports/::1708364629
+::res://exports/web/::1708364709
+index.apple-touch-icon.png::CompressedTexture2D::124838987832667927::1708364681::1708364717::1::::<><>::
+index.icon.png::CompressedTexture2D::154719392005206177::1708364681::1708364717::1::::<><>::
+index.png::CompressedTexture2D::8037916213860484956::1708364681::1708364717::1::::<><>::
+::res://music/::1708309210
+Battle Cutscene.ogg::AudioStreamOggVorbis::8843440026362623965::1708309210::1708309210::1::::<><>::
+JourneyThroughForest.ogg::AudioStreamOggVorbis::1261050622383952536::1708309210::1708309210::1::::<><>::
+sfx_step_grass_l.wav::AudioStreamWAV::5545679493045855465::1708307866::1708307892::1::::<><>::
