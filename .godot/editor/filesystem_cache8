@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708311039
+::res://::1708311271
 character_movement.gd::GDScript::-1::1708309571::0::1::::<>CharacterBody2D<>::
 character_movement.tscn::PackedScene::4890716796659907052::1708304181::0::1::::<><>::res://character_movement.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
 icon.svg::CompressedTexture2D::7094550317273180326::1708299999::1708299999::1::::<><>::
-main_scene.tscn::PackedScene::3019524264534136744::1708311026::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
+main_scene.tscn::PackedScene::3019524264534136744::1708311090::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dobhl2qkc3lx7::::res://music.tscn
 music.tscn::PackedScene::8144416345753600922::1708309523::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg<>uid://dx83fu7xi4yun::::res://music/Battle Cutscene.ogg
 player.gd::GDScript::-1::1708308720::0::1::::<>CharacterBody2D<>::
 player.tscn::PackedScene::2111898954805969319::1708309523::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/run_2.png<>uid://bqju0gnrwy5py::::res://art/run_3.png<>uid://eitwksaky742::::res://art/run_4.png<>uid://cpk7iga3sofl4::::res://art/run_5.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav
