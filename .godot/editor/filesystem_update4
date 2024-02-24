@@ -1,3 +1,2 @@
-res://main_scene.tscn
-res://character_movement.tscn
-res://background.tscn
+res://player.tscn
+res://player.gd
