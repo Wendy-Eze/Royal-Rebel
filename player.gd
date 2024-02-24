@@ -3,20 +3,27 @@ extends CharacterBody2D
 
 @onready var speed = 400
 var walking = false
+var is_attacking = false
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
-		
+	
+	if Input.is_action_just_pressed("attack"):
+		is_attacking = true
+		$AnimatedSprite2D.play("attack")
+	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
+		is_attacking = false
 		if not walking:
 			$WalkTimer.start()
 			walking = true
 
 	else:
-		$AnimatedSprite2D.stop()
+		if not is_attacking:
+			$AnimatedSprite2D.play("idle")
 		$WalkTimer.stop()
 		walking = false
 		
