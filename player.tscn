@@ -74,19 +74,22 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
-size = Vector2(151, 165)
+size = Vector2(182, 192)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lmqur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(50, -30)
 scale = Vector2(2.11724, 2.11724)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
 animation = &"attack"
+frame = 2
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 4.5)
+position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_ru3nh")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
