@@ -1,4 +1,6 @@
-res://main_scene.tscn
-res://background.tscn
+res://arrow.tscn
+res://arrow.gd
 res://player.tscn
+res://player.gd
+res://main_scene.tscn
 res://mob_goblin.tscn
