@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=9 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
@@ -470,6 +470,8 @@ texture = ExtResource("5_wp5el")
 [sub_resource type="TileSet" id="TileSet_k4iyu"]
 sources/0 = SubResource("TileSetAtlasSource_ngmmr")
 
+[sub_resource type="Curve2D" id="Curve2D_y65cg"]
+
 [node name="Main Scene" type="Node"]
 script = ExtResource("1_lodcs")
 
@@ -488,5 +490,11 @@ position = Vector2(538, 308)
 position = Vector2(171, 154)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+
+[node name="MobGoblinTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="MobGoblinPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_y65cg")
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]

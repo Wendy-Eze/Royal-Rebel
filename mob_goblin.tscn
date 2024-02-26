@@ -1,6 +1,7 @@
-[gd_scene load_steps=27 format=3 uid="uid://cviwi16h7v1c1"]
+[gd_scene load_steps=28 format=3 uid="uid://cviwi16h7v1c1"]
 
 [ext_resource type="Texture2D" uid="uid://ce6jooru7oom5" path="res://art/Mob Art/Goblin/goblin_sheet.png" id="1_edvad"]
+[ext_resource type="Script" path="res://mob_goblin.gd" id="1_yrwcw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flk8d"]
 atlas = ExtResource("1_edvad")
@@ -194,8 +195,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
 size = Vector2(20, 20.5)
 
-[node name="Goblin" type="CharacterBody2D"]
+[node name="Goblin" type="RigidBody2D"]
 scale = Vector2(10, 10)
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_yrwcw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -205,3 +209,7 @@ animation = &"idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.75)
 shape = SubResource("RectangleShape2D_76sq3")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708929484
+::res://::1708934174
 arrow.gd::GDScript::-1::1708896347::0::1::::<>Area2D<>::
 arrow.tscn::PackedScene::8855793384999280594::1708896483::0::1::::<><>::res://arrow.gd<>uid://bu8t2h6vpjo8f::::res://art/Player Art/arrow.png
 background.tscn::PackedScene::4183347314601902050::1708378966::0::1::::<><>::uid://ha7ixo2h05xo::::res://art/grassback.png
@@ -10,13 +10,14 @@ HUD.gd::GDScript::-1::1708922333::0::1::::<>CanvasLayer<>::
 hud.tscn::PackedScene::8955425053551223926::1708922333::0::1::::<><>::res://HUD.gd<>uid://vshxj5xr21il::::res://art/startscreen.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://dvvtn0102djbo::::res://mute_button.tscn
 icon.svg::CompressedTexture2D::7094550317273180326::1708378971::1708378971::1::::<><>::
 main_scene.gd::GDScript::-1::1708922333::0::1::::<>Node<>::
-main_scene.tscn::PackedScene::3019524264534136744::1708929414::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://d0ucso2y2x77o::::res://hud.tscn
-mob_goblin.tscn::PackedScene::6264673579867168654::1708896483::0::1::::<><>::uid://ce6jooru7oom5::::res://art/Mob Art/Goblin/goblin_sheet.png
+main_scene.tscn::PackedScene::3019524264534136744::1708934136::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://d0ucso2y2x77o::::res://hud.tscn
+mob_goblin.gd::GDScript::-1::1708934058::0::1::::<>RigidBody2D<>::
+mob_goblin.tscn::PackedScene::6264673579867168654::1708934058::0::1::::<><>::uid://ce6jooru7oom5::::res://art/Mob Art/Goblin/goblin_sheet.png<>res://mob_goblin.gd
 music.tscn::PackedScene::8144416345753600922::1708922333::0::1::::<><>::uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg<>uid://dx83fu7xi4yun::::res://music/Battle Cutscene.ogg
 mute_button.gd::GDScript::-1::1708922333::0::1::::<>TextureButton<>::
 mute_button.tscn::PackedScene::8677757892917328444::1708922333::0::1::::<><>::uid://gf463idysq8n::::res://art/unmute.png<>uid://crsa6r5pxydqn::::res://art/mute.png<>res://mute_button.gd<>uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg
-player.gd::GDScript::-1::1708922333::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2111898954805969319::1708929414::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
+player.gd::GDScript::-1::1708933852::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2111898954805969319::1708934136::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
 README.md::TextFile::-1::1708296074::0::1::::<><>::
 ::res://art/::1708922419
 grassback.png::CompressedTexture2D::493280366487436716::1708378966::1708896361::1::::<><>::
