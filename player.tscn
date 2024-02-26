@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=22 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Texture2D" uid="uid://dpcjwifb5ocd4" path="res://art/Player Art/run_0.png" id="1_5an6p"]
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
@@ -94,9 +94,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_25dgw"]
-size = Vector2(43.0212, 8.97395)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
 size = Vector2(140, 163)
 
@@ -109,14 +106,6 @@ position = Vector2(50, -30)
 scale = Vector2(2.11724, 2.11724)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
 animation = &"basic_melee"
-frame = 3
-frame_progress = 1.0
-
-[node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/SwordHit"]
-position = Vector2(40.8347, 26.9218)
-shape = SubResource("RectangleShape2D_25dgw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 3.5)
@@ -133,5 +122,4 @@ wait_time = 0.45
 position = Vector2(92, 0)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
