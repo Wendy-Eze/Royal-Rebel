@@ -195,8 +195,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
 size = Vector2(13.2, 16.8)
 
+
 [node name="Goblin" type="RigidBody2D" groups=["enemy"]]
 collision_mask = 0
+
+[node name="Goblin" type="RigidBody2D"]
+
 gravity_scale = 0.0
 max_contacts_reported = 1
 contact_monitor = true
