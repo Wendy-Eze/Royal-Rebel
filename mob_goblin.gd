@@ -41,7 +41,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 func _on_body_entered(body):
-
 	health -= 20
 	print("Goblin was hit! Health:", health)
 	
@@ -61,7 +60,3 @@ func _hit_by_arrow():
 func _hit_by_sword():
 	health -= 20
 	print("goblin was hit! ", health)
-	if body.is_in_group("player"):
-		health -= 20
-		print("goblin was hit!", health)
-
