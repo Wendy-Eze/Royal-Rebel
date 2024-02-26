@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0ucso2y2x77o"]
+[gd_scene load_steps=8 format=3 uid="uid://d0ucso2y2x77o"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0k33q"]
-[ext_resource type="Texture2D" uid="uid://c0adr1kg374fs" path="res://arts/startscreen.png" id="2_edks0"]
-[ext_resource type="FontFile" uid="uid://r01a061varmx" path="res://arts/upheaval/upheavtt.ttf" id="3_o8ejs"]
+[ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="2_edks0"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="3_o8ejs"]
+[ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="4_y3b8p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x43s"]
 bg_color = Color(0, 0, 0, 1)
@@ -69,6 +70,8 @@ text = "Start"
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="MuteButton" parent="." instance=ExtResource("4_y3b8p")]
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

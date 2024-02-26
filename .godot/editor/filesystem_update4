@@ -1,1 +1,11 @@
+res://hud.tscn
 res://main_scene.tscn
+res://player.tscn
+res://mob_goblin.tscn
+res://arrow.tscn
+res://background.tscn
+res://main_scene.gd
+res://player.gd
+res://mute_button.tscn
+res://mute_button.gd
+res://music.tscn

@@ -1,3 +1,6 @@
+AudioStreamPlayer
+TextureButton
+Button
 TileMap
 Marker2D
 CollisionShape2D

@@ -51,3 +51,7 @@ func arrow():
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()
+
+func start():
+	show()
+	$CollisionShape2D.disabled = false
