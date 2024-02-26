@@ -10,3 +10,4 @@ func _process(delta):
 func new_game():
 	$Player.start()
 	$HUD.show_message("Get Ready")
+

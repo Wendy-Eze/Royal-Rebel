@@ -68,5 +68,3 @@ func _on_animated_sprite_2d_animation_finished():
 		print("Stopping attack animation")
 		is_attacking = false
 		#$AnimatedSprite2D.stop()  # Stop the animation when it finishes
-	
-

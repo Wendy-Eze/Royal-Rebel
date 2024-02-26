@@ -3,6 +3,9 @@ extends RigidBody2D
 @export var speed = 100
 var player_position
 var target_position
+
+var health: int = 100
+
 @onready var player = get_parent().get_node("Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,3 +32,7 @@ func _physics_process(delta):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+
+func _on_body_entered(body):
+	health -= 20
+	print("goblin was hit!", health)

@@ -1,6 +1,7 @@
+Timer
+PathFollow2D
 Sprite2D
 Path2D
-Timer
 VisibleOnScreenNotifier2D
 RigidBody2D
 AudioStreamPlayer
@@ -11,4 +12,3 @@ Marker2D
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-CharacterBody2D
