@@ -1,2 +1,4 @@
 res://main_scene.tscn
 res://player.tscn
+res://mob_goblin.tscn
+res://mob_goblin.gd
