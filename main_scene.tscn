@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=8 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
-[ext_resource type="PackedScene" uid="uid://dobhl2qkc3lx7" path="res://music.tscn" id="2_4yk7j"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
 [ext_resource type="PackedScene" uid="uid://cviwi16h7v1c1" path="res://mob_goblin.tscn" id="4_g7gvp"]
 [ext_resource type="Texture2D" uid="uid://cffjxcg5i7y50" path="res://art/TilesetFloor.png" id="5_wp5el"]
+[ext_resource type="PackedScene" uid="uid://d0ucso2y2x77o" path="res://hud.tscn" id="6_jebqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngmmr"]
 texture = ExtResource("5_wp5el")
@@ -470,6 +471,7 @@ texture = ExtResource("5_wp5el")
 sources/0 = SubResource("TileSetAtlasSource_ngmmr")
 
 [node name="Main Scene" type="Node"]
+script = ExtResource("1_lodcs")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -484,4 +486,6 @@ position = Vector2(538, 308)
 
 [node name="Goblin" parent="." instance=ExtResource("4_g7gvp")]
 
-[node name="Music" parent="." instance=ExtResource("2_4yk7j")]
+[node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+
+[connection signal="start_game" from="HUD" to="." method="new_game"]

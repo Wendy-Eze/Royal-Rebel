@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvvtn0102djbo"]
+
+[ext_resource type="Texture2D" uid="uid://gf463idysq8n" path="res://art/unmute.png" id="1_bfmx3"]
+[ext_resource type="Texture2D" uid="uid://crsa6r5pxydqn" path="res://art/mute.png" id="2_g26e7"]
+[ext_resource type="Script" path="res://mute_button.gd" id="3_1bsql"]
+[ext_resource type="AudioStream" uid="uid://r74k4l8gu665" path="res://music/JourneyThroughForest.ogg" id="4_3c8l7"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_15ti2"]
+action = &"mute"
+
+[sub_resource type="Shortcut" id="Shortcut_3v5v4"]
+events = [SubResource("InputEventAction_15ti2")]
+
+[node name="MuteButton" type="TextureButton"]
+offset_left = 1060.0
+offset_top = 8.0
+offset_right = 1134.0
+offset_bottom = 82.0
+toggle_mode = true
+shortcut = SubResource("Shortcut_3v5v4")
+texture_normal = ExtResource("1_bfmx3")
+texture_pressed = ExtResource("2_g26e7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("3_1bsql")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3c8l7")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
