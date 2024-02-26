@@ -3,8 +3,9 @@ extends RigidBody2D
 @export var speed = 100
 var player_position
 var target_position
-var timer_started = false  # Initialize timer_started to false
+var timer_started = false
 var health: int = 100
+var rtimer_started = false
 
 @onready var player = get_parent().get_node("Player")
 @onready var arrow = get_parent().get_node("Arrow")
@@ -36,7 +37,16 @@ func _physics_process(delta):
 			$Timer.start()
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
-
+		if Input.is_action_just_pressed("basic_melee"):
+			health -= 20
+			print("Goblin was hit! Health:", health)
+	
+	if health <= 0:
+		$AnimatedSprite2D.play("deaddrop")
+		if not rtimer_started:
+			$RespawnTimer.start()
+			rtimer_started = true
+			
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
@@ -56,3 +66,9 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 func _hit_by_arrow():
 	health -= 20
 	print("goblin was hit! ", health)
+
+func _on_respawn_timer_timeout():
+	health = 100
+	position = Vector2(1769, 822)
+	rtimer_started = false
+	$RespawnTimer.stop()
