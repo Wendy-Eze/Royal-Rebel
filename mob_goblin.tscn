@@ -193,11 +193,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
-size = Vector2(13.2, 16.8)
+size = Vector2(11.4, 16.8)
 
 [node name="Goblin" type="RigidBody2D" groups=["enemy"]]
 collision_mask = 0
 gravity_scale = 0.0
+continuous_cd = 1
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_yrwcw")
@@ -209,19 +210,23 @@ sprite_frames = SubResource("SpriteFrames_mqffj")
 animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-31, -15)
+position = Vector2(-30, -15)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_76sq3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="ContactTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="ContactTimer" to="." method="_on_contact_timer_timeout"]

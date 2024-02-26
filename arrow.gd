@@ -23,4 +23,4 @@ func _on_body_entered(body):
 		print("touched enemy")
 		goblin_hit.emit()
 		body._hit_by_arrow()
-		#body.queue_free()
+		queue_free()

@@ -488,6 +488,5 @@ position = Vector2(538, 308)
 position = Vector2(1769, 822)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
-visible = false
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]

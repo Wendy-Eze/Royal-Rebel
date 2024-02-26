@@ -114,9 +114,10 @@ frame_progress = 1.0
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/SwordHit"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/SwordHit"]
 position = Vector2(40.8347, 26.9218)
 shape = SubResource("RectangleShape2D_25dgw")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 3.5)
