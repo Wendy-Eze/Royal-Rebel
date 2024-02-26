@@ -69,10 +69,10 @@ func _on_animated_sprite_2d_animation_finished():
 		print("Stopping attack animation")
 		is_attacking = false
 		#$AnimatedSprite2D.stop()  # Stop the animation when it finishes
-
-
-func _on_sword_hit_area_entered(area):
-	if area.is_in_group("enemy"):
-		area.hit_by_sword()
+#
+func _on_sword_hit_body_entered(body):
+	if body.is_in_group("enemy"):
+		body._hit_by_sword()
 		print("touched enemy")
 		goblin_hit.emit()
+

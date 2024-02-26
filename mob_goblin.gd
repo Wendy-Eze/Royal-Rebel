@@ -67,6 +67,10 @@ func _hit_by_arrow():
 	health -= 20
 	print("goblin was hit! ", health)
 
+func _hit_by_sword():
+	health -= 20
+	print("goblin was hit! ", health)
+
 func _on_respawn_timer_timeout():
 	health = 100
 	position = Vector2(1769, 822)
