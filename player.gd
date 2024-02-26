@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var speed = 400
 var walking = false
 var is_attacking = false
+signal goblin_hit
 @onready var end_of_bow = $Marker2D
 
 
@@ -68,3 +69,10 @@ func _on_animated_sprite_2d_animation_finished():
 		print("Stopping attack animation")
 		is_attacking = false
 		#$AnimatedSprite2D.stop()  # Stop the animation when it finishes
+
+
+func _on_sword_hit_area_entered(area):
+	if area.is_in_group("enemy"):
+		area.hit_by_sword()
+		print("touched enemy")
+		goblin_hit.emit()

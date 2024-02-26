@@ -49,3 +49,7 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 func _hit_by_arrow():
 	health -= 20
 	print("goblin was hit! ", health)
+	
+func _hit_by_sword():
+	health -= 20
+	print("goblin was hit! ", health)
