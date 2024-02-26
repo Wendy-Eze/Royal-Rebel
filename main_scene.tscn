@@ -490,7 +490,6 @@ position = Vector2(538, 308)
 position = Vector2(171, 154)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
-visible = false
 
 [node name="MobGoblinTimer" type="Timer" parent="."]
 wait_time = 0.5
