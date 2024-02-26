@@ -1,8 +1,9 @@
 res://main_scene.tscn
+res://mob_goblin.gd
 res://player.tscn
 res://mob_goblin.tscn
 res://arrow.tscn
-res://mob_goblin.gd
-res://arrow.gd
-res://main_scene.gd
+
 res://player.gd
+res://mob_goblin.gd
+
