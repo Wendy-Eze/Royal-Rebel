@@ -1,8 +1,7 @@
-res://lives.tscn
-res://lives.gd
-res://livecounter.gd
 res://main_scene.tscn
-res://hud.tscn
 res://player.tscn
 res://mob_goblin.tscn
-res://mute_button.tscn
+res://arrow.tscn
+res://mob_goblin.gd
+res://player.gd
+res://main_scene.gd
