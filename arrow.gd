@@ -2,6 +2,7 @@ extends Area2D
 
 var speed = 30
 var direction := Vector2.ZERO
+signal goblin_hit
 
 func _ready():
 	pass 
@@ -16,3 +17,10 @@ func _process(delta):
 
 func set_direction(direction:Vector2):
 	self.direction = direction 
+
+func _on_body_entered(body):
+	if body.is_in_group("enemy"):
+		print("touched enemy")
+		goblin_hit.emit()
+		body._hit_by_arrow()
+		#body.queue_free()

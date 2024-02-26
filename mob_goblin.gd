@@ -7,6 +7,7 @@ var target_position
 var health: int = 100
 
 @onready var player = get_parent().get_node("Player")
+@onready var arrow = get_parent().get_node("Arrow")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AnimatedSprite2D.play("idle")
@@ -36,3 +37,15 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_body_entered(body):
 	health -= 20
 	print("goblin was hit!", health)
+	
+		
+func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	if body.is_in_group("player"):
+		print("player in area")
+		Livecounter.lives -= 1
+	#if body.is_in_group("arrow"):
+		#print("goblin hit by arrow")
+
+func _hit_by_arrow():
+	health -= 20
+	print("goblin was hit! ", health)

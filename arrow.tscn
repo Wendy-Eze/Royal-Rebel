@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfpy"]
 size = Vector2(17, 25)
 
-[node name="Arrow" type="Area2D"]
+[node name="Arrow" type="Area2D" groups=["aroow"]]
 script = ExtResource("1_1ponj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,3 +17,5 @@ texture = ExtResource("1_jhmd3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(17.5, 1.5)
 shape = SubResource("RectangleShape2D_okfpy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
