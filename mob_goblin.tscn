@@ -195,9 +195,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
 size = Vector2(13.2, 16.8)
 
-[node name="Goblin" type="RigidBody2D"]
+[node name="Goblin" type="RigidBody2D" groups=["enemy"]]
 collision_mask = 0
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 script = ExtResource("1_yrwcw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -214,4 +216,5 @@ shape = SubResource("RectangleShape2D_76sq3")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

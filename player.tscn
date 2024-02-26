@@ -97,7 +97,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
 size = Vector2(140, 163)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_lmqur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
