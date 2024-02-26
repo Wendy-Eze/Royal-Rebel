@@ -4,3 +4,5 @@ res://player.tscn
 res://mob_goblin.tscn
 res://arrow.tscn
 res://main_scene.gd
+res://arrow.gd
+res://player.gd
