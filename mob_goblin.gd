@@ -50,13 +50,9 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
-	$Timer.stop()
-	
-		
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.is_in_group("player"):
-		print("player in area")
+	if position.distance_to(player_position) <= 200:
 		Livecounter.lives -= 1
+	$Timer.stop()
 
 func _hit_by_arrow():
 	health -= 20
