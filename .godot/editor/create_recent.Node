@@ -1,5 +1,3 @@
-CollisionShape2D
-Area2D
 Timer
 PathFollow2D
 Sprite2D
@@ -11,4 +9,6 @@ TextureButton
 Button
 TileMap
 Marker2D
+CollisionShape2D
+Area2D
 AnimatedSprite2D

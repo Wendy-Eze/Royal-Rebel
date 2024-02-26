@@ -10,8 +10,3 @@ func _process(delta):
 func new_game():
 	$Player.start()
 	$HUD.show_message("Get Ready")
-	
-
-#func hit_by_arrow():
-	#$Goblin.health -= 20 
-	#print("goblin was hit!", $Goblin.health)
