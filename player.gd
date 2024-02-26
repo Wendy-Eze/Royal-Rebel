@@ -6,6 +6,7 @@ var walking = false
 var is_attacking = false
 @onready var end_of_bow = $Marker2D
 
+
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
@@ -14,6 +15,11 @@ func get_input():
 		is_attacking = true
 		$AnimatedSprite2D.play("attack")
 		arrow()
+	
+	if Input.is_action_just_pressed("basic_melee") and not is_attacking:
+		print("melee")
+		is_attacking = true
+		$AnimatedSprite2D.play("basic_melee")	
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -55,3 +61,12 @@ func _on_walk_timer_timeout():
 func start():
 	show()
 	$CollisionShape2D.disabled = false
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == ("basic_melee"):
+		print("Stopping attack animation")
+		is_attacking = false
+		#$AnimatedSprite2D.stop()  # Stop the animation when it finishes
+	
+

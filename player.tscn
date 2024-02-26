@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=22 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Texture2D" uid="uid://dpcjwifb5ocd4" path="res://art/Player Art/run_0.png" id="1_5an6p"]
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
@@ -9,11 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://bqju0gnrwy5py" path="res://art/Player Art/run_3.png" id="4_dip28"]
 [ext_resource type="Texture2D" uid="uid://ccihnk2hcyoce" path="res://art/Player Art/attack_2.png" id="4_j414i"]
 [ext_resource type="Texture2D" uid="uid://eitwksaky742" path="res://art/Player Art/run_4.png" id="5_4rl7y"]
+[ext_resource type="Texture2D" uid="uid://dn21yhkyw46tx" path="res://art/Player Art/basic_melee0.png" id="5_8qilo"]
 [ext_resource type="Texture2D" uid="uid://cpk7iga3sofl4" path="res://art/Player Art/run_5.png" id="6_8waou"]
 [ext_resource type="Texture2D" uid="uid://b35dip2wba5s8" path="res://art/Player Art/idle_0.png" id="6_elgde"]
+[ext_resource type="Texture2D" uid="uid://cnw378iukpr38" path="res://art/Player Art/basic_melee1.png" id="6_vv6kb"]
 [ext_resource type="Texture2D" uid="uid://dwcrolybcefmf" path="res://art/Player Art/idle_2.png" id="7_klwr3"]
+[ext_resource type="Texture2D" uid="uid://cpvwcckchoert" path="res://art/Player Art/basic_melee2.png" id="7_ok1k5"]
 [ext_resource type="AudioStream" uid="uid://clamsb4csfkhl" path="res://music/sfx_step_grass_l.wav" id="8_87lko"]
 [ext_resource type="Texture2D" uid="uid://b62p52ljv0ti7" path="res://art/Player Art/idle_1.png" id="8_grgel"]
+[ext_resource type="Texture2D" uid="uid://cm27cer1adbni" path="res://art/Player Art/basic_melee3.png" id="8_hjcbs"]
 [ext_resource type="Texture2D" uid="uid://bs5ydcuwnmc25" path="res://art/Player Art/idle_3.png" id="9_fm2rf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
@@ -31,6 +35,23 @@ animations = [{
 "loop": false,
 "name": &"attack",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8qilo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vv6kb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ok1k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hjcbs")
+}],
+"loop": true,
+"name": &"basic_melee",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -84,9 +105,7 @@ texture_filter = 1
 position = Vector2(50, -30)
 scale = Vector2(2.11724, 2.11724)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"attack"
-frame = 2
-frame_progress = 1.0
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 7)
@@ -102,4 +121,5 @@ wait_time = 0.45
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(92, 0)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

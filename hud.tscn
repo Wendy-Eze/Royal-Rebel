@@ -23,8 +23,8 @@ script = ExtResource("1_0k33q")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_top = -16.0
-offset_right = 1157.0
-offset_bottom = 653.0
+offset_right = 1920.0
+offset_bottom = 1064.0
 texture = ExtResource("2_edks0")
 expand_mode = 1
 
@@ -50,15 +50,13 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="StartButton" type="Button" parent="."]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -138.0
-offset_top = -148.0
-offset_right = 138.0
-offset_bottom = -48.0
+anchors_preset = -1
+anchor_left = 0.452083
+anchor_top = 0.833333
+anchor_right = 0.547917
+anchor_bottom = 0.887037
+offset_top = -150.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_o8ejs")
@@ -66,12 +64,17 @@ theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_4x43s")
 shortcut = SubResource("Shortcut_v3frc")
 text = "Start"
+metadata/_edit_use_anchors_ = true
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
 [node name="MuteButton" parent="." instance=ExtResource("4_y3b8p")]
+offset_left = 1800.0
+offset_top = 10.0
+offset_right = 1874.0
+offset_bottom = 84.0
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

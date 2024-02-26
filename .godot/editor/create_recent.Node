@@ -1,3 +1,7 @@
+Path2D
+Timer
+VisibleOnScreenNotifier2D
+RigidBody2D
 AudioStreamPlayer
 TextureButton
 Button
@@ -9,4 +13,3 @@ Area2D
 AnimatedSprite2D
 CharacterBody2D
 TextureRect
-AudioStreamPlayer2D
