@@ -485,8 +485,9 @@ layer_0/tile_data = PackedInt32Array(-131077, 1245184, 10, -65541, 917504, 12, -
 position = Vector2(538, 308)
 
 [node name="Goblin" parent="." instance=ExtResource("4_g7gvp")]
-position = Vector2(171, 154)
+position = Vector2(1769, 822)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+visible = false
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]
