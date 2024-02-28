@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
-[ext_resource type="PackedScene" uid="uid://cviwi16h7v1c1" path="res://mob_goblin.tscn" id="4_g7gvp"]
 [ext_resource type="Texture2D" uid="uid://cffjxcg5i7y50" path="res://art/TilesetFloor.png" id="5_wp5el"]
+[ext_resource type="PackedScene" uid="uid://ctde7gqgg0sxr" path="res://mob_spawner.tscn" id="6_62o7t"]
 [ext_resource type="PackedScene" uid="uid://d0ucso2y2x77o" path="res://hud.tscn" id="6_jebqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngmmr"]
@@ -484,9 +484,9 @@ layer_0/tile_data = PackedInt32Array(-131077, 1245184, 10, -65541, 917504, 12, -
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
 position = Vector2(538, 308)
 
-[node name="Goblin" parent="." instance=ExtResource("4_g7gvp")]
-position = Vector2(1769, 822)
-
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+
+[node name="mob_spawner" parent="." instance=ExtResource("6_62o7t")]
+position = Vector2(1740, 824)
 
 [connection signal="start_game" from="HUD" to="." method="new_game"]

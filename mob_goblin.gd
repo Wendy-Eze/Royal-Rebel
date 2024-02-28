@@ -16,7 +16,7 @@ func _physics_process(delta):
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
-	if position.distance_to(player_position) > 200 and position.distance_to(player_position) <= 800:
+	if position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800:
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
 			$AnimatedSprite2D.play("run")
@@ -50,7 +50,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
-	if position.distance_to(player_position) <= 200:
+	if position.distance_to(player_position) <= 160:
 		Livecounter.lives -= 1
 	$Timer.stop()
 
@@ -65,8 +65,9 @@ func _hit_by_sword():
 func _on_respawn_timer_timeout():
 	health = 100
 	set_linear_velocity(Vector2.ZERO)
+	position = Vector2(1769, 822)
 	target_position = (player.position - position).normalized()
 	$AnimatedSprite2D.play("idle")
-	position = Vector2(1769, 822)
 	rtimer_started = false
 	$RespawnTimer.stop()
+	queue_free()
