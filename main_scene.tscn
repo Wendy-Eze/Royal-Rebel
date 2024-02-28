@@ -548,6 +548,7 @@ layer_0/tile_data = PackedInt32Array(-131077, 1245184, 10, -65541, 917504, 12, -
 position = Vector2(538, 308)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+visible = false
 
 [node name="mob_spawner" parent="." instance=ExtResource("6_62o7t")]
 position = Vector2(1740, 824)
