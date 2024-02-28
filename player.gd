@@ -68,7 +68,6 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("basic_melee"):
 		print("Stopping attack animation")
 		is_attacking = false
-		#$AnimatedSprite2D.stop()  # Stop the animation when it finishes
 
 func _on_sword_hit_body_entered(body):
 	if body.is_in_group("enemy"):

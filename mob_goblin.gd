@@ -8,8 +8,6 @@ var health: int = 100
 var rtimer_started = false
 
 @onready var player = get_parent().get_node("Player")
-#@onready var arrow = get_parent().get_node("Arrow")
-# Called when the node enters the scene tree for the first time.
 
 func _ready():
 	pass
@@ -49,26 +47,12 @@ func _physics_process(delta):
 			
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
-
-#func _on_body_entered(body):
-	#health -= 20
-	#print("Goblin was hit! Health:", health)
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
-	
-		
-func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.is_in_group("player"):
-		print("player in area")
+	if position.distance_to(player_position) <= 200:
 		Livecounter.lives -= 1
-		#$ContactTimer.start()
-
-#func _on_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
-	#if body.is_in_group("player"):
-		#print("player not in area")
-		#$ContactTimer.stop()
-		##Livecounter.lives -= 1
+	$Timer.stop()
 
 func _hit_by_arrow():
 	health -= 20
@@ -80,10 +64,9 @@ func _hit_by_sword():
 
 func _on_respawn_timer_timeout():
 	health = 100
+	set_linear_velocity(Vector2.ZERO)
+	target_position = (player.position - position).normalized()
+	$AnimatedSprite2D.play("idle")
 	position = Vector2(1769, 822)
 	rtimer_started = false
 	$RespawnTimer.stop()
-
-
-#func _on_contact_timer_timeout():
-	#Livecounter.lives -= 1
