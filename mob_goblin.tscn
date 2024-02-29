@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cviwi16h7v1c1"]
+[gd_scene load_steps=29 format=3 uid="uid://cviwi16h7v1c1"]
 
 [ext_resource type="Texture2D" uid="uid://ce6jooru7oom5" path="res://art/Mob Art/Goblin/goblin_sheet.png" id="1_edvad"]
 [ext_resource type="Script" path="res://mob_goblin.gd" id="1_yrwcw"]
@@ -195,6 +195,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
 size = Vector2(11.4, 16.8)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54e4p"]
+bg_color = Color(0.854902, 0.133333, 0, 1)
+
 [node name="Goblin" type="RigidBody2D" groups=["enemy"]]
 collision_mask = 0
 gravity_scale = 0.0
@@ -207,7 +210,7 @@ script = ExtResource("1_yrwcw")
 texture_filter = 1
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"attack"
+animation = &"deaddrop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
@@ -221,8 +224,26 @@ wait_time = 2.0
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
+[node name="HealthBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -99.0
+offset_top = -136.0
+offset_right = 53.0
+offset_bottom = -109.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_54e4p")
+step = 20.0
+show_percentage = false
+
+[node name="HealthTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

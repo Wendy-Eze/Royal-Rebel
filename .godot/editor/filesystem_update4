@@ -4,3 +4,5 @@ res://mob_goblin.tscn
 res://arrow.tscn
 res://hud.tscn
 res://mob_spawner.tscn
+res://mob_goblin.gd
+res://mob_spawner.gd
