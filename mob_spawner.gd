@@ -7,6 +7,7 @@ var spawn_num = 5
 func _ready():
 	##spawn()
 	call_deferred("spawn")
+	#pass
 	##pass
 	
 #func _process(_delta):
@@ -24,3 +25,4 @@ func spawn():
 			var random_y = randi_range(0, 2500)
 			new_obj.position = Vector2(random_x, random_y)
 			get_parent().add_child(new_obj)
+			mob = new_obj

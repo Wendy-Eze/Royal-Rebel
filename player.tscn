@@ -101,6 +101,7 @@ size = Vector2(43.0212, 8.97395)
 size = Vector2(140, 163)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_lmqur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
