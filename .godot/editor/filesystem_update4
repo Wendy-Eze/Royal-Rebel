@@ -5,3 +5,4 @@ res://arrow.tscn
 res://hud.tscn
 res://mob_spawner.tscn
 res://player.gd
+res://mob_spawner.gd

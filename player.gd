@@ -12,7 +12,7 @@ func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 	
-	if Input.is_action_just_pressed("attack") and not is_attacking:
+	if Input.is_action_just_pressed("attack"):
 		is_attacking = true
 		$AnimatedSprite2D.play("attack")
 		arrow()
