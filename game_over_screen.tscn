@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://da2qdynvsop07"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_3vxe7"]
+[ext_resource type="Texture2D" uid="uid://0kxj26cvgmtu" path="res://art/GAME OVER.png" id="1_ges8w"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_pnq4l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyg0v"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jajke"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="GameOverScreen" type="CanvasLayer"]
+script = ExtResource("1_3vxe7")
+
+[node name="GameOverBackground" type="TextureRect" parent="."]
+offset_right = 1928.0
+offset_bottom = 1088.0
+texture = ExtResource("1_ges8w")
+
+[node name="GameOverMessage" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.325
+anchor_top = 0.4
+anchor_right = 0.687
+anchor_bottom = 0.6
+offset_left = -6.10352e-05
+offset_top = -8.0
+offset_right = -7.04004
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_pnq4l")
+theme_override_font_sizes/font_size = 120
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RestartButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.433
+anchor_top = 0.652
+anchor_right = 0.566
+anchor_bottom = 0.709
+offset_left = 0.639954
+offset_top = -0.160034
+offset_right = -0.720093
+offset_bottom = 0.279968
+grow_horizontal = 2
+tooltip_text = "restart level!"
+theme_override_fonts/font = ExtResource("2_pnq4l")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_oyg0v")
+text = "RESTART"
+
+[node name="QuitButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = -1
+anchor_left = 0.458
+anchor_top = 0.748
+anchor_right = 0.542
+anchor_bottom = 0.806
+offset_left = 6.63995
+offset_top = 0.159973
+offset_right = -8.64014
+offset_bottom = -0.480042
+tooltip_text = "quit to home screen!
+"
+theme_override_fonts/font = ExtResource("2_pnq4l")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_jajke")
+text = "QUIT"
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
