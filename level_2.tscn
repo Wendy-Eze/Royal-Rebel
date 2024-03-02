@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfopq7krxk8s"]
+
+[ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
+[ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://next_level.tscn" id="2_qg73i"]
+
+[node name="Level 2" type="Node"]
+
+[node name="Level #" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 319.0
+offset_right = 156.0
+offset_bottom = 342.0
+theme_override_font_sizes/font_size = 20
+text = "2nd Level"
+
+[node name="Next_Level" parent="." instance=ExtResource("2_qg73i")]
+
+[node name="Player" parent="." instance=ExtResource("1_dijaf")]
