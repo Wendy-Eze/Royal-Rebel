@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=5 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="1_nou5r"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://player_health.tscn" id="3_0ws11"]
+[ext_resource type="PackedScene" uid="uid://da2qdynvsop07" path="res://game_over_screen.tscn" id="4_r3yx1"]
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -14,3 +15,6 @@ offset_right = 1875.0
 offset_bottom = 112.0
 
 [node name="PlayerHealth" parent="." instance=ExtResource("3_0ws11")]
+
+[node name="GameOverScreen" parent="." instance=ExtResource("4_r3yx1")]
+visible = false

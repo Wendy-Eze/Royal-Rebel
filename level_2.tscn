@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=4 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
 [ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://next_level.tscn" id="2_qg73i"]
+[ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="3_qb11k"]
 
 [node name="Level 2" type="Node"]
 
@@ -16,3 +17,6 @@ text = "2nd Level"
 [node name="Next_Level" parent="." instance=ExtResource("2_qg73i")]
 
 [node name="Player" parent="." instance=ExtResource("1_dijaf")]
+position = Vector2(238, 520)
+
+[node name="GameHUD" parent="." instance=ExtResource("3_qb11k")]
