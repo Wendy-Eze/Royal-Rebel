@@ -1,13 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=11 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
 [ext_resource type="Texture2D" uid="uid://cffjxcg5i7y50" path="res://art/TilesetFloor.png" id="5_wp5el"]
 [ext_resource type="Texture2D" uid="uid://yhgqt5n0cerc" path="res://mystic_woods_free_2.1/Forest.png" id="6_8x1et"]
+[ext_resource type="PackedScene" uid="uid://ctde7gqgg0sxr" path="res://mob_spawner.tscn" id="6_62o7t"]
 [ext_resource type="PackedScene" uid="uid://d0ucso2y2x77o" path="res://hud.tscn" id="6_jebqx"]
-[ext_resource type="PackedScene" uid="uid://cviwi16h7v1c1" path="res://mob_goblin.tscn" id="7_7ljmc"]
-[ext_resource type="Script" path="res://begingame.gd" id="8_l6224"]
-[ext_resource type="Texture2D" uid="uid://c8cwhbr0dre1k" path="res://icon.svg" id="9_3lljf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngmmr"]
 texture = ExtResource("5_wp5el")
@@ -535,9 +533,6 @@ texture = ExtResource("6_8x1et")
 [sub_resource type="TileSet" id="TileSet_5bx28"]
 sources/0 = SubResource("TileSetAtlasSource_ojfmi")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjvi4"]
-size = Vector2(131, 128)
-
 [node name="Main Scene" type="Node"]
 script = ExtResource("1_lodcs")
 
@@ -554,25 +549,13 @@ position = Vector2(538, 308)
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
 
+[node name="mob_spawner" parent="." instance=ExtResource("6_62o7t")]
+position = Vector2(1740, 824)
+
 [node name="TileMap2" type="TileMap" parent="."]
 scale = Vector2(7, 7)
 tile_set = SubResource("TileSet_5bx28")
 format = 2
 layer_0/tile_data = PackedInt32Array(655383, 0, 0, 720919, 0, 1, 786455, 0, 2, 851991, 131072, 4, 655384, 65536, 0, 720920, 65536, 1, 786456, 65536, 2, 851992, 65536, 3, 655385, 131072, 0, 720921, 131072, 1, 786457, 131072, 2, 851993, 131072, 3, 720895, 0, 0, 786431, 0, 1, 851967, 0, 2, 917503, 0, 0, 655360, 65536, 0, 720896, 65536, 1, 786432, 65536, 2, 851968, 65536, 0, 655361, 131072, 0, 720897, 131072, 1, 786433, 131072, 2, 851969, 131072, 0, 1179655, 0, 0, 1245191, 0, 1, 1310727, 0, 2, 1376263, 0, 3, 1179656, 65536, 0, 1245192, 65536, 1, 1310728, 65536, 2, 1376264, 65536, 3, 1179657, 131072, 0, 1245193, 131072, 1, 1310729, 131072, 2, 1376265, 131072, 4, 1245209, 0, 0, 1310745, 0, 1, 1376281, 0, 2, 1441817, 0, 3, 1245210, 65536, 0, 1310746, 65536, 1, 1376282, 65536, 2, 1441818, 65536, 3, 1245211, 131072, 0, 1310747, 131072, 1, 1376283, 131072, 2, 1441819, 131072, 3, 983039, 0, 1, 1048575, 0, 2, 1114111, 0, 0, 917504, 65536, 1, 983040, 65536, 2, 1048576, 65536, 0, 917505, 131072, 1, 983041, 131072, 2, 1048577, 131072, 0, 1179647, 0, 1, 1245183, 0, 2, 1310719, 0, 3, 1114112, 65536, 1, 1179648, 65536, 2, 1245184, 65536, 3, 1114113, 131072, 1, 1179649, 131072, 2, 1245185, 131072, 4, 131086, 0, 0, 196622, 0, 1, 262158, 0, 2, 327694, 0, 3, 131087, 65536, 0, 196623, 65536, 1, 262159, 65536, 2, 327695, 65536, 3, 131088, 131072, 0, 196624, 131072, 1, 262160, 131072, 2, 327696, 131072, 3, -65519, 0, 0, 17, 0, 1, 65553, 0, 2, 131089, 0, 3, -65518, 65536, 0, 18, 65536, 1, 65554, 65536, 2, 131090, 65536, 3, -65517, 131072, 0, 19, 131072, 1, 65555, 131072, 2, 131091, 131072, 3, 196626, 0, 0, 262162, 0, 1, 327698, 0, 2, 393234, 0, 3, 196627, 65536, 0, 262163, 65536, 1, 327699, 65536, 2, 393235, 65536, 3, 196628, 131072, 0, 262164, 131072, 1, 327700, 131072, 2, 393236, 131072, 3, -65511, 0, 0, 25, 0, 1, 65561, 0, 2, 131097, 0, 3, -65510, 65536, 0, 26, 65536, 1, 65562, 65536, 2, 131098, 65536, 3, -65509, 131072, 0, 27, 131072, 1, 65563, 131072, 2, 131099, 131072, 3, 131071, 0, 0, 196607, 0, 1, 262143, 0, 2, 327679, 0, 3, 65536, 65536, 0, 131072, 65536, 1, 196608, 65536, 2, 262144, 65536, 3, 65537, 131072, 0, 131073, 131072, 1, 196609, 131072, 2, 262145, 131072, 3, 589836, 0, 0, 655372, 0, 1, 720908, 0, 2, 786444, 0, 3, 589837, 65536, 0, 655373, 65536, 1, 720909, 65536, 2, 786445, 65536, 3, 589838, 131072, 0, 655374, 131072, 1, 720910, 131072, 2, 786446, 131072, 3, 851973, 0, 0, 917509, 0, 1, 983045, 0, 2, 1048581, 131072, 4, 851974, 65536, 0, 917510, 65536, 1, 983046, 65536, 2, 1048582, 65536, 3, 851975, 131072, 0, 917511, 131072, 1, 983047, 131072, 2, 1048583, 131072, 3, 1245201, 65536, 5, 1179674, 65536, 5, 1114138, 65536, 5, 1376257, 65536, 5, 1376258, 65536, 5, 1441793, 65536, 5, 1441810, 65536, 5, 1441813, 65536, 5, 786435, 65536, 5, 524288, 65536, 5, 327680, 65536, 5, 2, 65536, 5, 16, 65536, 5, 21, 65536, 5, 22, 65536, 5, 983066, 131072, 4, 983042, 131072, 4, 1441794, 131072, 4, 1310733, 0, 5, 1310734, 0, 5, 917516, 0, 5, 917517, 0, 5, 524291, 0, 5, 524292, 0, 5, 9, 0, 5, 10, 0, 5, 11, 0, 5, 458770, 0, 5, 458771, 0, 5, 458772, 0, 5, 458773, 0, 5, 458774, 0, 5)
 
-[node name="BeginGame" type="Area2D" parent="."]
-position = Vector2(2883, 813)
-script = ExtResource("8_l6224")
-
-[node name="Sprite2D" type="Sprite2D" parent="BeginGame"]
-texture = ExtResource("9_3lljf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BeginGame"]
-position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_qjvi4")
-
-[node name="Goblin" parent="." instance=ExtResource("7_7ljmc")]
-position = Vector2(2462, 1810)
-
 [connection signal="start_game" from="HUD" to="." method="new_game"]
-[connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]

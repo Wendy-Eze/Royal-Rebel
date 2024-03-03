@@ -1,17 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=3 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
-[ext_resource type="PackedScene" uid="uid://cwp156068eg8n" path="res://game_hud.tscn" id="1_hnuxl"]
 [ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://next_level.tscn" id="2_qg73i"]
 
 [node name="Level 2" type="Node"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 2790.0
-offset_bottom = 1447.0
-color = Color(0.356863, 0.662745, 0.333333, 1)
-
-[node name="Game_HUD" parent="." instance=ExtResource("1_hnuxl")]
 
 [node name="Level #" type="Label" parent="."]
 offset_left = 88.0
@@ -22,7 +14,5 @@ theme_override_font_sizes/font_size = 20
 text = "2nd Level"
 
 [node name="Next_Level" parent="." instance=ExtResource("2_qg73i")]
-position = Vector2(1711, 403)
 
 [node name="Player" parent="." instance=ExtResource("1_dijaf")]
-position = Vector2(185, 153)

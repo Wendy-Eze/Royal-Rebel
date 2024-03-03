@@ -75,3 +75,4 @@ func _on_sword_hit_body_entered(body):
 		body._hit_by_sword()
 		print("touched enemy")
 		goblin_hit.emit()
+
