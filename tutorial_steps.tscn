@@ -74,7 +74,7 @@ theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
 text = "What do we have here? A GOBLIN!
-To defeat the goblin, use the spacebar key to shoot arrows and your mouse to aim. You can also use the X or K key to use your sword. "
+Use the spacebar key to shoot arrows and your mouse to aim. Use the X or K key tfor your sword."
 horizontal_alignment = 1
 autowrap_mode = 2
 
