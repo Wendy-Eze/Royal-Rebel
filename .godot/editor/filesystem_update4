@@ -1,3 +1,4 @@
 res://opening_cutscene.tscn
-res://tutorial_steps.tscn
+res://Control.gd
 res://main_scene.tscn
+res://tutorial_steps.tscn
