@@ -7,11 +7,23 @@
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 152.0
+offset_top = 82.0
+offset_right = 1619.0
+offset_bottom = 479.0
 script = ExtResource("1_pudhr")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="TextLabel" type="Label" parent="Control"]
 layout_mode = 1
-offset_right = 1007.0
-offset_bottom = 467.0
+anchors_preset = -1
+anchor_left = 0.557
+anchor_top = 1.009
+anchor_right = 0.557
+anchor_bottom = 1.009
+offset_left = -503.119
+offset_top = -233.573
+offset_right = 503.881
+offset_bottom = 233.427
+grow_horizontal = 2
+grow_vertical = 2
+text = "hello"
