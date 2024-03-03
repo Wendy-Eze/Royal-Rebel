@@ -1,3 +1,6 @@
+ColorRect
+TileMap
+Button
 Timer
 Sprite2D
 CollisionShape2D
@@ -10,5 +13,3 @@ Control
 Node
 RemoteTransform2D
 Camera2D
-TileMap
-PathFollow2D

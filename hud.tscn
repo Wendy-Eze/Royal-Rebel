@@ -76,10 +76,10 @@ wait_time = 2.0
 one_shot = true
 
 [node name="MuteButton" parent="." instance=ExtResource("4_y3b8p")]
-offset_left = 1777.0
-offset_top = 10.0
-offset_right = 1874.0
-offset_bottom = 107.0
+offset_left = 1800.0
+offset_top = 18.0
+offset_right = 1897.0
+offset_bottom = 115.0
 
 [connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

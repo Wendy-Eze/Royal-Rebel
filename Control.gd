@@ -1,5 +1,6 @@
 extends Control
 @onready var text_label: Label = $TextLabel
+signal start_tut
 
 var dialogue_lines = [
 	"The kingdom of Avalon has been under the stifling rule of the corrupt King Zephyr for many, many years. Citizens of Avalon have been struggling under the weight of increasing taxes and mass incarceration by the kingsmen.",
@@ -22,9 +23,27 @@ func advance_text():
 	if current_line < dialogue_lines.size() -1:
 		# Update the text in the Label node to display the next line of dialogue
 		$TextLabel.text = dialogue_lines[current_line]
+		print(current_line)
+		
+		match current_line:
+			
+			1: 
+				$One.hide()
+				$Two.show()
+				$Three.hide()
+			
+			2: 
+				$One.hide()
+				$Two.hide()
+				$Three.show()
+		
 	else:
 		# If there are no more lines of dialogue, hide the Label node or perform any other necessary actions
 		$TextLabel.hide()
+		$One.hide()
+		$Two.hide()
+		$Three.hide()
+		start_tut.emit()
 	print("Advancing to the next line of text...")
 	
 #func input(event):

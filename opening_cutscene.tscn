@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddogjkss48hui"]
+[gd_scene load_steps=5 format=3 uid="uid://ddogjkss48hui"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_pudhr"]
+[ext_resource type="Script" path="res://opening_cutscene.gd" id="1_vvooe"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_2ar4t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rty7"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
 
 [node name="opening_cutscene" type="Node2D"]
+script = ExtResource("1_vvooe")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -13,17 +23,58 @@ offset_right = 1619.0
 offset_bottom = 479.0
 script = ExtResource("1_pudhr")
 
+[node name="One" type="ColorRect" parent="Control"]
+offset_left = -150.0
+offset_top = -82.0
+offset_right = 1762.0
+offset_bottom = 994.0
+
+[node name="Two" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -80.0
+offset_right = 304.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.866667, 0.576471, 0.627451, 1)
+
+[node name="Three" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -88.0
+offset_right = 308.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.419608, 0.686275, 1)
+
 [node name="TextLabel" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.557
-anchor_top = 1.009
-anchor_right = 0.557
-anchor_bottom = 1.009
-offset_left = -503.119
-offset_top = -233.573
-offset_right = 503.881
-offset_bottom = 233.427
+anchor_left = 0.554
+anchor_top = 2.071
+anchor_right = 0.554
+anchor_bottom = 2.071
+offset_left = -798.718
+offset_top = -90.187
+offset_right = 799.282
+offset_bottom = 89.813
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rty7")
 text = "hello"
+autowrap_mode = 2
+
+[connection signal="start_tut" from="Control" to="." method="_on_control_start_game"]

@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=5 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
 [ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://next_level.tscn" id="2_elny4"]
+[ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="3_ouwdk"]
+[ext_resource type="PackedScene" uid="uid://ctde7gqgg0sxr" path="res://mob_spawner.tscn" id="4_nxpkb"]
 
 [node name="Level 1" type="Node"]
 
 [node name="Next_Level" parent="." instance=ExtResource("2_elny4")]
 
 [node name="Player" parent="." instance=ExtResource("1_g8i7q")]
+position = Vector2(276, 520)
 
 [node name="Level #" type="Label" parent="."]
 offset_left = 88.0
@@ -16,3 +19,7 @@ offset_right = 171.0
 offset_bottom = 351.0
 theme_override_font_sizes/font_size = 20
 text = "1st Level"
+
+[node name="GameHUD" parent="." instance=ExtResource("3_ouwdk")]
+
+[node name="mob_spawner" parent="." instance=ExtResource("4_nxpkb")]
