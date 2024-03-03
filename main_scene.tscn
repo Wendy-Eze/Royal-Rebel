@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=20 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://cviwi16h7v1c1" path="res://mob_goblin.tscn" id="6_nhbrn"]
 [ext_resource type="Texture2D" uid="uid://c8cwhbr0dre1k" path="res://icon.svg" id="7_o1jcp"]
 [ext_resource type="Script" path="res://begingame.gd" id="7_udl4h"]
+[ext_resource type="Script" path="res://goblinarea.gd" id="9_3nqaa"]
+[ext_resource type="PackedScene" uid="uid://ctipcvp4xho2p" path="res://tutorial_steps.tscn" id="10_nlptt"]
+[ext_resource type="Script" path="res://storearea.gd" id="11_j1ide"]
+[ext_resource type="Texture2D" uid="uid://cgmpdkwqqsdem" path="res://art/store.png" id="12_x3e2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngmmr"]
 texture = ExtResource("5_wp5el")
@@ -538,6 +542,12 @@ texture = ExtResource("6_8x1et")
 [sub_resource type="TileSet" id="TileSet_5bx28"]
 sources/0 = SubResource("TileSetAtlasSource_ojfmi")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xv0"]
+size = Vector2(1192, 1064)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2jsca"]
+size = Vector2(820, 487)
+
 [node name="Main Scene" type="Node"]
 script = ExtResource("1_lodcs")
 
@@ -574,5 +584,45 @@ layer_0/tile_data = PackedInt32Array(655383, 0, 0, 720919, 0, 1, 786455, 0, 2, 8
 [node name="Goblin" parent="." instance=ExtResource("6_nhbrn")]
 position = Vector2(2480, 1528)
 
+[node name="GoblinArea" type="Area2D" parent="."]
+position = Vector2(2463, 1567)
+script = ExtResource("9_3nqaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinArea"]
+position = Vector2(5, -25)
+shape = SubResource("RectangleShape2D_h7xv0")
+
+[node name="TutorialSteps" parent="." instance=ExtResource("10_nlptt")]
+
+[node name="GoblinStepTime" type="Timer" parent="."]
+wait_time = 7.0
+
+[node name="WalkStepTime" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="StoreArea" type="Area2D" parent="."]
+position = Vector2(471, 2353)
+script = ExtResource("11_j1ide")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StoreArea"]
+position = Vector2(38, -60.5)
+shape = SubResource("RectangleShape2D_2jsca")
+
+[node name="Sprite2D" type="Sprite2D" parent="StoreArea"]
+texture_filter = 1
+position = Vector2(32, -51)
+scale = Vector2(15.1406, 14.6719)
+texture = ExtResource("12_x3e2d")
+
+[node name="StoreStepTimer" type="Timer" parent="."]
+wait_time = 8.0
+
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="body_entered" from="GoblinArea" to="GoblinArea" method="_on_body_entered"]
+[connection signal="player_near" from="GoblinArea" to="." method="goblin_step"]
+[connection signal="timeout" from="GoblinStepTime" to="." method="_on_goblin_step_time_timeout"]
+[connection signal="timeout" from="WalkStepTime" to="." method="_on_walk_step_time_timeout"]
+[connection signal="body_entered" from="StoreArea" to="StoreArea" method="_on_body_entered"]
+[connection signal="player_near" from="StoreArea" to="." method="store_step"]
+[connection signal="timeout" from="StoreStepTimer" to="." method="_on_store_step_timer_timeout"]
