@@ -3,10 +3,11 @@ extends CanvasLayer
 signal start_game
 
 func _ready():
-
 	pass
+	
 
 func _process(delta):
+	#set_health()
 	pass
 
 func show_message(text):
@@ -33,9 +34,12 @@ func _on_start_button_pressed():
 	$StartButton.hide()
 	$Background.hide()
 	start_game.emit()
+	$Instruction.show()
 	#print("got node")
 
 func _on_message_timer_timeout():
 	$Message.hide()
 	
 
+#func set_health():
+	#$PlayerHealth.value = Livecounter.num

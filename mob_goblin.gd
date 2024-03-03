@@ -60,7 +60,8 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
 	if position.distance_to(player_position) <= 160:
-		Livecounter.lives -= 1
+		#Livecounter.lives -= 1
+		Livecounter.num -= 10
 	$Timer.stop()
 
 func _hit_by_arrow():

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://edgef62ofbmr"]
+
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_mbghk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ioahx"]
+bg_color = Color(0.890196, 0, 0.227451, 1)
+
+[sub_resource type="GDScript" id="GDScript_w3ku8"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	$PlayerHealth.value = Livecounter.num
+"
+
+[node name="PlayerHealth" type="ProgressBar"]
+offset_left = 32.0
+offset_top = 38.0
+offset_right = 416.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("1_mbghk")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/fill = SubResource("StyleBoxFlat_ioahx")
+step = 10.0
+script = SubResource("GDScript_w3ku8")
