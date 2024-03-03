@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0k33q"]
 [ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="2_edks0"]
-[ext_resource type="PackedScene" uid="uid://draq3x3t6waeu" path="res://lives.tscn" id="2_w8mi1"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="3_o8ejs"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="4_y3b8p"]
+[ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://player_health.tscn" id="5_pcrf2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x43s"]
 bg_color = Color(0, 0, 0, 1)
@@ -22,7 +22,7 @@ events = [SubResource("InputEventAction_1k7tw")]
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0k33q")
 
-[node name="Lives" parent="." instance=ExtResource("2_w8mi1")]
+[node name="PlayerHealth" parent="." instance=ExtResource("5_pcrf2")]
 
 [node name="Background" type="TextureRect" parent="."]
 offset_top = -16.0

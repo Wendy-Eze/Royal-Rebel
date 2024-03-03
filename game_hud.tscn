@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://be3pnj5onpfin"]
+
+[ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
+[ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="1_nou5r"]
+[ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://player_health.tscn" id="3_0ws11"]
+
+[node name="GameHUD" type="CanvasLayer"]
+script = ExtResource("1_jl2e5")
+
+[node name="MuteButton" parent="." instance=ExtResource("1_nou5r")]
+offset_left = 1801.0
+offset_top = 38.0
+offset_right = 1875.0
+offset_bottom = 112.0
+
+[node name="PlayerHealth" parent="." instance=ExtResource("3_0ws11")]
