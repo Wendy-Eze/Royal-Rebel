@@ -24,6 +24,7 @@ offset_bottom = 479.0
 script = ExtResource("1_pudhr")
 
 [node name="One" type="ColorRect" parent="Control"]
+layout_mode = 0
 offset_left = -150.0
 offset_top = -82.0
 offset_right = 1762.0

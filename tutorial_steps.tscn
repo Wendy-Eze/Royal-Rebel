@@ -51,7 +51,8 @@ offset_bottom = 229.0
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and wonder a bit."
+text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and wander a bit."
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="GoblinStep" type="Panel" parent="."]
@@ -73,7 +74,8 @@ theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
 text = "What do we have here? A GOBLIN!
-To defeat the goblin, use Spacebar for bow and arrow or X/k key for sword. "
+To defeat the goblin, use the spacebar key to shoot arrows and your mouse to aim. You can also use the X or K key to use your sword. "
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="StoreStep" type="Panel" parent="."]
@@ -94,7 +96,8 @@ offset_bottom = 229.0
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "You have come across the store! Here you are able to buy health and potions. To purchase, you will need to defeat enemies and collect coins."
+text = "You have come across the market! Here you are able to buy health and potions. You can gain money by defeating enemies or collecting coins. "
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Start_Game" type="Panel" parent="."]
@@ -119,7 +122,7 @@ grow_horizontal = 2
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "are you ready to begin your journey?"
+text = "Royal Rebel, are you ready to begin your journey?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
