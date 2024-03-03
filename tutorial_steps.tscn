@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctipcvp4xho2p"]
+
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_7yuql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu2y"]
+bg_color = Color(0.2, 0.2, 0.2, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="TutorialSteps" type="CanvasLayer"]
+
+[node name="WalkStep" type="Panel" parent="."]
+visible = false
+offset_left = 348.0
+offset_top = 771.0
+offset_right = 1641.0
+offset_bottom = 1015.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="WalkStep"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 36.0
+offset_right = 1263.0
+offset_bottom = 229.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_7yuql")
+theme_override_font_sizes/font_size = 45
+text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and wonder a bit."
+autowrap_mode = 2
+
+[node name="GoblinStep" type="Panel" parent="."]
+visible = false
+offset_left = 348.0
+offset_top = 771.0
+offset_right = 1641.0
+offset_bottom = 1015.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="GoblinStep"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 36.0
+offset_right = 1263.0
+offset_bottom = 229.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_7yuql")
+theme_override_font_sizes/font_size = 45
+text = "What do we have here? A GOBLIN!
+To defeat the goblin, use Spacebar for bow and arrow or X/k key for sword. "
+autowrap_mode = 2
+
+[node name="StoreStep" type="Panel" parent="."]
+visible = false
+offset_left = 298.0
+offset_top = 79.0
+offset_right = 1591.0
+offset_bottom = 323.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="StoreStep"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 36.0
+offset_right = 1263.0
+offset_bottom = 229.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("1_7yuql")
+theme_override_font_sizes/font_size = 45
+text = "You have come across the store! Here you are able to buy health and potions. To purchase, you will need to defeat enemies and collect coins."
+autowrap_mode = 2
