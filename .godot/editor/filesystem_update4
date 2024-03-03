@@ -9,4 +9,10 @@ res://level_2.tscn
 res://level_3.tscn
 res://next_level.tscn
 res://opening_cutscene.tscn
-res://Control.gd
+res://livecounter.gd
+res://mob_goblin.gd
+res://begingame.gd
+res://game_hud.tscn
+res://game_hud.gd
+res://player_health.tscn
+res://HUD.gd

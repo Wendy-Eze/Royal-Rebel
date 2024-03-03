@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
+	set_health()
 
 func show_message(text):
 	$Message.text = text
@@ -39,3 +39,5 @@ func _on_message_timer_timeout():
 	$Message.hide()
 	
 
+func set_health():
+	$PlayerHealth.value = Livecounter.num
