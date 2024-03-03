@@ -2,18 +2,13 @@ extends Control
 @onready var text_label: Label = $TextLabel
 signal start_tut
 
-var dialogue_lines = [
-	"The kingdom of Avalon has been under the stifling rule of the corrupt King Zephyr for many, many years. Citizens of Avalon have been struggling under the weight of increasing taxes and mass incarceration by the kingsmen.",
-	"Anyone against his regime will be thrown into jail , never to see the light of day again. In the shadows, I, the Royal Rebel, bid my time to eventually overthrow the king and return peace to the kingdom.",
-	#"Among the king’s many victims, my young brother is locked in his dungeon.",
-	"News has spread that King Zyphyr's plan to turn everyone in Avalon into mindless puppets to do his bidding, using the power of a legendary diadem, thought only to be a myth.",
-	"Because the journey is too dangerous for others, I must travel through the kingdom and uncharted wilderness alone to find and destroy the diadem before the kingsmen find it. The legend of the diadem states it is hidden in the Sacred Willow Tree deep in the outskirts of the kingdom, guarded by a fierce dragon..."]
-var current_line = 0
+var dialogue_lines = ["The kingdom of Avalon has been under the stifling rule of the corrupt King Zephyr for many, many years. Citizens of Avalon have been struggling under the weight of increasing taxes and mass incarceration by the kingsmen.", "Anyone against his regime will be thrown into jail , never to see the light of day again. In the shadows, I, the Royal Rebel, bid my time to eventually overthrow the king and return peace to the kingdom.","News has spread that King Zyphyr's plan to turn everyone in Avalon into mindless puppets to do his bidding, using the power of a legendary diadem, thought only to be a myth.","Because the journey is too dangerous for others, I must travel through the kingdom and uncharted wilderness alone to find and destroy the diadem before the kingsmen find it. The legend of the diadem states it is hidden in the Sacred Willow Tree deep in the outskirts of the kingdom, guarded by a fierce dragon..."]
+var current_line = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TextLabel.text = dialogue_lines[0]
-	grab_focus()
+	$TextLabel.text = dialogue_lines[-1]
+	#grab_focus()
 	
 func advance_text():
 	   # Increment a counter to move to the next line in your dialogue_lines array
@@ -26,23 +21,28 @@ func advance_text():
 		print(current_line)
 		
 		match current_line:
-			
-			1: 
+			1:
 				$One.hide()
 				$Two.show()
 				$Three.hide()
-			
-			2: 
+				$Four.hide()
+			2:
 				$One.hide()
 				$Two.hide()
 				$Three.show()
-		
+				$Four.hide()
+			3:
+				$One.hide()
+				$Two.hide()
+				$Three.hide()
+				$Four.show()
 	else:
 		# If there are no more lines of dialogue, hide the Label node or perform any other necessary actions
 		$TextLabel.hide()
 		$One.hide()
 		$Two.hide()
 		$Three.hide()
+		$Four.hide()
 		start_tut.emit()
 	print("Advancing to the next line of text...")
 	
