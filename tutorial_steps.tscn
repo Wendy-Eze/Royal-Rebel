@@ -4,13 +4,12 @@
 [ext_resource type="Script" path="res://tutorial_steps.gd" id="1_t87l0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu2y"]
-bg_color = Color(0.2, 0.2, 0.2, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(1, 1, 1, 1)
-border_blend = true
+bg_color = Color(0.784314, 0.596078, 0.34902, 0.811765)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -34,7 +33,6 @@ corner_radius_bottom_left = 10
 script = ExtResource("1_t87l0")
 
 [node name="WalkStep" type="Panel" parent="."]
-visible = false
 offset_left = 348.0
 offset_top = 771.0
 offset_right = 1641.0
@@ -43,7 +41,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="WalkStep"]
-layout_mode = 0
+texture_filter = 1
 offset_left = 41.0
 offset_top = 36.0
 offset_right = 1263.0
