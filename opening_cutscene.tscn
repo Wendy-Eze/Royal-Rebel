@@ -25,18 +25,11 @@ script = ExtResource("1_pudhr")
 
 [node name="One" type="ColorRect" parent="Control"]
 layout_mode = 0
-
-offset_left = -153.0
-offset_top = -86.0
-offset_right = 1773.0
-offset_bottom = 1000.0
-color = Color(0.682353, 0.607843, 0.54902, 1)
-
 offset_left = -150.0
 offset_top = -82.0
-offset_right = 1762.0
+offset_right = 1773.0
 offset_bottom = 994.0
-
+color = Color(0.682353, 0.607843, 0.54902, 1)
 
 [node name="Two" type="ColorRect" parent="Control"]
 visible = false
