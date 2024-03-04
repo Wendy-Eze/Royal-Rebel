@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709528949
+::res://::1709530873
 arrow.gd::GDScript::-1::1709528741::0::1::::<>Area2D<>::
 arrow.tscn::PackedScene::8855793384999280594::1709528741::0::1::::<><>::res://arrow.gd<>uid://bu8t2h6vpjo8f::::res://art/Player Art/arrow.png
 background.tscn::PackedScene::4183347314601902050::1709528741::0::1::::<><>::uid://ha7ixo2h05xo::::res://art/grassback.png
@@ -16,14 +16,14 @@ goblinarea.gd::GDScript::-1::1709528742::0::1::::<>Area2D<>::
 HUD.gd::GDScript::-1::1709528741::0::1::::<>CanvasLayer<>::
 hud.tscn::PackedScene::8955425053551223926::1709528742::0::1::::<><>::res://HUD.gd<>uid://vshxj5xr21il::::res://art/startscreen.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://dvvtn0102djbo::::res://mute_button.tscn<>uid://ckugnyx88umid::::res://player_health.tscn
 icon.svg::CompressedTexture2D::7094550317273180326::1709528742::1709528742::1::::<><>::
-level_1.tscn::PackedScene::8313201476654208787::1709528742::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://be3pnj5onpfin::::res://game_hud.tscn<>uid://ctde7gqgg0sxr::::res://mob_spawner.tscn<>uid://cgmpdkwqqsdem::::res://art/store.png
+level_1.tscn::PackedScene::8313201476654208787::1709530872::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://be3pnj5onpfin::::res://game_hud.tscn<>uid://ctde7gqgg0sxr::::res://mob_spawner.tscn<>uid://cgmpdkwqqsdem::::res://art/store.png
 level_2.tscn::PackedScene::151577291138999844::1709528742::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://be3pnj5onpfin::::res://game_hud.tscn
 level_3.tscn::PackedScene::4579533719401522286::1709528742::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://be3pnj5onpfin::::res://game_hud.tscn
 livecounter.gd::GDScript::-1::1709528742::0::1::::<>Node<>::
 lives.gd::GDScript::-1::1709528742::0::1::::<>Node2D<>::
 lives.tscn::PackedScene::8353495119236595484::1709528742::0::1::::<><>::res://lives.gd<>uid://i6jr4p4ggx04::::res://art/heart.png
 main_scene.gd::GDScript::-1::1709528742::0::1::::<>Node<>::
-main_scene.tscn::PackedScene::3019524264534136744::1709528742::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://ddogjkss48hui::::res://opening_cutscene.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://d0ucso2y2x77o::::res://hud.tscn<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://c8cwhbr0dre1k::::res://icon.svg<>res://begingame.gd<>res://goblinarea.gd<>uid://ctipcvp4xho2p::::res://tutorial_steps.tscn<>res://storearea.gd<>uid://cgmpdkwqqsdem::::res://art/store.png
+main_scene.tscn::PackedScene::3019524264534136744::1709530872::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://ddogjkss48hui::::res://opening_cutscene.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://d0ucso2y2x77o::::res://hud.tscn<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://c8cwhbr0dre1k::::res://icon.svg<>res://begingame.gd<>res://goblinarea.gd<>uid://ctipcvp4xho2p::::res://tutorial_steps.tscn<>res://storearea.gd<>uid://cgmpdkwqqsdem::::res://art/store.png
 mob_goblin.gd::GDScript::-1::1709528742::0::1::::<>RigidBody2D<>::
 mob_goblin.tscn::PackedScene::6264673579867168654::1709528742::0::1::::<><>::uid://ce6jooru7oom5::::res://art/Mob Art/Goblin/goblin_sheet.png<>res://mob_goblin.gd
 mob_spawner.gd::GDScript::-1::1709528742::0::1::::<>Node2D<>::
@@ -33,18 +33,19 @@ music.tscn::PackedScene::8144416345753600922::1709528742::0::1::::<><>::uid://r7
 mute_button.gd::GDScript::-1::1709528743::0::1::::<>TextureButton<>::
 mute_button.tscn::PackedScene::8677757892917328444::1709528743::0::1::::<><>::uid://gf463idysq8n::::res://art/unmute.png<>uid://crsa6r5pxydqn::::res://art/mute.png<>res://mute_button.gd<>uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg
 next_level.gd::GDScript::-1::1709528743::0::1::::<>Area2D<>::
-next_level.tscn::PackedScene::8453309320156836099::1709528743::0::1::::<><>::res://next_level.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
+next_level.tscn::PackedScene::8453309320156836099::1709530872::0::1::::<><>::res://next_level.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
 opening_cutscene.gd::GDScript::-1::1709528743::0::1::::<>Node2D<>::
-opening_cutscene.tscn::PackedScene::7399110798549858148::1709528743::0::1::::<><>::res://Control.gd<>res://opening_cutscene.gd<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
+opening_cutscene.tscn::PackedScene::7399110798549858148::1709530872::0::1::::<><>::res://Control.gd<>res://opening_cutscene.gd<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 player.gd::GDScript::-1::1709528743::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2111898954805969319::1709528743::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
+player.tscn::PackedScene::2111898954805969319::1709530873::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
 player_health.tscn::PackedScene::5516406173760257235::1709528743::0::1::::<><>::uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 README.md::TextFile::-1::1709528741::0::1::::<><>::
 RestartButton.gd::GDScript::-1::1709528741::0::1::::<>Button<>::
 storearea.gd::GDScript::-1::1709528743::0::1::::<>Area2D<>::
 tutorial_steps.gd::GDScript::-1::1709528743::0::1::::<>CanvasLayer<>::
 tutorial_steps.tscn::PackedScene::6123859872531676901::1709528743::0::1::::<><>::uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>res://tutorial_steps.gd
-::res://art/::1709528918
+::res://art/::1709530966
+addedwater.png::CompressedTexture2D::6715988321708212617::1709530966::1709530966::1::::<><>::
 added_water.png::CompressedTexture2D::5337453243024742799::1709528741::1709528918::1::::<><>::
 Archer (2).png::CompressedTexture2D::1623309112020669037::1709528741::1709528915::1::::<><>::
 GAME OVER.png::CompressedTexture2D::1776778897608755146::1709528741::1709528915::1::::<><>::
