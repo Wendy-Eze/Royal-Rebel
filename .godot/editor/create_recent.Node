@@ -1,3 +1,4 @@
+RichTextLabel
 ColorRect
 TileMap
 Button
@@ -11,5 +12,3 @@ CanvasLayer
 ProgressBar
 Control
 Node
-RemoteTransform2D
-Camera2D
