@@ -1,3 +1,4 @@
+
 res://main_scene.tscn
 res://player.tscn
 res://mob_goblin.tscn
@@ -12,3 +13,7 @@ res://level_3.tscn
 res://game_over_screen.tscn
 res://opening_cutscene.tscn
 res://Control.gd
+
+res://opening_cutscene.tscn
+res://tutorial_steps.tscn
+res://main_scene.tscn
