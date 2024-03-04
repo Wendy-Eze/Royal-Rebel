@@ -75,3 +75,4 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jajke")
 text = "QUIT"
 
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

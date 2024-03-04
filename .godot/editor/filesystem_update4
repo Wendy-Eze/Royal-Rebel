@@ -1,3 +1,6 @@
-res://opening_cutscene.tscn
-res://Control.gd
 res://main_scene.tscn
+res://opening_cutscene.tscn
+res://tutorial_steps.tscn
+res://game_over_screen.tscn
+res://game_over_screen.gd
+res://music.tscn
