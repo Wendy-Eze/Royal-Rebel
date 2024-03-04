@@ -1,8 +1,1 @@
-res://main_scene.tscn
-res://opening_cutscene.tscn
-res://main_scene.gd
 res://level_1.tscn
-res://next_level.tscn
-res://player.tscn
-res://mob_spawner.gd
-
