@@ -1,6 +1,8 @@
 res://main_scene.tscn
 res://opening_cutscene.tscn
-res://tutorial_steps.tscn
-res://game_over_screen.tscn
-res://game_over_screen.gd
-res://music.tscn
+res://main_scene.gd
+res://level_1.tscn
+res://next_level.tscn
+res://player.tscn
+res://mob_spawner.gd
+

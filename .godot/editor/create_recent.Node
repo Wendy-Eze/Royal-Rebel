@@ -1,6 +1,8 @@
+
 RichTextLabel
 ColorRect
 TileMap
+ColorRect
 Button
 Timer
 Sprite2D
@@ -12,3 +14,4 @@ CanvasLayer
 ProgressBar
 Control
 Node
+RemoteTransform2D
