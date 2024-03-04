@@ -101,6 +101,8 @@ size = Vector2(43.0212, 8.97395)
 size = Vector2(140, 163)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(905, 516)
+collision_mask = 3
 script = ExtResource("1_lmqur")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -108,9 +110,7 @@ texture_filter = 1
 position = Vector2(42.724, -39.5001)
 scale = Vector2(2.11724, 2.11724)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"basic_melee"
-frame = 3
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
@@ -135,6 +135,15 @@ position = Vector2(63, 13.9999)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)
+enabled = false
+limit_left = 0
+limit_top = 0
+limit_right = 12620
+limit_bottom = 4250
+editor_draw_limits = true
+
+[node name="TutCam" type="Camera2D" parent="."]
+enabled = false
 limit_left = 0
 limit_top = 0
 limit_right = 3000

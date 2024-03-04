@@ -1,7 +1,6 @@
 res://main_scene.tscn
 res://player.tscn
-res://mob_goblin.tscn
-res://arrow.tscn
-res://hud.tscn
-res://mob_spawner.tscn
-res://player.gd
+res://opening_cutscene.tscn
+res://next_level.tscn
+res://level_1.tscn
+res://game_hud.tscn

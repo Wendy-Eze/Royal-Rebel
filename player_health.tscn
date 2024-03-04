@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckugnyx88umid"]
+
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_fq7gm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x6f85"]
+bg_color = Color(0.835294, 0, 0.211765, 1)
+
+[node name="PlayerHealth" type="ProgressBar"]
+offset_left = 41.0
+offset_top = 38.0
+offset_right = 436.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("1_fq7gm")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/fill = SubResource("StyleBoxFlat_x6f85")
+step = 20.0
