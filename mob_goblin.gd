@@ -10,6 +10,7 @@ var rtimer_started = false
 
 @onready var player = get_parent().get_node("Player")
 
+
 func _ready():
 	pass
 

@@ -54,6 +54,11 @@ func arrow():
 	var target = get_global_mouse_position()
 	var direction_to_mouse = arrow.global_position.direction_to(target).normalized()
 	
+	if $AnimatedSprite2D.flip_h:
+		direction_to_mouse = Vector2.LEFT.rotated(rotation)  # Shoot left if player is flipped
+	else:
+		direction_to_mouse = Vector2.RIGHT.rotated(rotation)  # Shoot right if player is not flipped
+
 	arrow.set_direction(direction_to_mouse)
 
 func _on_walk_timer_timeout():
