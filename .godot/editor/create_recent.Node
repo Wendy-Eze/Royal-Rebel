@@ -1,5 +1,5 @@
-ColorRect
 TileMap
+ColorRect
 Button
 Timer
 Sprite2D
@@ -12,4 +12,3 @@ ProgressBar
 Control
 Node
 RemoteTransform2D
-Camera2D

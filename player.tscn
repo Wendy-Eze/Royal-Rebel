@@ -101,6 +101,7 @@ size = Vector2(43.0212, 8.97395)
 size = Vector2(140, 163)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(905, 516)
 collision_mask = 3
 script = ExtResource("1_lmqur")
 
@@ -138,8 +139,8 @@ position = Vector2(63, 13.9999)
 position = Vector2(0, -2)
 limit_left = 0
 limit_top = 0
-limit_right = 3000
-limit_bottom = 2500
+limit_right = 10500
+limit_bottom = 4250
 editor_draw_limits = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

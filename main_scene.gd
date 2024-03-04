@@ -28,10 +28,14 @@ func game_begins():
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()
+	$TutorialSteps/WalkStep.hide()
+	$TutorialSteps/StoreStep.hide()
 	$GoblinStepTime.start()
 
 func store_step():
 	$TutorialSteps/StoreStep.show()
+	$TutorialSteps/WalkStep.hide()
+	$TutorialSteps/GoblinStep.hide()
 	$StoreStepTimer.start()
 
 func begin_game():
@@ -40,7 +44,6 @@ func begin_game():
 func _on_goblin_step_time_timeout():
 	$TutorialSteps/GoblinStep.hide()
 	$GoblinArea/CollisionShape2D.disabled = true
-	#$BeginGame/CollisionShape2D.disabled = false
 
 func _on_walk_step_time_timeout():
 	$TutorialSteps/WalkStep.hide()

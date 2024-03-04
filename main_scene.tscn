@@ -1593,7 +1593,7 @@ shape = SubResource("RectangleShape2D_h7xv0")
 [node name="TutorialSteps" parent="." instance=ExtResource("10_nlptt")]
 
 [node name="GoblinStepTime" type="Timer" parent="."]
-wait_time = 7.0
+wait_time = 5.0
 
 [node name="WalkStepTime" type="Timer" parent="."]
 wait_time = 5.0
