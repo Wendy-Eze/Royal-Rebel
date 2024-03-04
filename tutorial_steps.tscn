@@ -4,13 +4,12 @@
 [ext_resource type="Script" path="res://tutorial_steps.gd" id="1_t87l0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu2y"]
-bg_color = Color(0.2, 0.2, 0.2, 1)
-border_width_left = 8
-border_width_top = 8
-border_width_right = 8
-border_width_bottom = 8
-border_color = Color(1, 1, 1, 1)
-border_blend = true
+bg_color = Color(0.784314, 0.596078, 0.34902, 0.811765)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -40,10 +39,9 @@ offset_top = 771.0
 offset_right = 1641.0
 offset_bottom = 1015.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
-metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="WalkStep"]
-layout_mode = 0
+texture_filter = 1
 offset_left = 41.0
 offset_top = 36.0
 offset_right = 1263.0
@@ -51,7 +49,7 @@ offset_bottom = 229.0
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and wander a bit."
+text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and explore."
 horizontal_alignment = 1
 autowrap_mode = 2
 
