@@ -1566,7 +1566,6 @@ layer_0/tile_data = PackedInt32Array(786444, 0, 3, 786445, 65536, 3, 786446, 131
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
 visible = false
-position = Vector2(538, 308)
 
 [node name="TileMap2" type="TileMap" parent="."]
 texture_filter = 1
@@ -1613,7 +1612,7 @@ scale = Vector2(15.1406, 14.6719)
 texture = ExtResource("12_x3e2d")
 
 [node name="StoreStepTimer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]
 [connection signal="player_near" from="BeginGame" to="." method="begin_game"]
