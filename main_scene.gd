@@ -39,6 +39,7 @@ func store_step():
 	$TutorialSteps/GoblinStep.hide()
 	$StoreStepTimer.start()
 
+
 func begin_game():
 	$TutorialSteps/Start_Game.show()
 	

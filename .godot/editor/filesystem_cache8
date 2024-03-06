@@ -1,23 +1,26 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709686805
+::res://::1709765961
 arrow.gd::GDScript::-1::1709570229::0::1::::<>Area2D<>::
 arrow.tscn::PackedScene::8855793384999280594::1709580306::0::1::::<><>::res://arrow.gd<>uid://bu8t2h6vpjo8f::::res://art/Player Art/arrow.png
 background.tscn::PackedScene::4183347314601902050::1709570229::0::1::::<><>::uid://ha7ixo2h05xo::::res://art/grassback.png
 begingame.gd::GDScript::-1::1709576417::0::1::::<>Area2D<>::
 character_movement.gd::GDScript::-1::1709570229::0::1::::<>CharacterBody2D<>::
 character_movement.tscn::PackedScene::4890716796659907052::1709570229::0::1::::<><>::res://character_movement.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
+coin.gd::GDScript::-1::1709688935::0::1::::<>Area2D<>::
+coin.tscn::PackedScene::8965865155641613380::1709762726::0::1::::<><>::res://coin.gd<>uid://bm4maju0f733n::::res://art/coin.png
+coincounter.gd::GDScript::-1::1709688576::0::1::::<>Node<>::
 Control.gd::GDScript::-1::1709570229::0::1::::<>Control<>::
 export_presets.cfg::TextFile::-1::1709581904::0::1::::<><>::
-game_hud.gd::GDScript::-1::1709570230::0::1::::<>CanvasLayer<>::
-game_hud.tscn::PackedScene::2725913125279512633::1709686199::0::1::::<><>::res://game_hud.gd<>uid://dvvtn0102djbo::::res://mute_button.tscn<>uid://ckugnyx88umid::::res://player_health.tscn<>uid://da2qdynvsop07::::res://game_over_screen.tscn
+game_hud.gd::GDScript::-1::1709689118::0::1::::<>CanvasLayer<>::
+game_hud.tscn::PackedScene::2725913125279512633::1709762726::0::1::::<><>::res://game_hud.gd<>uid://dvvtn0102djbo::::res://mute_button.tscn<>uid://ckugnyx88umid::::res://player_health.tscn<>uid://da2qdynvsop07::::res://game_over_screen.tscn<>uid://bm4maju0f733n::::res://art/coin.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 game_over_screen.gd::GDScript::-1::1709570230::0::1::::<>CanvasLayer<>::
 game_over_screen.tscn::PackedScene::7215978361326522526::1709570230::0::1::::<><>::res://game_over_screen.gd<>uid://0kxj26cvgmtu::::res://art/GAME OVER.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 goblinarea.gd::GDScript::-1::1709570230::0::1::::<>Area2D<>::
 HUD.gd::GDScript::-1::1709570229::0::1::::<>CanvasLayer<>::
-hud.tscn::PackedScene::8955425053551223926::1709570230::0::1::::<><>::res://HUD.gd<>uid://vshxj5xr21il::::res://art/startscreen.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://dvvtn0102djbo::::res://mute_button.tscn<>uid://ckugnyx88umid::::res://player_health.tscn
+hud.tscn::PackedScene::8955425053551223926::1709762727::0::1::::<><>::res://HUD.gd<>uid://vshxj5xr21il::::res://art/startscreen.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://dvvtn0102djbo::::res://mute_button.tscn<>uid://ckugnyx88umid::::res://player_health.tscn
 icon.svg::CompressedTexture2D::7094550317273180326::1709570230::1709570230::1::::<><>::
 level_1.gd::GDScript::-1::1709578373::0::1::::<>Node<>::
-level_1.tscn::PackedScene::8313201476654208787::1709686199::0::1::::<><>::res://level_1.gd<>uid://5dawxk67ob32::::res://player.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://be3pnj5onpfin::::res://game_hud.tscn<>uid://c1i3x2wl01qsh::::res://art/addedwater.png<>uid://ctde7gqgg0sxr::::res://mob_spawner.tscn<>uid://cgmpdkwqqsdem::::res://art/store.png<>uid://be3gjxcnxehov::::res://art/bridgev1.png
+level_1.tscn::PackedScene::8313201476654208787::1709763091::0::1::::<><>::res://level_1.gd<>uid://5dawxk67ob32::::res://player.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://be3pnj5onpfin::::res://game_hud.tscn<>uid://c1i3x2wl01qsh::::res://art/addedwater.png<>uid://ctde7gqgg0sxr::::res://mob_spawner.tscn<>uid://be3gjxcnxehov::::res://art/bridgev1.png<>uid://cl4ra1npuv3u5::::res://market.tscn
 level_2.gd::GDScript::-1::1709578440::0::1::::<>Node<>::
 level_2.tscn::PackedScene::151577291138999844::1709580306::0::1::::<><>::res://level_2.gd<>uid://5dawxk67ob32::::res://player.tscn<>uid://dso31fq22q7dn::::res://next_level.tscn<>uid://be3pnj5onpfin::::res://game_hud.tscn
 level_3.gd::GDScript::-1::1709578447::0::1::::<>Node<>::
@@ -25,10 +28,10 @@ level_3.tscn::PackedScene::4579533719401522286::1709580306::0::1::::<><>::res://
 livecounter.gd::GDScript::-1::1709570230::0::1::::<>Node<>::
 lives.gd::GDScript::-1::1709570230::0::1::::<>Node2D<>::
 lives.tscn::PackedScene::8353495119236595484::1709570230::0::1::::<><>::res://lives.gd<>uid://i6jr4p4ggx04::::res://art/heart.png
-main_scene.gd::GDScript::-1::1709580188::0::1::::<>Node<>::
-main_scene.tscn::PackedScene::3019524264534136744::1709686198::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://ddogjkss48hui::::res://opening_cutscene.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://d0ucso2y2x77o::::res://hud.tscn<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://c8cwhbr0dre1k::::res://icon.svg<>res://begingame.gd<>res://goblinarea.gd<>uid://ctipcvp4xho2p::::res://tutorial_steps.tscn<>res://storearea.gd<>uid://cgmpdkwqqsdem::::res://art/store.png
-mob_goblin.gd::GDScript::-1::1709686191::0::1::::<>RigidBody2D<>::
-mob_goblin.tscn::PackedScene::6264673579867168654::1709686235::0::1::::<><>::uid://ce6jooru7oom5::::res://art/Mob Art/Goblin/goblin_sheet.png<>res://mob_goblin.gd
+main_scene.gd::GDScript::-1::1709754802::0::1::::<>Node<>::
+main_scene.tscn::PackedScene::3019524264534136744::1709762724::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://main_scene.gd<>uid://ddogjkss48hui::::res://opening_cutscene.tscn<>uid://cffjxcg5i7y50::::res://art/TilesetFloor.png<>uid://yhgqt5n0cerc::::res://mystic_woods_free_2.1/Forest.png<>uid://d0ucso2y2x77o::::res://hud.tscn<>uid://cviwi16h7v1c1::::res://mob_goblin.tscn<>uid://c8cwhbr0dre1k::::res://icon.svg<>res://begingame.gd<>res://goblinarea.gd<>uid://ctipcvp4xho2p::::res://tutorial_steps.tscn<>res://storearea.gd<>uid://cgmpdkwqqsdem::::res://art/store.png
+mob_goblin.gd::GDScript::-1::1709687997::0::1::::<>RigidBody2D<>::
+mob_goblin.tscn::PackedScene::6264673579867168654::1709762726::0::1::::<><>::uid://ce6jooru7oom5::::res://art/Mob Art/Goblin/goblin_sheet.png<>res://mob_goblin.gd
 mob_spawner.gd::GDScript::-1::1709570230::0::1::::<>Node2D<>::
 mob_spawner.tscn::PackedScene::6112922883285625551::1709570230::0::1::::<><>::res://mob_spawner.gd
 music.gd::GDScript::-1::1709570230::0::1::::<>AudioStreamPlayer2D<>::
@@ -36,37 +39,62 @@ music.tscn::PackedScene::8144416345753600922::1709570230::0::1::::<><>::uid://r7
 mute_button.gd::GDScript::-1::1709570230::0::1::::<>TextureButton<>::
 mute_button.tscn::PackedScene::8677757892917328444::1709570230::0::1::::<><>::uid://gf463idysq8n::::res://art/unmute.png<>uid://crsa6r5pxydqn::::res://art/mute.png<>res://mute_button.gd<>uid://r74k4l8gu665::::res://music/JourneyThroughForest.ogg
 next_level.gd::GDScript::-1::1709570231::0::1::::<>Area2D<>::
-next_level.tscn::PackedScene::8453309320156836099::1709686198::0::1::::<><>::res://next_level.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
+next_level.tscn::PackedScene::8453309320156836099::1709762725::0::1::::<><>::res://next_level.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
 opening_cutscene.gd::GDScript::-1::1709570231::0::1::::<>Node2D<>::
-opening_cutscene.tscn::PackedScene::7399110798549858148::1709686198::0::1::::<><>::res://Control.gd<>res://opening_cutscene.gd<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
+opening_cutscene.tscn::PackedScene::7399110798549858148::1709762725::0::1::::<><>::res://Control.gd<>res://opening_cutscene.gd<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 player.gd::GDScript::-1::1709579787::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::2111898954805969319::1709686198::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
+player.tscn::PackedScene::2111898954805969319::1709762725::0::1::::<><>::uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>res://player.gd<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png
 player_health.tscn::PackedScene::5516406173760257235::1709570231::0::1::::<><>::uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
 README.md::TextFile::-1::1709570229::0::1::::<><>::
+market.tscn::PackedScene::5605819177547999422::1709765961::0::1::::<><>::res://market.gd<>uid://d4yn4vvp0bgj::::res://art/store1.png<>uid://mg05bfhyaxm6::::res://art/map art/fence_00.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://n5t1ldraxqe2::::res://art/health1.png<>uid://7q6hbsjykdyv::::res://art/map art/cottage.png<>uid://bm4maju0f733n::::res://art/coin.png<>uid://dx1lr1st35pmh::::res://art/exit.png<>uid://wfjyytnec0x5::::res://art/blacksmith/tile000.png<>res://blacksmith.gd<>uid://ga462sjbk4px::::res://art/blacksmith/tile001.png<>uid://c6x48q6v8wqwh::::res://art/blacksmith/tile002.png<>uid://hrogwy30h0q2::::res://art/blacksmith/tile003.png<>uid://ce3x814bgsod4::::res://art/blacksmith/tile004.png<>uid://cjne2bfp3v0pe::::res://art/blacksmith/tile005.png<>uid://lt2nod7mfoxl::::res://art/blacksmith/tile006.png<>uid://dax7wp02dnm1a::::res://art/blacksmith/tile007.png<>uid://bxjxwwr7n7mxt::::res://art/potion/tile000.png<>uid://cnbyiqugleln5::::res://art/potion/tile001.png<>uid://cqy4o8jhd1nsr::::res://art/potion/tile002.png
+market.gd::GDScript::-1::1709762641::0::1::::<>Area2D<>::
+blacksmith.gd::GDScript::-1::1709762716::0::1::::<>Area2D<>::
 RestartButton.gd::GDScript::-1::1709570229::0::1::::<>Button<>::
 storearea.gd::GDScript::-1::1709570231::0::1::::<>Area2D<>::
 tutorial_steps.gd::GDScript::-1::1709570231::0::1::::<>CanvasLayer<>::
 tutorial_steps.tscn::PackedScene::6123859872531676901::1709580306::0::1::::<><>::uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>res://tutorial_steps.gd
 tut_player.tscn::PackedScene::4719045920306069902::1709578092::0::1::::<><>::res://player.gd<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png<>uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav
-::res://art/::1709686805
+::res://art/::1709765721
 addedwater.png::CompressedTexture2D::6616008925715186027::1709574331::1709574335::1::::<><>::
 Archer (2).png::CompressedTexture2D::1623309112020669037::1709570229::1709570359::1::::<><>::
 bridgev1.png::CompressedTexture2D::2725360221208871357::1709575006::1709575006::1::::<><>::
 coin.png::CompressedTexture2D::3289282870880518693::1709686797::1709686805::1::::<><>::
+exit.png::CompressedTexture2D::8827978916091887083::1709753510::1709753722::1::::<><>::
 GAME OVER.png::CompressedTexture2D::1776778897608755146::1709570229::1709570359::1::::<><>::
 grassback.png::CompressedTexture2D::493280366487436716::1709570229::1709570359::1::::<><>::
+health1.png::CompressedTexture2D::975586936584894075::1709753004::1709753265::1::::<><>::
+health.png::CompressedTexture2D::6914339657167041382::1709753004::1709753265::1::::<><>::
 heart.png::CompressedTexture2D::626084818586522555::1709570229::1709570359::1::::<><>::
+invisibility2.png::CompressedTexture2D::4411850401033467914::1709753004::1709753265::1::::<><>::
+invisibility.png::CompressedTexture2D::8627788998762860377::1709753004::1709753265::1::::<><>::
 mute.png::CompressedTexture2D::6003266808371179721::1709570229::1709570359::1::::<><>::
 startscreen.png::CompressedTexture2D::1511591128304041675::1709570229::1709570359::1::::<><>::
 stone-bridge2.png::CompressedTexture2D::8422694496847827705::1709570229::1709570359::1::::<><>::
 stone-bridge.png::CompressedTexture2D::3388549585214521865::1709570229::1709570359::1::::<><>::
+store1.png::CompressedTexture2D::271915465522209265::1709751014::1709751026::1::::<><>::
 store.png::CompressedTexture2D::5219663634504583216::1709570229::1709570359::1::::<><>::
 TilesetFloor.png::CompressedTexture2D::5134695116231940405::1709570229::1709570359::1::::<><>::
 unmute.png::CompressedTexture2D::433272586181117215::1709570229::1709570359::1::::<><>::
+::res://art/blacksmith/::1709761143
+tile000.png::CompressedTexture2D::1555067051303428544::1709761106::1709761143::1::::<><>::
+tile001.png::CompressedTexture2D::422950660577089161::1709761106::1709761143::1::::<><>::
+tile002.png::CompressedTexture2D::6997996821759336019::1709761106::1709761143::1::::<><>::
+tile003.png::CompressedTexture2D::527278273842316775::1709761106::1709761143::1::::<><>::
+tile004.png::CompressedTexture2D::5112856151545104651::1709761106::1709761143::1::::<><>::
+tile005.png::CompressedTexture2D::5431669016304944494::1709761106::1709761143::1::::<><>::
+tile006.png::CompressedTexture2D::812963772902448505::1709761107::1709761143::1::::<><>::
+tile007.png::CompressedTexture2D::7208725798358766300::1709761107::1709761143::1::::<><>::
 ::res://art/font/::1709570229
 ::res://art/font/upheaval/::1709570358
 upheaval.txt::TextFile::-1::1709570229::0::1::::<><>::
 upheavtt.ttf::FontFile::924638342929881620::1709570229::1709570358::1::::<><>::
+::res://art/map art/::1709750720
+cottage.png::CompressedTexture2D::2280967848586305217::1709672266::1709747106::1::::<><>::
+fence_00.png::CompressedTexture2D::856223949414575027::1709672155::1709747106::1::::<><>::
+RPGpack_sheet.png::CompressedTexture2D::469567525240956979::1709693369::1709747107::1::::<><>::
+thatched-roof.png::CompressedTexture2D::2938701190831469714::1709672267::1709747106::1::::<><>::
+tilemap.png::CompressedTexture2D::3772611851248164888::1709693341::1709747106::1::::<><>::
+well_00.png::CompressedTexture2D::6362187112171222157::1709672187::1709747106::1::::<><>::
 ::res://art/Mob Art/::1709570229
 ::res://art/Mob Art/Goblin/::1709570359
 goblin_sheet.png::CompressedTexture2D::5118164668904366622::1709570229::1709570359::1::::<><>::
@@ -90,6 +118,12 @@ run_2.png::CompressedTexture2D::3327934958310242486::1709570229::1709570359::1::
 run_3.png::CompressedTexture2D::3529280902416447246::1709570229::1709570359::1::::<><>::
 run_4.png::CompressedTexture2D::298463859967403861::1709570229::1709570359::1::::<><>::
 run_5.png::CompressedTexture2D::5848275346053954871::1709570229::1709570359::1::::<><>::
+::res://art/potion/::1709766682
+bprof.png::CompressedTexture2D::6744175441038965328::1709766632::1709766685::1::::<><>::
+tile000.png::CompressedTexture2D::4020780448701876833::1709765726::1709765730::1::::<><>::
+tile001.png::CompressedTexture2D::5688833078169490452::1709765727::1709765730::1::::<><>::
+tile002.png::CompressedTexture2D::5947195473093939913::1709765727::1709765730::1::::<><>::
+wprof.png::CompressedTexture2D::7415238015029927684::1709766632::1709766685::1::::<><>::
 ::res://exports/::1709581952
 ::res://exports/web/::1709570359
 index.apple-touch-icon.png::CompressedTexture2D::124838987832667927::1709570230::1709570359::1::::<><>::
