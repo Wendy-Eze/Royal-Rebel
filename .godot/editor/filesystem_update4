@@ -1,6 +1,12 @@
-res://level_1.tscn
+res://mob_goblin.tscn
+res://mob_goblin.gd
 res://main_scene.tscn
 res://player.tscn
 res://opening_cutscene.tscn
 res://next_level.tscn
+res://level_1.tscn
 res://game_hud.tscn
+res://coin.gd
+res://coin.tscn
+res://coincounter.gd
+res://game_hud.gd
