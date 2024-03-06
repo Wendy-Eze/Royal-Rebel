@@ -5,8 +5,9 @@ var player_position
 var target_position
 var timer_started = false
 var health: int = 100
-var damage: int = 20
+var damage: int = 10
 var rtimer_started = false
+var coin_scene = preload("res://coin.tscn")
 
 @onready var player = get_parent().get_node("Player")
 
@@ -22,6 +23,7 @@ func _physics_process(delta):
 	target_position = (player.position - position).normalized()
 
 	if position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800:
+		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
 			$AnimatedSprite2D.play("run")
@@ -49,6 +51,7 @@ func _physics_process(delta):
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")
+		set_linear_velocity(Vector2.ZERO)
 		#$DeathTimer.start()
 		if not rtimer_started:
 			$RespawnTimer.start()
@@ -60,11 +63,14 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
+	Livecounter.num -= 20
 	if position.distance_to(player_position) <= 160:
-		#Livecounter.lives -= 1
-		Livecounter.num -= 20
+		$DamageTimer.start()
 	$Timer.stop()
-
+	
+func _on_damage_timer_timeout():
+	Livecounter.num -= 20 
+	
 func _hit_by_arrow():
 	health -= damage
 	set_health_bar()
@@ -88,7 +94,12 @@ func _on_respawn_timer_timeout():
 	#rtimer_started = false
 	#$RespawnTimer.stop()
 	queue_free()
-
+	drop_coin()
+	
+func drop_coin():
+	var coin = coin_scene.instantiate()
+	coin.position = position
+	get_parent().add_child(coin)
 
 
 func _on_health_timer_timeout():
@@ -97,3 +108,6 @@ func _on_health_timer_timeout():
 
 #func _on_death_timer_timeout():
 	#queue_free()
+
+
+# Replace with function body.
