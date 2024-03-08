@@ -1,13 +1,10 @@
+res://level_1.tscn
+res://market.tscn
 res://main_scene.tscn
 res://player.tscn
 res://opening_cutscene.tscn
 res://next_level.tscn
-res://level_1.tscn
 res://game_hud.tscn
 res://mob_goblin.tscn
 res://coin.tscn
-res://market.tscn
-res://market.gd
-res://main_scene.gd
 res://hud.tscn
-res://blacksmith.gd
