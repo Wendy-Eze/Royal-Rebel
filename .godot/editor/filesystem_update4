@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 res://level_1.tscn
 res://market.tscn
+=======
+res://level_2.tscn
+>>>>>>> Stashed changes
 res://main_scene.tscn
 res://player.tscn
 res://opening_cutscene.tscn
@@ -7,4 +11,7 @@ res://next_level.tscn
 res://game_hud.tscn
 res://mob_goblin.tscn
 res://coin.tscn
+<<<<<<< Updated upstream
 res://hud.tscn
+=======
+>>>>>>> Stashed changes

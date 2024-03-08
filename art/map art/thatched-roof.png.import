@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://bh4r8ka750icg"
+=======
+uid="uid://oo5wmr13tvr7"
+>>>>>>> Stashed changes
 path="res://.godot/imported/thatched-roof.png-58d21e28d757438eba902c83fb8e80c2.ctex"
 metadata={
 "vram_texture": false

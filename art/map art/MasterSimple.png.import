@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://mg05bfhyaxm6"
-=======
-uid="uid://b3o5x5yaql0t1"
->>>>>>> Stashed changes
-path="res://.godot/imported/fence_00.png-d227e485c3d663c12e02dc87b4a370ca.ctex"
+uid="uid://djwhxmh5l84sr"
+path="res://.godot/imported/MasterSimple.png-e9bf97084b1ab287099a99d8414df637.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/map art/fence_00.png"
-dest_files=["res://.godot/imported/fence_00.png-d227e485c3d663c12e02dc87b4a370ca.ctex"]
+source_file="res://art/map art/MasterSimple.png"
+dest_files=["res://.godot/imported/MasterSimple.png-e9bf97084b1ab287099a99d8414df637.ctex"]
 
 [params]
 
