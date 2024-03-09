@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ctde7gqgg0sxr" path="res://mob_spawner.tscn" id="4_nxpkb"]
 [ext_resource type="Texture2D" uid="uid://be3gjxcnxehov" path="res://art/bridgev1.png" id="9_g5e04"]
 [ext_resource type="PackedScene" uid="uid://cl4ra1npuv3u5" path="res://market.tscn" id="10_ot08q"]
-[ext_resource type="Texture2D" uid="uid://7q6hbsjykdyv" path="res://art/map art/cottage.png" id="11_dao2s"]
+[ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="11_dao2s"]
 [ext_resource type="Texture2D" uid="uid://88givuk35ta7" path="res://art/map art/Dream_Island/village.png" id="12_6ygea"]
 [ext_resource type="Texture2D" uid="uid://b3cwolewqbfq0" path="res://art/map art/Dream_Island/cave.png" id="13_gssj1"]
 [ext_resource type="Texture2D" uid="uid://c580r4tv6s61o" path="res://art/map art/Dream_Island/Nature.png" id="14_vwybx"]

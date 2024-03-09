@@ -1,30 +1,14 @@
 TileMap
-<<<<<<< Updated upstream
-=======
 SubViewport
 SubViewportContainer
 Label
->>>>>>> Stashed changes
 Sprite2D
 AnimatedSprite2D
 CollisionShape2D
 Area2D
-<<<<<<< Updated upstream
 Label
 Panel
 TextureButton
 Button
 ColorRect
 NinePatchRect
-SubViewport
-SubViewportContainer
-Timer
-=======
-Timer
-Camera2D
-ColorRect
-Node2D
-RichTextLabel
-Button
-Panel
->>>>>>> Stashed changes
