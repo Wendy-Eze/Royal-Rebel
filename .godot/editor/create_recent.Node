@@ -1,4 +1,7 @@
 TileMap
+SubViewport
+SubViewportContainer
+Label
 Sprite2D
 AnimatedSprite2D
 CollisionShape2D
@@ -9,6 +12,3 @@ TextureButton
 Button
 ColorRect
 NinePatchRect
-SubViewport
-SubViewportContainer
-Timer
