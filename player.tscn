@@ -102,7 +102,6 @@ size = Vector2(140, 163)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(905, 516)
-scale = Vector2(0.7, 0.7)
 collision_mask = 3
 script = ExtResource("1_lmqur")
 

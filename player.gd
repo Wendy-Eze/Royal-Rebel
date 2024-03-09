@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 
-@onready var speed = 400
+@onready var speed = 500
 var walking = false
 var is_attacking = false
 signal goblin_hit
