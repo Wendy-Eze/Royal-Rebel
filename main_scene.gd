@@ -20,6 +20,7 @@ func new_game():
 func game_begins():
 	$opening_cutscene.queue_free()
 	$Player.start()
+	$Trees.show()
 	$Player/TutCam.enabled = true
 	print("tutorial begins")
 	$HUD/PlayerHealth.show()
