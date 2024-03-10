@@ -1,7 +1,9 @@
 res://market.tscn
-res://potionscene.gd
+res://mob_goblin.tscn
+res://mob_goblin.gd
 res://main_scene.tscn
 res://level_1.tscn
 res://player.tscn
-res://player.gd
-res://mob_spawner.gd
+res://arrow.tscn
+res://hud.tscn
+res://level_2.tscn

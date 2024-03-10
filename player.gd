@@ -6,6 +6,7 @@ var walking = false
 var is_attacking = false
 signal goblin_hit
 @onready var end_of_bow = $Marker2D
+@onready var arrow_cooldown = $Marker2D
 
 
 func get_input():
@@ -47,6 +48,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func arrow():
+	#if arrow_cooldown.is_stopped():
+		#pass
 	var arrow = preload("res://arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
