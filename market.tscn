@@ -6329,6 +6329,7 @@ corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
 [node name="Market" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_5s35o")
 
 [node name="Fence" type="TileMap" parent="."]
@@ -6433,6 +6434,7 @@ position = Vector2(335, 191)
 scale = Vector2(9, 9)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PotionScene/Collider"]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8htg7")
 animation = &"idle"
 autoplay = "idle"
@@ -6443,6 +6445,7 @@ position = Vector2(-3, 2.94444)
 shape = SubResource("RectangleShape2D_6drf5")
 
 [node name="Witch" type="Area2D" parent="PotionScene/Collider"]
+texture_filter = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PotionScene/Collider/Witch"]
 position = Vector2(-0.333328, 9.61111)

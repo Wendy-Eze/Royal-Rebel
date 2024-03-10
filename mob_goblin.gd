@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var speed = 100
+@export var speed = 50
 var player_position
 var target_position
 var timer_started = false
@@ -56,6 +56,7 @@ func _physics_process(delta):
 		if not rtimer_started:
 			$RespawnTimer.start()
 			rtimer_started = true
+			
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
@@ -95,6 +96,7 @@ func _on_respawn_timer_timeout():
 	#$RespawnTimer.stop()
 	queue_free()
 	drop_coin()
+
 	
 func drop_coin():
 	var coin = coin_scene.instantiate()
