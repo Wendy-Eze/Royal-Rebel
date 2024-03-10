@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddogjkss48hui"]
+[gd_scene load_steps=7 format=3 uid="uid://ddogjkss48hui"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_pudhr"]
 [ext_resource type="Script" path="res://opening_cutscene.gd" id="1_vvooe"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_2ar4t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikwqn"]
+bg_color = Color(0.854902, 0, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvrbc"]
+bg_color = Color(0.505882, 0.00392157, 0.0588235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rty7"]
 bg_color = Color(0.117647, 0.117647, 0.117647, 1)
@@ -73,6 +79,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.254902, 0.478431, 0.466667, 1)
 
+[node name="Skip" type="Button" parent="Control"]
+offset_left = 1352.0
+offset_top = 630.0
+offset_right = 1608.0
+offset_bottom = 686.0
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ikwqn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gvrbc")
+text = "Skip >>>"
+
 [node name="TextLabel" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -94,3 +111,4 @@ text = "hello"
 autowrap_mode = 2
 
 [connection signal="start_tut" from="Control" to="." method="_on_control_start_game"]
+[connection signal="pressed" from="Control/Skip" to="Control" method="_on_skip_pressed"]

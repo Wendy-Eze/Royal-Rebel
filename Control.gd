@@ -74,3 +74,7 @@ func advance_text():
 func _process(delta):
 	if Input.is_action_just_pressed("next_line"):
 		advance_text()
+
+
+func _on_skip_pressed():
+	start_tut.emit()
