@@ -1,3 +1,3 @@
 extends Node
 
-var  num = 0
+var num = 0
