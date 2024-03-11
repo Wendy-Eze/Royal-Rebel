@@ -8,7 +8,7 @@ var health: int = 100
 var damage: int = 10
 var rtimer_started = false
 var coin_scene = preload("res://coin.tscn")
-
+var arrow_hit = false
 @onready var player = get_parent().get_node("Player")
 
 
@@ -22,7 +22,7 @@ func _physics_process(delta):
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
-	if position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800:
+	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
@@ -78,6 +78,8 @@ func _hit_by_arrow():
 	$HealthBar.show()
 	$HealthTimer.start()
 	print("goblin was hit! ", health)
+	#arrow_hit = true
+	#set_linear_velocity((player_position - position).normalized() * speed)
 
 func _hit_by_sword():
 	health -= damage
@@ -95,6 +97,8 @@ func _on_respawn_timer_timeout():
 	#rtimer_started = false
 	#$RespawnTimer.stop()
 	queue_free()
+	Goblinkill.num += 1
+	#add function like num += 1 goblinkill.num += 1
 	drop_coin()
 
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=40 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -14,6 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://88givuk35ta7" path="res://art/map art/Dream_Island/village.png" id="12_6ygea"]
 [ext_resource type="Texture2D" uid="uid://b3cwolewqbfq0" path="res://art/map art/Dream_Island/cave.png" id="13_gssj1"]
 [ext_resource type="Texture2D" uid="uid://c580r4tv6s61o" path="res://art/map art/Dream_Island/Nature.png" id="14_vwybx"]
+[ext_resource type="Texture2D" uid="uid://qemu03d8ar8f" path="res://art/npc/Female2.png" id="15_k7fbx"]
+[ext_resource type="Texture2D" uid="uid://bfjo1rnxe6vss" path="res://art/npc/Male2.png" id="16_63cpt"]
+[ext_resource type="Script" path="res://lev1_mission.gd" id="16_i6hpv"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14028,6 +14032,93 @@ sources/1 = SubResource("TileSetAtlasSource_60ie4")
 sources/2 = SubResource("TileSetAtlasSource_wcr7e")
 sources/3 = SubResource("TileSetAtlasSource_dubah")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgnv5"]
+atlas = ExtResource("15_k7fbx")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utifu"]
+atlas = ExtResource("15_k7fbx")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kr8a"]
+atlas = ExtResource("15_k7fbx")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6p05u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgnv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utifu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kr8a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2c1g"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.996078, 0.960784, 0.933333, 1)
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_da58c"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 40.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3nkp"]
+size = Vector2(109, 246)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a8cq"]
+atlas = ExtResource("16_63cpt")
+region = Rect2(0, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tt0e"]
+atlas = ExtResource("16_63cpt")
+region = Rect2(32, 336, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0oyj"]
+atlas = ExtResource("16_63cpt")
+region = Rect2(64, 336, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wnbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3a8cq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tt0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0oyj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1fqr7"]
+size = Vector2(1506, 542.5)
+
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
 
@@ -14084,3 +14175,73 @@ position = Vector2(235, 916)
 
 [node name="Market" parent="." instance=ExtResource("10_ot08q")]
 position = Vector2(2348, 2348)
+
+[node name="Fnpc" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(7844, 2539)
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_6p05u")
+autoplay = "default"
+frame_progress = 0.639295
+
+[node name="Lev1_Mission" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_i6hpv")
+
+[node name="Intro" type="Label" parent="Lev1_Mission"]
+visible = false
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 498.0
+offset_right = 2265.0
+offset_bottom = 774.0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2c1g")
+text = "Hello! I am the Mayor of this town. If you could eliminate the goblins, I have a reward that would be helfpul to you mission."
+autowrap_mode = 2
+
+[node name="Outro" type="Label" parent="Lev1_Mission"]
+visible = false
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 498.0
+offset_right = 2255.0
+offset_bottom = 774.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_da58c")
+text = "Hooray! You've gotten rid of all the goblins. Here's is a reward to aid your mission. Go stop the King!!"
+autowrap_mode = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lev1_Mission"]
+position = Vector2(1494, 1030)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lev1_Mission/StaticBody2D"]
+position = Vector2(-1.5, -14)
+shape = SubResource("RectangleShape2D_k3nkp")
+
+[node name="Mayor" type="AnimatedSprite2D" parent="Lev1_Mission/StaticBody2D"]
+texture_filter = 1
+scale = Vector2(7, 7)
+sprite_frames = SubResource("SpriteFrames_5wnbv")
+autoplay = "default"
+frame_progress = 0.562458
+
+[node name="MissionDetect" type="Area2D" parent="Lev1_Mission"]
+position = Vector2(1493, 1030)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lev1_Mission/MissionDetect"]
+position = Vector2(149, 32.75)
+shape = SubResource("RectangleShape2D_1fqr7")
+
+[node name="IntroTimer" type="Timer" parent="Lev1_Mission"]
+wait_time = 5.0
+
+[connection signal="body_entered" from="Lev1_Mission/MissionDetect" to="Lev1_Mission" method="_on_mission_detect_body_entered"]
+[connection signal="timeout" from="Lev1_Mission/IntroTimer" to="Lev1_Mission" method="_on_intro_timer_timeout"]

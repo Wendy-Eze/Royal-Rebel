@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfpy"]
 size = Vector2(17, 25)
 
-[node name="Arrow" type="Area2D" groups=["aroow"]]
+[node name="Arrow" type="Area2D" groups=["arrow"]]
 collision_mask = 3
 script = ExtResource("1_1ponj")
 

@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjqeknaomhnba"]
+
+[ext_resource type="Script" path="res://killcount_g.gd" id="1_hfpbf"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_1jpwj"]
+[ext_resource type="Script" path="res://KillsLeft.gd" id="3_wyb0i"]
+[ext_resource type="Texture2D" uid="uid://cm21l24kftelu" path="res://art/Mob Art/Goblin/goblinp.png" id="4_cxvbe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxn6u"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[node name="KillCount_G" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_hfpbf")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sxn6u")
+
+[node name="KillsLeft" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = 0.037
+anchor_right = 0.533
+anchor_bottom = 0.111
+offset_left = 120.2
+offset_top = -1.48
+offset_right = 218.68
+offset_bottom = 59.56
+theme_override_fonts/font = ExtResource("2_1jpwj")
+theme_override_font_sizes/font_size = 70
+text = "/10"
+script = ExtResource("3_wyb0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(69, 40)
+scale = Vector2(0.120277, 0.120277)
+texture = ExtResource("4_cxvbe")
