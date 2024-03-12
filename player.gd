@@ -7,6 +7,13 @@ var is_attacking = false
 signal goblin_hit
 @onready var end_of_bow = $Marker2D
 @onready var arrow_cooldown = $Marker2D
+#Some signal is emitted
+# is knight = false (every regular animation should have not is_knight in if statement)
+#	for example: if signal emit:
+#		$AnimatedSprite2D.hide()
+#		$AnimatedSprite2D/SwordHit/CollisionShape2D2.diabled = true
+#		$Knight.show()
+#		is_knight = true 
 
 
 func get_input():
