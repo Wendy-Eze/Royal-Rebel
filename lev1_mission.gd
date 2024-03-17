@@ -3,7 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Armor/CollisionShape2D.disabled = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,3 +27,10 @@ func _on_end_mission_body_entered(body):
 
 func _on_outro_timer_timeout():
 	$Outro.hide()
+	$Armor/CollisionShape2D.diabled = false
+
+
+func _on_armor_body_entered(body):
+	if body.is_in_group("player"):
+		print("Knight armor collected")
+		queue_free()

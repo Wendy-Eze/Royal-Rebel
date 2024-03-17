@@ -56,8 +56,6 @@ func _physics_process(delta):
 		if not rtimer_started:
 			$RespawnTimer.start()
 			rtimer_started = true
-			
-
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
@@ -90,12 +88,12 @@ func _hit_by_sword():
 
 func _on_respawn_timer_timeout():
 	#health = 100
-	#set_linear_velocity(Vector2.ZERO)
-	#position = Vector2(1769, 822)
-	#target_position = (player.position - position).normalized()
-	#$AnimatedSprite2D.play("idle")
-	#rtimer_started = false
-	#$RespawnTimer.stop()
+		#set_linear_velocity(Vector2.ZERO)
+		#position = Vector2(1769, 822)
+		#target_position = (player.position - position).normalized()
+		#$AnimatedSprite2D.play("idle")
+		#rtimer_started = false
+		#$RespawnTimer.stop()
 	queue_free()
 	Goblinkill.num += 1
 	#add function like num += 1 goblinkill.num += 1
