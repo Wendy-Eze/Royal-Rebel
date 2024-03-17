@@ -7,6 +7,8 @@ var is_attacking = false
 signal goblin_hit
 @onready var end_of_bow = $Marker2D
 @onready var arrow_cooldown = $Marker2D
+var is_knight = false
+
 #Some signal is emitted
 # is knight = false (every regular animation should have not is_knight in if statement)
 #	for example: if signal emit:

@@ -1,11 +1,14 @@
 extends Control
 
 var hmaxlimit = 2
-var hlimit = 0
+var hbase = 0
+var ibase = 0
+var imaxlimit = 1
 var in_area = false
 
 func _ready():
-	$Panel/Limit.text = str(hmaxlimit)
+	$PotionMenu/Health/Limit.text = str(hmaxlimit)
+	$PotionMenu/Invisibility/Limit.text = str(imaxlimit)
 	
 #func _physics_process(_delta):
 
@@ -13,7 +16,7 @@ func _ready():
 func _process(delta):
 	#if in_area == true:
 	if Input.is_action_just_released("shop") and not in_area: 
-			$Panel.show()
+			$PotionMenu.show()
 			print("Shop action released")
 
 func _on_witch_body_entered(body):
@@ -28,13 +31,23 @@ func _on_witch_body_exited(body):
 		in_area = false
 
 func _on_health_button_pressed():
-	if (hlimit < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num > 10):
-		Coincounter.num -= 10 
+	if (hbase < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num > 20):
+		Coincounter.num -= 20 
 		Livecounter.num += 25
-		hlimit += 1
-		$Panel/Limit.text = str(hmaxlimit-1)
+		hbase += 1
+		$PotionMenu/Health/Limit.text = str(hmaxlimit-1)
 	else:
-		print("cannot purchase")
+		print("cannot purchase health")
+
 
 func _on_exit_pressed():
-	$Panel.hide()
+	$PotionMenu.hide()
+
+
+func _on_invisibility_button_pressed():
+	if (ibase < imaxlimit) and (Coincounter.num > 30):
+		Coincounter.num -= 30 
+		ibase += 1
+		$PotionMenu/Invisibility/Limit.text = str(imaxlimit-1)
+	else:
+		print("cannot purchase ghost")

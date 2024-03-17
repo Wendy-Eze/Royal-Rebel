@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cl4ra1npuv3u5"]
+[gd_scene load_steps=44 format=3 uid="uid://cl4ra1npuv3u5"]
 
 [ext_resource type="Script" path="res://market.gd" id="1_5s35o"]
 [ext_resource type="Texture2D" uid="uid://d4yn4vvp0bgj" path="res://art/store1.png" id="1_cdg3n"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://cnbyiqugleln5" path="res://art/potion/tile001.png" id="19_45xl1"]
 [ext_resource type="Texture2D" uid="uid://cqy4o8jhd1nsr" path="res://art/potion/tile002.png" id="20_r2aa7"]
 [ext_resource type="Texture2D" uid="uid://ddv85fb7fq3hw" path="res://art/potion/wprof.png" id="23_kfras"]
+[ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="25_2nh3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8ll2"]
 texture = ExtResource("2_bexod")
@@ -6321,6 +6322,17 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n580k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v7pju"]
+bg_color = Color(0.929412, 0.839216, 0.376471, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5u2lm"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuvoh"]
 bg_color = Color(0.929412, 0.839216, 0.376471, 1)
 corner_radius_top_left = 15
@@ -6473,9 +6485,10 @@ position = Vector2(1265, 39)
 scale = Vector2(23.5278, 23.5278)
 texture = ExtResource("23_kfras")
 
-[node name="Panel" type="Panel" parent="PotionScene"]
-visible = false
-layout_mode = 0
+[node name="PotionMenu" type="Panel" parent="PotionScene"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = -12.025
 offset_left = -369.0
 offset_top = -330.0
 offset_right = 931.0
@@ -6483,75 +6496,7 @@ offset_bottom = 70.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ouvyo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Limit" type="Label" parent="PotionScene/Panel"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1014.0
-offset_top = 47.0
-offset_right = -978.0
-offset_bottom = 101.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("2_gom7a")
-theme_override_font_sizes/font_size = 60
-text = "0
-"
-
-[node name="Heart" type="Sprite2D" parent="PotionScene/Panel"]
-texture_filter = 1
-position = Vector2(228, 135.25)
-scale = Vector2(7.28125, 7.28125)
-texture = ExtResource("3_p3iaf")
-
-[node name="Label" type="Label" parent="PotionScene/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 143.0
-offset_top = 202.25
-offset_right = 317.0
-offset_bottom = 236.25
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("2_gom7a")
-theme_override_font_sizes/font_size = 30
-text = "25% Health"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HealthButton" type="Button" parent="PotionScene/Panel"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 126.0
-offset_top = 247.25
-offset_right = 339.0
-offset_bottom = 334.25
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_gom7a")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_xuvoh")
-text = "
-BUY"
-
-[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/Panel"]
-texture_filter = 1
-position = Vector2(206, 273.25)
-scale = Vector2(1.75, 1.65625)
-texture = ExtResource("4_82il2")
-
-[node name="CoinDisplay" type="Label" parent="PotionScene/Panel/CoinDisplay"]
-texture_filter = 3
-offset_left = 16.0
-offset_top = -9.20755
-offset_right = 40.0
-offset_bottom = 8.79245
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_gom7a")
-theme_override_font_sizes/font_size = 20
-text = "20"
-
-[node name="Exit" type="TextureButton" parent="PotionScene/Panel"]
+[node name="Exit" type="TextureButton" parent="PotionScene/PotionMenu"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -6569,9 +6514,149 @@ scale = Vector2(3, 3)
 texture_normal = ExtResource("6_5xujd")
 metadata/_edit_use_anchors_ = true
 
+[node name="Invisibility" type="Panel" parent="PotionScene/PotionMenu"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 47.0
+offset_right = 650.0
+offset_bottom = 347.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_n580k")
+
+[node name="InvisibilityButton" type="Button" parent="PotionScene/PotionMenu/Invisibility"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 200.0
+offset_right = 228.0
+offset_bottom = 287.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_v7pju")
+text = "
+BUY"
+
+[node name="Ghost" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
+position = Vector2(113, 84.8387)
+scale = Vector2(7.5, 7.74194)
+texture = ExtResource("25_2nh3i")
+
+[node name="Text" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 23.0
+offset_top = 155.0
+offset_right = 224.0
+offset_bottom = 183.0
+theme_override_colors/font_color = Color(0, 0.768627, 0.972549, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 30
+text = "Ghost 30 sec"
+
+[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
+layout_mode = 0
+offset_left = 184.0
+offset_right = 224.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
+texture_filter = 1
+position = Vector2(102, 225)
+scale = Vector2(1.75, 1.65625)
+texture = ExtResource("4_82il2")
+
+[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Invisibility/CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -9.20755
+offset_right = 40.0
+offset_bottom = 8.79245
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 20
+text = "30"
+
+[node name="Health" type="Panel" parent="PotionScene/PotionMenu"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 47.0
+offset_right = 351.0
+offset_bottom = 347.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_5u2lm")
+
+[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Health"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -65.0
+offset_right = -29.0
+offset_bottom = 54.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 60
+text = "0
+"
+
+[node name="Heart" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
+texture_filter = 1
+position = Vector2(120, 88.25)
+scale = Vector2(7.28125, 7.28125)
+texture = ExtResource("3_p3iaf")
+
+[node name="Label" type="Label" parent="PotionScene/PotionMenu/Health"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 35.0
+offset_top = 155.25
+offset_right = 209.0
+offset_bottom = 189.25
+theme_override_colors/font_color = Color(1, 0.337255, 0.270588, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 30
+text = "25% Health"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthButton" type="Button" parent="PotionScene/PotionMenu/Health"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 200.25
+offset_right = 231.0
+offset_bottom = 287.25
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xuvoh")
+text = "
+BUY"
+
+[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
+texture_filter = 1
+position = Vector2(98, 226.25)
+scale = Vector2(1.75, 1.65625)
+texture = ExtResource("4_82il2")
+
+[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Health/CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -9.20755
+offset_right = 40.0
+offset_bottom = 8.79245
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 20
+text = "20"
+
 [connection signal="body_entered" from="WeaponScene/Collider/Blacksmith" to="WeaponScene" method="_on_blacksmith_body_entered"]
 [connection signal="body_exited" from="WeaponScene/Collider/Blacksmith" to="WeaponScene" method="_on_blacksmith_body_exited"]
 [connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
 [connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
-[connection signal="pressed" from="PotionScene/Panel/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
-[connection signal="pressed" from="PotionScene/Panel/Exit" to="PotionScene" method="_on_exit_pressed"]
+[connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
+[connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
+[connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]

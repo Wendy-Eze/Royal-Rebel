@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=55 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://lev1_mission.gd" id="16_i6hpv"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
+[ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14123,6 +14124,9 @@ size = Vector2(1506, 542.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s6ogp"]
 size = Vector2(1484, 543)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fllth"]
+size = Vector2(75, 83)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_p80jh"]
 atlas = ExtResource("19_fexkt")
 region = Rect2(40, 40, 40, 40)
@@ -14193,6 +14197,18 @@ animations = [{
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0cbg"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 40.0
+expand_margin_top = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 40.0
 
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
@@ -14328,9 +14344,30 @@ shape = SubResource("RectangleShape2D_s6ogp")
 [node name="OutroTimer" type="Timer" parent="Lev1_Mission"]
 wait_time = 5.0
 
-[node name="Knight" type="AnimatedSprite2D" parent="."]
+[node name="Armor" type="Area2D" parent="Lev1_Mission"]
+position = Vector2(1732, 1088)
+
+[node name="Sprite2D" type="Sprite2D" parent="Lev1_Mission/Armor"]
 texture_filter = 1
-position = Vector2(10934, 2206)
+position = Vector2(-20, 9)
+scale = Vector2(1.875, 1.75)
+texture = ExtResource("19_ix8kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lev1_Mission/Armor"]
+position = Vector2(-18.5, 9.5)
+shape = SubResource("RectangleShape2D_fllth")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10794.0
+offset_top = 2034.0
+offset_right = 11158.0
+offset_bottom = 2233.0
+
+[node name="Knight" type="AnimatedSprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(140, 172)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_6e1ec")
 animation = &"idle"
@@ -14338,7 +14375,20 @@ autoplay = "idle"
 frame_progress = 0.127392
 flip_h = true
 
+[node name="Convo" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = -172.0
+offset_right = 492.0
+offset_bottom = -31.0
+theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_i0cbg")
+text = "Oh! Fellow knight, good to see you!"
+autowrap_mode = 2
+
 [connection signal="body_entered" from="Lev1_Mission/MissionDetect" to="Lev1_Mission" method="_on_mission_detect_body_entered"]
 [connection signal="timeout" from="Lev1_Mission/IntroTimer" to="Lev1_Mission" method="_on_intro_timer_timeout"]
 [connection signal="body_entered" from="Lev1_Mission/EndMission" to="Lev1_Mission" method="_on_end_mission_body_entered"]
 [connection signal="timeout" from="Lev1_Mission/OutroTimer" to="Lev1_Mission" method="_on_outro_timer_timeout"]
+[connection signal="body_entered" from="Lev1_Mission/Armor" to="Lev1_Mission" method="_on_armor_body_entered"]

@@ -21,6 +21,7 @@ Music="*res://music.tscn"
 Livecounter="*res://livecounter.gd"
 Coincounter="*res://coincounter.gd"
 Goblinkill="*res://goblinkill.gd"
+Globalvar="*res://globalvar.gd"
 
 [display]
 
