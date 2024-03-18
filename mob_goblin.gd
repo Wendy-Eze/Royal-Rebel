@@ -22,7 +22,7 @@ func _physics_process(delta):
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
-	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800) or arrow_hit:
+	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
@@ -38,7 +38,7 @@ func _physics_process(delta):
 		timer_started = false
 	else:
 		set_linear_velocity(Vector2.ZERO)
-		if not timer_started:
+		if not timer_started and not Globalvar.is_invisible:
 			$Timer.start()
 			timer_started = true
 			$AnimatedSprite2D.play("idle")

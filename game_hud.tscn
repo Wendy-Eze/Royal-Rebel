@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=9 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="1_nou5r"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="5_xqipu"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="6_nqeuc"]
 [ext_resource type="PackedScene" uid="uid://bjqeknaomhnba" path="res://killcount_g.tscn" id="7_tja4w"]
+[ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://inventory.tscn" id="8_7m88t"]
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -46,3 +47,16 @@ offset_left = 656.0
 offset_top = 22.0
 offset_right = 696.0
 offset_bottom = 62.0
+
+[node name="Inventory" parent="." instance=ExtResource("8_7m88t")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -123.0
+offset_right = -130.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0

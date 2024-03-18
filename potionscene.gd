@@ -45,9 +45,11 @@ func _on_exit_pressed():
 
 
 func _on_invisibility_button_pressed():
-	if (ibase < imaxlimit) and (Coincounter.num > 30):
-		Coincounter.num -= 30 
+	if (ibase < imaxlimit) and (Coincounter.num > 10):
+		Coincounter.num -= 10 
 		ibase += 1
+		Globalvar.equip_potion = true
+		Globalvar.i_num += 1
 		$PotionMenu/Invisibility/Limit.text = str(imaxlimit-1)
 	else:
 		print("cannot purchase ghost")

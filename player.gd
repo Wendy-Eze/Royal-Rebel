@@ -8,6 +8,9 @@ signal goblin_hit
 @onready var end_of_bow = $Marker2D
 @onready var arrow_cooldown = $Marker2D
 var is_knight = false
+var minpos = Vector2(0,15)
+var maxpos = Vector2(12620, 4235)
+
 
 #Some signal is emitted
 # is knight = false (every regular animation should have not is_knight in if statement)
@@ -22,15 +25,19 @@ func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 	
-	if Input.is_action_just_pressed("attack"):
-		is_attacking = true
-		$AnimatedSprite2D.play("attack")
-		arrow()
+	if Globalvar.equip_arrow and Globalvar.ready_arrow:
+		if Input.is_action_just_pressed("attack"):
+			is_attacking = true
+			$AnimatedSprite2D.play("attack")
+			arrow()
+			Globalvar.arrow_num -= 1
+			print(Globalvar.arrow_num)
 	
-	if Input.is_action_just_pressed("basic_melee") and not is_attacking:
-		print("melee")
-		is_attacking = true
-		$AnimatedSprite2D.play("basic_melee")	
+	if Globalvar.equip_sword:
+		if Input.is_action_just_pressed("basic_melee") and not is_attacking:
+			print("melee")
+			is_attacking = true
+			$AnimatedSprite2D.play("basic_melee")	
 	
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -55,7 +62,11 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
-
+	var pos = position
+	pos.x = clamp(pos.x, minpos.x, maxpos.x)
+	pos.y = clamp(pos.y, minpos.y, maxpos.y)
+	position = pos
+	
 func arrow():
 	#if arrow_cooldown.is_stopped():
 		#pass

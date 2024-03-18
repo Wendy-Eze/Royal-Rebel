@@ -244,6 +244,7 @@ limit_bottom = 2500
 editor_draw_limits = true
 
 [node name="ArrowCooldown" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="Knight" type="AnimatedSprite2D" parent="."]
 visible = false
