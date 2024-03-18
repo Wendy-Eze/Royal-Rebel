@@ -5,7 +5,8 @@ var is_invisible = false
 
 #Arrow Functionality
 var ready_arrow = false
-@onready var arrow_num = 15 
+var arrow_num = 80 
+var has_armor = false
 
 #Inventory Purposes
 var equip_arrow = false
