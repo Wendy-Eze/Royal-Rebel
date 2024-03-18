@@ -7,6 +7,7 @@ var is_invisible = false
 var ready_arrow = false
 var arrow_num = 80 
 var has_armor = false
+var armor_equipped = false
 
 #Inventory Purposes
 var equip_arrow = false
@@ -19,6 +20,7 @@ var use_potion = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#pass
 	ready_arrow = true
 
 

@@ -12,9 +12,11 @@ func _process(delta):
 
 
 func _on_blacksmith_body_entered(body):
-	if body.is_in_group("player"):
-		$talk.show()
+	pass
+	#if body.is_in_group("player"):
+		#$talk.show()
 
 func _on_blacksmith_body_exited(body):
-	if body.is_in_group("player"):
-		$talk.hide()
+	pass
+	#if body.is_in_group("player"):
+		#$talk.hide()

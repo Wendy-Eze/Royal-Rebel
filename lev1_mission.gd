@@ -8,7 +8,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not done:
-		if Goblinkill.num < 10:
+		if Goblinkill.num < 1:
 			$EndMission/CollisionShape2D.disabled = true
 			$Armor/CollisionShape2D.disabled = true 
 		else:
@@ -40,8 +40,6 @@ func _on_outro_timer_timeout():
 	#done = true
 	$OutroTimer.queue_free()
 	
-
-
 func _on_armor_body_entered(body):
 	if body.is_in_group("player"):
 		Globalvar.has_armor = true

@@ -17,6 +17,7 @@ func _process(delta):
 	#if in_area == true:
 	if Input.is_action_just_released("shop") and in_area: 
 			$PotionMenu.show()
+			$talk1.hide()
 			print("Shop action released")
 
 func _on_witch_body_entered(body):
@@ -43,6 +44,7 @@ func _on_health_button_pressed():
 
 func _on_exit_pressed():
 	$PotionMenu.hide()
+	$talk1.show()
 
 
 func _on_invisibility_button_pressed():
