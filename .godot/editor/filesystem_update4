@@ -1,5 +1,6 @@
-res://main_scene.tscn
 res://level_1.tscn
+res://level_1.gd
+res://main_scene.tscn
 res://coin.tscn
 res://killcount_g.tscn
 res://kill_counter.tscn
@@ -10,3 +11,6 @@ res://arrow.tscn
 res://market.tscn
 res://inventory.tscn
 res://next_level.tscn
+res://lev1_mission.gd
+res://potionscene.gd
+res://next_level.gd

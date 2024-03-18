@@ -33,7 +33,7 @@ func _on_witch_body_exited(body):
 		$PotionMenu.hide()
 
 func _on_health_button_pressed():
-	if (hbase < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num > 20):
+	if (hbase < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num >= 20):
 		Coincounter.num -= 20 
 		Livecounter.num += 25
 		hbase += 1
@@ -48,8 +48,8 @@ func _on_exit_pressed():
 
 
 func _on_invisibility_button_pressed():
-	if (ibase < imaxlimit) and (Coincounter.num > 10):
-		Coincounter.num -= 10 
+	if (ibase < imaxlimit) and (Coincounter.num >= 30):
+		Coincounter.num -= 30 
 		ibase += 1
 		Globalvar.equip_potion = true
 		Globalvar.i_num += 1

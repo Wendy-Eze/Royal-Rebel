@@ -14388,6 +14388,7 @@ texture_filter = 1
 position = Vector2(6068, 1436)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_hr6j8")
+autoplay = "default"
 frame_progress = 0.0953929
 
 [node name="Panel" type="Panel" parent="."]
@@ -14528,6 +14529,7 @@ frame_progress = 0.127392
 flip_h = true
 
 [node name="Convo" type="Label" parent="NextLevMission"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = -156.0

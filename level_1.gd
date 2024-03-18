@@ -5,7 +5,6 @@ extends Node
 func _ready():
 	pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Player/Camera2D.enabled = true
@@ -13,6 +12,12 @@ func _process(delta):
 	
 	if Globalvar.armor_equipped:
 		$GameHUD/WTimer.stop()
+		$NextLevMission/Convo.hide()
+		$GameHUD/Warning.hide()
+		$GameHUD/Warning_Message.hide()
+		$GameHUD/WarningTimer.hide()
+		$NextLevMission/Pass/CollisionShape2D.disabled = true
+	$GameHUD/WarningTimer.text = "%d" % [int($GameHUD/WTimer.time_left)]
 
 func _on_mission_timer_timeout():
 	$Panel.hide()
@@ -25,7 +30,7 @@ func _on_armor_check_body_entered(body):
 		$GameHUD/Warning.show()
 		$GameHUD/Warning_Message.show()
 		$GameHUD/WarningTimer.show()
-		$GameHUD/WarningTimer.text = str($GameHUD/WTimer.time_left)
+		#$GameHUD/WarningTimer.text = str($GameHUD/WTimer.time_left)
 
 func _on_w_timer_timeout():
 	$GameHUD/PlayerHealth.value == 0
