@@ -3,7 +3,7 @@ extends Control
 #@onready var container = $Container.get_theme_stylebox("panel")
 @onready var arrow = $Container/Arrow.get_theme_stylebox("panel")
 @onready var sword = $Container/Sword.get_theme_stylebox("panel")
-
+var timer_started = false
 
 func _ready():
 	$Container/Potion/Label.text = " "
@@ -13,7 +13,15 @@ func _ready():
 func _process(delta):
 	$Container/Arrow/ArrowLimit.text = str(Globalvar.arrow_num)
 	
-	
+	if Globalvar.arrow_num == 0:
+		Globalvar.ready_arrow = false
+		#
+	#if timer_started:
+		#$Container/Arrow/ArrowCooldown.start()
+		#print($Container/Arrow/ArrowCooldown.time_left)
+	if Globalvar.has_armor:
+		$Container/Armor/Sprite2D.show()
+		
 	if Input.is_action_pressed("arrow"):
 		Globalvar.equip_arrow = true
 		Globalvar.equip_sword = false
@@ -29,6 +37,8 @@ func _process(delta):
 		sword.border_width_right = 0
 		sword.border_width_left = 0
 		add_theme_stylebox_override("panel", sword)
+		#$Container/Arrow/ArrowCooldown.start()
+	#print($Container/Arrow/ArrowCooldown.time_left)
 		
 		#if Globalvar.arrow_num <= 15 and not Globalvar.ready_arrow:
 			#$Container/Arrow/ArrowCooldown.start()
@@ -65,6 +75,9 @@ func _process(delta):
 		$Container/Potion/Label.text = " "
 	#$Container/Potion/Timer.text = str($Container/Potion/Timer2.time_left)
 	$Container/Potion/Timer.text = "%d" % [int($Container/Potion/Timer2.time_left)]
+	
+	#if Globalvar.arrow_num == 0:
+		#print("num of arrow is zero")
 
 
 func _on_timer_2_timeout():

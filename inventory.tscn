@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=30 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://inventory.gd" id="1_jhhv0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://brb5o5klisoi8" path="res://art/misc/3.png" id="8_xrg5u"]
 [ext_resource type="Texture2D" uid="uid://b4g2ckyv8w25g" path="res://art/misc/4.png" id="9_d6w2v"]
 [ext_resource type="Texture2D" uid="uid://dbm43r0063j24" path="res://art/misc/5.png" id="10_pugcp"]
+[ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="11_0ft5n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nbv3"]
 bg_color = Color(0.309804, 0.172549, 0.0823529, 1)
@@ -82,15 +83,25 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wcid"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j8451"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4n6c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgohs"]
+
 [node name="Inventory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+scale = Vector2(1.3, 1.3)
 script = ExtResource("1_jhhv0")
 
 [node name="Container" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_right = 277.0
+offset_right = 377.0
 offset_bottom = 91.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nbv3")
 
@@ -265,6 +276,43 @@ vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="Container/Potion"]
 wait_time = 21.0
+
+[node name="Armor" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 282.0
+offset_top = 7.0
+offset_right = 362.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wcid")
+
+[node name="ArmorButton" type="Button" parent="Container/Armor"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 64.0
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j8451")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4n6c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vgohs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/Armor"]
+visible = false
+position = Vector2(40, 40)
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("11_0ft5n")
+
+[node name="0" type="Label" parent="Container/Armor"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 63.0
+offset_right = 57.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="Container/Arrow/ArrowCooldown" to="." method="_on_arrow_cooldown_timeout"]
 [connection signal="timeout" from="Container/Potion/Timer2" to="." method="_on_timer_2_timeout"]

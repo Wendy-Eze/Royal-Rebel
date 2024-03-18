@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 
-@onready var speed = 500
+@onready var speed = 900
 var walking = false
 var is_attacking = false
 signal goblin_hit
@@ -37,11 +37,17 @@ func get_input():
 		if Input.is_action_just_pressed("basic_melee") and not is_attacking:
 			print("melee")
 			is_attacking = true
-			$AnimatedSprite2D.play("basic_melee")	
-	
+			$AnimatedSprite2D.play("basic_melee")
+			
+	if Globalvar.has_armor:
+		if Input.is_action_just_pressed("knight"):
+			$AnimatedSprite2D.hide()
+			$Knight.show()
+		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
+		$Knight.play()
 		is_attacking = false
 		if not walking:
 			$WalkTimer.start()
@@ -50,6 +56,7 @@ func get_input():
 	else:
 		if not is_attacking:
 			$AnimatedSprite2D.play("idle")
+			$Knight.play("idle")
 		$WalkTimer.stop()
 		walking = false
 		
@@ -57,6 +64,9 @@ func get_input():
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$Knight.animation = "walk"
+		$Knight.flip_v = false
+		$Knight.flip_h = velocity.x < 0
 
 
 func _physics_process(delta):

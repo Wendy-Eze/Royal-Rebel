@@ -15,7 +15,7 @@ func _ready():
 			
 func _process(delta):
 	#if in_area == true:
-	if Input.is_action_just_released("shop") and not in_area: 
+	if Input.is_action_just_released("shop") and in_area: 
 			$PotionMenu.show()
 			print("Shop action released")
 
@@ -29,6 +29,7 @@ func _on_witch_body_exited(body):
 	if body.is_in_group("player"):
 		$talk1.hide()
 		in_area = false
+		$PotionMenu.hide()
 
 func _on_health_button_pressed():
 	if (hbase < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num > 20):

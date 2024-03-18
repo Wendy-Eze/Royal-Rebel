@@ -6490,6 +6490,7 @@ scale = Vector2(23.5278, 23.5278)
 texture = ExtResource("23_kfras")
 
 [node name="PotionMenu" type="Panel" parent="PotionScene"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -12.025
