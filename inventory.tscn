@@ -1,0 +1,270 @@
+[gd_scene load_steps=25 format=3 uid="uid://pye3lymjy8ky"]
+
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
+[ext_resource type="Script" path="res://inventory.gd" id="1_jhhv0"]
+[ext_resource type="Texture2D" uid="uid://cigfvv3i4dcpi" path="res://art/misc/arrow.png" id="2_i7pps"]
+[ext_resource type="Texture2D" uid="uid://2wslsobg5oup" path="res://art/misc/sword.png" id="3_hyfkp"]
+[ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="5_223v0"]
+[ext_resource type="Texture2D" uid="uid://fjavxd0xxurf" path="res://art/misc/1.png" id="6_q6cb6"]
+[ext_resource type="Texture2D" uid="uid://dirxrg23ebdy0" path="res://art/misc/2.png" id="7_krwe8"]
+[ext_resource type="Texture2D" uid="uid://brb5o5klisoi8" path="res://art/misc/3.png" id="8_xrg5u"]
+[ext_resource type="Texture2D" uid="uid://b4g2ckyv8w25g" path="res://art/misc/4.png" id="9_d6w2v"]
+[ext_resource type="Texture2D" uid="uid://dbm43r0063j24" path="res://art/misc/5.png" id="10_pugcp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nbv3"]
+bg_color = Color(0.309804, 0.172549, 0.0823529, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n34k"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdw8x"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_dho2q"]
+action = &"arrow"
+
+[sub_resource type="Shortcut" id="Shortcut_6ikrl"]
+events = [SubResource("InputEventAction_dho2q")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_katf0"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 0.741176)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yg6a"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7fsja"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_gqwf8"]
+action = &"sword"
+
+[sub_resource type="Shortcut" id="Shortcut_75k0p"]
+events = [SubResource("InputEventAction_gqwf8")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujd8b"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cu384"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0mii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q6cb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_krwe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xrg5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d6w2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pugcp")
+}],
+"loop": true,
+"name": &"timer",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8b6e8"]
+bg_color = Color(0.0705882, 0.0705882, 0.427451, 0.705882)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jhhv0")
+
+[node name="Container" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 277.0
+offset_bottom = 91.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7nbv3")
+
+[node name="Arrow" type="Panel" parent="Container"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 87.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6n34k")
+
+[node name="ArrowButton" type="Button" parent="Container/Arrow"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 13.0
+offset_right = 71.0
+offset_bottom = 68.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cdw8x")
+shortcut = SubResource("Shortcut_6ikrl")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/Arrow"]
+position = Vector2(34.875, 42.625)
+scale = Vector2(1.63281, 1.60157)
+texture = ExtResource("2_i7pps")
+
+[node name="ArrowLimit" type="Label" parent="Container/Arrow"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = -2.0
+offset_right = 80.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 20
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowCooldown" type="Timer" parent="Container/Arrow"]
+wait_time = 16.0
+
+[node name="Cooldown" type="Label" parent="Container/Arrow"]
+visible = false
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 71.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_katf0")
+text = "15"
+
+[node name="1" type="Label" parent="Container/Arrow"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 62.0
+offset_right = 46.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sword" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 7.0
+offset_right = 178.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yg6a")
+
+[node name="SwordButton" type="Button" parent="Container/Sword"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 17.0
+offset_right = 64.0
+offset_bottom = 63.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7fsja")
+shortcut = SubResource("Shortcut_75k0p")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/Sword"]
+texture_filter = 1
+position = Vector2(41, 39)
+scale = Vector2(1.891, 1.891)
+texture = ExtResource("3_hyfkp")
+
+[node name="2" type="Label" parent="Container/Sword"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 32.0
+offset_top = 62.0
+offset_right = 56.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Potion" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 7.0
+offset_right = 270.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujd8b")
+
+[node name="U" type="Label" parent="Container/Potion"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 62.0
+offset_right = 59.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "U"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PotionButton" type="Button" parent="Container/Potion"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 65.0
+offset_bottom = 63.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cu384")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/Potion"]
+visible = false
+position = Vector2(40, 39)
+scale = Vector2(3.3205, 3.3205)
+texture = ExtResource("5_223v0")
+
+[node name="Label" type="Label" parent="Container/Potion"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -2.0
+offset_right = 81.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="AnimatedSprite2D" parent="Container/Potion"]
+visible = false
+position = Vector2(42, -56)
+scale = Vector2(0.166016, 0.166016)
+sprite_frames = SubResource("SpriteFrames_t0mii")
+animation = &"timer"
+autoplay = "timer"
+frame_progress = 0.249073
+
+[node name="Timer" type="Label" parent="Container/Potion"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = -68.0
+offset_right = 61.0
+offset_bottom = -40.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8b6e8")
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer2" type="Timer" parent="Container/Potion"]
+wait_time = 21.0
+
+[connection signal="timeout" from="Container/Arrow/ArrowCooldown" to="." method="_on_arrow_cooldown_timeout"]
+[connection signal="timeout" from="Container/Potion/Timer2" to="." method="_on_timer_2_timeout"]

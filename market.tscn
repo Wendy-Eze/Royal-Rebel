@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cl4ra1npuv3u5"]
+[gd_scene load_steps=46 format=3 uid="uid://cl4ra1npuv3u5"]
 
 [ext_resource type="Script" path="res://market.gd" id="1_5s35o"]
 [ext_resource type="Texture2D" uid="uid://d4yn4vvp0bgj" path="res://art/store1.png" id="1_cdg3n"]
@@ -6331,6 +6331,10 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_doc4n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8inx0"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5u2lm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuvoh"]
@@ -6488,6 +6492,7 @@ texture = ExtResource("23_kfras")
 [node name="PotionMenu" type="Panel" parent="PotionScene"]
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -12.025
 anchor_right = -12.025
 offset_left = -369.0
 offset_top = -330.0
@@ -6532,6 +6537,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_v7pju")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_doc4n")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8inx0")
 text = "
 BUY"
 
