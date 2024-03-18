@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 
-@onready var speed = 900
+@onready var speed = 600
 var walking = false
 var is_attacking = false
 signal goblin_hit
@@ -41,8 +41,10 @@ func get_input():
 			
 	if Globalvar.has_armor:
 		if Input.is_action_just_pressed("knight"):
+			Globalvar.armor_equipped = true
 			$AnimatedSprite2D.hide()
 			$Knight.show()
+#armor equipped
 		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed

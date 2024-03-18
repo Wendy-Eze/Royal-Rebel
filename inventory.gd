@@ -1,24 +1,35 @@
 extends Control
 
-#@onready var container = $Container.get_theme_stylebox("panel")
 @onready var arrow = $Container/Arrow.get_theme_stylebox("panel")
 @onready var sword = $Container/Sword.get_theme_stylebox("panel")
-var timer_started = false
+var cooldownactive = false
 
 func _ready():
 	$Container/Potion/Label.text = " "
 	$Container/Arrow/Cooldown.text = " "
-	#pass # Replace with function body.
 
 func _process(delta):
 	$Container/Arrow/ArrowLimit.text = str(Globalvar.arrow_num)
 	
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
-		#
+		
+	#if Globalvar.arrow_num == 15 and not cooldownactive:
+		#Globalvar.arrow_num = 0
+		#Globalvar.ready_arrow = false
+		##cooldownactive = true
+		##if cooldownactive:
+		#startcooldown()
+		
+	##$Container/Arrow/ArrowCooldown.start()
+	##print($Container/Arrow/ArrowCooldown.time_left)
 	#if timer_started:
 		#$Container/Arrow/ArrowCooldown.start()
+		#timer_started = false
 		#print($Container/Arrow/ArrowCooldown.time_left)
+	#else:
+		#pass
+	
 	if Globalvar.has_armor:
 		$Container/Armor/Sprite2D.show()
 		
@@ -42,6 +53,7 @@ func _process(delta):
 		
 		#if Globalvar.arrow_num <= 15 and not Globalvar.ready_arrow:
 			#$Container/Arrow/ArrowCooldown.start()
+		#print($Container/Arrow/ArrowCooldown.time_left)
 		#$Container/Arrow/Cooldown.text = "%d" % [int($Container/Arrow/ArrowCooldown.time_left)]
 	#
 	if Input.is_action_just_pressed("sword"):
@@ -87,9 +99,17 @@ func _on_timer_2_timeout():
 	#if not Globalvar.equip_potion and Globalvar.i_num == 0:
 	#$Container/Potion/Sprite2D.hide()
 
+func startcooldown():
+	cooldownactive = true
+	#if cooldownactive:
+	$Container/Arrow/ArrowCooldown.start()
+	$Container/Arrow/Cooldown.show()
+	print($Container/Arrow/ArrowCooldown.time_left)
+	$Container/Arrow/Cooldown.text = "%d" % [int($Container/Arrow/ArrowCooldown.time_left)]
 
 func _on_arrow_cooldown_timeout():
-	Globalvar.arrow_num = 15
+	#Globalvar.arrow_num = 15
 	$Container/Arrow/Cooldown.hide()
 	print("Arrow cooldown timer completed.")
 	$Container/Arrow/Cooldown.text = " "
+	cooldownactive = false
