@@ -11,3 +11,6 @@ res://market.tscn
 res://inventory.tscn
 res://next_level.tscn
 res://tutorial_steps.gd
+res://game_over_screen.gd
+res://game_over_screen.tscn
+res://lives.tscn
