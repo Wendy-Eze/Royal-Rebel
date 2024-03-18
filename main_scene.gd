@@ -20,6 +20,7 @@ func new_game():
 func game_begins():
 	$opening_cutscene.queue_free()
 	$Player.start()
+	$Trees.show()
 	$Player/TutCam.enabled = true
 	print("tutorial begins")
 	$HUD/PlayerHealth.show()
@@ -38,6 +39,7 @@ func store_step():
 	$TutorialSteps/WalkStep.hide()
 	$TutorialSteps/GoblinStep.hide()
 	$StoreStepTimer.start()
+
 
 func begin_game():
 	$TutorialSteps/Start_Game.show()

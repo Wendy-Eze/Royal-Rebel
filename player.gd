@@ -1,30 +1,55 @@
 
 extends CharacterBody2D
 
-@onready var speed = 400
+@onready var speed = 600
 var walking = false
 var is_attacking = false
 signal goblin_hit
 @onready var end_of_bow = $Marker2D
+@onready var arrow_cooldown = $Marker2D
+var is_knight = false
+var minpos = Vector2(0,15)
+var maxpos = Vector2(12620, 4235)
+
+
+#Some signal is emitted
+# is knight = false (every regular animation should have not is_knight in if statement)
+#	for example: if signal emit:
+#		$AnimatedSprite2D.hide()
+#		$AnimatedSprite2D/SwordHit/CollisionShape2D2.diabled = true
+#		$Knight.show()
+#		is_knight = true 
 
 
 func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 	
-	if Input.is_action_just_pressed("attack"):
-		is_attacking = true
-		$AnimatedSprite2D.play("attack")
-		arrow()
+	if Globalvar.equip_arrow and Globalvar.ready_arrow:
+		if Input.is_action_just_pressed("attack"):
+			is_attacking = true
+			$AnimatedSprite2D.play("attack")
+			arrow()
+			Globalvar.arrow_num -= 1
+			print(Globalvar.arrow_num)
 	
-	if Input.is_action_just_pressed("basic_melee") and not is_attacking:
-		print("melee")
-		is_attacking = true
-		$AnimatedSprite2D.play("basic_melee")	
-	
+	if Globalvar.equip_sword:
+		if Input.is_action_just_pressed("basic_melee") and not is_attacking:
+			print("melee")
+			is_attacking = true
+			$AnimatedSprite2D.play("basic_melee")
+			
+	if Globalvar.has_armor:
+		if Input.is_action_just_pressed("knight"):
+			Globalvar.armor_equipped = true
+			$AnimatedSprite2D.hide()
+			$Knight.show()
+#armor equipped
+		
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		$AnimatedSprite2D.play()
+		$Knight.play()
 		is_attacking = false
 		if not walking:
 			$WalkTimer.start()
@@ -33,6 +58,7 @@ func get_input():
 	else:
 		if not is_attacking:
 			$AnimatedSprite2D.play("idle")
+			$Knight.play("idle")
 		$WalkTimer.stop()
 		walking = false
 		
@@ -40,13 +66,22 @@ func get_input():
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = velocity.x < 0
+		$Knight.animation = "walk"
+		$Knight.flip_v = false
+		$Knight.flip_h = velocity.x < 0
 
 
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
-
+	var pos = position
+	pos.x = clamp(pos.x, minpos.x, maxpos.x)
+	pos.y = clamp(pos.y, minpos.y, maxpos.y)
+	position = pos
+	
 func arrow():
+	#if arrow_cooldown.is_stopped():
+		#pass
 	var arrow = preload("res://arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position

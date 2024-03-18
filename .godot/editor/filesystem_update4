@@ -1,6 +1,12 @@
-res://level_1.tscn
 res://main_scene.tscn
+res://level_1.tscn
+res://coin.tscn
+res://killcount_g.tscn
+res://kill_counter.tscn
+res://mob_goblin.tscn
 res://player.tscn
-res://opening_cutscene.tscn
-res://next_level.tscn
 res://game_hud.tscn
+res://arrow.tscn
+res://market.tscn
+res://inventory.tscn
+res://next_level.tscn

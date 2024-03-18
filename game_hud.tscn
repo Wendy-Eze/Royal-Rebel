@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=9 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="1_nou5r"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://player_health.tscn" id="3_0ws11"]
 [ext_resource type="PackedScene" uid="uid://da2qdynvsop07" path="res://game_over_screen.tscn" id="4_r3yx1"]
+[ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="5_xqipu"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="6_nqeuc"]
+[ext_resource type="PackedScene" uid="uid://bjqeknaomhnba" path="res://killcount_g.tscn" id="7_tja4w"]
+[ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://inventory.tscn" id="8_7m88t"]
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -15,6 +19,44 @@ offset_right = 1875.0
 offset_bottom = 112.0
 
 [node name="PlayerHealth" parent="." instance=ExtResource("3_0ws11")]
+texture_filter = 1
 
 [node name="GameOverScreen" parent="." instance=ExtResource("4_r3yx1")]
 visible = false
+
+[node name="CoinDisplay" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(539, 62)
+scale = Vector2(3, 3)
+texture = ExtResource("5_xqipu")
+metadata/_edit_group_ = true
+
+[node name="CoinDisplay" type="Label" parent="CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -11.0
+offset_right = 33.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("6_nqeuc")
+theme_override_font_sizes/font_size = 20
+text = "0"
+metadata/_edit_use_anchors_ = true
+
+[node name="KillCount_G" parent="." instance=ExtResource("7_tja4w")]
+offset_left = 656.0
+offset_top = 22.0
+offset_right = 696.0
+offset_bottom = 62.0
+
+[node name="Inventory" parent="." instance=ExtResource("8_7m88t")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -211.0
+offset_top = -166.0
+offset_right = -211.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 0

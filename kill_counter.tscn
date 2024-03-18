@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ftkdqfuea46"]
+
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_prtt3"]
+[ext_resource type="Script" path="res://KillCounter.gd" id="2_7foqs"]
+
+[node name="KillCounter" type="Label"]
+anchors_preset = -1
+anchor_left = 0.54
+anchor_top = 0.038
+anchor_right = 0.655
+anchor_bottom = 0.078
+offset_left = -0.800049
+offset_top = -0.0400009
+offset_right = 0.399902
+offset_bottom = -0.240005
+theme_override_fonts/font = ExtResource("1_prtt3")
+theme_override_font_sizes/font_size = 35
+text = "Kills:"
+script = ExtResource("2_7foqs")

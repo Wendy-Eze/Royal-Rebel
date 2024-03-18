@@ -6,6 +6,7 @@ func _ready():
 
 func _process(delta):
 	set_health()
+	add_coin()
 	if $PlayerHealth.value == 0:
 		#get_tree().current_scene.pause()
 		$GameOverScreen.show()
@@ -14,3 +15,6 @@ func _process(delta):
 
 func set_health():
 	$PlayerHealth.value = Livecounter.num
+
+func add_coin():
+		$CoinDisplay/CoinDisplay.text = str(Coincounter.num)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=37 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Texture2D" uid="uid://dpcjwifb5ocd4" path="res://art/Player Art/run_0.png" id="1_5an6p"]
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://b62p52ljv0ti7" path="res://art/Player Art/idle_1.png" id="8_grgel"]
 [ext_resource type="Texture2D" uid="uid://cm27cer1adbni" path="res://art/Player Art/basic_melee3.png" id="8_hjcbs"]
 [ext_resource type="Texture2D" uid="uid://bs5ydcuwnmc25" path="res://art/Player Art/idle_3.png" id="9_fm2rf"]
+[ext_resource type="Texture2D" uid="uid://bmdlwfdogcyjo" path="res://art/Player Art/IDLE.png" id="20_ilfo8"]
+[ext_resource type="Texture2D" uid="uid://bmbymh6tp5xks" path="res://art/Player Art/WALK.png" id="21_pgbfd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
 animations = [{
@@ -100,6 +102,96 @@ size = Vector2(43.0212, 8.97395)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
 size = Vector2(140, 163)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j25c"]
+atlas = ExtResource("20_ilfo8")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vgsk"]
+atlas = ExtResource("20_ilfo8")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idufb"]
+atlas = ExtResource("20_ilfo8")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01ei1"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ocr"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ekuh"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7wpw"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob7yf"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j542l"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j6qp"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8uvp"]
+atlas = ExtResource("21_pgbfd")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a0k21"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j25c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vgsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idufb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01ei1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ocr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ekuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7wpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob7yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j542l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j6qp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8uvp")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(905, 516)
 collision_mask = 3
@@ -110,7 +202,7 @@ texture_filter = 1
 position = Vector2(42.724, -39.5001)
 scale = Vector2(2.11724, 2.11724)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"idle"
+animation = &"attack"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
@@ -150,6 +242,18 @@ limit_top = 0
 limit_right = 3000
 limit_bottom = 2500
 editor_draw_limits = true
+
+[node name="ArrowCooldown" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="Knight" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-25, -22)
+scale = Vector2(8.08854, 5.875)
+sprite_frames = SubResource("SpriteFrames_a0k21")
+animation = &"idle"
+frame_progress = 0.337664
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
