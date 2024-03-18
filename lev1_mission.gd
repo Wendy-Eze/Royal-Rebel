@@ -8,7 +8,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not done:
-		if Goblinkill.num < 1:
+		if Goblinkill.num < 10:
 			$EndMission/CollisionShape2D.disabled = true
 			$Armor/CollisionShape2D.disabled = true 
 		else:
