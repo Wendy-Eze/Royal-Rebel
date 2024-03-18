@@ -40,7 +40,7 @@ offset_right = 218.68
 offset_bottom = 59.56
 theme_override_fonts/font = ExtResource("2_1jpwj")
 theme_override_font_sizes/font_size = 70
-text = "/10"
+text = "/ 10"
 script = ExtResource("3_wyb0i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

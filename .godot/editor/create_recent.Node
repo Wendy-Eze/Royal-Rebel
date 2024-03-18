@@ -1,6 +1,12 @@
+<<<<<<< Updated upstream
 CollisionShape2D
 StaticBody2D
 Area2D
+=======
+TextureRect
+Sprite2D
+Timer
+>>>>>>> Stashed changes
 Label
 Timer
 AnimatedSprite2D
@@ -11,4 +17,8 @@ Control
 Node
 CanvasLayer
 Container
+<<<<<<< Updated upstream
 Node2D
+=======
+StaticBody2D
+>>>>>>> Stashed changes
