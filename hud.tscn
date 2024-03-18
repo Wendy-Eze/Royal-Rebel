@@ -47,7 +47,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_o8ejs")
 theme_override_font_sizes/font_size = 120
 text = "Royal 
-Rebels"
+Rebel"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

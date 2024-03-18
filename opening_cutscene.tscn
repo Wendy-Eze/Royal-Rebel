@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddogjkss48hui"]
+[gd_scene load_steps=11 format=3 uid="uid://ddogjkss48hui"]
 
 [ext_resource type="Script" path="res://Control.gd" id="1_pudhr"]
 [ext_resource type="Script" path="res://opening_cutscene.gd" id="1_vvooe"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_2ar4t"]
+[ext_resource type="Texture2D" uid="uid://74sf4lb1ej0v" path="res://art/Untitled design (5).png" id="3_2wlkv"]
+[ext_resource type="Texture2D" uid="uid://d142es0kvvs7q" path="res://art/prison.png" id="4_ilvvc"]
+[ext_resource type="Texture2D" uid="uid://dtviin2b7s0ql" path="res://art/crown.png" id="5_fk2jd"]
+[ext_resource type="Texture2D" uid="uid://c08y4dp1ernjw" path="res://art/tree.png" id="6_hkv82"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikwqn"]
 bg_color = Color(0.854902, 0, 0.12549, 1)
@@ -29,57 +33,58 @@ offset_right = 1619.0
 offset_bottom = 479.0
 script = ExtResource("1_pudhr")
 
-[node name="One" type="ColorRect" parent="Control"]
+[node name="One" type="TextureRect" parent="Control"]
 layout_mode = 0
-offset_left = -160.0
+offset_left = -152.0
 offset_top = -82.0
-offset_right = 1773.0
-offset_bottom = 1006.0
-color = Color(0.682353, 0.607843, 0.54902, 1)
+offset_right = 1768.0
+offset_bottom = 998.0
+texture = ExtResource("3_2wlkv")
 
-[node name="Two" type="ColorRect" parent="Control"]
+[node name="Two" type="TextureRect" parent="Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -168.0
-offset_top = -90.0
-offset_right = 304.0
-offset_bottom = 617.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.866667, 0.576471, 0.627451, 1)
+texture = ExtResource("4_ilvvc")
 
-[node name="Three" type="ColorRect" parent="Control"]
+[node name="Three" type="TextureRect" parent="Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -176.0
-offset_top = -106.0
-offset_right = 308.0
-offset_bottom = 625.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.313726, 0.419608, 0.686275, 1)
+texture = ExtResource("5_fk2jd")
 
-[node name="Four" type="ColorRect" parent="Control"]
+[node name="Four" type="TextureRect" parent="Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -176.0
-offset_top = -106.0
-offset_right = 308.0
-offset_bottom = 617.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.254902, 0.478431, 0.466667, 1)
+texture = ExtResource("6_hkv82")
 
 [node name="Skip" type="Button" parent="Control"]
+layout_mode = 0
 offset_left = 1352.0
 offset_top = 630.0
 offset_right = 1608.0

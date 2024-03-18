@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 func _on_restart_button_pressed():
+	Livecounter.num = 100
 	get_tree().change_scene_to_file("res://level_1.tscn")
 
 
