@@ -10,3 +10,4 @@ res://arrow.tscn
 res://market.tscn
 res://inventory.tscn
 res://next_level.tscn
+res://tutorial_steps.gd
