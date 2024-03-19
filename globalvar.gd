@@ -5,7 +5,7 @@ var is_invisible = false
 
 #Arrow Functionality
 var ready_arrow = false
-var arrow_num = 80 
+var arrow_num = 30 
 var has_armor = false
 var armor_equipped = false
 

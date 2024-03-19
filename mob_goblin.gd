@@ -8,8 +8,10 @@ var health: int = 100
 var damage: int = 10
 var rtimer_started = false
 var coin_scene = preload("res://coin.tscn")
+var arrow_scene = preload("res://arrow.tscn")
 var arrow_hit = false
 @onready var player = get_parent().get_node("Player")
+
 
 
 func _ready():
@@ -55,6 +57,7 @@ func _physics_process(delta):
 		#$DeathTimer.start()
 		if not rtimer_started:
 			$RespawnTimer.start()
+			$Deathsound.play()
 			rtimer_started = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
@@ -95,6 +98,7 @@ func _on_respawn_timer_timeout():
 		#rtimer_started = false
 		#$RespawnTimer.stop()
 	queue_free()
+	
 	Goblinkill.num += 1
 	#add function like num += 1 goblinkill.num += 1
 	drop_coin()
@@ -102,8 +106,11 @@ func _on_respawn_timer_timeout():
 	
 func drop_coin():
 	var coin = coin_scene.instantiate()
+	var arrow = arrow_scene.instantiate()
 	coin.position = position
+	arrow.position = position
 	get_parent().add_child(coin)
+	get_parent().add_child(arrow)
 
 
 func _on_health_timer_timeout():

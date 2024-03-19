@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://cviwi16h7v1c1"]
+[gd_scene load_steps=30 format=3 uid="uid://cviwi16h7v1c1"]
 
 [ext_resource type="Texture2D" uid="uid://ce6jooru7oom5" path="res://art/Mob Art/Goblin/goblin_sheet.png" id="1_edvad"]
 [ext_resource type="Script" path="res://mob_goblin.gd" id="1_yrwcw"]
+[ext_resource type="AudioStream" uid="uid://btk4r3v8s0puo" path="res://music/goblindeath.mp3" id="3_1m67p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flk8d"]
 atlas = ExtResource("1_edvad")
@@ -243,6 +244,9 @@ wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="Deathsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1m67p")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

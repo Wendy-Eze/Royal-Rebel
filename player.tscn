@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=38 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Texture2D" uid="uid://dpcjwifb5ocd4" path="res://art/Player Art/run_0.png" id="1_5an6p"]
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bs5ydcuwnmc25" path="res://art/Player Art/idle_3.png" id="9_fm2rf"]
 [ext_resource type="Texture2D" uid="uid://bmdlwfdogcyjo" path="res://art/Player Art/IDLE.png" id="20_ilfo8"]
 [ext_resource type="Texture2D" uid="uid://bmbymh6tp5xks" path="res://art/Player Art/WALK.png" id="21_pgbfd"]
+[ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="22_vtrs6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
 animations = [{
@@ -256,6 +257,9 @@ scale = Vector2(8.08854, 5.875)
 sprite_frames = SubResource("SpriteFrames_a0k21")
 animation = &"idle"
 frame_progress = 0.337664
+
+[node name="Collect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_vtrs6")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
