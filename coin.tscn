@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d00eqvq5mds0s"]
+[gd_scene load_steps=5 format=3 uid="uid://d00eqvq5mds0s"]
 
 [ext_resource type="Script" path="res://coin.gd" id="1_6gw0o"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="1_r06pv"]
+[ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="3_5abhr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eua35"]
 radius = 9.0
@@ -17,5 +18,8 @@ shape = SubResource("CircleShape2D_eua35")
 texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("1_r06pv")
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5abhr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

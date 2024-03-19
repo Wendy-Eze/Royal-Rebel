@@ -33,4 +33,4 @@ func _on_armor_check_body_entered(body):
 		#$GameHUD/WarningTimer.text = str($GameHUD/WTimer.time_left)
 
 func _on_w_timer_timeout():
-	$GameHUD/PlayerHealth.value == 0
+	$GameHUD/PlayerHealth.value = 0
