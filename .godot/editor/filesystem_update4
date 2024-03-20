@@ -1,22 +1,2 @@
-<<<<<<< Updated upstream
-=======
-res://hud.tscn
->>>>>>> Stashed changes
 res://main_scene.tscn
-res://killcount_g.tscn
-<<<<<<< Updated upstream
-res://kill_counter.tscn
-res://mob_goblin.tscn
-res://player.tscn
-res://game_hud.tscn
-res://arrow.tscn
-res://market.tscn
-res://inventory.tscn
-res://next_level.tscn
-res://tutorial_steps.gd
-res://game_over_screen.gd
-res://game_over_screen.tscn
-res://lives.tscn
-=======
-res://opening_cutscene.tscn
->>>>>>> Stashed changes
+res://begingame.gd
