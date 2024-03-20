@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
-[ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://next_level.tscn" id="2_52k24"]
+[ext_resource type="PackedScene" uid="uid://dso31fq22q7dn" path="res://general/next_level.tscn" id="2_52k24"]
 [ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="3_smjkn"]
 
 [node name="Level 3" type="Node"]

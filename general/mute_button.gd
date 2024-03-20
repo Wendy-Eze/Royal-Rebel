@@ -16,4 +16,4 @@ func _make_mute():
 	if isMuted:
 		$Music.set_volume_db(-80)
 	else:
-		$Music.set_volume_db(0)
+		$Music.set_volume_db(-20)

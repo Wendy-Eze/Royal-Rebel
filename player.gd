@@ -31,7 +31,7 @@ func get_input():
 			is_attacking = true
 			$AnimatedSprite2D.play("attack")
 			arrow()
-			#$Collect.play()
+			$ArrowSound.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
 	
@@ -40,6 +40,7 @@ func get_input():
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
+			$SwordSound.play()
 			
 	if Globalvar.has_armor:
 		if Input.is_action_just_pressed("knight"):
@@ -84,7 +85,7 @@ func _physics_process(delta):
 func arrow():
 	#if arrow_cooldown.is_stopped():
 		#pass
-	var arrow = preload("res://arrow.tscn").instantiate()
+	var arrow = preload("res://general/arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
 	
