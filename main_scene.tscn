@@ -11184,3 +11184,4 @@ shape = SubResource("RectangleShape2D_1wcmo")
 [connection signal="body_entered" from="Walk tut" to="Walk tut" method="_on_body_entered"]
 [connection signal="body_exited" from="Walk tut" to="Walk tut" method="_on_body_exited"]
 [connection signal="player_near" from="Walk tut" to="." method="walk_tut"]
+[connection signal="player_out" from="Walk tut" to="." method="walk_out"]

@@ -1,6 +1,7 @@
 extends Area2D
 
 signal player_near
+signal player_out
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
@@ -10,4 +11,6 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	pass # Replace with function body.
+	if body.is_in_group("player"):
+		print("player is not walking tut")
+		player_out.emit()
