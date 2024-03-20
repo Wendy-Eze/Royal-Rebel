@@ -39,6 +39,7 @@ offset_top = 771.0
 offset_right = 1641.0
 offset_bottom = 1015.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
+metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="WalkStep"]
 texture_filter = 1
@@ -74,8 +75,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "What do we have here? A GOBLIN!
-Use the spacebar key to shoot arrows and your mouse to aim. Use the X or K key tfor your sword."
+text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack and your mouse to aim. "
 horizontal_alignment = 1
 autowrap_mode = 2
 

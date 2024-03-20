@@ -1,13 +1,12 @@
-Sprite2D
+StaticBody2D
+CollisionShape2D
+Area2D
+TileMap
 AnimatedSprite2D
 AudioStreamPlayer
 Label
 AudioStreamPlayer2D
 Panel
-TileMap
-CollisionShape2D
-StaticBody2D
-Area2D
 TextureRect
 Timer
 Timer
