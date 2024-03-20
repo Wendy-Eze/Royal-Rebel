@@ -247,6 +247,7 @@ wait_time = 2.0
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m67p")
+volume_db = -30.0
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

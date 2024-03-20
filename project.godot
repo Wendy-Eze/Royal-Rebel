@@ -17,11 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Music="*res://music.tscn"
+Music="*res://general/music.tscn"
 Livecounter="*res://livecounter.gd"
-Coincounter="*res://coincounter.gd"
-Goblinkill="*res://goblinkill.gd"
-Globalvar="*res://globalvar.gd"
+Coincounter="*res://autoload/coincounter.gd"
+Goblinkill="*res://autoload/goblinkill.gd"
+Globalvar="*res://autoload/globalvar.gd"
 
 [display]
 

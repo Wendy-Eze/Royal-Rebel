@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctipcvp4xho2p"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_7yuql"]
-[ext_resource type="Script" path="res://tutorial_steps.gd" id="1_t87l0"]
+[ext_resource type="Script" path="res://intro/tutorial_steps.gd" id="1_t87l0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu2y"]
 bg_color = Color(0.784314, 0.596078, 0.34902, 0.811765)

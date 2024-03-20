@@ -7,8 +7,8 @@ var timer_started = false
 var health: int = 100
 var damage: int = 10
 var rtimer_started = false
-var coin_scene = preload("res://coin.tscn")
-var arrow_scene = preload("res://arrow.tscn")
+var coin_scene = preload("res://general/coin.tscn")
+var arrow_scene = preload("res://general/arrow.tscn")
 var arrow_hit = false
 @onready var player = get_parent().get_node("Player")
 

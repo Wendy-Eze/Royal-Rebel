@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=39 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Texture2D" uid="uid://dpcjwifb5ocd4" path="res://art/Player Art/run_0.png" id="1_5an6p"]
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
@@ -21,7 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://bs5ydcuwnmc25" path="res://art/Player Art/idle_3.png" id="9_fm2rf"]
 [ext_resource type="Texture2D" uid="uid://bmdlwfdogcyjo" path="res://art/Player Art/IDLE.png" id="20_ilfo8"]
 [ext_resource type="Texture2D" uid="uid://bmbymh6tp5xks" path="res://art/Player Art/WALK.png" id="21_pgbfd"]
-[ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="22_vtrs6"]
+[ext_resource type="AudioStream" uid="uid://csttp6r87agqf" path="res://music/arroweffect.mp3" id="22_jyht7"]
+[ext_resource type="AudioStream" uid="uid://cjfniau6vnvkj" path="res://music/swordeffect.mp3" id="23_ns4u3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
 animations = [{
@@ -220,7 +221,7 @@ shape = SubResource("RectangleShape2D_ru3nh")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_87lko")
-volume_db = -8.433
+volume_db = -35.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.45
@@ -258,8 +259,13 @@ sprite_frames = SubResource("SpriteFrames_a0k21")
 animation = &"idle"
 frame_progress = 0.337664
 
-[node name="Collect" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_vtrs6")
+[node name="ArrowSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_jyht7")
+volume_db = -20.0
+
+[node name="SwordSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_ns4u3")
+volume_db = -20.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]

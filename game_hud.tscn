@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
-[ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://mute_button.tscn" id="1_nou5r"]
-[ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://player_health.tscn" id="3_0ws11"]
+[ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
+[ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://general/player_health.tscn" id="3_0ws11"]
 [ext_resource type="PackedScene" uid="uid://da2qdynvsop07" path="res://game_over_screen.tscn" id="4_r3yx1"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="5_xqipu"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="6_nqeuc"]
-[ext_resource type="PackedScene" uid="uid://bjqeknaomhnba" path="res://killcount_g.tscn" id="7_tja4w"]
-[ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://inventory.tscn" id="8_7m88t"]
+[ext_resource type="PackedScene" uid="uid://bjqeknaomhnba" path="res://general/killcount_g.tscn" id="7_tja4w"]
+[ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="8_7m88t"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="9_ops20"]
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
 
