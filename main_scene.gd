@@ -30,22 +30,26 @@ func game_begins():
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()
-	$TutorialSteps/WalkStep.hide()
-	$TutorialSteps/StoreStep.hide()
-	$GoblinStepTime.start()
+	#$TutorialSteps/WalkStep.hide()
+	#$TutorialSteps/StoreStep.hide()
+	#$GoblinStepTime.start()
+	
+func goblin_out():
+	$TutorialSteps/GoblinStep.hide()
+	#$GoblinStepTime.start()
+	
 
 func store_step():
 	$TutorialSteps/StoreStep.show()
-	$TutorialSteps/WalkStep.hide()
-	$TutorialSteps/GoblinStep.hide()
-	$StoreStepTimer.start()
+	#$TutorialSteps/WalkStep.hide()
+	#$TutorialSteps/GoblinStep.hide()
+	#$StoreStepTimer.start()
 
 func walk_tut():
 	$TutorialSteps/StoreStep.hide()
 	$TutorialSteps/WalkStep.show()
 	$TutorialSteps/GoblinStep.hide()
 	$WalkStepTime.start()
-	
 
 
 func begin_game():
@@ -70,3 +74,4 @@ func _on_walk_tut_player_near():
 
 func _on_walk_tut_body_entered(body):
 	pass # Replace with function body.
+

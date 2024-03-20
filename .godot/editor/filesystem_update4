@@ -1,9 +1,10 @@
-res://level_1.tscn
 res://level_2.tscn
+
 res://player.tscn
 res://general/arrow.tscn
 res://general/mute_button.tscn
 res://mob_goblin.tscn
+ 
 res://main_scene.tscn
 res://intro/tutorial_steps.tscn
 res://main_scene.gd

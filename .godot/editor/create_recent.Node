@@ -5,7 +5,6 @@ TileMap
 AnimatedSprite2D
 AudioStreamPlayer
 Label
-Sprite2D
 AudioStreamPlayer2D
 Panel
 TextureRect

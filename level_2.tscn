@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=71 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://yhgqt5n0cerc" path="res://mystic_woods_free_2.1/Forest.png" id="6_klpop"]
 [ext_resource type="Texture2D" uid="uid://cgyfbjacnrseq" path="res://art/map art/RPGpack_sheet.png" id="7_rsfhi"]
 [ext_resource type="Texture2D" uid="uid://88givuk35ta7" path="res://art/map art/Dream_Island/village.png" id="9_vdug0"]
+[ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="11_p3fgw"]
 [ext_resource type="Texture2D" uid="uid://qemu03d8ar8f" path="res://art/npc/Female2.png" id="12_q7kxq"]
 [ext_resource type="Texture2D" uid="uid://bfjo1rnxe6vss" path="res://art/npc/Male2.png" id="13_5acyy"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="14_sql25"]
@@ -38368,6 +38369,12 @@ sprite_frames = SubResource("SpriteFrames_30uwo")
 autoplay = "default"
 frame_progress = 0.225301
 
+[node name="Sprite2D" type="Sprite2D" parent="Seller"]
+z_index = 1
+position = Vector2(31.4286, 3.28571)
+rotation = 0.837758
+texture = ExtResource("11_p3fgw")
+
 [node name="TileMap2" type="TileMap" parent="."]
 visible = false
 texture_filter = 1
@@ -38461,4 +38468,4 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_k0pd3")
 animation = &"1"
 autoplay = "1"
-frame_progress = 0.482077
+frame_progress = 0.586012
