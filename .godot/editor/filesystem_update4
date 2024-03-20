@@ -1,18 +1,11 @@
 res://level_1.tscn
 res://level_2.tscn
 res://player.tscn
-res://player.gd
-res://mute_button.tscn
-res://mute_button.gd
-res://level1_files/market.tscn
-res://main_scene.tscn
-res://killcount_g.tscn
+res://general/arrow.tscn
 res://general/mute_button.tscn
-res://level_1_files/market.tscn
-res://intro/tut_player.tscn
-res://background.tscn
-res://general/killcount_g.tscn
-res://kill_counter.tscn
-res://mob_goblin.gd
-res://general/coin.tscn
 res://mob_goblin.tscn
+res://main_scene.tscn
+res://intro/tutorial_steps.tscn
+res://main_scene.gd
+res://Walk tut.gd
+res://hud.tscn

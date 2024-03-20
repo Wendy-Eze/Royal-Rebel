@@ -25,8 +25,8 @@ func game_begins():
 	print("tutorial begins")
 	$HUD/PlayerHealth.show()
 	$HUD.show_message("Get Ready")
-	$TutorialSteps/WalkStep.show()
-	$WalkStepTime.start()
+	#$TutorialSteps/WalkStep.show()
+	#$WalkStepTime.start()
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()
@@ -40,6 +40,13 @@ func store_step():
 	$TutorialSteps/GoblinStep.hide()
 	$StoreStepTimer.start()
 
+func walk_tut():
+	$TutorialSteps/StoreStep.hide()
+	$TutorialSteps/WalkStep.show()
+	$TutorialSteps/GoblinStep.hide()
+	$WalkStepTime.start()
+	
+
 
 func begin_game():
 	$TutorialSteps/Start_Game.show()
@@ -49,8 +56,17 @@ func _on_goblin_step_time_timeout():
 	$GoblinArea/CollisionShape2D.disabled = true
 
 func _on_walk_step_time_timeout():
-	$TutorialSteps/WalkStep.hide()
+	pass
+	#$TutorialSteps/WalkStep.hide()
 
 func _on_store_step_timer_timeout():
 	$TutorialSteps/StoreStep.hide()
 	$StoreArea/CollisionShape2D.disabled = true
+
+
+func _on_walk_tut_player_near():
+	pass # Replace with function body.
+
+
+func _on_walk_tut_body_entered(body):
+	pass # Replace with function body.
