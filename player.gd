@@ -12,6 +12,7 @@ var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
 
 
+
 #Some signal is emitted
 # is knight = false (every regular animation should have not is_knight in if statement)
 #	for example: if signal emit:
@@ -30,11 +31,12 @@ func get_input():
 			is_attacking = true
 			$AnimatedSprite2D.play("attack")
 			arrow()
+			#$Collect.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("basic_melee") and not is_attacking:
+		if Input.is_action_just_pressed("attack") and not is_attacking:
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")

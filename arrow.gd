@@ -25,3 +25,7 @@ func _on_body_entered(body):
 		body._hit_by_arrow()
 		body.arrow_hit = true
 		queue_free()
+	if body.is_in_group("player"):
+		print("arrow collected")
+		Globalvar.arrow_num += 2
+		queue_free()

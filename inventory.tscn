@@ -129,6 +129,7 @@ scale = Vector2(1.63281, 1.60157)
 texture = ExtResource("2_i7pps")
 
 [node name="ArrowLimit" type="Label" parent="Container/Arrow"]
+visible = false
 layout_mode = 0
 offset_left = 59.0
 offset_top = -2.0
@@ -221,7 +222,7 @@ offset_right = 59.0
 offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("1_cksf5")
 theme_override_font_sizes/font_size = 40
-text = "U"
+text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -310,7 +311,7 @@ offset_right = 57.0
 offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("1_cksf5")
 theme_override_font_sizes/font_size = 40
-text = "0"
+text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
