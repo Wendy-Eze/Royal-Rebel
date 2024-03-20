@@ -9927,7 +9927,6 @@ format = 2
 layer_0/tile_data = PackedInt32Array(786444, 0, 3, 786445, 65536, 3, 786446, 131072, 3, 851993, 131072, 3, 851992, 65536, 3, 131089, 0, 3, 131090, 65536, 3, 131091, 131072, 3, 131099, 131072, 3, 131098, 65536, 3, 131097, 0, 3, 327679, 0, 3, 262144, 65536, 3, 262145, 131072, 3, 1441819, 131072, 3, 1441818, 65536, 3, 1441817, 0, 3, 1310719, 0, 3, 1245184, 65536, 3, 524291, 0, 5, 524292, 0, 5, 9, 0, 5, 10, 0, 5, 11, 0, 5, 458770, 0, 5, 458771, 0, 5, 458772, 0, 5, 458773, 0, 5, 458774, 0, 5, 917516, 0, 5, 917517, 0, 5, 1310733, 0, 5, 1310734, 0, 5, 327695, 65536, 3, 327694, 0, 3, 327696, 131072, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
-visible = false
 position = Vector2(504, 249)
 
 [node name="Trees" type="TileMap" parent="."]
@@ -10021,9 +10020,13 @@ wait_time = 5.0
 [connection signal="start_tut" from="opening_cutscene" to="." method="game_begins"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="body_entered" from="GoblinArea" to="GoblinArea" method="_on_body_entered"]
+[connection signal="body_exited" from="GoblinArea" to="GoblinArea" method="_on_body_exited"]
 [connection signal="player_near" from="GoblinArea" to="." method="goblin_step"]
+[connection signal="player_out" from="GoblinArea" to="." method="goblin_out"]
 [connection signal="timeout" from="GoblinStepTime" to="." method="_on_goblin_step_time_timeout"]
 [connection signal="timeout" from="WalkStepTime" to="." method="_on_walk_step_time_timeout"]
 [connection signal="body_entered" from="StoreArea" to="StoreArea" method="_on_body_entered"]
+[connection signal="body_exited" from="StoreArea" to="StoreArea" method="_on_body_exited"]
 [connection signal="player_near" from="StoreArea" to="." method="store_step"]
+[connection signal="player_out" from="StoreArea" to="." method="store_out"]
 [connection signal="timeout" from="StoreStepTimer" to="." method="_on_store_step_timer_timeout"]
