@@ -75,16 +75,15 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack and your mouse to aim. "
+text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack. "
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="StoreStep" type="Panel" parent="."]
-visible = false
 offset_left = 298.0
 offset_top = 79.0
 offset_right = 1591.0
-offset_bottom = 323.0
+offset_bottom = 355.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
 metadata/_edit_group_ = true
 
@@ -98,7 +97,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("1_7yuql")
 theme_override_font_sizes/font_size = 45
-text = "You have come across the market! Here you are able to buy health and potions. You can gain money by defeating enemies or collecting coins. "
+text = "You have come across the market! Here you are able to buy health and potions. You can gain money by defeating enemies or collecting coins. (This shop is closed)."
 horizontal_alignment = 1
 autowrap_mode = 2
 
