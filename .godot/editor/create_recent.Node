@@ -1,14 +1,9 @@
-Label
-HBoxContainer
-Panel
-MarginContainer
-CanvasLayer
+AnimatedSprite2D
 TileMap
 TextureButton
 Button
 StaticBody2D
 CollisionShape2D
 Area2D
-AnimatedSprite2D
 AudioStreamPlayer
 AudioStreamPlayer2D
