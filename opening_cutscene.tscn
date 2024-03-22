@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://bqy5i22w7t6hf"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_pudhr"]
+[ext_resource type="Script" path="res://opening_cutscene.gd" id="1_vvooe"]
+[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_2ar4t"]
+[ext_resource type="Texture2D" uid="uid://74sf4lb1ej0v" path="res://art/Untitled design (5).png" id="3_2wlkv"]
+[ext_resource type="Texture2D" uid="uid://d142es0kvvs7q" path="res://art/prison.png" id="4_ilvvc"]
+[ext_resource type="Texture2D" uid="uid://dtviin2b7s0ql" path="res://art/crown.png" id="5_fk2jd"]
+[ext_resource type="Texture2D" uid="uid://c08y4dp1ernjw" path="res://art/tree.png" id="6_hkv82"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikwqn"]
+bg_color = Color(0.854902, 0, 0.12549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvrbc"]
+bg_color = Color(0.505882, 0.00392157, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rty7"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 1)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[node name="opening_cutscene" type="Node2D"]
+script = ExtResource("1_vvooe")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 152.0
+offset_top = 82.0
+offset_right = 1619.0
+offset_bottom = 479.0
+script = ExtResource("1_pudhr")
+
+[node name="One" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 1768.0
+offset_bottom = 998.0
+texture = ExtResource("3_2wlkv")
+
+[node name="Two" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ilvvc")
+
+[node name="Three" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_fk2jd")
+
+[node name="Four" type="TextureRect" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -82.0
+offset_right = 301.0
+offset_bottom = 601.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_hkv82")
+
+[node name="Skip" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1352.0
+offset_top = 630.0
+offset_right = 1608.0
+offset_bottom = 686.0
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ikwqn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gvrbc")
+text = "Skip >>>"
+
+[node name="TextLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.554
+anchor_top = 2.071
+anchor_right = 0.554
+anchor_bottom = 2.071
+offset_left = -798.718
+offset_top = -90.187
+offset_right = 799.282
+offset_bottom = 89.813
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_0rty7")
+text = "hello"
+autowrap_mode = 2
+
+[connection signal="start_tut" from="Control" to="." method="_on_control_start_game"]
+[connection signal="pressed" from="Control/Skip" to="Control" method="_on_skip_pressed"]
