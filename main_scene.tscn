@@ -11072,6 +11072,7 @@ layer_0/tile_data = PackedInt32Array(196622, 851970, 28, 262158, 851970, 29, 196
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
 position = Vector2(504, 249)
+scale = Vector2(1.5, 1.5)
 
 [node name="Trees" type="TileMap" parent="."]
 visible = false

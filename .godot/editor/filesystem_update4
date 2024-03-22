@@ -13,7 +13,4 @@ res://main_scene.tscn
 res://intro/tutorial_steps.tscn
 res://hud.tscn
 res://opening_cutscene.tscn
-res://mob_goblin.tscn
-res://livecounter.gd
-res://mob_goblin.gd
-res://game_over_screen.tscn
+res://main_scene.gd

@@ -10,6 +10,7 @@ signal goblin_hit
 var is_knight = false
 var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
+signal death_over
 
 
 
@@ -81,6 +82,9 @@ func _physics_process(delta):
 	pos.x = clamp(pos.x, minpos.x, maxpos.x)
 	pos.y = clamp(pos.y, minpos.y, maxpos.y)
 	position = pos
+	if Livecounter.num == 0:
+		$AnimatedSprite2D.animation = "death"
+		$DeathTimer.start()
 	
 func arrow():
 	#if arrow_cooldown.is_stopped():
@@ -119,3 +123,7 @@ func _on_sword_hit_body_entered(body):
 		print("touched enemy")
 		goblin_hit.emit()
 
+
+
+func _on_death_timer_timeout():
+	death_over.emit()

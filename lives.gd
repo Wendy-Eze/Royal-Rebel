@@ -11,4 +11,5 @@ func _physics_process(delta):
 		$Live2.hide()
 	if Livecounter.lives == 0:
 		get_tree().reload_current_scene()
+		
 

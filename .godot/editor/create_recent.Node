@@ -1,4 +1,12 @@
+
+Timer
+Label
+HBoxContainer
+Panel
+MarginContainer
+
 AnimatedSprite2D
+81dc8025614c88a8c1c8362267bdb6ce36e8b5a7
 TileMap
 TextureButton
 Button
