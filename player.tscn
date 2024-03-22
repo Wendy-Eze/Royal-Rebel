@@ -29,7 +29,6 @@
 [ext_resource type="AudioStream" uid="uid://csttp6r87agqf" path="res://music/arroweffect.mp3" id="22_jyht7"]
 [ext_resource type="Texture2D" uid="uid://38dpwc86kbre" path="res://art/Adventurer/Individual Sprites/adventurer-idle-01.png" id="23_7i1p0"]
 [ext_resource type="Texture2D" uid="uid://dhn7yna5ruojt" path="res://art/Adventurer/Individual Sprites/adventurer-die-01.png" id="23_ksexi"]
-[ext_resource type="AudioStream" uid="uid://cjfniau6vnvkj" path="res://music/swordeffect.mp3" id="23_ns4u3"]
 [ext_resource type="Texture2D" uid="uid://cwaww7y55p53y" path="res://art/Adventurer/Individual Sprites/adventurer-die-02.png" id="24_7k3bc"]
 [ext_resource type="Texture2D" uid="uid://bum6wvethlh2b" path="res://art/Adventurer/Individual Sprites/adventurer-idle-02.png" id="24_yyihi"]
 [ext_resource type="Texture2D" uid="uid://bxs5wda2mf3nk" path="res://art/Adventurer/Individual Sprites/adventurer-idle-03.png" id="25_pbvpp"]
@@ -47,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://u836gch0016i" path="res://art/Adventurer/Individual Sprites/adventurer-run-03.png" id="33_eqsm0"]
 [ext_resource type="Texture2D" uid="uid://1lo603rkav1s" path="res://art/Adventurer/Individual Sprites/adventurer-run-04.png" id="34_7ybb8"]
 [ext_resource type="Texture2D" uid="uid://byqyov44d63gi" path="res://art/Adventurer/Individual Sprites/adventurer-run-05.png" id="35_ub55g"]
+[ext_resource type="AudioStream" uid="uid://di47w1wr6upxk" path="res://music/sword_flesh_sound.mp3" id="47_48hqm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
 animations = [{
@@ -372,7 +372,7 @@ stream = ExtResource("22_jyht7")
 volume_db = -20.0
 
 [node name="SwordSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("23_ns4u3")
+stream = ExtResource("47_48hqm")
 volume_db = -20.0
 
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
