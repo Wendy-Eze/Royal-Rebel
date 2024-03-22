@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=72 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
+[ext_resource type="Texture2D" uid="uid://dg18vsyay3sbx" path="res://art/Mob Art/goblin1/Idle.png" id="21_by8m6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14279,6 +14280,42 @@ size = Vector2(303, 581)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bn2"]
 size = Vector2(137, 486)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovbne"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cumdk"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbe8n"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahk7w"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owj6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovbne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cumdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbe8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahk7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
 
@@ -14560,6 +14597,12 @@ shape = SubResource("RectangleShape2D_01bn2")
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="Goblin" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2683, 774)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_owj6c")
 
 [connection signal="timeout" from="GameHUD/WTimer" to="." method="_on_w_timer_timeout"]
 [connection signal="death_over" from="Player" to="." method="_on_player_death_over"]

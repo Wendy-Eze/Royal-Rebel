@@ -45,6 +45,7 @@ func _physics_process(delta):
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
 		if Input.is_action_just_pressed("basic_melee"):
+			
 			health -= damage
 			set_health_bar()
 			$HealthBar.show()
