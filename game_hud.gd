@@ -11,7 +11,7 @@ func _process(delta):
 
 	if $PlayerHealth.value == 0:
 		#get_tree().current_scene.pause()
-		$GameOverScreen.show()
+		#$GameOverScreen.show()
 		$PlayerHealth.hide()
 		$MuteButton.hide()
 
