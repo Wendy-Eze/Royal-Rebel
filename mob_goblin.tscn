@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://cviwi16h7v1c1"]
+[gd_scene load_steps=35 format=3 uid="uid://cviwi16h7v1c1"]
 
 [ext_resource type="Texture2D" uid="uid://ce6jooru7oom5" path="res://art/Mob Art/Goblin/goblin_sheet.png" id="1_edvad"]
 [ext_resource type="Script" path="res://mob_goblin.gd" id="1_yrwcw"]
 [ext_resource type="AudioStream" uid="uid://btk4r3v8s0puo" path="res://music/goblindeath.mp3" id="3_1m67p"]
+[ext_resource type="Texture2D" uid="uid://dg18vsyay3sbx" path="res://art/Mob Art/goblin1/Idle.png" id="3_en37k"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_flk8d"]
 atlas = ExtResource("1_edvad")
@@ -95,6 +96,22 @@ region = Rect2(163, 121, 37, 30)
 [sub_resource type="AtlasTexture" id="AtlasTexture_kgqnu"]
 atlas = ExtResource("1_edvad")
 region = Rect2(163, 151, 37, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15yby"]
+atlas = ExtResource("3_en37k")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v02y1"]
+atlas = ExtResource("3_en37k")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2ydm"]
+atlas = ExtResource("3_en37k")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7n4e"]
+atlas = ExtResource("3_en37k")
+region = Rect2(450, 0, 150, 150)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mqffj"]
 animations = [{
@@ -191,6 +208,23 @@ animations = [{
 "loop": true,
 "name": &"swim",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_15yby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v02y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2ydm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7n4e")
+}],
+"loop": true,
+"name": &"try",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
@@ -210,9 +244,10 @@ script = ExtResource("1_yrwcw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(10, 10)
+position = Vector2(-36, -21)
+scale = Vector2(10.024, 10.024)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
+animation = &"try"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
