@@ -1,7 +1,11 @@
-<<<<<<< HEAD
 res://level_2.tscn
-=======
-res://level_1.tscn
-res://main_scene.tscn
+res://animated_sprite_2d.tscn
 res://player.tscn
->>>>>>> 6ef7636e7e48c7c6a3c1d2e3b5fb0066ac2c739d
+res://level_1.tscn
+res://general/arrow.tscn
+res://general/mute_button.tscn
+res://mob_goblin.tscn
+res://general/coin.tscn
+res://mob_spawner.tscn
+res://animated_sprite_2d.gd
+res://mob_knight.tscn
