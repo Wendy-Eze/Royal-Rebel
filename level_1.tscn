@@ -14276,7 +14276,7 @@ expand_margin_right = 40.0
 expand_margin_bottom = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6bp0"]
-size = Vector2(303, 581)
+size = Vector2(269, 397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bn2"]
 size = Vector2(137, 486)
@@ -14564,7 +14564,6 @@ scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_6e1ec")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.127392
 flip_h = true
 
 [node name="Convo" type="Label" parent="NextLevMission"]
@@ -14585,7 +14584,7 @@ autowrap_mode = 2
 [node name="ArmorCheck" type="Area2D" parent="NextLevMission"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevMission/ArmorCheck"]
-position = Vector2(141.5, 104.5)
+position = Vector2(157.5, 169.5)
 shape = SubResource("RectangleShape2D_k6bp0")
 
 [node name="Pass" type="StaticBody2D" parent="NextLevMission"]

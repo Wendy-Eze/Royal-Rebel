@@ -315,6 +315,8 @@ position = Vector2(42.724, -39.5001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
 animation = &"death"
+frame = 1
+frame_progress = 0.133333
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
