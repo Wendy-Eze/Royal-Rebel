@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Label
 HBoxContainer
 Panel
@@ -12,3 +13,19 @@ StaticBody2D
 CollisionShape2D
 Area2D
 AudioStreamPlayer
+=======
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+Timer
+Label
+Panel
+Node
+Node2D
+StaticBody2D
+Sprite2D
+Button
+HBoxContainer
+MarginContainer
+TileMap
+>>>>>>> 9c92667cbb821895946b67f44c4c1881cc30dc2d

@@ -5,3 +5,15 @@ res://main_scene.tscn
 res://level_1.tscn
 res://player.tscn
 res://level_2.tscn
+=======
+res://general/coin.tscn
+res://level_2.tscn
+res://level_2.gd
+res://level_1.tscn
+res://game_hud.tscn
+res://autoload/globalvar.gd
+res://game_hud.gd
+res://playerscene.gd
+res://witchscene.gd
+res://general/killcount_g.tscn
+>>>>>>> 9c92667cbb821895946b67f44c4c1881cc30dc2d
