@@ -102,6 +102,7 @@ func _physics_process(delta):
 	position = pos
 	if Livecounter.num == 0:
 		$AnimatedSprite2D.animation = "death"
+		#$Death.play()
 		$DeathTimer.start()
 		
 func add_ghost():
