@@ -1,3 +1,7 @@
-res://level_1.tscn
+res://intro/opening_cutscene.tscn
+res://intro/Textbox.gd
+res://intro/Control.gd
 res://main_scene.tscn
+res://level_1.tscn
 res://player.tscn
+res://level_2.tscn

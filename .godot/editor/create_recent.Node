@@ -1,12 +1,10 @@
-
-Timer
 Label
 HBoxContainer
 Panel
 MarginContainer
-
+CanvasLayer
+Timer
 AnimatedSprite2D
-81dc8025614c88a8c1c8362267bdb6ce36e8b5a7
 TileMap
 TextureButton
 Button
@@ -14,4 +12,3 @@ StaticBody2D
 CollisionShape2D
 Area2D
 AudioStreamPlayer
-AudioStreamPlayer2D
