@@ -1,3 +1,10 @@
+res://general/coin.tscn
+res://level_2.tscn
+res://level_2.gd
 res://level_1.tscn
-res://main_scene.tscn
-res://player.tscn
+res://game_hud.tscn
+res://autoload/globalvar.gd
+res://game_hud.gd
+res://playerscene.gd
+res://witchscene.gd
+res://general/killcount_g.tscn

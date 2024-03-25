@@ -1,22 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyf2vgonbvqq1"]
+[gd_scene load_steps=6 format=3 uid="uid://dyf2vgonbvqq1"]
 
 [ext_resource type="Script" path="res://general/arrow.gd" id="1_1ponj"]
-[ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="1_jhmd3"]
+[ext_resource type="Texture2D" uid="uid://c5num5vcy1txr" path="res://art/arrow/iron arrow.png" id="2_n34ku"]
+[ext_resource type="Texture2D" uid="uid://3bu17tgl0bqu" path="res://art/arrow/gold arrow.png" id="3_4h7xp"]
+[ext_resource type="Texture2D" uid="uid://b5hbnrxss26pn" path="res://art/arrow/diamond arrow.png" id="4_f172f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okfpy"]
-size = Vector2(17, 25)
+size = Vector2(11.5, 10)
 
 [node name="Arrow" type="Area2D" groups=["arrow"]]
 collision_mask = 15
 script = ExtResource("1_1ponj")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0.999954, -4.57764e-05)
-scale = Vector2(0.151042, 0.151042)
-texture = ExtResource("1_jhmd3")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17.5, 1.5)
+position = Vector2(29.25, -2)
 shape = SubResource("RectangleShape2D_okfpy")
+
+[node name="Iron" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_n34ku")
+
+[node name="Gold" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("3_4h7xp")
+
+[node name="Diamond" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("4_f172f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
