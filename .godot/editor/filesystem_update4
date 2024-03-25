@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 res://level_2.tscn
+=======
+res://level_1.tscn
+res://main_scene.tscn
+res://player.tscn
+>>>>>>> 6ef7636e7e48c7c6a3c1d2e3b5fb0066ac2c739d

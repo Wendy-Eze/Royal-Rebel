@@ -11,9 +11,10 @@ func _process(delta):
 
 	if $PlayerHealth.value == 0:
 		#get_tree().current_scene.pause()
-		$GameOverScreen.show()
+		#$GameOverScreen.show()
 		$PlayerHealth.hide()
 		$MuteButton.hide()
+
 
 func set_health():
 	$PlayerHealth.value = Livecounter.num
@@ -23,3 +24,12 @@ func add_coin():
 
 func add_arrow():
 	$ArrowDisplay/ArrowDisplay.text = str(Globalvar.arrow_num)
+
+
+func _on_menu_button_pressed():
+	if $Menu.is_visible():
+		$Menu.hide()
+		#get_tree().paused = false
+	else:
+		$Menu.show()
+		#get_tree().paused = true

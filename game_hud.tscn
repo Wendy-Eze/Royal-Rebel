@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=16 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -10,9 +10,24 @@
 [ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="8_7m88t"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="9_ops20"]
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
+[ext_resource type="Texture2D" uid="uid://c02klxxt6nqfq" path="res://art/setting.png" id="11_m028w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
+
+[sub_resource type="InputEventAction" id="InputEventAction_4rmpy"]
+action = &"menu"
+
+[sub_resource type="Shortcut" id="Shortcut_1wsp2"]
+events = [SubResource("InputEventAction_4rmpy")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njrsr"]
+bg_color = Color(0.0901961, 0.0901961, 0.0901961, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.4, 0.290196, 0.101961, 1)
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -23,10 +38,20 @@ offset_bottom = 112.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w2cqi")
 
 [node name="MuteButton" parent="." instance=ExtResource("1_nou5r")]
-offset_left = 1826.0
+offset_left = 1742.0
 offset_top = 22.0
-offset_right = 1900.0
+offset_right = 1816.0
 offset_bottom = 96.0
+
+[node name="MenuButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 1836.0
+offset_top = 33.0
+offset_right = 1868.0
+offset_bottom = 66.0
+scale = Vector2(1.5, 1.5)
+shortcut = SubResource("Shortcut_1wsp2")
+texture_normal = ExtResource("11_m028w")
 
 [node name="PlayerHealth" parent="." instance=ExtResource("3_0ws11")]
 texture_filter = 1
@@ -90,3 +115,13 @@ theme_override_font_sizes/font_size = 325
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+offset_left = 696.0
+offset_top = 155.0
+offset_right = 1814.0
+offset_bottom = 861.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

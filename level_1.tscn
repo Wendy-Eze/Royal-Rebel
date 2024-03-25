@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=72 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -20,6 +20,7 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
+[ext_resource type="Texture2D" uid="uid://dg18vsyay3sbx" path="res://art/Mob Art/goblin1/Idle.png" id="21_by8m6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14033,7 +14034,8 @@ texture = ExtResource("14_vwybx")
 21:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_fv0o7"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_be78s")
 sources/1 = SubResource("TileSetAtlasSource_60ie4")
 sources/2 = SubResource("TileSetAtlasSource_wcr7e")
@@ -14274,10 +14276,46 @@ expand_margin_right = 40.0
 expand_margin_bottom = 40.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k6bp0"]
-size = Vector2(303, 581)
+size = Vector2(269, 397)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bn2"]
 size = Vector2(137, 486)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovbne"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cumdk"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbe8n"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahk7w"]
+atlas = ExtResource("21_by8m6")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owj6c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovbne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cumdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbe8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahk7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
@@ -14371,6 +14409,7 @@ layer_1/tile_data = PackedInt32Array(983116, 524289, 0, 1048652, 524289, 1, 1114
 
 [node name="Player" parent="." instance=ExtResource("1_g8i7q")]
 position = Vector2(235, 916)
+scale = Vector2(1.5, 1.5)
 
 [node name="Market" parent="." instance=ExtResource("10_ot08q")]
 position = Vector2(2348, 2348)
@@ -14525,7 +14564,6 @@ scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_6e1ec")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.127392
 flip_h = true
 
 [node name="Convo" type="Label" parent="NextLevMission"]
@@ -14546,7 +14584,7 @@ autowrap_mode = 2
 [node name="ArmorCheck" type="Area2D" parent="NextLevMission"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NextLevMission/ArmorCheck"]
-position = Vector2(141.5, 104.5)
+position = Vector2(157.5, 169.5)
 shape = SubResource("RectangleShape2D_k6bp0")
 
 [node name="Pass" type="StaticBody2D" parent="NextLevMission"]
@@ -14560,7 +14598,14 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
+[node name="Goblin" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2683, 774)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_owj6c")
+
 [connection signal="timeout" from="GameHUD/WTimer" to="." method="_on_w_timer_timeout"]
+[connection signal="death_over" from="Player" to="." method="_on_player_death_over"]
 [connection signal="body_entered" from="Lev1_Mission/MissionDetect" to="Lev1_Mission" method="_on_mission_detect_body_entered"]
 [connection signal="timeout" from="Lev1_Mission/IntroTimer" to="Lev1_Mission" method="_on_intro_timer_timeout"]
 [connection signal="body_entered" from="Lev1_Mission/EndMission" to="Lev1_Mission" method="_on_end_mission_body_entered"]

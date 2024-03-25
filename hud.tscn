@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://d0ucso2y2x77o"]
+[gd_scene load_steps=10 format=3 uid="uid://d0ucso2y2x77o"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0k33q"]
 [ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="2_edks0"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="3_o8ejs"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="4_y3b8p"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://general/player_health.tscn" id="5_pcrf2"]
+[ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="6_76eap"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4x43s"]
 bg_color = Color(0, 0, 0, 1)
@@ -21,6 +22,12 @@ events = [SubResource("InputEventAction_1k7tw")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0k33q")
+
+[node name="Inventory" parent="." instance=ExtResource("6_76eap")]
+offset_left = 720.0
+offset_top = 912.0
+offset_right = 720.0
+offset_bottom = 912.0
 
 [node name="PlayerHealth" parent="." instance=ExtResource("5_pcrf2")]
 

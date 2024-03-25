@@ -12,6 +12,7 @@ func _process(delta):
 
 func _on_restart_button_pressed():
 	Livecounter.num = 100
+	Goblinkill.num = 0
 	get_tree().change_scene_to_file("res://level_1.tscn")
 
 

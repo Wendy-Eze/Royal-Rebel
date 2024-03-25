@@ -34,3 +34,8 @@ func _on_armor_check_body_entered(body):
 
 func _on_w_timer_timeout():
 	$GameHUD/PlayerHealth.value = 0
+	
+
+
+func _on_player_death_over():
+	$GameHUD/GameOverScreen.show()

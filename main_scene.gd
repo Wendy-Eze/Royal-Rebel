@@ -2,7 +2,9 @@ extends Node
 
 
 func _ready():
-	pass
+	$Player.scale *= .8
+	
+	
 	
 func _process(delta):
 	pass
@@ -25,32 +27,28 @@ func game_begins():
 	print("tutorial begins")
 	$HUD/PlayerHealth.show()
 	$HUD.show_message("Get Ready")
-	$TutorialSteps/WalkStep.show()
-	$WalkStepTime.start()
+
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()
-	$TutorialSteps/WalkStep.hide()
-	$TutorialSteps/StoreStep.hide()
-	$GoblinStepTime.start()
+	
+	
+func goblin_out():
+	$TutorialSteps/GoblinStep.hide()
 
 func store_step():
 	$TutorialSteps/StoreStep.show()
-	$TutorialSteps/WalkStep.hide()
-	$TutorialSteps/GoblinStep.hide()
-	$StoreStepTimer.start()
 
+
+func store_out():
+	$TutorialSteps/StoreStep.hide()
+	
+func walk_tut():
+	$TutorialSteps/WalkStep.show()
+
+func walk_out():
+	$TutorialSteps/WalkStep.hide()
 
 func begin_game():
 	$TutorialSteps/Start_Game.show()
-	
-func _on_goblin_step_time_timeout():
-	$TutorialSteps/GoblinStep.hide()
-	$GoblinArea/CollisionShape2D.disabled = true
 
-func _on_walk_step_time_timeout():
-	$TutorialSteps/WalkStep.hide()
-
-func _on_store_step_timer_timeout():
-	$TutorialSteps/StoreStep.hide()
-	$StoreArea/CollisionShape2D.disabled = true
