@@ -14,6 +14,13 @@ func _process(delta):
 		
 		var angle = direction.angle()
 		rotation = angle
+		
+	if Globalvar.agold:
+		$Gold.show()
+		$Iron.hide()
+	if Globalvar.adiamond:
+		$Gold.hide()
+		$Diamond.show()
 
 func set_direction(direction:Vector2):
 	self.direction = direction 
@@ -28,4 +35,5 @@ func _on_body_entered(body):
 	if body.is_in_group("player"):
 		print("arrow collected")
 		Globalvar.arrow_num += 2
+		#Globalvar.first += 1
 		queue_free()
