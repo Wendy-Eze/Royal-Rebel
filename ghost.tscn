@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt1t0h56gotsv"]
+
+[ext_resource type="Texture2D" uid="uid://84bj4r75mqw0" path="res://art/Adventurer/Individual Sprites/adventurer-attack1-00.png" id="1_60wj5"]
+[ext_resource type="Script" path="res://Ghost.gd" id="2_ues7w"]
+
+[node name="Ghost" type="Sprite2D"]
+modulate = Color(0.223529, 0.223529, 0.223529, 1)
+show_behind_parent = true
+position = Vector2(103, 67.25)
+scale = Vector2(2, 2.16)
+texture = ExtResource("1_60wj5")
+script = ExtResource("2_ues7w")

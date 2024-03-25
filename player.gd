@@ -11,8 +11,12 @@ var is_knight = false
 var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
 signal death_over
-
-
+var canDash = true
+var dashing = false
+var dashDirection = Vector2.ZERO
+var facing
+@export var ghost_node : PackedScene
+@onready var ghost_timer = $GhostTimer
 
 #Some signal is emitted
 # is knight = false (every regular animation should have not is_knight in if statement)
@@ -28,16 +32,16 @@ func get_input():
 	velocity = input_direction * speed
 	
 	if Globalvar.equip_arrow and Globalvar.ready_arrow:
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_just_pressed("bow"):
 			is_attacking = true
-			$AnimatedSprite2D.play("attack")
+			$AnimatedSprite2D.play("bow")
 			arrow()
 			$ArrowSound.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("attack") and not is_attacking:
+		if Input.is_action_just_pressed("bow") and not is_attacking:
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
@@ -73,6 +77,20 @@ func get_input():
 		$Knight.animation = "walk"
 		$Knight.flip_v = false
 		$Knight.flip_h = velocity.x < 0
+		
+func dash():
+	ghost_timer.start()
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "position", position + velocity * 1.5, 0.45)
+	await tween.finished
+	ghost_timer.stop()
+		##dashing = false
+		##canDash = true
+		
+func _input(event):
+	if event.is_action_pressed("dash"):
+		dash()
 
 
 func _physics_process(delta):
@@ -85,6 +103,30 @@ func _physics_process(delta):
 	if Livecounter.num == 0:
 		$AnimatedSprite2D.animation = "death"
 		$DeathTimer.start()
+		
+func add_ghost():
+	var ghost = ghost_node.instantiate()
+	ghost.set_property(position, $Sprite2D.scale)
+	get_tree().current_scene.add_child(ghost)
+		
+	##animations for dash
+	#if velocity.x <20:
+		#$AnimatedSprite2D.animation = "idle with sword"
+	#if Input.is_action_pressed("move_left"):
+		#$AnimatedSprite2D.animation = "walk"
+		#velocity.x = -speed
+		#dashDirection = Vector2(-1,0)
+		#facing = "move_left"
+	#elif Input.is_action_pressed("move_right"):
+		#$AnimatedSprite2D.animation = "walk"
+		#velocity.x = speed
+		#dashDirection = Vector2(1, 0)
+		#facing = "move_right"
+	##else:
+		##velocity.x = lerp(velocity.x, 0, 0.1)
+		
+		
+		
 	
 func arrow():
 	#if arrow_cooldown.is_stopped():
@@ -127,3 +169,7 @@ func _on_sword_hit_body_entered(body):
 
 func _on_death_timer_timeout():
 	death_over.emit()
+
+
+func _on_ghost_timer_timeout():
+	add_ghost()
