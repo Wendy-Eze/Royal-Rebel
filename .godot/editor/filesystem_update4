@@ -1,16 +1,3 @@
 res://level_1.tscn
-res://level_2.tscn
-res://level_3.tscn
-res://player.tscn
-res://general/arrow.tscn
-res://general/mute_button.tscn
-res://mob_mushroom.tscn
-res://mob_dog.tscn
-res://mob_bat.tscn
-res://enchanted_spawner.tscn
-res://game_hud.tscn
 res://main_scene.tscn
-res://intro/tutorial_steps.tscn
-res://hud.tscn
-res://opening_cutscene.tscn
-res://main_scene.gd
+res://player.tscn
