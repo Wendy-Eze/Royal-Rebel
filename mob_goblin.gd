@@ -45,7 +45,7 @@ func _physics_process(delta):
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
 		if Input.is_action_just_pressed("basic_melee"):
-			
+			#$AnimatedSprite2D.play("take_hit")
 			health -= damage
 			set_health_bar()
 			$HealthBar.show()
@@ -66,25 +66,28 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
-	Livecounter.num -= 20
+	#Livecounter.num -= 15
 	if position.distance_to(player_position) <= 160:
 		$DamageTimer.start()
+		print("timer started")
 	$Timer.stop()
 	
 func _on_damage_timer_timeout():
-	Livecounter.num -= 20 
+	Livecounter.num -= 15 
 	
 func _hit_by_arrow():
 	health -= damage
+	$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
 	$HealthBar.show()
 	$HealthTimer.start()
 	print("goblin was hit! ", health)
 	#arrow_hit = true
 	#set_linear_velocity((player_position - position).normalized() * speed)
-
+#
 func _hit_by_sword():
 	health -= damage
+	$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
 	$HealthTimer.start()
 	$HealthBar.show()

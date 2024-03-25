@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"take_hit",
-"speed": 5.0
+"speed": 9.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
@@ -254,8 +254,7 @@ texture_filter = 1
 position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
-frame_progress = 0.784722
+animation = &"take_hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
@@ -286,7 +285,6 @@ wait_time = 2.0
 wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
-wait_time = 2.0
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m67p")

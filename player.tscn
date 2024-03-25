@@ -118,7 +118,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"basic_melee",
-"speed": 9.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -205,10 +205,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_25dgw"]
-size = Vector2(43.0212, 8.97395)
+size = Vector2(21.6773, 3.8203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
-size = Vector2(140, 163)
+size = Vector2(140, 180.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j25c"]
 atlas = ExtResource("20_ilfo8")
@@ -314,19 +314,17 @@ texture_filter = 1
 position = Vector2(42.724, -39.5001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"death"
-frame = 1
-frame_progress = 0.133333
+animation = &"idle with sword"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AnimatedSprite2D/SwordHit"]
-position = Vector2(40.8347, 26.9218)
+position = Vector2(18.546, 4.25002)
 shape = SubResource("RectangleShape2D_25dgw")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-16.276, -6.00012)
+position = Vector2(36.5, -22.25)
 shape = SubResource("RectangleShape2D_ru3nh")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
