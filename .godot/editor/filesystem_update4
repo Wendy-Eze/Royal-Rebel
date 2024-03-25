@@ -1,3 +1,7 @@
-res://level_1.tscn
 res://main_scene.tscn
+res://level_1.tscn
 res://player.tscn
+res://player.gd
+res://Ghost.gd
+res://ghost.tscn
+res://test_scene.tscn
