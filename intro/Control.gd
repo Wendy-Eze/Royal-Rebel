@@ -1,4 +1,5 @@
 extends Control
+@onready var text_label: Label = $TextLabel
 signal start_tut
 
 

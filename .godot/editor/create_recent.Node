@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+Label
+HBoxContainer
+Panel
+MarginContainer
+CanvasLayer
+Timer
+AnimatedSprite2D
+TileMap
+TextureButton
+Button
+StaticBody2D
+CollisionShape2D
+Area2D
+AudioStreamPlayer
+=======
 CollisionShape2D
 Area2D
 AnimatedSprite2D
@@ -12,3 +28,4 @@ Button
 HBoxContainer
 MarginContainer
 TileMap
+>>>>>>> 9c92667cbb821895946b67f44c4c1881cc30dc2d

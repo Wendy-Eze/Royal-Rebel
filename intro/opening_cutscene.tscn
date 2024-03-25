@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddogjkss48hui"]
+[gd_scene load_steps=13 format=3 uid="uid://ddogjkss48hui"]
 
 [ext_resource type="Script" path="res://intro/Control.gd" id="1_pudhr"]
 [ext_resource type="Script" path="res://intro/opening_cutscene.gd" id="1_vvooe"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_2ar4t"]
 [ext_resource type="Texture2D" uid="uid://74sf4lb1ej0v" path="res://art/Untitled design (5).png" id="3_2wlkv"]
+[ext_resource type="Script" path="res://intro/Textbox.gd" id="3_g4xov"]
 [ext_resource type="Texture2D" uid="uid://d142es0kvvs7q" path="res://art/prison.png" id="4_ilvvc"]
 [ext_resource type="Texture2D" uid="uid://dtviin2b7s0ql" path="res://art/crown.png" id="5_fk2jd"]
 [ext_resource type="Texture2D" uid="uid://c08y4dp1ernjw" path="res://art/tree.png" id="6_hkv82"]
@@ -13,6 +14,14 @@ bg_color = Color(0.854902, 0, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvrbc"]
 bg_color = Color(0.505882, 0.00392157, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxsly"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rty7"]
 bg_color = Color(0.117647, 0.117647, 0.117647, 1)
@@ -32,6 +41,77 @@ offset_top = 82.0
 offset_right = 1619.0
 offset_bottom = 479.0
 script = ExtResource("1_pudhr")
+
+[node name="Textbox" type="CanvasLayer" parent="Control"]
+script = ExtResource("3_g4xov")
+
+[node name="Skip" type="Button" parent="Control/Textbox"]
+offset_left = 1504.0
+offset_top = 712.0
+offset_right = 1760.0
+offset_bottom = 768.0
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_ikwqn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gvrbc")
+text = "Skip >>>"
+
+[node name="TextboxContainer" type="MarginContainer" parent="Control/Textbox"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -368.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 45
+
+[node name="Panel" type="Panel" parent="Control/Textbox/TextboxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxsly")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Textbox/TextboxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="Panel" type="Panel" parent="Control/Textbox/TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Textbox/TextboxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Start" type="Label" parent="Control/Textbox/TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(79, 0)
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 75
+text = "*"
+
+[node name="Label" type="Label" parent="Control/Textbox/TextboxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 60
+text = "Placeholder text! The quick brown sddddssss"
+autowrap_mode = 2
+clip_text = true
+
+[node name="End" type="Label" parent="Control/Textbox/TextboxContainer/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(79, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2ar4t")
+theme_override_font_sizes/font_size = 75
+text = "->"
 
 [node name="One" type="TextureRect" parent="Control"]
 layout_mode = 0
@@ -83,18 +163,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_hkv82")
 
-[node name="Skip" type="Button" parent="Control"]
-layout_mode = 0
-offset_left = 1352.0
-offset_top = 630.0
-offset_right = 1608.0
-offset_bottom = 686.0
-theme_override_fonts/font = ExtResource("2_2ar4t")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxFlat_ikwqn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gvrbc")
-text = "Skip >>>"
-
 [node name="TextLabel" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
@@ -116,4 +184,4 @@ text = "hello"
 autowrap_mode = 2
 
 [connection signal="start_tut" from="Control" to="." method="_on_control_start_game"]
-[connection signal="pressed" from="Control/Skip" to="Control" method="_on_skip_pressed"]
+[connection signal="pressed" from="Control/Textbox/Skip" to="Control" method="_on_skip_pressed"]
