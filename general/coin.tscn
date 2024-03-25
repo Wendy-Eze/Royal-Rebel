@@ -1,8 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://d00eqvq5mds0s"]
+[gd_scene load_steps=12 format=3 uid="uid://d00eqvq5mds0s"]
 
 [ext_resource type="Script" path="res://general/coin.gd" id="1_jgbcy"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="2_8qvyl"]
+[ext_resource type="Texture2D" uid="uid://bj5blov1f1tfa" path="res://art/misc/spr_coin.png" id="2_shbro"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="3_gfkli"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ganrs"]
+atlas = ExtResource("2_shbro")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my3xx"]
+atlas = ExtResource("2_shbro")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tca5y"]
+atlas = ExtResource("2_shbro")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_va4s8"]
+atlas = ExtResource("2_shbro")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t40o7"]
+atlas = ExtResource("2_shbro")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmtkt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ganrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my3xx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tca5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_va4s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t40o7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eua35"]
 radius = 9.0
@@ -10,11 +54,20 @@ radius = 9.0
 [node name="Coin" type="Area2D"]
 script = ExtResource("1_jgbcy")
 
+[node name="CoinSprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -1)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bmtkt")
+autoplay = "default"
+frame_progress = 0.993669
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3, 3)
 shape = SubResource("CircleShape2D_eua35")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 scale = Vector2(3, 3)
 texture = ExtResource("2_8qvyl")

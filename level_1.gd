@@ -3,7 +3,8 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	$Player.scale *= 0.6
+	Globalvar.level = 1
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,9 +20,9 @@ func _process(delta):
 		$NextLevMission/Pass/CollisionShape2D.disabled = true
 	$GameHUD/WarningTimer.text = "%d" % [int($GameHUD/WTimer.time_left)]
 
-func _on_mission_timer_timeout():
-	$Panel.hide()
-	$GameHUD.show()
+#func _on_mission_timer_timeout():
+	#$Level1.hide()
+	##$GameHUD.show()
 
 func _on_armor_check_body_entered(body):
 	if body.is_in_group("player") and not Globalvar.armor_equipped:
@@ -39,3 +40,4 @@ func _on_w_timer_timeout():
 
 func _on_player_death_over():
 	$GameHUD/GameOverScreen.show()
+	$GameHUD/PlayerHealth.hide()

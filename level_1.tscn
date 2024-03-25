@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -20,7 +20,6 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
-[ext_resource type="Texture2D" uid="uid://dg18vsyay3sbx" path="res://art/Mob Art/goblin1/Idle.png" id="21_by8m6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14120,14 +14119,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aanij"]
-bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
-border_width_left = 30
-border_width_top = 30
-border_width_right = 30
-border_width_bottom = 30
-border_color = Color(0.501961, 0.329412, 0.0901961, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2c1g"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
 border_width_left = 15
@@ -14281,41 +14272,9 @@ size = Vector2(269, 397)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bn2"]
 size = Vector2(137, 486)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ovbne"]
-atlas = ExtResource("21_by8m6")
-region = Rect2(0, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cumdk"]
-atlas = ExtResource("21_by8m6")
-region = Rect2(150, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cbe8n"]
-atlas = ExtResource("21_by8m6")
-region = Rect2(300, 0, 150, 150)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahk7w"]
-atlas = ExtResource("21_by8m6")
-region = Rect2(450, 0, 150, 150)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_owj6c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ovbne")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cumdk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cbe8n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ahk7w")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="FontVariation" id="FontVariation_c0vy4"]
+base_font = ExtResource("17_r4l8p")
+spacing_glyph = 50
 
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
@@ -14357,7 +14316,6 @@ theme_override_font_sizes/font_size = 20
 text = "1st Level"
 
 [node name="GameHUD" parent="." instance=ExtResource("3_ouwdk")]
-visible = false
 
 [node name="Warning" type="Label" parent="GameHUD"]
 visible = false
@@ -14409,7 +14367,6 @@ layer_1/tile_data = PackedInt32Array(983116, 524289, 0, 1048652, 524289, 1, 1114
 
 [node name="Player" parent="." instance=ExtResource("1_g8i7q")]
 position = Vector2(235, 916)
-scale = Vector2(1.5, 1.5)
 
 [node name="Market" parent="." instance=ExtResource("10_ot08q")]
 position = Vector2(2348, 2348)
@@ -14430,38 +14387,25 @@ sprite_frames = SubResource("SpriteFrames_hr6j8")
 autoplay = "default"
 frame_progress = 0.0953929
 
-[node name="Panel" type="Panel" parent="."]
-z_index = 1
-offset_left = 436.0
-offset_top = 424.0
-offset_right = 2300.0
-offset_bottom = 1366.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_aanij")
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 125.0
-offset_top = 140.0
-offset_right = 1722.0
-offset_bottom = 791.0
-theme_override_fonts/font = ExtResource("17_r4l8p")
-theme_override_font_sizes/font_size = 80
-text = "Level 1
-
-
-1. Speak with Mayor 
-
-Collect Reward at the end of mission!!"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
 [node name="Lev1_Mission" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("16_i6hpv")
+
+[node name="Help" type="Label" parent="Lev1_Mission"]
+layout_mode = 0
+offset_left = 1283.0
+offset_top = 729.0
+offset_right = 1665.0
+offset_bottom = 813.0
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_y2c1g")
+text = "Help! Help!"
+autowrap_mode = 2
 
 [node name="Intro" type="Label" parent="Lev1_Mission"]
 visible = false
@@ -14556,6 +14500,7 @@ offset_left = 10794.0
 offset_top = 2034.0
 offset_right = 11158.0
 offset_bottom = 2233.0
+metadata/_edit_group_ = true
 
 [node name="Knight" type="AnimatedSprite2D" parent="NextLevMission"]
 texture_filter = 1
@@ -14593,16 +14538,26 @@ shape = SubResource("RectangleShape2D_k6bp0")
 position = Vector2(364, 98)
 shape = SubResource("RectangleShape2D_01bn2")
 
+[node name="Level1" type="Label" parent="."]
+visible = false
+offset_left = 587.0
+offset_top = 126.0
+offset_right = 2539.0
+offset_bottom = 729.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = SubResource("FontVariation_c0vy4")
+theme_override_font_sizes/font_size = 200
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="MissionTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
-autostart = true
-
-[node name="Goblin" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(2683, 774)
-scale = Vector2(6, 6)
-sprite_frames = SubResource("SpriteFrames_owj6c")
 
 [connection signal="timeout" from="GameHUD/WTimer" to="." method="_on_w_timer_timeout"]
 [connection signal="death_over" from="Player" to="." method="_on_player_death_over"]

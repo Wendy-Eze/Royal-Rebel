@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=21 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="9_ops20"]
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
 [ext_resource type="Texture2D" uid="uid://c02klxxt6nqfq" path="res://art/setting.png" id="11_m028w"]
+[ext_resource type="Texture2D" uid="uid://c5num5vcy1txr" path="res://art/arrow/iron arrow.png" id="12_if1a4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
@@ -28,6 +29,32 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.4, 0.290196, 0.101961, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_6cfyf"]
+base_font = ExtResource("6_nqeuc")
+spacing_glyph = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgj28"]
+bg_color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.286275, 0.196078, 0.0509804, 1)
+expand_margin_right = 20.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiij4"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.372549, 0.262745, 0.0156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oict3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+shadow_size = 190
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -124,4 +151,137 @@ offset_right = 1814.0
 offset_bottom = 861.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
 
+[node name="Level1" type="Label" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -81.0
+offset_right = 1925.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = SubResource("FontVariation_6cfyf")
+theme_override_font_sizes/font_size = 100
+text = "Level 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level2" type="Label" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -81.0
+offset_right = 1925.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = SubResource("FontVariation_6cfyf")
+theme_override_font_sizes/font_size = 100
+text = "Level 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Level3" type="Label" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -81.0
+offset_right = 1925.0
+offset_bottom = 522.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = SubResource("FontVariation_6cfyf")
+theme_override_font_sizes/font_size = 100
+text = "Level 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Coin_collected" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 1457.0
+offset_top = 155.0
+offset_right = 1881.0
+offset_bottom = 256.0
+theme_override_fonts/font = ExtResource("6_nqeuc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgj28")
+text = "Gained +10 coins"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Coin_collected"]
+position = Vector2(58, 53)
+scale = Vector2(3.28125, 3.1875)
+texture = ExtResource("5_xqipu")
+
+[node name="Arrow_collected" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 1457.0
+offset_top = 274.0
+offset_right = 1881.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("6_nqeuc")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgj28")
+text = "Gained +2 arrows"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow_collected"]
+position = Vector2(56, 51)
+rotation = -0.689405
+scale = Vector2(1.1875, 1.15357)
+texture = ExtResource("12_if1a4")
+
+[node name="CollectTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Story2" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Story2"]
+visible = false
+offset_left = 377.0
+offset_top = 766.0
+offset_right = 1643.0
+offset_bottom = 861.0
+theme_override_fonts/font = ExtResource("6_nqeuc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_eiij4")
+text = "I need to speak with the king. "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Story2Timer" type="Timer" parent="Story2"]
+wait_time = 3.0
+
+[node name="Shadow" type="Panel" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -155.0
+offset_right = 2024.0
+offset_bottom = 39.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
+
+[node name="Shadow1" type="Panel" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = 1002.0
+offset_right = 2024.0
+offset_bottom = 1200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
+[connection signal="timeout" from="Story2/Story2Timer" to="." method="_on_story_2_timer_timeout"]
