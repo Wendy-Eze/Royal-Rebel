@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://v6iejn0563cr"]
+
+[ext_resource type="Script" path="res://animated_sprite_2d.gd" id="1_5wet1"]
+[ext_resource type="Texture2D" uid="uid://db3ed5yciuoy3" path="res://art/knight-sprite.png" id="2_yp4ew"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhx50"]
+radius = 6.0
+height = 20.0
+
+[node name="mob_knight" type="CharacterBody2D"]
+position = Vector2(280, 266)
+script = ExtResource("1_5wet1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yp4ew")
+hframes = 4
+vframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 2)
+shape = SubResource("CapsuleShape2D_yhx50")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(9, 11)
+target_position = Vector2(0, 80)
