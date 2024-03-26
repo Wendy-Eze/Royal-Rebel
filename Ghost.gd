@@ -16,3 +16,4 @@ func ghosting():
 	tween_fade.tween_property(self, "self_modulate", Color(1, 1, 1, 0),0.75)
 	await tween_fade.finished
 	queue_free()
+
