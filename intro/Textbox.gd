@@ -22,12 +22,15 @@ var text_queue = []
 func _ready():
 	print("Starting state: State.READY")
 	hide_textbox()
-	queue_text("The kingdom of Avalon has been under the stifling rule of the corrupt King Zephyr for many, many years.")
-	queue_text("Citizens of Avalon have been struggling under the weight of increasing taxes and mass incarceration by the kingsmen.")
+	queue_text("The kingdom of Avalon has been under the stifling rule of the corrupt King Zephyr")
+	queue_text("for many, many years.")
+	queue_text("Citizens of Avalon have been struggling under the weight of increasing taxes and mass")
+	queue_text("incarceration by the kingsmen.")
 	queue_text("Anyone against his regime will be thrown into jail, never to see the light of day again.")
-	queue_text("News has spread that King plans to turn everyone in Avalon into mindless puppets to do his bidding...")
-	queue_text("...using the power of a legendary Diadem, thought only to be a myth.")
-	queue_text("Because the journey is too dangerous for others, you, the Royal Rebel, must travel through uncharted wilderness alone...")
+	queue_text("News has spread that King plans to turn everyone in Avalon into mindless puppets to do")
+	queue_text("his bidding using the power of a legendary Diadem, thought only to be a myth.")
+	queue_text("Because the journey is too dangerous for others, you, the Royal Rebel, must travel")
+	queue_text("through uncharted wilderness alone...")
 	queue_text("...to find and destroy the diadem before the King finds it!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
