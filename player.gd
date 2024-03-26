@@ -11,9 +11,6 @@ var is_knight = false
 var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
 signal death_over
-var canDash = true
-var dashing = false
-var dashDirection = Vector2.ZERO
 var facing
 @export var ghost_node : PackedScene
 @onready var ghost_timer = $GhostTimer
@@ -31,21 +28,26 @@ func get_input():
 	var input_direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = input_direction * speed
 	
+	if Input.is_action_just_pressed("dash"):
+			$AnimatedSprite2D.play("dash")
+	
 	if Globalvar.equip_arrow and Globalvar.ready_arrow:
-		if Input.is_action_just_pressed("bow"):
+		if Input.is_action_just_pressed("attack"):
 			is_attacking = true
-			$AnimatedSprite2D.play("bow")
+			$AnimatedSprite2D.play("attack")
 			arrow()
 			$ArrowSound.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
+		
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("bow") and not is_attacking:
+		if Input.is_action_just_pressed("attack") and not is_attacking:
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
 			$SwordSound.play()
+			
 			
 	if Globalvar.has_armor:
 		if Input.is_action_just_pressed("knight"):
@@ -64,9 +66,11 @@ func get_input():
 			walking = true
 
 	else:
-		if not is_attacking:
+		if not is_attacking and not Globalvar.equip_sword:
 			$AnimatedSprite2D.play("idle")
 			$Knight.play("idle")
+		if not is_attacking and Globalvar.equip_sword:
+			$AnimatedSprite2D.play("idle with sword")
 		$WalkTimer.stop()
 		walking = false
 		
@@ -109,22 +113,10 @@ func add_ghost():
 	var ghost = ghost_node.instantiate()
 	ghost.set_property(position, $Sprite2D.scale)
 	get_tree().current_scene.add_child(ghost)
+	ghost.flip_h = $AnimatedSprite2D.flip_h
+	ghost.flip_v = $AnimatedSprite2D.flip_v
 		
-	##animations for dash
-	#if velocity.x <20:
-		#$AnimatedSprite2D.animation = "idle with sword"
-	#if Input.is_action_pressed("move_left"):
-		#$AnimatedSprite2D.animation = "walk"
-		#velocity.x = -speed
-		#dashDirection = Vector2(-1,0)
-		#facing = "move_left"
-	#elif Input.is_action_pressed("move_right"):
-		#$AnimatedSprite2D.animation = "walk"
-		#velocity.x = speed
-		#dashDirection = Vector2(1, 0)
-		#facing = "move_right"
-	##else:
-		##velocity.x = lerp(velocity.x, 0, 0.1)
+
 		
 		
 		

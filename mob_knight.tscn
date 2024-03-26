@@ -12,6 +12,7 @@ position = Vector2(280, 266)
 script = ExtResource("1_5wet1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("2_yp4ew")
 hframes = 4
 vframes = 6

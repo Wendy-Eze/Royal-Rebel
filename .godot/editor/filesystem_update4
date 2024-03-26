@@ -4,6 +4,12 @@ res://level_1.tscn
 res://player.tscn
 res://ghost.tscn
 res://test_scene.tscn
+
 res://mob_knight.tscn
 res://hud.tscn
 res://level_2.tscn
+
+res://level_2.tscn
+res://player.gd
+res://Ghost.gd
+
