@@ -47,3 +47,13 @@ func _on_k_area_body_entered(body):
 		$MainMap/Kingdom/Housing.tile_set.set_physics_layer_collision_layer(0,1)
 		$MainMap/Kingdom/Pillars.tile_set.set_physics_layer_collision_layer(0,1)
 		$MainMap/TileMap4.tile_set.set_physics_layer_collision_layer(0,1)
+
+
+
+
+func _on_begin_body_entered(body):
+	$Dialogue/Label.show()
+
+
+func _on_begin_body_exited(body):
+	$Dialogue/Label.hide()

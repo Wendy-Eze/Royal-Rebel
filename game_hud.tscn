@@ -268,17 +268,17 @@ wait_time = 3.0
 [node name="Shadow" type="Panel" parent="."]
 visible = false
 offset_left = -27.0
-offset_top = -155.0
+offset_top = -119.0
 offset_right = 2024.0
-offset_bottom = 39.0
+offset_bottom = 75.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
 
 [node name="Shadow1" type="Panel" parent="."]
 visible = false
 offset_left = -27.0
-offset_top = 1002.0
+offset_top = 935.0
 offset_right = 2024.0
-offset_bottom = 1200.0
+offset_bottom = 1133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

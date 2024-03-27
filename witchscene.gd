@@ -24,19 +24,19 @@ func _on_area_2d_body_entered(body):
 		Globalvar.witch_shown = true
 		if not talk_started:
 			talk_started = true
-			$Talk.show()
+			$WitchDialogue/Talk.show()
 			$Timer.start()
 
 
 func _on_timer_timeout():
 	#index += 1
 	if index < dialogue.size():
-		$Talk.text = dialogue[index]
-		$Timer.start(3)
+		$WitchDialogue/Talk.text = dialogue[index]
+		$Timer.start(5)
 		index += 1
 	else:
 		$Timer.stop()
-		$Talk.hide()
+		$WitchDialogue/Talk.hide()
 		$Portal.show()
 		$Portal/CollisionShape2D.disabled = false
 		
