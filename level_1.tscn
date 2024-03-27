@@ -14562,6 +14562,7 @@ one_shot = true
 [connection signal="timeout" from="GameHUD/WTimer" to="." method="_on_w_timer_timeout"]
 [connection signal="death_over" from="Player" to="." method="_on_player_death_over"]
 [connection signal="body_entered" from="Lev1_Mission/MissionDetect" to="Lev1_Mission" method="_on_mission_detect_body_entered"]
+[connection signal="body_exited" from="Lev1_Mission/MissionDetect" to="Lev1_Mission" method="_on_mission_detect_body_exited"]
 [connection signal="timeout" from="Lev1_Mission/IntroTimer" to="Lev1_Mission" method="_on_intro_timer_timeout"]
 [connection signal="body_entered" from="Lev1_Mission/EndMission" to="Lev1_Mission" method="_on_end_mission_body_entered"]
 [connection signal="timeout" from="Lev1_Mission/OutroTimer" to="Lev1_Mission" method="_on_outro_timer_timeout"]

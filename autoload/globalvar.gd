@@ -9,6 +9,10 @@ var arrow_num = 30
 var has_armor = false
 var armor_equipped = false
 
+#Dungeon + Kingdom 
+var in_dungeon = false
+#var in_kingdom = false
+
 
 #Inventory Purposes
 var equip_arrow = false

@@ -5,6 +5,7 @@ extends Node
 func _ready():
 	$Player.scale *= 0.6
 	Globalvar.level = 3
+	Globalvar.witch_shown = false 
 	#pass # Replace with function body.
 
 
