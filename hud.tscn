@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_0k33q"]
 [ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="2_edks0"]
-[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="3_o8ejs"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="4_y3b8p"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="5_d8sg3"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://general/player_health.tscn" id="5_pcrf2"]
 [ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="6_76eap"]
 
@@ -51,8 +51,8 @@ offset_right = 240.0
 offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_o8ejs")
-theme_override_font_sizes/font_size = 120
+theme_override_fonts/font = ExtResource("5_d8sg3")
+theme_override_font_sizes/font_size = 140
 text = "Royal 
 Rebel"
 horizontal_alignment = 1
@@ -71,11 +71,11 @@ offset_right = 56.0
 offset_bottom = -193.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("3_o8ejs")
+theme_override_fonts/font = ExtResource("5_d8sg3")
 theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxFlat_4x43s")
 shortcut = SubResource("Shortcut_v3frc")
-text = "Start"
+text = "START"
 metadata/_edit_use_anchors_ = true
 
 [node name="MessageTimer" type="Timer" parent="."]
