@@ -16,7 +16,7 @@ func _process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and not Globalvar.in_dungeon:
 		Globalvar.entered_kingdom = true
 		$Timer.start()
 

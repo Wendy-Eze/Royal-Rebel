@@ -29,6 +29,12 @@ func _on_d_area_body_entered(body):
 		$MainMap/Kingdom/Housing.tile_set.set_physics_layer_collision_layer(0,0)
 		$MainMap/Kingdom/Pillars.tile_set.set_physics_layer_collision_layer(0,0)
 		$MainMap/TileMap4.tile_set.set_physics_layer_collision_layer(0,0)
+		$MainMap/WitchScene/StaticBody2D/CollisionShape2D.disabled = true 
+		$MainMap/WitchScene/Portal/CollisionShape2D.disabled = true 
+		#$MainMap/PlayerScene/Area2D/CollisionShape2D.disabled = true 
+		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
+		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
+		$MainMap/Fountain/StaticBody2D.collision_layer = 0
 		
 		Globalvar.in_dungeon = true
 
@@ -38,7 +44,7 @@ func _on_k_area_body_entered(body):
 		$DungeonMap.hide()
 		Globalvar.in_dungeon = false
 		$MainMap.show()
-		$Player.position = Vector2(7789,500)
+		$Player.position = Vector2(7789,980)
 		$MainMap/Kingdom.tile_set.set_physics_layer_collision_mask(0,1)
 		$MainMap/Kingdom/Housing.tile_set.set_physics_layer_collision_mask(0,1)
 		$MainMap/Kingdom/Pillars.tile_set.set_physics_layer_collision_mask(0,1)
@@ -47,13 +53,16 @@ func _on_k_area_body_entered(body):
 		$MainMap/Kingdom/Housing.tile_set.set_physics_layer_collision_layer(0,1)
 		$MainMap/Kingdom/Pillars.tile_set.set_physics_layer_collision_layer(0,1)
 		$MainMap/TileMap4.tile_set.set_physics_layer_collision_layer(0,1)
-
-
-
-
+		$MainMap/WitchScene/StaticBody2D/CollisionShape2D.disabled = false 
+		$MainMap/WitchScene/Portal/CollisionShape2D.disabled = false 
+		$MainMap/WitchScene/StaticBody2D.collision_layer = 1
+		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
+		$MainMap/Fountain/StaticBody2D.collision_layer = 1
+		
 func _on_begin_body_entered(body):
 	$Dialogue/Label.show()
 
 
 func _on_begin_body_exited(body):
 	$Dialogue/Label.hide()
+
