@@ -158,8 +158,6 @@ func _on_sword_hit_body_entered(body):
 		print("touched enemy")
 		goblin_hit.emit()
 
-
-
 func _on_death_timer_timeout():
 	death_over.emit()
 
