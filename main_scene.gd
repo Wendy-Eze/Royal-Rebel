@@ -2,7 +2,7 @@ extends Node
 
 
 func _ready():
-	$Player.scale *= .8
+	$Player.scale *= .6
 
 func _process(delta):
 	pass

@@ -28,3 +28,12 @@ func _physics_process(delta):
 	
 	if health <= 0:
 		queue_free()
+		
+	if Globalvar.in_dungeon:
+		$CollisionShape2D.disabled = true
+		$RayCast2D.enabled = false 
+		hide()
+	if not Globalvar.in_dungeon:
+		$CollisionShape2D.disabled = false
+		$RayCast2D.enabled = true 
+		show()

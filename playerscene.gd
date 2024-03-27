@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,10 +8,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	#if Globalvar.missions == 0:
-		#$Area2D/CollisionShape2D.disabled = false
-		#Globalvar.missions += 1
+	
+	if Globalvar.missions == 0:
+		$Area2D/CollisionShape2D.disabled = false
+		Globalvar.missions += 1
 		
 
 
