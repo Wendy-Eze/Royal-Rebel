@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=64 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c1i3x2wl01qsh" path="res://art/addedwater.png" id="3_srgpc"]
 [ext_resource type="PackedScene" uid="uid://ctde7gqgg0sxr" path="res://mob_spawner.tscn" id="4_nxpkb"]
 [ext_resource type="Texture2D" uid="uid://be3gjxcnxehov" path="res://art/bridgev1.png" id="9_g5e04"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="9_k1uxt"]
 [ext_resource type="PackedScene" uid="uid://cl4ra1npuv3u5" path="res://level_1_files/market.tscn" id="10_ot08q"]
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="11_dao2s"]
 [ext_resource type="Texture2D" uid="uid://88givuk35ta7" path="res://art/map art/Dream_Island/village.png" id="12_6ygea"]
@@ -17,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://qemu03d8ar8f" path="res://art/npc/Female2.png" id="15_k7fbx"]
 [ext_resource type="Texture2D" uid="uid://bfjo1rnxe6vss" path="res://art/npc/Male2.png" id="16_63cpt"]
 [ext_resource type="Script" path="res://level_1_files/lev1_mission.gd" id="16_i6hpv"]
-[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="17_r4l8p"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
 
@@ -2976,10 +2976,6 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_qlsd7")
 sources/1 = SubResource("TileSetAtlasSource_rkpuq")
 sources/3 = SubResource("TileSetAtlasSource_5xega")
-
-[sub_resource type="FontVariation" id="FontVariation_d1rma"]
-base_font = ExtResource("17_r4l8p")
-spacing_glyph = 15
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be78s"]
 texture = ExtResource("11_dao2s")
@@ -14272,10 +14268,6 @@ size = Vector2(269, 397)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01bn2"]
 size = Vector2(137, 486)
 
-[sub_resource type="FontVariation" id="FontVariation_c0vy4"]
-base_font = ExtResource("17_r4l8p")
-spacing_glyph = 50
-
 [node name="Level 1" type="Node"]
 script = ExtResource("1_c8meh")
 
@@ -14314,6 +14306,8 @@ offset_right = 171.0
 offset_bottom = 351.0
 theme_override_font_sizes/font_size = 20
 text = "1st Level"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameHUD" parent="." instance=ExtResource("3_ouwdk")]
 
@@ -14326,9 +14320,11 @@ offset_right = 1211.0
 offset_bottom = 372.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = SubResource("FontVariation_d1rma")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 100
 text = "WARNING!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Warning_Message" type="Label" parent="GameHUD"]
 visible = false
@@ -14337,9 +14333,11 @@ offset_left = 519.0
 offset_top = 393.0
 offset_right = 1325.0
 offset_bottom = 439.0
-theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 50
 text = "Equip armor to escape gaurds!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WTimer" type="Timer" parent="GameHUD"]
 wait_time = 15.0
@@ -14351,7 +14349,7 @@ offset_left = 890.0
 offset_top = 179.0
 offset_right = 944.0
 offset_bottom = 261.0
-theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 90
 text = "0"
 
@@ -14396,43 +14394,49 @@ script = ExtResource("16_i6hpv")
 
 [node name="Help" type="Label" parent="Lev1_Mission"]
 layout_mode = 0
-offset_left = 1283.0
-offset_top = 729.0
-offset_right = 1665.0
-offset_bottom = 813.0
+offset_left = 1345.0
+offset_top = 727.0
+offset_right = 1645.0
+offset_bottom = 828.0
 theme_override_constants/line_spacing = 10
-theme_override_fonts/font = ExtResource("17_r4l8p")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("9_k1uxt")
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_y2c1g")
 text = "Help! Help!"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Intro" type="Label" parent="Lev1_Mission"]
 visible = false
 layout_mode = 0
-offset_left = 1032.0
-offset_top = 498.0
-offset_right = 2265.0
-offset_bottom = 774.0
+offset_left = 979.0
+offset_top = 599.0
+offset_right = 2014.0
+offset_bottom = 829.0
 theme_override_constants/line_spacing = 10
-theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_y2c1g")
-text = "Hello! I am the Mayor of this town. If you could eliminate the goblins, I have a reward that would be helfpul to you mission."
+text = "Hello! I am the Mayor of this town. If you could eliminate the goblins, I have a reward that would be helfpul to your mission."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Outro" type="Label" parent="Lev1_Mission"]
 visible = false
 layout_mode = 0
-offset_left = 1032.0
-offset_top = 498.0
-offset_right = 2255.0
-offset_bottom = 774.0
+offset_left = 1058.0
+offset_top = 579.0
+offset_right = 1932.0
+offset_bottom = 829.0
 theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_da58c")
-text = "Hooray! You've gotten rid of all the goblins. Here's is a reward to aid your mission. Go stop the King!!"
+text = "Hooray! You've gotten rid of all the goblins. Here is a reward to aid your mission. Go stop the King!!"
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Mayor" type="Label" parent="Lev1_Mission"]
@@ -14441,9 +14445,10 @@ offset_left = 1414.0
 offset_top = 1153.0
 offset_right = 1572.0
 offset_bottom = 1199.0
-theme_override_fonts/font = ExtResource("17_r4l8p")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 50
-text = "Mayor"
+text = "MAYOR"
+horizontal_alignment = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Lev1_Mission"]
 position = Vector2(1494, 1030)
@@ -14512,17 +14517,17 @@ autoplay = "idle"
 flip_h = true
 
 [node name="Convo" type="Label" parent="NextLevMission"]
-visible = false
 z_index = 1
 layout_mode = 0
-offset_left = -156.0
-offset_top = -282.0
-offset_right = 488.0
-offset_bottom = -27.0
-theme_override_fonts/font = ExtResource("17_r4l8p")
+offset_left = -104.0
+offset_top = -227.0
+offset_right = 441.0
+offset_bottom = -11.0
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 60
 theme_override_styles/normal = SubResource("StyleBoxFlat_i0cbg")
-text = "YOU! WE NEED BACKUP! THE ROYAL REBEL HAS BEEN SPOTTED."
+text = "YOU! We need backup! The Royal Rebel has been spotted!"
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -14548,7 +14553,7 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 40
-theme_override_fonts/font = SubResource("FontVariation_c0vy4")
+theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 200
 text = "Level 1"
 horizontal_alignment = 1

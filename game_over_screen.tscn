@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_over_screen.gd" id="1_3vxe7"]
 [ext_resource type="Texture2D" uid="uid://0kxj26cvgmtu" path="res://art/GAME OVER.png" id="1_ges8w"]
-[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="2_pnq4l"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="3_yy6ha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyg0v"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -31,8 +31,8 @@ offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_pnq4l")
-theme_override_font_sizes/font_size = 120
+theme_override_fonts/font = ExtResource("3_yy6ha")
+theme_override_font_sizes/font_size = 140
 text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -51,8 +51,8 @@ offset_right = -0.720093
 offset_bottom = 0.279968
 grow_horizontal = 2
 tooltip_text = "restart level!"
-theme_override_fonts/font = ExtResource("2_pnq4l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("3_yy6ha")
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_oyg0v")
 text = "RESTART"
 
@@ -69,8 +69,8 @@ offset_right = -8.64014
 offset_bottom = -0.480042
 tooltip_text = "quit to home screen!
 "
-theme_override_fonts/font = ExtResource("2_pnq4l")
-theme_override_font_sizes/font_size = 60
+theme_override_fonts/font = ExtResource("3_yy6ha")
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxFlat_jajke")
 text = "QUIT"
 
