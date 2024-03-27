@@ -11,6 +11,7 @@ var armor_equipped = false
 
 #Dungeon + Kingdom 
 var in_dungeon = false
+var mission_done = false
 #var in_kingdom = false
 
 

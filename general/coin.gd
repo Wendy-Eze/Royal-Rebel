@@ -8,5 +8,6 @@ func _on_body_entered(body):
 		Globalvar.first += 1
 		$Collect.play()
 		$Sprite2D.hide()
+		$CoinSprite.hide()
 		await $Collect.finished
 		queue_free()

@@ -105,9 +105,9 @@ text = "0"
 metadata/_edit_use_anchors_ = true
 
 [node name="KillCount_G" parent="." instance=ExtResource("7_tja4w")]
-offset_left = 656.0
+offset_left = 862.0
 offset_top = 22.0
-offset_right = 696.0
+offset_right = 902.0
 offset_bottom = 62.0
 
 [node name="Inventory" parent="." instance=ExtResource("8_7m88t")]
@@ -127,21 +127,22 @@ grow_vertical = 0
 stream = ExtResource("9_ops20")
 
 [node name="ArrowDisplay" type="Sprite2D" parent="."]
-position = Vector2(1032, 62)
+position = Vector2(730, 58)
 scale = Vector2(0.223958, 0.223958)
 texture = ExtResource("10_o36cw")
 
 [node name="ArrowDisplay" type="Label" parent="ArrowDisplay"]
 texture_filter = 1
-offset_left = 290.233
-offset_top = -178.605
-offset_right = 500.233
-offset_bottom = 137.395
+offset_left = 290.232
+offset_top = -160.744
+offset_right = 500.232
+offset_bottom = 155.256
 theme_override_fonts/font = ExtResource("6_nqeuc")
-theme_override_font_sizes/font_size = 325
+theme_override_font_sizes/font_size = 275
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Panel" parent="."]
 visible = false
