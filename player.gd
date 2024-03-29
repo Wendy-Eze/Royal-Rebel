@@ -39,7 +39,9 @@ func get_input():
 			$ArrowSound.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
-		
+			
+	
+	
 	
 	if Globalvar.equip_sword:
 		if Input.is_action_just_pressed("attack") and not is_attacking:
@@ -66,11 +68,13 @@ func get_input():
 			walking = true
 
 	else:
-		if not is_attacking and not Globalvar.equip_sword:
+		if not is_attacking and not Globalvar.equip_sword and not Globalvar.equip_arrow:
 			$AnimatedSprite2D.play("idle")
 			$Knight.play("idle")
 		if not is_attacking and Globalvar.equip_sword:
 			$AnimatedSprite2D.play("idle with sword")
+		if not is_attacking and Globalvar.equip_arrow:
+			$AnimatedSprite2D.play("idle with bow")
 		$WalkTimer.stop()
 		walking = false
 		
