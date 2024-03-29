@@ -1,10 +1,8 @@
-[gd_scene load_steps=64 format=3 uid="uid://5dawxk67ob32"]
+[gd_scene load_steps=66 format=3 uid="uid://5dawxk67ob32"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_lmqur"]
 [ext_resource type="PackedScene" uid="uid://dt1t0h56gotsv" path="res://ghost.tscn" id="2_im7he"]
-[ext_resource type="Texture2D" uid="uid://dakm6hwpigtq3" path="res://art/Player Art/attack_0.png" id="2_wdcso"]
-[ext_resource type="Texture2D" uid="uid://dp03l8tqxkqr6" path="res://art/Player Art/attack_1.png" id="3_qpvlx"]
-[ext_resource type="Texture2D" uid="uid://ccihnk2hcyoce" path="res://art/Player Art/attack_2.png" id="4_j414i"]
+[ext_resource type="Texture2D" uid="uid://bmw16e6bfgut8" path="res://adventurer-Sheet (1)/l0_sprite_5.png" id="4_42n8d"]
 [ext_resource type="Texture2D" uid="uid://84bj4r75mqw0" path="res://art/Adventurer/Individual Sprites/adventurer-attack1-00.png" id="5_v6ll3"]
 [ext_resource type="Texture2D" uid="uid://dm1nfqx7351i4" path="res://art/Adventurer/Individual Sprites/adventurer-attack1-01.png" id="6_44ry4"]
 [ext_resource type="Texture2D" uid="uid://bxegw7rlafiqs" path="res://art/Adventurer/Individual Sprites/adventurer-attack1-02.png" id="7_qrol1"]
@@ -44,13 +42,25 @@
 [ext_resource type="Texture2D" uid="uid://dhg0dycynwa0x" path="res://art/Adventurer/Individual Sprites/adventurer-run-00.png" id="30_f4q4o"]
 [ext_resource type="Texture2D" uid="uid://uim40sh3axh7" path="res://art/Adventurer/Individual Sprites/adventurer-run-01.png" id="31_4mf8e"]
 [ext_resource type="Texture2D" uid="uid://uc1e44r572vp" path="res://art/Adventurer/Individual Sprites/adventurer-run-02.png" id="32_dokfn"]
+[ext_resource type="Texture2D" uid="uid://capu1yxrsavjw" path="res://adventurer-Sheet (1)/l0_sprite_1.png" id="32_e85rh"]
 [ext_resource type="Texture2D" uid="uid://u836gch0016i" path="res://art/Adventurer/Individual Sprites/adventurer-run-03.png" id="33_eqsm0"]
+[ext_resource type="Texture2D" uid="uid://jp73ycvsgae" path="res://adventurer-Sheet (1)/l0_sprite_2.png" id="33_v84pg"]
 [ext_resource type="Texture2D" uid="uid://1lo603rkav1s" path="res://art/Adventurer/Individual Sprites/adventurer-run-04.png" id="34_7ybb8"]
+[ext_resource type="Texture2D" uid="uid://bi4qvbeslbwfx" path="res://adventurer-Sheet (1)/l0_sprite_3.png" id="34_gvx4s"]
+[ext_resource type="Texture2D" uid="uid://ckcxp33q8rfwk" path="res://adventurer-Sheet (1)/l0_sprite_4.png" id="35_l8hec"]
 [ext_resource type="Texture2D" uid="uid://byqyov44d63gi" path="res://art/Adventurer/Individual Sprites/adventurer-run-05.png" id="35_ub55g"]
 [ext_resource type="AudioStream" uid="uid://di47w1wr6upxk" path="res://music/sword_flesh_sound.mp3" id="47_48hqm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uy2tr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_42n8d")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("5_v6ll3")
@@ -109,20 +119,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wdcso")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_qpvlx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_j414i")
-}],
-"loop": false,
-"name": &"bow",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("5_v6ll3")
 }],
 "loop": true,
@@ -170,6 +166,23 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_e85rh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_v84pg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_gvx4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l8hec")
+}],
+"loop": true,
+"name": &"idle with bow",
 "speed": 5.0
 }, {
 "frames": [{
@@ -356,7 +369,7 @@ volume_db = -35.0
 wait_time = 0.45
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(63, 13.9999)
+position = Vector2(122.5, -63)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)
