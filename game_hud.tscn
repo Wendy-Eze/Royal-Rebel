@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=24 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -29,6 +29,15 @@ border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0.4, 0.290196, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed1sp"]
+bg_color = Color(1, 0.352941, 0.141176, 1)
+
+[sub_resource type="InputEventAction" id="InputEventAction_islaw"]
+action = &"menu"
+
+[sub_resource type="Shortcut" id="Shortcut_wpgax"]
+events = [SubResource("InputEventAction_islaw")]
 
 [sub_resource type="FontVariation" id="FontVariation_6cfyf"]
 base_font = ExtResource("6_nqeuc")
@@ -145,12 +154,21 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Panel" parent="."]
+process_mode = 2
 visible = false
 offset_left = 696.0
 offset_top = 155.0
 offset_right = 1814.0
 offset_bottom = 861.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
+
+[node name="ExitButton" type="Button" parent="Menu"]
+offset_left = 918.0
+offset_top = 45.0
+offset_right = 1054.0
+offset_bottom = 83.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ed1sp")
+shortcut = SubResource("Shortcut_wpgax")
 
 [node name="Level1" type="Label" parent="."]
 visible = false
@@ -283,6 +301,7 @@ offset_bottom = 1133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
 [connection signal="timeout" from="Story2/Story2Timer" to="." method="_on_story_2_timer_timeout"]
