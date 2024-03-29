@@ -1,14 +1,4 @@
-res://level_2.tscn
+res://level_3.tscn
 res://main_scene.tscn
-res://knightkey.tscn
-res://mob_knight.tscn
-res://dungeon.tscn
 res://player.tscn
-res://game_hud.tscn
-res://general/coin.tscn
-res://general/arrow.tscn
-res://game_hud.gd
-res://mob_goblin.gd
-res://main_scene.gd
-res://player.gd
 res://level_1.tscn

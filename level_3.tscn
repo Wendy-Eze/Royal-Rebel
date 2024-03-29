@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=56 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="25_lixw8"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="26_mdq05"]
 [ext_resource type="Texture2D" uid="uid://n5t1ldraxqe2" path="res://art/health1.png" id="27_vqpim"]
+[ext_resource type="Texture2D" uid="uid://d2s00xee8j3kt" path="res://art/misc/48x48 trees.png" id="28_pfjj7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf7vq"]
 texture = ExtResource("2_gd88p")
@@ -6187,6 +6188,45 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ek176"]
+texture = ExtResource("28_pfjj7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pvs38"]
+sources/0 = SubResource("TileSetAtlasSource_ek176")
+
 [node name="Level 3" type="Node"]
 script = ExtResource("1_pwsri")
 
@@ -6465,6 +6505,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("22_gnsls")
 theme_override_font_sizes/font_size = 20
 text = "20"
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+scale = Vector2(35, 35)
+tile_set = SubResource("TileSet_pvs38")
+format = 2
+layer_0/tile_data = PackedInt32Array(262164, 196608, 2, 262165, 262144, 2, 262166, 327680, 2)
+layer_1/tile_data = PackedInt32Array(131092, 196608, 0, 196628, 196608, 1, 131093, 262144, 0, 196629, 262144, 1, 131094, 327680, 0, 196630, 327680, 1)
 
 [connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
 [connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
