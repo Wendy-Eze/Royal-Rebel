@@ -348,7 +348,7 @@ texture_filter = 1
 position = Vector2(42.724, -39.5001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"idle with sword"
+animation = &"walk"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
