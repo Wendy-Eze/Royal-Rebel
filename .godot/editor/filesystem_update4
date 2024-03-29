@@ -11,3 +11,4 @@ res://game_hud.gd
 res://mob_goblin.gd
 res://main_scene.gd
 res://player.gd
+res://level_1.tscn
