@@ -1,9 +1,13 @@
+
 TileMap
+
+Button
+AnimatedSprite2D
+
 StaticBody2D
 CollisionShape2D
 RayCast2D
 Timer
-AnimatedSprite2D
 Label
 Sprite2D
 CanvasLayer

@@ -28,8 +28,8 @@ func _process(delta):
 
 	if $PlayerHealth.value == 0:
 		#get_tree().current_scene.pause()
-		#$GameOverScreen.show()
-		#$PlayerHealth.hide()
+		$GameOverScreen.show()
+		$PlayerHealth.hide()
 		$MuteButton.hide()
 	
 	if Globalvar.level == 1 and attempts == 0:
@@ -55,12 +55,19 @@ func add_arrow():
 
 
 func _on_menu_button_pressed():
-	if $Menu.is_visible():
-		$Menu.hide()
-		#get_tree().paused = false
-	else:
-		$Menu.show()
-		#get_tree().paused = true
+	$Menu.show()
+	get_tree().paused = true
+	#if $Menu.is_visible():
+		#$Menu.hide()
+		##get_tree().paused = false
+	#else:
+		#$Menu.show()
+		##get_tree().paused = true
+
+func _on_exit_button_pressed():
+	$Menu.hide()
+	get_tree().paused = false
+		 # Replace with function body.
 
 
 func _on_level_timer_timeout():
@@ -80,3 +87,4 @@ func _on_collect_timer_timeout():
 #func _on_story_2_timer_timeout():
 	#$Story2/Label.hide()
 	#Globalvar.entered_kingdom = false 
+

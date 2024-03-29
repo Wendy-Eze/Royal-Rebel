@@ -35,7 +35,8 @@ func _on_d_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
 		$MainMap/Fountain/StaticBody2D.collision_layer = 0
-		
+		$KnightKey/CollisionShape2D.disabled = false
+		$KnightKey.show()
 		Globalvar.in_dungeon = true
 
 
@@ -58,6 +59,8 @@ func _on_k_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 1
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
 		$MainMap/Fountain/StaticBody2D.collision_layer = 1
+		$KnightKey/CollisionShape2D.disabled = true
+		$KnightKey.hide()
 		
 func _on_begin_body_entered(body):
 	$Dialogue/Label.show()
