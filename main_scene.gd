@@ -11,6 +11,7 @@ func new_game():
 	$opening_cutscene.start()
 	$HUD/Message.hide()
 	$HUD/PlayerHealth.hide()
+	$HUD/Inventory.hide()
 	#$Player.start()
 	#$HUD.show_message("Get Ready")
 	#$TutorialSteps/WalkStep.show()
@@ -21,6 +22,7 @@ func game_begins():
 	$opening_cutscene.queue_free()
 	$Player.start()
 	$Trees.show()
+	$HUD/Inventory.show()
 	$Player/TutCam.enabled = true
 	print("tutorial begins")
 	$HUD/PlayerHealth.show()

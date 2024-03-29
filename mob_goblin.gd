@@ -9,6 +9,7 @@ var damage: int = 10
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")
 var arrow_scene = preload("res://general/arrow.tscn")
+var key_scene = preload("res://art/npc/key-white.png")
 var arrow_hit = false
 @onready var player = get_parent().get_node("Player")
 
@@ -111,10 +112,13 @@ func _on_respawn_timer_timeout():
 func drop_coin():
 	var coin = coin_scene.instantiate()
 	var arrow = arrow_scene.instantiate()
+	#var key = key_scene.instantiate()
 	coin.position = position
 	arrow.position = position
+	#key.position = position
 	get_parent().add_child(coin)
 	get_parent().add_child(arrow)
+	#get_parent().add_child()
 
 
 func _on_health_timer_timeout():
@@ -125,4 +129,5 @@ func _on_health_timer_timeout():
 	#queue_free()
 
 
-# Replace with function body.
+#Knight
+#

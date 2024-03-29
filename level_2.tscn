@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=126 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -37,6 +37,7 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="29_7fjwx"]
 [ext_resource type="Texture2D" uid="uid://bqkqoxcemu4yh" path="res://art/npc/Witch/portal.png" id="30_twfq8"]
 [ext_resource type="PackedScene" uid="uid://cgy2apekwckpv" path="res://dungeon.tscn" id="34_4m7o7"]
+[ext_resource type="PackedScene" uid="uid://bkifg6bp220da" path="res://knightkey.tscn" id="38_20kho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djjy"]
 texture = ExtResource("5_x4u0f")
@@ -42522,6 +42523,10 @@ visibility_layer = 2
 position = Vector2(75, 902)
 metadata/_edit_group_ = true
 
+[node name="KnightKey" parent="." instance=ExtResource("38_20kho")]
+visible = false
+position = Vector2(11503, 2884)
+
 [node name="GameHUD" parent="." instance=ExtResource("3_qb11k")]
 
 [node name="Label" type="Label" parent="."]
@@ -42535,7 +42540,7 @@ theme_override_font_sizes/font_size = 40
 text = "Next"
 
 [node name="mob_knight" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(11052, 2931)
+position = Vector2(10569, 2719)
 scale = Vector2(10, 10)
 
 [node name="mob_knight2" parent="." instance=ExtResource("19_1pipp")]
