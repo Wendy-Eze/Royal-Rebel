@@ -40,9 +40,9 @@ func _physics_process(delta):
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
-	 #and $RayCast2D2.is_colliding() and $RayCast2D3.is_colliding()
-	if $RayCast2D.is_colliding():
-		if position.distance_to(player_position) > 300 and position.distance_to(player_position) <= 1000:
+
+	if $ShapeCast2D.is_colliding():
+		if position.distance_to(player_position) > 200 and position.distance_to(player_position) <= 1000:
 			speed = 200
 			position += target_position * speed * delta
 			$AnimatedSprite2D.play("walk")
@@ -60,11 +60,11 @@ func _physics_process(delta):
 		
 	if Globalvar.in_dungeon:
 		$CollisionShape2D.disabled = true
-		$RayCast2D.enabled = false 
+		$ShapeCast2D.enabled = false 
 		hide()
 	if not Globalvar.in_dungeon:
 		$CollisionShape2D.disabled = false
-		$RayCast2D.enabled = true 
+		$ShapeCast2D.enabled = true 
 		show()
 
 func random_gen():
