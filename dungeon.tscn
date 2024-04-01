@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cgy2apekwckpv"]
+[gd_scene load_steps=32 format=3 uid="uid://cgy2apekwckpv"]
 
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="1_bi10q"]
 [ext_resource type="Script" path="res://dungeon.gd" id="1_t1scc"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://8heprxq46ik8" path="res://art/map art/stone_ground.png" id="10_wbdev"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="11_0l0ce"]
 [ext_resource type="Texture2D" uid="uid://0eaqof6inety" path="res://art/npc/doctor.png" id="12_qs4e0"]
+[ext_resource type="PackedScene" uid="uid://b4r48jdoaurt1" path="res://armory.tscn" id="13_ae1bk"]
 [ext_resource type="Texture2D" uid="uid://c8cwhbr0dre1k" path="res://icon.svg" id="15_0p80s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqwbb"]
@@ -6132,6 +6133,24 @@ texture = ExtResource("12_qs4e0")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="Armory" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(7484, 829)
+
+[node name="Armory2" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(9863, 834)
+
+[node name="Armory3" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(9826, 2855)
+
+[node name="Armory4" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(11022, 2833)
+
+[node name="Armory5" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(7470, 4118)
+
+[node name="Armory6" parent="." instance=ExtResource("13_ae1bk")]
+position = Vector2(9860, 4083)
 
 [connection signal="body_entered" from="DocArea" to="." method="_on_doc_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

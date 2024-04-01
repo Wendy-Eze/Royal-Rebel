@@ -1,8 +1,9 @@
+AnimatedSprite2D
+CollisionShape2D
+RigidBody2D
 TileMap
 Button
-AnimatedSprite2D
 StaticBody2D
-CollisionShape2D
 RayCast2D
 Timer
 Label
@@ -11,4 +12,3 @@ CanvasLayer
 Area2D
 Node2D
 Control
-Node
