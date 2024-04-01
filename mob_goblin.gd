@@ -26,8 +26,14 @@ func _physics_process(delta):
 	
 	if Globalvar.level == 2:
 		damage = 10
-	if Globalvar.level == 3:
+	#if Globalvar.level == 2 and Globalvar.equip_diamond:
+		#damage = 10
+	if Globalvar.level == 3 and Globalvar.equip_sword:
 		damage = 5
+	if Globalvar.level == 3 and Globalvar.equip_gold:
+		damage = 10
+	if Globalvar.level == 3 and Globalvar.equip_diamond:
+		damage = 15
 		
 	player_position = player.position
 	target_position = (player.position - position).normalized()

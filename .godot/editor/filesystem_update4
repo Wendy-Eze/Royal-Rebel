@@ -1,6 +1,7 @@
 res://main_scene.tscn
 res://player.tscn
 res://level_1.tscn
+res://level_2.tscn
 res://level_3.tscn
 res://knightkey.tscn
 res://mob_knight.tscn
@@ -8,7 +9,14 @@ res://game_hud.tscn
 res://general/inventory.tscn
 res://dungeon.tscn
 res://armory.tscn
-res://level_2.tscn
 res://general/arrow.tscn
-res://animated_sprite_2d.gd
-res://mob_goblin.tscn
+res://mob_goblin.gd
+res://messengerscene.gd
+res://level_2.gd
+res://level_3.gd
+res://autoload/globalvar.gd
+res://general/inventory.gd
+res://level_1.gd
+res://level_1_files/market.tscn
+res://general/killcount_g.tscn
+res://player.gd

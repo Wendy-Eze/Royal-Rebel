@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=30 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -11,8 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="9_ops20"]
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
 [ext_resource type="Texture2D" uid="uid://c02klxxt6nqfq" path="res://art/setting.png" id="11_m028w"]
+[ext_resource type="Texture2D" uid="uid://dier36a3dmis" path="res://art/misc/spacebar.png" id="12_14nk3"]
 [ext_resource type="Texture2D" uid="uid://c5num5vcy1txr" path="res://art/arrow/iron arrow.png" id="12_if1a4"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
+[ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
+[ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
@@ -32,13 +35,16 @@ border_width_bottom = 10
 border_color = Color(0.4, 0.290196, 0.101961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ed1sp"]
-bg_color = Color(1, 0.352941, 0.141176, 1)
+bg_color = Color(1, 0.352941, 0.141176, 0)
 
 [sub_resource type="InputEventAction" id="InputEventAction_islaw"]
 action = &"menu"
 
 [sub_resource type="Shortcut" id="Shortcut_wpgax"]
 events = [SubResource("InputEventAction_islaw")]
+
+[sub_resource type="FontVariation" id="FontVariation_gebma"]
+base_font = ExtResource("13_fd44j")
 
 [sub_resource type="FontVariation" id="FontVariation_6cfyf"]
 base_font = ExtResource("6_nqeuc")
@@ -164,20 +170,67 @@ metadata/_edit_use_anchors_ = true
 [node name="Menu" type="Panel" parent="."]
 process_mode = 2
 visible = false
-offset_left = 696.0
+offset_left = 137.0
 offset_top = 155.0
-offset_right = 1814.0
+offset_right = 1784.0
 offset_bottom = 861.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
 
 [node name="ExitButton" type="Button" parent="Menu"]
 layout_mode = 0
-offset_left = 918.0
-offset_top = 45.0
-offset_right = 1054.0
-offset_bottom = 83.0
+offset_left = 1531.0
+offset_top = 48.0
+offset_right = 1592.0
+offset_bottom = 75.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ed1sp")
 shortcut = SubResource("Shortcut_wpgax")
+
+[node name="Space" type="Sprite2D" parent="Menu"]
+position = Vector2(350.5, 363)
+scale = Vector2(0.640833, 0.601667)
+texture = ExtResource("12_14nk3")
+
+[node name="wasd" type="Sprite2D" parent="Menu"]
+position = Vector2(1076, 187)
+scale = Vector2(0.766, 0.766)
+texture = ExtResource("13_vxy7y")
+
+[node name="Label" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 610.5
+offset_top = 342.0
+offset_right = 765.5
+offset_bottom = 393.0
+theme_override_fonts/font = SubResource("FontVariation_gebma")
+theme_override_font_sizes/font_size = 50
+text = "- Attack"
+
+[node name="Label2" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 178.0
+offset_right = 1521.0
+offset_bottom = 229.0
+theme_override_fonts/font = SubResource("FontVariation_gebma")
+theme_override_font_sizes/font_size = 50
+text = "- Walk
+"
+
+[node name="Label3" type="Label" parent="Menu"]
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 465.0
+offset_right = 1521.0
+offset_bottom = 516.0
+theme_override_fonts/font = SubResource("FontVariation_gebma")
+theme_override_font_sizes/font_size = 50
+text = "- Dash
+"
+
+[node name="Shift" type="Sprite2D" parent="Menu"]
+position = Vector2(1076, 494)
+scale = Vector2(0.287143, 0.23)
+texture = ExtResource("15_v6gqu")
 
 [node name="Level1" type="Label" parent="."]
 visible = false

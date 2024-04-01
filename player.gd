@@ -96,6 +96,7 @@ func get_input():
 		$Knight.animation = "walk"
 		$Knight.flip_v = false
 		$Knight.flip_h = velocity.x < 0
+
 		
 func dash():
 	ghost_timer.start()
@@ -130,12 +131,7 @@ func add_ghost():
 	get_tree().current_scene.add_child(ghost)
 	ghost.flip_h = $AnimatedSprite2D.flip_h
 	ghost.flip_v = $AnimatedSprite2D.flip_v
-		
 
-		
-		
-		
-	
 func arrow():
 	#if arrow_cooldown.is_stopped():
 		#pass
@@ -147,7 +143,7 @@ func arrow():
 	var direction_to_mouse = arrow.global_position.direction_to(target).normalized()
 	
 	if $AnimatedSprite2D.flip_h:
-		direction_to_mouse = Vector2.LEFT.rotated(rotation)  # Shoot left if player is flipped
+		direction_to_mouse = -(Vector2.LEFT) # Shoot left if player is flipped
 	else:
 		direction_to_mouse = Vector2.RIGHT.rotated(rotation)  # Shoot right if player is not flipped
 

@@ -2704,7 +2704,8 @@ texture = ExtResource("3_s6egk")
 19:31/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_2sl7y"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/1 = SubResource("TileSetAtlasSource_h8ll2")
 sources/3 = SubResource("TileSetAtlasSource_uaho3")
 
@@ -10055,7 +10056,8 @@ texture = ExtResource("5_rvaus")
 21:54/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_0m6j6"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_14tgt")
 sources/1 = SubResource("TileSetAtlasSource_rjh08")
 sources/2 = SubResource("TileSetAtlasSource_320el")
