@@ -32,36 +32,42 @@ func _process(delta):
 		$TileMap.tile_set.set_physics_layer_collision_mask(0,1)
 		$TileMap.tile_set.set_physics_layer_collision_layer(0,1)
 		$DocArea/CollisionShape2D.disabled = false
+	if Globalvar.mission_done:
+		$TileMap/Open.show()
+		$TileMap/Closed.hide()
 
 
 func _on_doc_area_body_entered(body):
 	if body.is_in_group("player"):
-		if not talk_started:
+		if not talk_started and not Globalvar.has_key:
 			$DoctorDialogue/Text.show()
 			$Timer.start()
-		if Globalvar.mission_done:
+		if Globalvar.has_key:
+			talk_started = true
 			$DoctorDialogue/Text2.show()
 			$Timer.start()
 
 func _on_timer_timeout():
-	if index < dialogue.size():
-		$DoctorDialogue/Text.text = dialogue[index]
-		$Timer.start(5)
-		if index == 1:
-			$DoctorDialogue/Reply.show()
-			$DoctorDialogue/NPC.hide()
+	if not Globalvar.has_key:
+		if index < dialogue.size():
+			$DoctorDialogue/Text.text = dialogue[index]
+			$Timer.start(5)
+			if index == 1:
+				$DoctorDialogue/Reply.show()
+				$DoctorDialogue/NPC.hide()
+			else:
+				$DoctorDialogue/Reply.hide()
+				$DoctorDialogue/NPC.show()
+			index += 1
 		else:
-			$DoctorDialogue/Reply.hide()
-			$DoctorDialogue/NPC.show()
-		index += 1
-	else:
-		$Timer.stop()
-		$DoctorDialogue/Text.hide()
-		$DoctorDialogue/NPC.hide()
+			$Timer.stop()
+			$DoctorDialogue/Text.hide()
+			$DoctorDialogue/NPC.hide()
+		
 	
-	if Globalvar.mission_done:
+	if Globalvar.has_key:
 		if index2 < dialogue2.size():
-			$DoctorDialogue/Text2.text = dialogue[index]
+			$DoctorDialogue/Text2.text = dialogue2[index2]
 			$Timer.start(5)
 			#if index == 1:
 				#$DoctorDialogue/Reply.show()
@@ -69,8 +75,36 @@ func _on_timer_timeout():
 			#else:
 				#$DoctorDialogue/Reply.hide()
 				#$DoctorDialogue/NPC.show()
-			index += 1
+			index2 += 1
 		else:
 			$Timer.stop()
 			$DoctorDialogue/Text2.hide()
 			$DoctorDialogue/NPC.hide()
+			Globalvar.mission_done = true
+
+
+func _on_lock_body_entered(body):
+	if body.is_in_group("player"):
+		if Globalvar.mission_done:
+			$TileMap/ArmoryClosed.hide()
+			$TileMap/ArmoryClosed/Sprite2D/Lock/CollisionShape2D.disabled = true
+			$TileMap/ArmoryClosed.tile_set.set_physics_layer_collision_mask(0,0)
+			$TileMap/ArmoryClosed.tile_set.set_physics_layer_collision_layer(0,0)
+			Globalvar.unlocked_armory = true
+
+
+func _on_arrows_button_pressed():
+	Globalvar.arrow_num += 20
+	$Node/Arrows/ArrowsButton.disabled = true
+	$Node/Arrows.hide()
+
+func _on_gold_button_pressed():
+	Globalvar.has_goldsword = true
+	$Node/GoldSword/GoldButton.disabled = true
+	$Node/GoldSword.hide()
+
+
+func _on_diamond_button_pressed():
+	Globalvar.has_diamondsword = true
+	$Node/DiamondSword/DiamondButton.disabled = true
+	$Node/DiamondSword.hide()

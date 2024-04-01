@@ -5,12 +5,13 @@ var player_position
 var target_position
 var timer_started = false
 var health: int = 100
-var damage: int = 10
+var damage: int = 15
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")
 var arrow_scene = preload("res://general/arrow.tscn")
-var key_scene = preload("res://art/npc/key-white.png")
+var key_scene = preload("res://key.tscn")
 var arrow_hit = false
+var key_instance = 0
 @onready var player = get_parent().get_node("Player")
 
 
@@ -22,10 +23,16 @@ func set_health_bar():
 	$HealthBar.value = health
 
 func _physics_process(delta):
+	
+	if Globalvar.level == 2:
+		damage = 10
+	if Globalvar.level == 3:
+		damage = 5
+		
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
-	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible) or arrow_hit:
+	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
@@ -74,7 +81,7 @@ func _on_timer_timeout():
 	$Timer.stop()
 	
 func _on_damage_timer_timeout():
-	Livecounter.num -= 15 
+	Livecounter.num -= 10 
 	
 func _hit_by_arrow():
 	health -= damage
@@ -112,13 +119,19 @@ func _on_respawn_timer_timeout():
 func drop_coin():
 	var coin = coin_scene.instantiate()
 	var arrow = arrow_scene.instantiate()
-	#var key = key_scene.instantiate()
 	coin.position = position
 	arrow.position = position
-	#key.position = position
+	
 	get_parent().add_child(coin)
 	get_parent().add_child(arrow)
 	#get_parent().add_child()
+	
+	if Globalvar.is_guard and key_instance == 0:
+		var key = key_scene.instantiate()
+		key.position = position
+		get_parent().add_child(key)
+		#Globalvar.has_key = true
+		key_instance += 1
 
 
 func _on_health_timer_timeout():

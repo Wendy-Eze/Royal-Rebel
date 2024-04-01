@@ -7,6 +7,8 @@ func _ready():
 	Globalvar.arrow_num = 30
 	Globalvar.level = 2
 	$GameHUD/KillCount_G.hide()
+	Globalvar.is_guard = true
+	Globalvar.blindknight = true 
 	#pass # Replace with function body.
 
 
@@ -14,7 +16,22 @@ func _ready():
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
-
+	
+	if Globalvar.has_key:
+		$Dialogue/CollectedKey.show()
+		
+	if not Globalvar.has_key:
+		$Dialogue/CollectedKey.hide()
+		
+	if Globalvar.mission_done:
+		$Dialogue/Key.show()
+		$Dialogue/CollectedKey.hide()
+	
+	if not Globalvar.mission_done:
+		$Dialogue/Key.hide()
+		
+	if Globalvar.unlocked_armory:
+		$Dialogue/Key.hide()
 
 func _on_d_area_body_entered(body):
 	if body.is_in_group("player"):
@@ -35,9 +52,10 @@ func _on_d_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
 		$MainMap/Fountain/StaticBody2D.collision_layer = 0
-		$KnightKey/CollisionShape2D.disabled = false
 		$KnightKey.show()
 		Globalvar.in_dungeon = true
+		Globalvar.blindknight = false
+
 
 
 func _on_k_area_body_entered(body):
@@ -59,8 +77,9 @@ func _on_k_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 1
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
 		$MainMap/Fountain/StaticBody2D.collision_layer = 1
-		$KnightKey/CollisionShape2D.disabled = true
+		#$KnightKey/CollisionShape2D.disabled = true
 		$KnightKey.hide()
+		Globalvar.blindknight = true
 		
 func _on_begin_body_entered(body):
 	$Dialogue/Label.show()

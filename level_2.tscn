@@ -1,4 +1,4 @@
-[gd_scene load_steps=126 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=134 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -36,8 +36,12 @@
 [ext_resource type="Script" path="res://playerscene.gd" id="28_stpk0"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="29_7fjwx"]
 [ext_resource type="Texture2D" uid="uid://bqkqoxcemu4yh" path="res://art/npc/Witch/portal.png" id="30_twfq8"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="33_mlvms"]
 [ext_resource type="PackedScene" uid="uid://cgy2apekwckpv" path="res://dungeon.tscn" id="34_4m7o7"]
 [ext_resource type="PackedScene" uid="uid://bkifg6bp220da" path="res://knightkey.tscn" id="38_20kho"]
+[ext_resource type="Texture2D" uid="uid://chpnfnyrv0lda" path="res://art/misc/armorykey.png" id="39_ngr4y"]
+[ext_resource type="Texture2D" uid="uid://bdwvpmx36uau" path="res://art/npc/key-white.png" id="40_6fti0"]
+[ext_resource type="Script" path="res://armorkey.gd" id="40_y1agp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djjy"]
 texture = ExtResource("5_x4u0f")
@@ -20357,7 +20361,8 @@ texture = ExtResource("18_q5v15")
 1:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_hqt7y"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/4 = SubResource("TileSetAtlasSource_q321b")
 sources/5 = SubResource("TileSetAtlasSource_xvwmw")
 sources/6 = SubResource("TileSetAtlasSource_i0nts")
@@ -23957,7 +23962,8 @@ texture = ExtResource("5_x4u0f")
 37:34/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_r84i8"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 13
+physics_layer_0/collision_mask = 13
 sources/0 = SubResource("TileSetAtlasSource_665nx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bat1s"]
@@ -42046,14 +42052,15 @@ animations = [{
 size = Vector2(280, 351)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1u1u"]
-size = Vector2(1991.5, 932)
+size = Vector2(3270.5, 932)
 
 [sub_resource type="FontVariation" id="FontVariation_xyqlq"]
-base_font = ExtResource("29_7fjwx")
+base_font = ExtResource("33_mlvms")
 spacing_glyph = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwygi"]
 bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+expand_margin_left = 90.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ef5qa"]
 atlas = ExtResource("30_twfq8")
@@ -42112,6 +42119,9 @@ height = 502.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birl7"]
 size = Vector2(2030, 1735.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4jh2"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2rlsu"]
 size = Vector2(149, 900)
 
@@ -42122,7 +42132,7 @@ size = Vector2(427, 212)
 size = Vector2(486, 233.5)
 
 [sub_resource type="FontVariation" id="FontVariation_y4i22"]
-base_font = ExtResource("29_7fjwx")
+base_font = ExtResource("33_mlvms")
 spacing_glyph = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjo16"]
@@ -42131,6 +42141,23 @@ expand_margin_left = 15.0
 expand_margin_top = 15.0
 expand_margin_right = 15.0
 expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37fbo"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_v7r4b"]
+base_font = ExtResource("29_7fjwx")
+spacing_glyph = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o858p"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 0.933333)
+expand_margin_left = 50.0
+expand_margin_right = 20.0
 
 [node name="Level 2" type="Node"]
 script = ExtResource("1_8qoml")
@@ -42217,15 +42244,6 @@ flip_h = true
 [node name="Knight2" type="AnimatedSprite2D" parent="MainMap/NPCs"]
 texture_filter = 1
 position = Vector2(10776, 950)
-scale = Vector2(7, 7)
-sprite_frames = SubResource("SpriteFrames_75ids")
-animation = &"idle"
-autoplay = "idle"
-flip_h = true
-
-[node name="Knight3" type="AnimatedSprite2D" parent="MainMap/NPCs"]
-texture_filter = 1
-position = Vector2(11321, 2806)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_75ids")
 animation = &"idle"
@@ -42387,6 +42405,7 @@ position = Vector2(51.5, 111)
 shape = SubResource("RectangleShape2D_6vew1")
 
 [node name="WitchScene" type="Node2D" parent="MainMap"]
+visible = false
 script = ExtResource("19_us2jg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MainMap/WitchScene"]
@@ -42408,7 +42427,7 @@ shape = SubResource("RectangleShape2D_lewwm")
 position = Vector2(8985, 1677)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/WitchScene/Area2D"]
-position = Vector2(548.25, -70.0001)
+position = Vector2(1187.75, -70.0001)
 shape = SubResource("RectangleShape2D_h1u1u")
 
 [node name="Talk2" type="Label" parent="MainMap/WitchScene"]
@@ -42465,7 +42484,6 @@ shape = SubResource("CapsuleShape2D_ahdsf")
 
 [node name="Talk" type="Label" parent="MainMap/WitchScene/WitchDialogue"]
 visible = false
-z_index = 1
 offset_left = 587.0
 offset_top = 679.0
 offset_right = 1434.0
@@ -42478,6 +42496,12 @@ text = "Hey, you! Come here, now!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="MainMap/WitchScene/WitchDialogue/Talk"]
+texture_filter = 1
+position = Vector2(-79, 87)
+scale = Vector2(3.84375, 3.84375)
+texture = ExtResource("19_tjdst")
 
 [node name="PlayerScene" type="Node2D" parent="MainMap"]
 script = ExtResource("28_stpk0")
@@ -42498,7 +42522,7 @@ offset_bottom = 918.0
 theme_override_constants/line_spacing = 15
 theme_override_fonts/font = SubResource("FontVariation_xyqlq")
 theme_override_font_sizes/font_size = 60
-theme_override_styles/normal = SubResource("StyleBoxFlat_pwygi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4jh2")
 text = "As a knight, you should know that he has made his way to get the artifact! Why don't You Know THIS!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -42512,6 +42536,8 @@ wait_time = 3.0
 
 [node name="Begin" type="Area2D" parent="MainMap"]
 position = Vector2(656, 555)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/Begin"]
 position = Vector2(86.5, 321)
@@ -42529,16 +42555,6 @@ position = Vector2(11503, 2884)
 
 [node name="GameHUD" parent="." instance=ExtResource("3_qb11k")]
 
-[node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 2843.0
-offset_top = 821.0
-offset_right = 2943.0
-offset_bottom = 876.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
-text = "Next"
-
 [node name="mob_knight" parent="." instance=ExtResource("19_1pipp")]
 position = Vector2(10569, 2719)
 scale = Vector2(10, 10)
@@ -42548,23 +42564,35 @@ position = Vector2(3368, 722)
 scale = Vector2(10, 10)
 
 [node name="mob_knight3" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(4940, 119)
+position = Vector2(8343, 2748)
 scale = Vector2(10, 10)
 
 [node name="mob_knight4" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(2697, 3776)
+position = Vector2(2599, 2575)
 scale = Vector2(10, 10)
 
 [node name="mob_knight5" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(7774, 1093)
+position = Vector2(7121, 828)
 scale = Vector2(10, 10)
 
 [node name="mob_knight6" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(6961, 3396)
+position = Vector2(6225, 2719)
 scale = Vector2(10, 10)
 
 [node name="mob_knight7" parent="." instance=ExtResource("19_1pipp")]
-position = Vector2(4780, 3356)
+position = Vector2(4780, 2739)
+scale = Vector2(10, 10)
+
+[node name="mob_knight8" parent="." instance=ExtResource("19_1pipp")]
+position = Vector2(5280, 1453)
+scale = Vector2(10, 10)
+
+[node name="mob_knight9" parent="." instance=ExtResource("19_1pipp")]
+position = Vector2(4976, 155)
+scale = Vector2(10, 10)
+
+[node name="mob_knight10" parent="." instance=ExtResource("19_1pipp")]
+position = Vector2(11404, 2719)
 scale = Vector2(10, 10)
 
 [node name="DArea" type="Area2D" parent="."]
@@ -42596,10 +42624,47 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjo16")
 text = "Welcome to the Kingdom! 
 Beware of the knights. Use your armor wisely.
-Complete mission."
+Explore as a mission awaits you."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="Key" type="Panel" parent="Dialogue"]
+visible = false
+offset_left = 41.0
+offset_top = 200.0
+offset_right = 139.0
+offset_bottom = 315.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_37fbo")
+
+[node name="armorkey" type="Sprite2D" parent="Dialogue/Key" groups=["key"]]
+texture_filter = 1
+position = Vector2(47, 56)
+scale = Vector2(2.43056, 2.43055)
+texture = ExtResource("39_ngr4y")
+script = ExtResource("40_y1agp")
+
+[node name="CollectedKey" type="Label" parent="Dialogue"]
+visible = false
+offset_left = 696.0
+offset_top = 159.0
+offset_right = 1360.0
+offset_bottom = 315.0
+theme_override_constants/line_spacing = 20
+theme_override_fonts/font = SubResource("FontVariation_v7r4b")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_o858p")
+text = "You have collected the key! Speak with doctor."
+horizontal_alignment = 2
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Dialogue/CollectedKey"]
+texture_filter = 1
+position = Vector2(0, 77)
+scale = Vector2(3.59375, 3.59375)
+texture = ExtResource("40_6fti0")
+hframes = 11
 
 [connection signal="body_entered" from="MainMap/MessengerScene/Start" to="MainMap/MessengerScene" method="_on_start_body_entered"]
 [connection signal="body_exited" from="MainMap/MessengerScene/Start" to="MainMap/MessengerScene" method="_on_start_body_exited"]

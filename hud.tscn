@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://HUD.gd" id="1_0k33q"]
 [ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="2_edks0"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="4_y3b8p"]
-[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="5_d8sg3"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="5_d8sg3"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://general/player_health.tscn" id="5_pcrf2"]
 [ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="6_76eap"]
 

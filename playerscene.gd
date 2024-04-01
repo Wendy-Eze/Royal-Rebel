@@ -11,12 +11,12 @@ func _process(delta):
 	
 	if Globalvar.missions == 0:
 		$Area2D/CollisionShape2D.disabled = false
-		Globalvar.missions += 1
+		#Globalvar.missions += 1
 		
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("player") and not Globalvar.in_dungeon:
+	if body.is_in_group("player") and not Globalvar.in_dungeon and Globalvar.missions == 0:
 		Globalvar.entered_kingdom = true
 		$Timer.start()
 
@@ -25,8 +25,10 @@ func _on_timer_timeout():
 	Globalvar.playertimerout = true
 	$Area2D/CollisionShape2D.disabled = true
 	$Knight.show()
+	Globalvar.missions += 1
 	$Timer2.start()
 
 func _on_timer_2_timeout():
 	$Knight.hide()
+	print("knight done")
 	

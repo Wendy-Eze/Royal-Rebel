@@ -20,34 +20,34 @@ var dir
 
 func _ready():
 	$AnimatedSprite2D.play("idle")
-	random_gen()
+	#random_gen()
 	#$Timer.start()
 	
 func _physics_process(delta):
 
-	match current:
-		enemy_state.RIGHT:
-			move_right()
-		enemy_state.LEFT:
-			move_left()
-		enemy_state.UP:
-			move_up()
-		enemy_state.DOWN:
-			move_down()
-	
+	#match current:
+		#enemy_state.RIGHT:
+			#move_right()
+		#enemy_state.LEFT:
+			#move_left()
+		#enemy_state.UP:
+			#move_up()
+		#enemy_state.DOWN:
+			#move_down()
+	#
 	move_and_slide()
 	
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 
 
-	if $ShapeCast2D.is_colliding():
+	if $ShapeCast2D.is_colliding() and not Globalvar.is_invisible:
 		if position.distance_to(player_position) > 200 and position.distance_to(player_position) <= 1000:
 			speed = 200
 			position += target_position * speed * delta
-			$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.play("run")
 		elif position.distance_to(player_position) > 1000:
-			#$AnimatedSprite2D.play("idle")
+			$AnimatedSprite2D.play("idle")
 			pass
 		else:
 			Livecounter.num -= 20

@@ -1,6 +1,6 @@
 extends Node2D
 
-var dialogue = ["Hey, you! Come here, now!", "The guards know you are wearing a disguise. Don’t worry, with the help of my powers they can’t see you." ,"I am Sabrina, the great witch of the nation. I can help you get to the king. I shall take you to him through this portal."]
+var dialogue = ["The guards know you are wearing a disguise. Don’t worry, with the help of my powers they can’t see you." ,"I am Sabrina, the great witch of the nation. I can help you get to the king. I shall take you to him through this portal."]
 var index = 0
 var talk_started = false
 #var talk1 = false
@@ -17,6 +17,7 @@ func _process(delta):
 	
 	if Globalvar.missions == 1:
 		$Area2D/CollisionShape2D.disabled = false
+		show()
 
 
 func _on_area_2d_body_entered(body):

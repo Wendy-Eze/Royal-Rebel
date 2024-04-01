@@ -13,7 +13,11 @@ func _process(delta):
 	
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
-		
+	
+	if Globalvar.has_goldsword:
+		$Container/GoldSword/Sprite2D.show()
+	if Globalvar.has_diamondsword:
+		$Container/DiamondSword/Sprite2D.show()
 	#if Globalvar.arrow_num == 15 and not cooldownactive:
 		#Globalvar.arrow_num = 0
 		#Globalvar.ready_arrow = false

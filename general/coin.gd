@@ -6,6 +6,7 @@ func _on_body_entered(body):
 		print("coin collected")
 		Coincounter.num += 10
 		Globalvar.first += 1
+		Globalvar.collected = true
 		$Collect.play()
 		$Sprite2D.hide()
 		$CoinSprite.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=33 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://general/inventory.gd" id="1_jhhv0"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://b4g2ckyv8w25g" path="res://art/misc/4.png" id="9_d6w2v"]
 [ext_resource type="Texture2D" uid="uid://dbm43r0063j24" path="res://art/misc/5.png" id="10_pugcp"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="11_0ft5n"]
+[ext_resource type="Texture2D" uid="uid://c3r51bgklm5c5" path="res://art/misc/goldsword.png" id="12_5oivh"]
+[ext_resource type="Texture2D" uid="uid://c8an3xg1nxewm" path="res://art/misc/diamondsword.png" id="13_mfufn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nbv3"]
 bg_color = Color(0.309804, 0.172549, 0.0823529, 1)
@@ -92,6 +94,8 @@ bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgohs"]
 
+[sub_resource type="Shortcut" id="Shortcut_nhgbi"]
+
 [node name="Inventory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
@@ -101,7 +105,7 @@ script = ExtResource("1_jhhv0")
 [node name="Container" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_right = 377.0
+offset_right = 553.0
 offset_bottom = 91.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nbv3")
 
@@ -312,6 +316,83 @@ offset_bottom = 99.0
 theme_override_fonts/font = ExtResource("1_cksf5")
 theme_override_font_sizes/font_size = 40
 text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoldSword" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 373.077
+offset_top = 6.92308
+offset_right = 453.077
+offset_bottom = 86.9231
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wcid")
+
+[node name="GoldButton" type="Button" parent="Container/GoldSword"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 64.0
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j8451")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4n6c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vgohs")
+shortcut = SubResource("Shortcut_nhgbi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/GoldSword"]
+visible = false
+position = Vector2(41.5384, 40.7692)
+scale = Vector2(1.79928, 1.79928)
+texture = ExtResource("12_5oivh")
+
+[node name="0" type="Label" parent="Container/GoldSword"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 63.0
+offset_right = 57.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "5
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiamondSword" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 463.077
+offset_top = 6.92308
+offset_right = 543.077
+offset_bottom = 86.9231
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wcid")
+
+[node name="GoldButton" type="Button" parent="Container/DiamondSword"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 64.0
+offset_bottom = 61.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_j8451")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t4n6c")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_vgohs")
+shortcut = SubResource("Shortcut_nhgbi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/DiamondSword"]
+visible = false
+position = Vector2(41.5384, 40.7692)
+scale = Vector2(1.79928, 1.79928)
+texture = ExtResource("13_mfufn")
+
+[node name="0" type="Label" parent="Container/DiamondSword"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 31.0
+offset_top = 63.0
+offset_right = 57.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "6"
 horizontal_alignment = 1
 vertical_alignment = 1
 
