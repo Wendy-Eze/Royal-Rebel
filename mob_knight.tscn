@@ -233,4 +233,8 @@ position = Vector2(7, 12)
 shape = SubResource("RectangleShape2D_hjqht")
 target_position = Vector2(0, 63)
 
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 2.0
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
