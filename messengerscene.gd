@@ -37,11 +37,16 @@ func _on_timer_timeout():
 		else:
 			$MessengerDialogue/Reply.hide()
 			$MessengerDialogue/NPC.show()
+		if index == 4:
+			$MessengerDialogue/Statue.show()
+		else:
+			$MessengerDialogue/Statue.hide()
 		index += 1
 	else:
 		$Timer.stop()
 		$MessengerDialogue/Text.hide()
 		$MessengerDialogue/NPC.hide()
+		$MessengerDialogue/Statue.hide()
 
 
 func _on_start_body_exited(body):

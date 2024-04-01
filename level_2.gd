@@ -48,6 +48,8 @@ func _on_d_area_body_entered(body):
 		$MainMap/TileMap4.tile_set.set_physics_layer_collision_layer(0,0)
 		$MainMap/WitchScene/StaticBody2D/CollisionShape2D.disabled = true 
 		$MainMap/WitchScene/Portal/CollisionShape2D.disabled = true 
+		$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = true
+		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = true
 		#$MainMap/PlayerScene/Area2D/CollisionShape2D.disabled = true 
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
@@ -74,6 +76,8 @@ func _on_k_area_body_entered(body):
 		$MainMap/TileMap4.tile_set.set_physics_layer_collision_layer(0,1)
 		$MainMap/WitchScene/StaticBody2D/CollisionShape2D.disabled = false 
 		$MainMap/WitchScene/Portal/CollisionShape2D.disabled = false 
+		$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = false
+		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = false
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 1
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
 		$MainMap/Fountain/StaticBody2D.collision_layer = 1
@@ -88,3 +92,16 @@ func _on_begin_body_entered(body):
 func _on_begin_body_exited(body):
 	$Dialogue/Label.hide()
 
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("player"):
+		if not Globalvar.mission_done:
+			$Dialogue/Confirm.show()
+		if Globalvar.mission_done:
+			$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = true
+
+
+func _on_area_2d_body_exited(body):
+	if body.is_in_group("player"):
+		$Dialogue/Confirm.hide()

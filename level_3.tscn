@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=76 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://n5t1ldraxqe2" path="res://art/health1.png" id="27_vqpim"]
 [ext_resource type="Texture2D" uid="uid://4cslfxce4i2e" path="res://art/map art/mystic tree1.png" id="29_6xl08"]
 [ext_resource type="Texture2D" uid="uid://bo13v4svby7ym" path="res://art/map art/mystic tree 2.png" id="30_r8iw0"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="32_5uffa"]
 [ext_resource type="Texture2D" uid="uid://clsmvwr02fjnv" path="res://art/misc/mystic portal.png" id="32_oih1s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf7vq"]
@@ -6616,6 +6617,17 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="FontVariation" id="FontVariation_7bk23"]
+base_font = ExtResource("32_5uffa")
+spacing_glyph = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfmuj"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+expand_margin_left = 90.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxcew"]
 atlas = ExtResource("32_oih1s")
 region = Rect2(0, 0, 32, 32)
@@ -6970,8 +6982,25 @@ flip_h = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WitchDialogue" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+visible = false
+offset_left = 587.0
+offset_top = 704.0
+offset_right = 1391.0
+offset_bottom = 848.0
+theme_override_fonts/font = SubResource("FontVariation_7bk23")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_kfmuj")
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+
+[node name="WitchIcon" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(491, 743)
+scale = Vector2(4, 4)
+texture = ExtResource("13_p21nb")
 
 [node name="Portal" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -6986,3 +7015,4 @@ frame_progress = 0.579296
 [connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
