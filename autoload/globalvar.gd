@@ -13,7 +13,11 @@ var armor_equipped = false
 var in_dungeon = false
 var mission_done = false
 #var in_kingdom = false
-
+var is_guard = false
+var has_key = false
+var has_armorkey = false
+var blindknight = false
+var unlocked_armory = false 
 
 #Inventory Purposes
 var equip_arrow = false
@@ -21,6 +25,8 @@ var equip_sword = false
 var equip_potion = false
 var i_num = 0
 var use_potion = false 
+var has_goldsword = false
+var has_diamondsword = false
 
 #Arrow level
 var asilver = true
@@ -28,6 +34,7 @@ var agold = false
 var adiamond = false
 
 var first = 0
+var collected = false
 
 #LEVEL 2
 var entered_kingdom = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://game_over_screen.gd" id="1_3vxe7"]
 [ext_resource type="Texture2D" uid="uid://0kxj26cvgmtu" path="res://art/GAME OVER.png" id="1_ges8w"]
-[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="3_yy6ha"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="3_yy6ha"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyg0v"]
 bg_color = Color(0.6, 0.6, 0.6, 0)

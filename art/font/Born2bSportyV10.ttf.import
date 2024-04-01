@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://btcd7jlbsnohb"
-path="res://.godot/imported/Born2bSportyV10.ttf-a03f6fa75dd0e44d817382786bfc657d.fontdata"
+path="res://.godot/imported/Born2bSportyV10.ttf-370b417bc0febbb886ffce13610ad6f5.fontdata"
 
 [deps]
 
-source_file="res://art/Born2bSportyV10.ttf"
-dest_files=["res://.godot/imported/Born2bSportyV10.ttf-a03f6fa75dd0e44d817382786bfc657d.fontdata"]
+source_file="res://art/font/Born2bSportyV10.ttf"
+dest_files=["res://.godot/imported/Born2bSportyV10.ttf-370b417bc0febbb886ffce13610ad6f5.fontdata"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=26 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
 [ext_resource type="Texture2D" uid="uid://c02klxxt6nqfq" path="res://art/setting.png" id="11_m028w"]
 [ext_resource type="Texture2D" uid="uid://c5num5vcy1txr" path="res://art/arrow/iron arrow.png" id="12_if1a4"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
@@ -64,6 +65,13 @@ border_color = Color(0.372549, 0.262745, 0.0156863, 1)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 shadow_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
 shadow_size = 190
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8q4as"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -125,9 +133,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -211.0
+offset_left = -336.0
 offset_top = -166.0
-offset_right = -211.0
+offset_right = -336.0
 offset_bottom = -166.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -163,6 +171,7 @@ offset_bottom = 861.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
 
 [node name="ExitButton" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 918.0
 offset_top = 45.0
 offset_right = 1054.0
@@ -299,6 +308,50 @@ offset_top = 935.0
 offset_right = 2024.0
 offset_bottom = 1133.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oict3")
+
+[node name="Collected" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_right = 0.021
+anchor_bottom = 0.03
+offset_left = 1814.0
+offset_top = 157.0
+offset_right = 1847.68
+offset_bottom = 170.6
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_8q4as")
+text = "+10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D2" type="Sprite2D" parent="Collected"]
+texture_filter = 1
+position = Vector2(-64, 22)
+scale = Vector2(3.28125, 3.1875)
+texture = ExtResource("5_xqipu")
+
+[node name="Collected2" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_right = 0.021
+anchor_bottom = 0.03
+offset_left = 1814.0
+offset_top = 256.0
+offset_right = 1847.68
+offset_bottom = 269.6
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_8q4as")
+text = "+2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="Collected2"]
+position = Vector2(-64, 18)
+rotation = -0.689405
+scale = Vector2(1.1875, 1.15357)
+texture = ExtResource("12_if1a4")
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]

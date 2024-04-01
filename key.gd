@@ -1,0 +1,9 @@
+extends Area2D
+
+
+func _on_body_entered(body):
+	if body.is_in_group("player"):
+		print("key collected")
+		Globalvar.has_key = true
+		$AnimatedSprite2D.hide()
+		queue_free()

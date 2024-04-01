@@ -53,9 +53,20 @@ func get_input():
 			
 	if Globalvar.has_armor:
 		if Input.is_action_just_pressed("knight"):
-			Globalvar.armor_equipped = true
-			$AnimatedSprite2D.hide()
-			$Knight.show()
+			Globalvar.armor_equipped = not Globalvar.armor_equipped  # Toggle armor equipped status
+			if Globalvar.armor_equipped:
+			# Armor is now equipped
+				$AnimatedSprite2D.hide()  # Hide the default character sprite
+				$Knight.show()  # Show the knight armor sprite
+			else:
+			# Armor is now unequipped
+				$AnimatedSprite2D.show()  # Show the default character sprite
+				$Knight.hide()
+			#if Globalvar.armor_equipped:
+				#Globalvar.armor_equipped = true
+				#$AnimatedSprite2D.hide()
+				#$Knight.show()
+			
 #armor equipped
 		
 	if velocity.length() > 0:
