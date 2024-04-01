@@ -46,11 +46,15 @@ func _physics_process(delta):
 			speed = 200
 			position += target_position * speed * delta
 			$AnimatedSprite2D.play("run")
+			$DamageTimer.stop()
 		elif position.distance_to(player_position) > 1000:
+			speed = 0
 			$AnimatedSprite2D.play("idle")
+			$DamageTimer.stop()
 			pass
 		else:
-			Livecounter.num -= 20
+			speed = 10
+			$DamageTimer.start()
 	if position.distance_to(player_position) <= 400:
 		if Input.is_action_just_pressed("basic_melee"):    
 			health -= damage
@@ -104,3 +108,7 @@ func move_up():
 func _on_timer_timeout():
 	random_gen()
 	$Timer.start()
+
+
+func _on_damage_timer_timeout():
+	Livecounter.num -= 20
