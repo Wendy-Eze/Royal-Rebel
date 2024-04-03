@@ -1,1 +1,11 @@
+<<<<<<< Updated upstream
+=======
+res://dungeon.tscn
+res://begingame.gd
+res://player.tscn
+res://main_scene.tscn
+res://game_hud.tscn
+res://mob_knight.tscn
+res://level_2.tscn
+>>>>>>> Stashed changes
 res://intro/tutorial_steps.tscn
