@@ -1,1 +1,6 @@
+res://mob_knight.tscn
+res://animated_sprite_2d.gd
+res://mob_goblin.gd
 res://main_scene.tscn
+res://level_3.tscn
+res://mob_goblin.tscn
