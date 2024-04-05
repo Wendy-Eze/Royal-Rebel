@@ -55,9 +55,6 @@ func _physics_process(delta):
 		else:
 			speed = 10
 			$DamageTimer.start()
-	if position.distance_to(player_position) <= 400:
-		if Input.is_action_just_pressed("basic_melee"):    
-			health -= damage
 	
 	if health <= 0:
 		queue_free()
