@@ -27,10 +27,18 @@ func _process(delta):
 	if not Globalvar.in_dungeon:
 		$TileMap.tile_set.set_physics_layer_collision_mask(0,0)
 		$TileMap.tile_set.set_physics_layer_collision_layer(0,0)
+		$TileMap/Open.tile_set.set_physics_layer_collision_layer(0,0)
+		$TileMap/Open.tile_set.set_physics_layer_collision_mask(0,0)
+		$TileMap/Closed.tile_set.set_physics_layer_collision_layer(0,0)
+		$TileMap/Closed.tile_set.set_physics_layer_collision_mask(0,0)
 		$DocArea/CollisionShape2D.disabled = true
 	if Globalvar.in_dungeon:
 		$TileMap.tile_set.set_physics_layer_collision_mask(0,1)
 		$TileMap.tile_set.set_physics_layer_collision_layer(0,1)
+		$TileMap/Open.tile_set.set_physics_layer_collision_layer(0,1)
+		$TileMap/Open.tile_set.set_physics_layer_collision_mask(0,1)
+		$TileMap/Closed.tile_set.set_physics_layer_collision_layer(0,1)
+		$TileMap/Closed.tile_set.set_physics_layer_collision_mask(0,1)
 		$DocArea/CollisionShape2D.disabled = false
 	if Globalvar.mission_done:
 		$TileMap/Open.show()
@@ -98,13 +106,14 @@ func _on_arrows_button_pressed():
 	$Node/Arrows/ArrowsButton.disabled = true
 	$Node/Arrows.hide()
 
-func _on_gold_button_pressed():
-	Globalvar.has_goldsword = true
-	$Node/GoldSword/GoldButton.disabled = true
-	$Node/GoldSword.hide()
-
-
 func _on_diamond_button_pressed():
 	Globalvar.has_diamondsword = true
 	$Node/DiamondSword/DiamondButton.disabled = true
 	$Node/DiamondSword.hide()
+
+
+func _on_coin_button_pressed():
+	Coincounter.num += 15
+	$Node/CoinButton.hide()
+	$Node/CoinButton.disabled = true
+	

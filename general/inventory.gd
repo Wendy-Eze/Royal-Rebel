@@ -16,10 +16,11 @@ func _process(delta):
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
 	
-	if Globalvar.has_goldsword:
-		$Container/GoldSword/Sprite2D.show()
+	#if Globalvar.has_goldsword:
+		#$Container/GoldSword/Sprite2D.show()
 	if Globalvar.has_diamondsword:
-		$Container/DiamondSword/Sprite2D.show()
+			$Container/Sword/Diamond.show()
+			$Container/Sword/Sprite2D.hide()
 	
 	if Globalvar.has_armor:
 		$Container/Armor/Sprite2D.show()
@@ -124,7 +125,7 @@ func _process(delta):
 		diamond.border_width_bottom = 5
 		diamond.border_width_top = 5
 		diamond.border_width_right = 5
-		diamond.gold.border_width_left = 5
+		diamond.border_width_left = 5
 		add_theme_stylebox_override("panel", diamond)
 		
 		arrow.border_width_bottom = 0

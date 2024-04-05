@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=81 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
@@ -6628,6 +6628,18 @@ expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hnka5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsnk7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpcgx"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_hp08i"]
+action = &"add"
+
+[sub_resource type="Shortcut" id="Shortcut_lk5hr"]
+events = [SubResource("InputEventAction_hp08i")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxcew"]
 atlas = ExtResource("32_oih1s")
 region = Rect2(0, 0, 32, 32)
@@ -6993,6 +7005,22 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_kfmuj")
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Button" type="Button" parent="CanvasLayer/WitchDialogue"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 652.0
+offset_top = -84.0
+offset_right = 809.0
+offset_bottom = -38.0
+theme_override_fonts/font = ExtResource("32_5uffa")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hnka5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fsnk7")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mpcgx")
+button_mask = 0
+shortcut = SubResource("Shortcut_lk5hr")
+text = "(E) to skip"
+
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
 [node name="WitchIcon" type="Sprite2D" parent="CanvasLayer"]
@@ -7015,4 +7043,5 @@ frame_progress = 0.579296
 [connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/WitchDialogue/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]

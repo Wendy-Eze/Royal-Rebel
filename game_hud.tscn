@@ -107,6 +107,7 @@ texture_normal = ExtResource("11_m028w")
 texture_filter = 1
 
 [node name="GameOverScreen" parent="." instance=ExtResource("4_r3yx1")]
+layer = 4
 visible = false
 
 [node name="CoinDisplay" type="Sprite2D" parent="."]

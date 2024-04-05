@@ -12,8 +12,16 @@ func _process(delta):
 
 func _on_restart_button_pressed():
 	Livecounter.num = 100
-	Goblinkill.num = 0
-	get_tree().change_scene_to_file("res://level_1.tscn")
+	if Globalvar.level == 1:
+		get_tree().change_scene_to_file("res://level_1.tscn")
+		Goblinkill.num = 0
+		Globalvar.has_armor = false 
+		Globalvar.armor_equipped = false
+	if Globalvar.level == 2:
+		get_tree().change_scene_to_file("res://level_2.tscn")
+	if Globalvar.level == 3:
+		get_tree().change_scene_to_file("res://level_3.tscn")
+		Goblinkill.num = 0
 
 
 func _on_quit_button_pressed():
