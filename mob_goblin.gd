@@ -40,7 +40,6 @@ func _physics_process(delta):
 		
 	player_position = player.position
 	target_position = (player.position - position).normalized()
-#160
 	if (position.distance_to(player_position) > 250 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
@@ -96,8 +95,8 @@ func _hit_by_arrow():
 	health -= damage
 	$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
-	$HealthBar.show()
 	$HealthTimer.start()
+	$HealthBar.show()
 	print("goblin was hit! ", health)
 	#arrow_hit = true
 	#set_linear_velocity((player_position - position).normalized() * speed)
