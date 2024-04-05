@@ -264,7 +264,7 @@ shape = SubResource("RectangleShape2D_76sq3")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.8
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
@@ -285,6 +285,7 @@ wait_time = 2.0
 wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.7
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m67p")

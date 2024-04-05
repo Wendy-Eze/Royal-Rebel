@@ -1,1 +1,12 @@
 res://main_scene.tscn
+res://player.gd
+res://player.tscn
+res://level_1.tscn
+res://level_2.tscn
+res://level_3.tscn
+res://game_hud.tscn
+res://game_over_screen.tscn
+res://mob_knight.tscn
+res://general/arrow.tscn
+res://dungeon.gd
+res://dungeon.tscn

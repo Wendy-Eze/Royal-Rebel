@@ -1,10 +1,10 @@
+Button
 Sprite2D
 Label
 Timer
 CollisionShape2D
 Area2D
 StaticBody2D
-Button
 Node
 TileMap
 AnimatedSprite2D

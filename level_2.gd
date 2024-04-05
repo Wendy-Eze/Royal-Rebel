@@ -9,6 +9,7 @@ func _ready():
 	$GameHUD/KillCount_G.hide()
 	Globalvar.is_guard = true
 	Globalvar.blindknight = true 
+	$KnightKey.hide()
 	#pass # Replace with function body.
 
 
@@ -82,7 +83,6 @@ func _on_k_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
 		$MainMap/Fountain/StaticBody2D.collision_layer = 1
 		#$KnightKey/CollisionShape2D.disabled = true
-		$KnightKey.hide()
 		Globalvar.blindknight = true
 		
 func _on_begin_body_entered(body):

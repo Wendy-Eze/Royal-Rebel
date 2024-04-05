@@ -345,7 +345,6 @@ wait_time = 0.5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(42.724, -39.5001)
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
 animation = &"walk"
@@ -358,7 +357,7 @@ shape = SubResource("RectangleShape2D_25dgw")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(36.5, -22.25)
+position = Vector2(12, 15)
 shape = SubResource("RectangleShape2D_ru3nh")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
@@ -369,7 +368,7 @@ volume_db = -35.0
 wait_time = 0.45
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(122.5, -63)
+position = Vector2(81.5, -29.5)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -2)

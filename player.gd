@@ -140,14 +140,25 @@ func arrow():
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
 	
 	var target = get_global_mouse_position()
-	var direction_to_mouse = arrow.global_position.direction_to(target).normalized()
-	
+	var direction_to_mouse 
+	#= arrow.global_position.direction_to(target).normalized()
+#
 	if $AnimatedSprite2D.flip_h:
-		direction_to_mouse = -(Vector2.LEFT) # Shoot left if player is flipped
+		direction_to_mouse = Vector2.LEFT
+		#Vector2.LEFT.rotated(rotation)
+		# Shoot left if player is flipped
+		print("facing left")
 	else:
-		direction_to_mouse = Vector2.RIGHT.rotated(rotation)  # Shoot right if player is not flipped
+		direction_to_mouse = Vector2.RIGHT  # Shoot right if player is not flipped
 
 	arrow.set_direction(direction_to_mouse)
+	
+	#var arrow_instance = preload("res://general/arrow.tscn").instantiate()
+	#add_child(arrow_instance)
+	#arrow_instance.global_position = end_of_bow.global_position  # Set the arrow's position
+#
+	#var direction_to_player = Vector2.RIGHT.rotated(rotation) if not $AnimatedSprite2D.flip_h else Vector2.LEFT.rotated(rotation)
+	#arrow_instance.set_direction(direction_to_player)
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()

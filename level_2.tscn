@@ -42222,14 +42222,12 @@ position = Vector2(1587.71, 391.286)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/Kingdom/CastleEntrance"]
 position = Vector2(-4.42859, -8.89291)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_h1ako")
 
 [node name="Area2D" type="Area2D" parent="MainMap/Kingdom/CastleEntrance"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/Kingdom/CastleEntrance/Area2D"]
 position = Vector2(-5.21436, 18.8571)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_d1d6l")
 
 [node name="TileMap4" type="TileMap" parent="MainMap"]

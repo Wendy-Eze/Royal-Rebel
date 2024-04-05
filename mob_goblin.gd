@@ -24,21 +24,24 @@ func set_health_bar():
 
 func _physics_process(delta):
 	
+	if Globalvar.equip_arrow:
+		damage = 10
+	if Globalvar.equip_arrow and Globalvar.level == 2:
+		damage = 8
+	if Globalvar.equip_arrow and Globalvar.level == 3:
+		damage = 6
+		
 	if Globalvar.level == 2:
 		damage = 10
-	#if Globalvar.level == 2 and Globalvar.equip_diamond:
-		#damage = 10
-	if Globalvar.level == 3 and Globalvar.equip_sword:
+	if Globalvar.level == 3:
 		damage = 5
-	if Globalvar.level == 3 and Globalvar.equip_gold:
+	if Globalvar.level == 3 and Globalvar.has_diamondsword:
 		damage = 10
-	if Globalvar.level == 3 and Globalvar.equip_diamond:
-		damage = 15
 		
 	player_position = player.position
 	target_position = (player.position - position).normalized()
-
-	if (position.distance_to(player_position) > 160 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
+#160
+	if (position.distance_to(player_position) > 250 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
 		if target_position.x > 0:
@@ -54,7 +57,7 @@ func _physics_process(delta):
 		timer_started = false
 	else:
 		set_linear_velocity(Vector2.ZERO)
-		if not timer_started and not Globalvar.is_invisible:
+		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
 			$Timer.start()
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
@@ -80,8 +83,8 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
-	#Livecounter.num -= 15
-	if position.distance_to(player_position) <= 160:
+	#Livecounter.num -= 10
+	if position.distance_to(player_position) <= 250:
 		$DamageTimer.start()
 		print("timer started")
 	$Timer.stop()

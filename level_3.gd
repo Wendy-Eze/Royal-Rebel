@@ -20,12 +20,23 @@ func _ready():
 	#pass # Replace with function body.
 
 
+
+func dialogue():
+	if index < bdialogue.size():
+		$CanvasLayer/WitchDialogue.text = bdialogue[index]
+		$CanvasLayer/Timer.start(5)
+		index += 1
+	else:
+		$CanvasLayer/Timer.stop()
+		$CanvasLayer/WitchDialogue.hide() 
+		$CanvasLayer/WitchIcon.hide()
+		$Witch2.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
 
-
+#
 func _on_timer_timeout():
 	if index < bdialogue.size():
 		$CanvasLayer/WitchDialogue.text = bdialogue[index]
@@ -36,3 +47,8 @@ func _on_timer_timeout():
 		$CanvasLayer/WitchDialogue.hide() 
 		$CanvasLayer/WitchIcon.hide()
 		$Witch2.hide()
+
+
+func _on_button_pressed():
+	dialogue()
+	#index += 1
