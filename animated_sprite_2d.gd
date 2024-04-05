@@ -5,7 +5,6 @@ var speed
 var facing_down = true
 var player_position
 var target_position
-var health: int = 100
 var damage: int = 10
 @onready var player = get_parent().get_node("Player")
 var is_wandering = true
@@ -55,9 +54,6 @@ func _physics_process(delta):
 		else:
 			speed = 10
 			$DamageTimer.start()
-	
-	if health <= 0:
-		queue_free()
 		
 	if Globalvar.in_dungeon:
 		$CollisionShape2D.disabled = true

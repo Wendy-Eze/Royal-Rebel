@@ -254,7 +254,7 @@ texture_filter = 1
 position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"take_hit"
+animation = &"deaddrop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
