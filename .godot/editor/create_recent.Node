@@ -1,6 +1,8 @@
+Label
+TextureRect
+CanvasLayer
 Button
 Sprite2D
-Label
 Timer
 CollisionShape2D
 Area2D
@@ -10,5 +12,3 @@ TileMap
 AnimatedSprite2D
 RigidBody2D
 NavigationLink2D
-Panel
-CanvasLayer
