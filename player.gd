@@ -102,7 +102,7 @@ func dash():
 	ghost_timer.start()
 	
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", position + velocity * 1.5, 0.45)
+	tween.tween_property(self, "position", position + velocity * 1.0, 0.30)
 	await tween.finished
 	ghost_timer.stop()
 		##dashing = false
