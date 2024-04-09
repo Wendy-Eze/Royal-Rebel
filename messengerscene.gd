@@ -25,6 +25,7 @@ func _on_start_body_entered(body):
 			talk_started = true
 			$MessengerDialogue/Text.show()
 			$MessengerDialogue/NPC.show()
+			$MessengerDialogue/Button.show()
 			$Timer.start()
 
 func _on_timer_timeout():
@@ -47,12 +48,41 @@ func _on_timer_timeout():
 		$MessengerDialogue/Text.hide()
 		$MessengerDialogue/NPC.hide()
 		$MessengerDialogue/Statue.hide()
-
+		$MessengerDialogue/Button.hide()
+		
+func message():
+	if index < dialogue.size():
+		$MessengerDialogue/Text.text = dialogue[index]
+		$Timer.start(5)
+		if index == 2:
+			$MessengerDialogue/Reply.show()
+			$MessengerDialogue/NPC.hide()
+		else:
+			$MessengerDialogue/Reply.hide()
+			$MessengerDialogue/NPC.show()
+		if index == 4:
+			$MessengerDialogue/Statue.show()
+		else:
+			$MessengerDialogue/Statue.hide()
+		index += 1
+	else:
+		$Timer.stop()
+		$MessengerDialogue/Text.hide()
+		$MessengerDialogue/NPC.hide()
+		$MessengerDialogue/Statue.hide()
+		$MessengerDialogue/Button.hide()
 
 func _on_start_body_exited(body):
 	if body.is_in_group("player"):
 		index = 5
 		talk_started = false
 		$MessengerDialogue/Text.hide()
+		$MessengerDialogue/Reply.hide()
 		$MessengerDialogue/NPC.hide()
+		$MessengerDialogue/Button.hide()
+		$MessengerDialogue/Statue.hide()
 		$Timer.stop()
+
+
+func _on_button_pressed():
+	message()

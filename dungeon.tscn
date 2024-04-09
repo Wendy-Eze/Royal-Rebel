@@ -1,4 +1,4 @@
-[gd_scene load_steps=115 format=3 uid="uid://cgy2apekwckpv"]
+[gd_scene load_steps=122 format=3 uid="uid://cgy2apekwckpv"]
 
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="1_bi10q"]
 [ext_resource type="Script" path="res://dungeon.gd" id="1_t1scc"]
@@ -18809,6 +18809,22 @@ spacing_glyph = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vi7i2"]
 bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hhqhy"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m40e7"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv5ee"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_j1tan"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_h47yu"]
+events = [SubResource("InputEventKey_j1tan")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bl8j"]
 atlas = ExtResource("13_xfunr")
 region = Rect2(0, 336, 32, 48)
@@ -18844,6 +18860,12 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6ojhy"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf5d4"]
+size = Vector2(49.6429, 147.679)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cs8c3"]
 atlas = ExtResource("10_4yhej")
@@ -19206,7 +19228,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(2621541, 262144, 24, 2687077, 262144, 25, 2752613, 262144, 26, 2621529, 262144, 24, 2687065, 262144, 25, 2752601, 262144, 26, 2621516, 262144, 24, 2687052, 262144, 25, 2752588, 262144, 26, 1245285, 327680, 24, 1310821, 327680, 25, 1376357, 327680, 26, 1245291, 262144, 24, 1310827, 262144, 25, 1376363, 262144, 26, 1245279, 262144, 24, 1310815, 262144, 25, 1376351, 262144, 26, 1245273, 327680, 24, 1310809, 327680, 25, 1376345, 327680, 26, 1245267, 262144, 24, 1310803, 262144, 25, 1376339, 262144, 26, 720972, 262144, 24, 786508, 262144, 25, 852044, 262144, 26, 720997, 262144, 24, 786533, 262144, 25, 852069, 262144, 26, 721009, 262144, 24, 786545, 262144, 25, 852081, 262144, 26, 2097253, 262144, 24, 2162789, 262144, 25, 2228325, 262144, 26, 2097265, 262144, 24, 2162801, 262144, 25, 2228337, 262144, 26, 2097241, 262144, 24, 2162777, 262144, 25, 2228313, 262144, 26, 2097228, 262144, 24, 2162764, 262144, 25, 2228300, 262144, 26, 2621523, 327680, 24, 2687059, 327680, 25, 2752595, 327680, 26, 2621524, 327680, 24, 2687060, 327680, 25, 2752596, 327680, 26, 2621525, 327680, 24, 2687061, 327680, 25, 2752597, 327680, 26, 2621535, 327680, 24, 2687071, 327680, 25, 2752607, 327680, 26, 2621536, 327680, 24, 2687072, 327680, 25, 2752608, 327680, 26, 2621537, 327680, 24, 2687073, 327680, 25, 2752609, 327680, 26, 2621547, 327680, 24, 2687083, 327680, 25, 2752619, 327680, 26, 2621548, 327680, 24, 2687084, 327680, 25, 2752620, 327680, 26, 2621549, 327680, 24, 2687085, 327680, 25, 2752621, 327680, 26, 2621553, 327680, 24, 2687089, 327680, 25, 2752625, 327680, 26, 2621554, 327680, 24, 2687090, 327680, 25, 2752626, 327680, 26, 2621555, 327680, 24, 2687091, 327680, 25, 2752627, 327680, 26, 2097259, 327680, 24, 2162795, 327680, 25, 2228331, 327680, 26, 2097260, 327680, 24, 2162796, 327680, 25, 2228332, 327680, 26, 2097261, 327680, 24, 2162797, 327680, 25, 2228333, 327680, 26, 2097247, 327680, 24, 2162783, 327680, 25, 2228319, 327680, 26, 2097248, 327680, 24, 2162784, 327680, 25, 2228320, 327680, 26, 2097249, 327680, 24, 2162785, 327680, 25, 2228321, 327680, 26, 2097235, 327680, 24, 2162771, 327680, 25, 2228307, 327680, 26, 2097236, 327680, 24, 2162772, 327680, 25, 2228308, 327680, 26, 2097237, 327680, 24, 2162773, 327680, 25, 2228309, 327680, 26, 1245260, 327680, 24, 1310796, 327680, 25, 1376332, 327680, 26, 1245261, 327680, 24, 1310797, 327680, 25, 1376333, 327680, 26, 1245262, 327680, 24, 1310798, 327680, 25, 1376334, 327680, 26, 1245274, 327680, 24, 1310810, 327680, 25, 1376346, 327680, 26, 1245275, 327680, 24, 1310811, 327680, 25, 1376347, 327680, 26, 1245286, 327680, 24, 1310822, 327680, 25, 1376358, 327680, 26, 1245287, 327680, 24, 1310823, 327680, 25, 1376359, 327680, 26, 1245297, 327680, 24, 1310833, 327680, 25, 1376369, 327680, 26, 1245298, 327680, 24, 1310834, 327680, 25, 1376370, 327680, 26, 1245299, 327680, 24, 1310835, 327680, 25, 1376371, 327680, 26, 721003, 327680, 24, 786539, 327680, 25, 852075, 327680, 26, 721004, 327680, 24, 786540, 327680, 25, 852076, 327680, 26, 721005, 327680, 24, 786541, 327680, 25, 852077, 327680, 26, 720991, 327680, 24, 786527, 327680, 25, 852063, 327680, 26, 720992, 327680, 24, 786528, 327680, 25, 852064, 327680, 26, 720993, 327680, 24, 786529, 327680, 25, 852065, 327680, 26, 720979, 327680, 24, 786515, 327680, 25, 852051, 327680, 26, 720980, 327680, 24, 786516, 327680, 25, 852052, 327680, 26, 720981, 327680, 24, 786517, 327680, 25, 852053, 327680, 26, 720985, 262144, 24, 786521, 262144, 25, 852057, 262144, 26)
 
 [node name="ArmoryClosed" type="TileMap" parent="TileMap"]
-visible = false
+z_index = 1
 tile_set = SubResource("TileSet_n0dym")
 format = 2
 layer_0/z_index = 1
@@ -19314,6 +19336,20 @@ position = Vector2(307, -34)
 scale = Vector2(5, 5)
 texture = ExtResource("14_uws3c")
 
+[node name="Button" type="Button" parent="DoctorDialogue"]
+visible = false
+offset_left = 1293.0
+offset_top = 622.0
+offset_right = 1489.0
+offset_bottom = 661.0
+theme_override_fonts/font = ExtResource("13_ai01h")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_hhqhy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m40e7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vv5ee")
+shortcut = SubResource("Shortcut_h47yu")
+text = "(Enter) to skip"
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
@@ -19350,6 +19386,28 @@ scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_tk7vq")
 autoplay = "default"
 frame_progress = 0.297995
+
+[node name="Label" type="Label" parent="Prisoners/P1"]
+visible = false
+z_index = 1
+texture_filter = 1
+offset_left = -46.7143
+offset_top = 24.0
+offset_right = 40.2857
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("13_ai01h")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ojhy")
+text = "Be careful!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NPCArea" type="Area2D" parent="Prisoners/P1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prisoners/P1/NPCArea"]
+position = Vector2(2.78589, 41.5893)
+shape = SubResource("RectangleShape2D_lf5d4")
 
 [node name="P2" type="AnimatedSprite2D" parent="Prisoners"]
 texture_filter = 1
@@ -19390,6 +19448,28 @@ sprite_frames = SubResource("SpriteFrames_dq3gh")
 autoplay = "default"
 frame_progress = 0.84978
 
+[node name="Label" type="Label" parent="Prisoners/P6"]
+visible = false
+z_index = 1
+texture_filter = 1
+offset_left = -36.5714
+offset_top = 14.4286
+offset_right = 33.4286
+offset_bottom = 34.4286
+theme_override_fonts/font = ExtResource("13_ai01h")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ojhy")
+text = "Lalalala"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NPCArea" type="Area2D" parent="Prisoners/P6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prisoners/P6/NPCArea"]
+position = Vector2(2.78589, 34.0714)
+shape = SubResource("RectangleShape2D_lf5d4")
+
 [node name="P7" type="AnimatedSprite2D" parent="Prisoners"]
 texture_filter = 1
 position = Vector2(7357, 4147)
@@ -19405,6 +19485,29 @@ scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_fbgtx")
 autoplay = "default"
 frame_progress = 0.393459
+
+[node name="Label" type="Label" parent="Prisoners/P8"]
+visible = false
+z_index = 1
+texture_filter = 1
+offset_left = -46.7143
+offset_top = 5.85714
+offset_right = 45.2857
+offset_bottom = 28.8571
+theme_override_fonts/font = ExtResource("13_ai01h")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_6ojhy")
+text = "Pls! Help Us!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="NPCArea" type="Area2D" parent="Prisoners/P8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Prisoners/P8/NPCArea"]
+position = Vector2(2.14287, 35)
+shape = SubResource("RectangleShape2D_lf5d4")
+metadata/_edit_group_ = true
 
 [node name="P9" type="AnimatedSprite2D" parent="Prisoners"]
 texture_filter = 1
@@ -19490,6 +19593,7 @@ text = "E"
 
 [node name="CoinButton" type="Button" parent="Node"]
 z_index = 1
+z_as_relative = false
 offset_left = 5266.0
 offset_top = 2080.0
 offset_right = 5495.0
@@ -19504,7 +19608,15 @@ text = "E"
 
 [connection signal="body_entered" from="TileMap/ArmoryClosed/Sprite2D/Lock" to="." method="_on_lock_body_entered"]
 [connection signal="body_entered" from="DocArea" to="." method="_on_doc_area_body_entered"]
+[connection signal="body_exited" from="DocArea" to="." method="_on_doc_area_body_exited"]
+[connection signal="pressed" from="DoctorDialogue/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Prisoners/P1/NPCArea" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="Prisoners/P1/NPCArea" to="." method="_on_npc_area_body_exited"]
+[connection signal="body_entered" from="Prisoners/P6/NPCArea" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="Prisoners/P6/NPCArea" to="." method="_on_npc_area_body_exited"]
+[connection signal="body_entered" from="Prisoners/P8/NPCArea" to="." method="_on_npc_area_body_entered"]
+[connection signal="body_exited" from="Prisoners/P8/NPCArea" to="." method="_on_npc_area_body_exited"]
 [connection signal="pressed" from="Node/Arrows/ArrowsButton" to="." method="_on_arrows_button_pressed"]
 [connection signal="pressed" from="Node/DiamondSword/DiamondButton" to="." method="_on_diamond_button_pressed"]
 [connection signal="pressed" from="Node/CoinButton" to="." method="_on_coin_button_pressed"]

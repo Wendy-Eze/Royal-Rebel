@@ -132,6 +132,7 @@ func add_ghost():
 	ghost.flip_h = $AnimatedSprite2D.flip_h
 	ghost.flip_v = $AnimatedSprite2D.flip_v
 
+
 func arrow():
 	#if arrow_cooldown.is_stopped():
 		#pass
@@ -152,13 +153,6 @@ func arrow():
 		direction_to_mouse = Vector2.RIGHT  # Shoot right if player is not flipped
 
 	arrow.set_direction(direction_to_mouse)
-	
-	#var arrow_instance = preload("res://general/arrow.tscn").instantiate()
-	#add_child(arrow_instance)
-	#arrow_instance.global_position = end_of_bow.global_position  # Set the arrow's position
-#
-	#var direction_to_player = Vector2.RIGHT.rotated(rotation) if not $AnimatedSprite2D.flip_h else Vector2.LEFT.rotated(rotation)
-	#arrow_instance.set_direction(direction_to_player)
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()

@@ -18,6 +18,7 @@ var has_key = false
 var has_armorkey = false
 var blindknight = false
 var unlocked_armory = false 
+var gaurd_dead = false
 
 #Inventory Purposes
 var equip_arrow = false
@@ -37,6 +38,9 @@ var adiamond = false
 
 var first = 0
 var collected = false
+
+#LEVEL1
+var lvl1_done = false
 
 #LEVEL 2
 var entered_kingdom = false

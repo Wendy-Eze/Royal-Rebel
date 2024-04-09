@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=145 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://bqkqoxcemu4yh" path="res://art/npc/Witch/portal.png" id="30_twfq8"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="33_mlvms"]
 [ext_resource type="PackedScene" uid="uid://cgy2apekwckpv" path="res://dungeon.tscn" id="34_4m7o7"]
+[ext_resource type="AudioStream" uid="uid://du5ayh5dstbqf" path="res://art/misc/portalsound.mp3" id="36_dsn5m"]
 [ext_resource type="PackedScene" uid="uid://bkifg6bp220da" path="res://knightkey.tscn" id="38_20kho"]
 [ext_resource type="Texture2D" uid="uid://chpnfnyrv0lda" path="res://art/misc/armorykey.png" id="39_ngr4y"]
 [ext_resource type="Texture2D" uid="uid://bdwvpmx36uau" path="res://art/npc/key-white.png" id="40_6fti0"]
@@ -41978,6 +41979,22 @@ expand_margin_left = 100.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7lgl"]
 bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qswb"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jlha"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4ryc"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_ppk7u"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_c1d2b"]
+events = [SubResource("InputEventKey_ppk7u")]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vcyd"]
 size = Vector2(766, 329.5)
 
@@ -42413,6 +42430,22 @@ position = Vector2(425, 722)
 scale = Vector2(7, 7)
 texture = ExtResource("20_3frt0")
 
+[node name="Button" type="Button" parent="MainMap/MessengerScene/MessengerDialogue"]
+visible = false
+anchors_preset = -1
+anchor_bottom = 0.011
+offset_left = 1253.0
+offset_top = 605.0
+offset_right = 1477.0
+offset_bottom = 633.12
+theme_override_fonts/font = ExtResource("33_mlvms")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qswb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2jlha")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j4ryc")
+shortcut = SubResource("Shortcut_c1d2b")
+text = "(Enter) to skip"
+
 [node name="Timer" type="Timer" parent="MainMap/MessengerScene"]
 wait_time = 0.1
 
@@ -42516,6 +42549,10 @@ frame_progress = 0.964574
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/WitchScene/Portal"]
 position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_ahdsf")
+
+[node name="Sound" type="AudioStreamPlayer" parent="MainMap/WitchScene/Portal"]
+stream = ExtResource("36_dsn5m")
+volume_db = -20.853
 
 [node name="WitchDialogue" type="CanvasLayer" parent="MainMap/WitchScene"]
 
@@ -42661,7 +42698,7 @@ theme_override_font_sizes/font_size = 35
 theme_override_styles/normal = SubResource("StyleBoxFlat_rjo16")
 text = "Welcome to the Kingdom! 
 Beware of the knights. Use your armor wisely.
-Explore as a mission awaits you."
+Speak with civilians as a mission awaits you."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -42718,6 +42755,7 @@ text = "Complete the mission to proceed!"
 [connection signal="body_exited" from="MainMap/Kingdom/CastleEntrance/Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="MainMap/MessengerScene/Start" to="MainMap/MessengerScene" method="_on_start_body_entered"]
 [connection signal="body_exited" from="MainMap/MessengerScene/Start" to="MainMap/MessengerScene" method="_on_start_body_exited"]
+[connection signal="pressed" from="MainMap/MessengerScene/MessengerDialogue/Button" to="MainMap/MessengerScene" method="_on_button_pressed"]
 [connection signal="timeout" from="MainMap/MessengerScene/Timer" to="MainMap/MessengerScene" method="_on_timer_timeout"]
 [connection signal="body_entered" from="MainMap/WitchScene/Area2D" to="MainMap/WitchScene" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MainMap/WitchScene/Timer" to="MainMap/WitchScene" method="_on_timer_timeout"]

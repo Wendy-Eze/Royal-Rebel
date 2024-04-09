@@ -149,7 +149,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack",
-"speed": 9.0
+"speed": 11.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,7 +240,6 @@ bg_color = Color(0.854902, 0.133333, 0, 1)
 
 [node name="Mushroom" type="RigidBody2D" groups=["enemy"]]
 collision_layer = 12
-collision_mask = 0
 gravity_scale = 0.0
 continuous_cd = 1
 max_contacts_reported = 1
@@ -252,8 +251,8 @@ texture_filter = 1
 position = Vector2(-40, -28)
 scale = Vector2(3.9675, 3.9675)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
-frame_progress = 0.92657
+animation = &"take_hit"
+frame_progress = 0.647421
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-40, 3.5)
@@ -263,7 +262,6 @@ shape = SubResource("RectangleShape2D_76sq3")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 
 [node name="RespawnTimer" type="Timer" parent="."]
 
@@ -284,7 +282,7 @@ wait_time = 2.0
 wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.6
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_pgqu1")

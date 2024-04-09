@@ -161,12 +161,29 @@ func _process(delta):
 		$Container/Potion/Label.text = " "
 	#$Container/Potion/Timer.text = str($Container/Potion/Timer2.time_left)
 	$Container/Potion/Timer.text = "%d" % [int($Container/Potion/Timer2.time_left)]
+	
+	if Globalvar.armor_equipped and Globalvar.level == 2:
+		if Input.is_action_just_pressed("knight"):
+			#Globalvar.i_num -= 1
+			Globalvar.is_invisible = true
+			$Container/Armor/Countdown.show()
+			$Container/Armor/Timer.show()
+			$Container/Armor/Timer2.start()
+			
+	#else:
+		#$Container/Potion/Sprite2D.hide()
+		#$Container/Potion/Label.text = " "
+	#$Container/Potion/Timer.text = str($Container/Potion/Timer2.time_left)
+	$Container/Armor/Timer.text = "%d" % [int($Container/Armor/Timer2.time_left)]
 
 
 func _on_timer_2_timeout():
 	Globalvar.is_invisible = false
 	$Container/Potion/Countdown.hide()
 	$Container/Potion/Timer.hide()
+	
+	$Container/Armor/Countdown.hide()
+	$Container/Armor/Timer.hide()
 	#if not Globalvar.equip_potion and Globalvar.i_num == 0:
 	#$Container/Potion/Sprite2D.hide()
 
