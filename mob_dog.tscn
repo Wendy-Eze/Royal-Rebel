@@ -302,7 +302,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -371,7 +371,8 @@ texture_filter = 1
 position = Vector2(-40, -28)
 scale = Vector2(3.9675, 3.9675)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
+animation = &"deaddrop"
+frame_progress = 0.678539
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-52.5, -51)
@@ -402,7 +403,7 @@ wait_time = 2.0
 wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.6
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_34wu2")

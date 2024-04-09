@@ -40,6 +40,7 @@ func _process(delta):
 		$GameOverScreen.show()
 		$PlayerHealth.hide()
 		$MuteButton.hide()
+		
 	
 	if Globalvar.level == 1 and attempts == 0:
 		$LevelTimer.start()
@@ -67,6 +68,12 @@ func add_arrow():
 func _on_menu_button_pressed():
 	$Menu.show()
 	get_tree().paused = true
+	if Globalvar.level == 1:
+		$Menu/Lvl1Obj.show()
+	if Globalvar.level == 2:
+		$Menu/Lvl2Obj.show()
+	if Globalvar.level == 3:
+		$Menu/Lvl3Obj.show()
 	#if $Menu.is_visible():
 		#$Menu.hide()
 		##get_tree().paused = false
@@ -76,6 +83,9 @@ func _on_menu_button_pressed():
 
 func _on_exit_button_pressed():
 	$Menu.hide()
+	$Menu/Lvl1Obj.hide()
+	$Menu/Lvl2Obj.hide()
+	$Menu/Lvl3Obj.hide()
 	get_tree().paused = false
 		 # Replace with function body.
 

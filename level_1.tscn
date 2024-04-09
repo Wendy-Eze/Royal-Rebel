@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -2976,6 +2976,17 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_qlsd7")
 sources/1 = SubResource("TileSetAtlasSource_rkpuq")
 sources/3 = SubResource("TileSetAtlasSource_5xega")
+
+[sub_resource type="FontVariation" id="FontVariation_jc6lg"]
+base_font = ExtResource("9_k1uxt")
+spacing_glyph = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbx7d"]
+bg_color = Color(0.803922, 0.0784314, 0.027451, 1)
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_be78s"]
 texture = ExtResource("11_dao2s")
@@ -14341,6 +14352,7 @@ vertical_alignment = 1
 
 [node name="WTimer" type="Timer" parent="GameHUD"]
 wait_time = 15.0
+one_shot = true
 
 [node name="WarningTimer" type="Label" parent="GameHUD"]
 visible = false
@@ -14352,6 +14364,18 @@ offset_bottom = 261.0
 theme_override_fonts/font = ExtResource("9_k1uxt")
 theme_override_font_sizes/font_size = 90
 text = "0"
+
+[node name="Mission" type="Label" parent="GameHUD"]
+visible = false
+texture_filter = 1
+offset_left = 585.0
+offset_top = 218.0
+offset_right = 1136.0
+offset_bottom = 289.0
+theme_override_fonts/font = SubResource("FontVariation_jc6lg")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_pbx7d")
+text = "Complete Mission!!"
 
 [node name="mob_spawner" parent="." instance=ExtResource("4_nxpkb")]
 
@@ -14508,6 +14532,7 @@ offset_bottom = 2233.0
 metadata/_edit_group_ = true
 
 [node name="Knight" type="AnimatedSprite2D" parent="NextLevMission"]
+visible = false
 texture_filter = 1
 position = Vector2(140, 172)
 scale = Vector2(7, 7)
@@ -14517,6 +14542,7 @@ autoplay = "idle"
 flip_h = true
 
 [node name="Convo" type="Label" parent="NextLevMission"]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = -104.0
@@ -14573,4 +14599,5 @@ one_shot = true
 [connection signal="timeout" from="Lev1_Mission/OutroTimer" to="Lev1_Mission" method="_on_outro_timer_timeout"]
 [connection signal="body_entered" from="Lev1_Mission/Armor" to="Lev1_Mission" method="_on_armor_body_entered"]
 [connection signal="body_entered" from="NextLevMission/ArmorCheck" to="." method="_on_armor_check_body_entered"]
+[connection signal="body_exited" from="NextLevMission/ArmorCheck" to="." method="_on_armor_check_body_exited"]
 [connection signal="timeout" from="MissionTimer" to="." method="_on_mission_timer_timeout"]

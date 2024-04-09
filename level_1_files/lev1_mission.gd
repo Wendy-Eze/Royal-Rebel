@@ -13,6 +13,7 @@ func _process(delta):
 			$Armor/CollisionShape2D.disabled = true 
 		else:
 			$EndMission/CollisionShape2D.disabled = false
+			Globalvar.lvl1_done = true
 			$MissionDetect/CollisionShape2D.disabled = true
 	else:
 		pass

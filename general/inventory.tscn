@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=35 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://general/inventory.gd" id="1_jhhv0"]
@@ -87,6 +87,36 @@ bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4n6c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgohs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kpub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_q6cb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_krwe8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xrg5u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d6w2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pugcp")
+}],
+"loop": true,
+"name": &"timer",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxs67"]
+bg_color = Color(0.0705882, 0.0705882, 0.427451, 0.705882)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de3du"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
@@ -333,6 +363,31 @@ text = "4"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Countdown" type="AnimatedSprite2D" parent="Container/Armor"]
+visible = false
+position = Vector2(42, -56)
+scale = Vector2(0.166016, 0.166016)
+sprite_frames = SubResource("SpriteFrames_4kpub")
+animation = &"timer"
+autoplay = "timer"
+
+[node name="Timer" type="Label" parent="Container/Armor"]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = -68.0
+offset_right = 61.0
+offset_bottom = -40.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_xxs67")
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer2" type="Timer" parent="Container/Armor"]
+wait_time = 16.0
+
 [node name="GoldSword" type="Panel" parent="Container"]
 visible = false
 layout_mode = 0
@@ -408,3 +463,4 @@ vertical_alignment = 1
 
 [connection signal="timeout" from="Container/Arrow/ArrowCooldown" to="." method="_on_arrow_cooldown_timeout"]
 [connection signal="timeout" from="Container/Potion/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Container/Armor/Timer2" to="." method="_on_timer_2_timeout"]

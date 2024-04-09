@@ -10,6 +10,8 @@ func _ready():
 	Globalvar.is_guard = true
 	Globalvar.blindknight = true 
 	$KnightKey.hide()
+	Globalvar.has_diamondsword = false
+	Globalvar.gaurd_dead = false
 	#pass # Replace with function body.
 
 
@@ -17,6 +19,9 @@ func _ready():
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	
+	if Globalvar.mission_done:
+			$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = true
 	
 	if Globalvar.has_key:
 		$Dialogue/CollectedKey.show()
@@ -55,7 +60,10 @@ func _on_d_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
 		$MainMap/Fountain/StaticBody2D.collision_layer = 0
-		$KnightKey.show()
+		if not Globalvar.gaurd_dead:
+			$KnightKey.show()
+		else:
+			pass
 		Globalvar.in_dungeon = true
 		Globalvar.blindknight = false
 

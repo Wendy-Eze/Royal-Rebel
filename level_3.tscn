@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bo13v4svby7ym" path="res://art/map art/mystic tree 2.png" id="30_r8iw0"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="32_5uffa"]
 [ext_resource type="Texture2D" uid="uid://clsmvwr02fjnv" path="res://art/misc/mystic portal.png" id="32_oih1s"]
+[ext_resource type="AudioStream" uid="uid://du5ayh5dstbqf" path="res://art/misc/portalsound.mp3" id="33_8mikj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jf7vq"]
 texture = ExtResource("2_gd88p")
@@ -6635,11 +6636,12 @@ expand_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mpcgx"]
 
-[sub_resource type="InputEventAction" id="InputEventAction_hp08i"]
-action = &"add"
+[sub_resource type="InputEventKey" id="InputEventKey_37tup"]
+device = -1
+physical_keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_lk5hr"]
-events = [SubResource("InputEventAction_hp08i")]
+events = [SubResource("InputEventKey_37tup")]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxcew"]
 atlas = ExtResource("32_oih1s")
@@ -6690,6 +6692,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm2h8"]
 
 [node name="Level 3" type="Node"]
 script = ExtResource("1_pwsri")
@@ -7007,10 +7011,10 @@ autowrap_mode = 2
 [node name="Button" type="Button" parent="CanvasLayer/WitchDialogue"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 652.0
-offset_top = -84.0
-offset_right = 809.0
-offset_bottom = -38.0
+offset_left = 593.0
+offset_top = -77.0
+offset_right = 817.0
+offset_bottom = -31.0
 theme_override_fonts/font = ExtResource("32_5uffa")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_hnka5")
@@ -7018,7 +7022,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_fsnk7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mpcgx")
 button_mask = 0
 shortcut = SubResource("Shortcut_lk5hr")
-text = "(E) to skip"
+text = "(Enter) to skip"
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
@@ -7029,13 +7033,22 @@ position = Vector2(491, 743)
 scale = Vector2(4, 4)
 texture = ExtResource("13_p21nb")
 
-[node name="Portal" type="AnimatedSprite2D" parent="."]
+[node name="Portal" type="Area2D" parent="."]
+
+[node name="Sound" type="AudioStreamPlayer" parent="Portal"]
+stream = ExtResource("33_8mikj")
+volume_db = -20.853
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Portal"]
 texture_filter = 1
 position = Vector2(11434, 2938)
 scale = Vector2(17, 17)
 sprite_frames = SubResource("SpriteFrames_s40cp")
 autoplay = "default"
 frame_progress = 0.579296
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource("RectangleShape2D_bm2h8")
 
 [connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
 [connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
