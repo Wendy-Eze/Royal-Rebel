@@ -14,14 +14,7 @@ signal death_over
 var facing
 @export var ghost_node : PackedScene
 @onready var ghost_timer = $GhostTimer
-
-#Some signal is emitted
-# is knight = false (every regular animation should have not is_knight in if statement)
-#	for example: if signal emit:
-#		$AnimatedSprite2D.hide()
-#		$AnimatedSprite2D/SwordHit/CollisionShape2D2.diabled = true
-#		$Knight.show()
-#		is_knight = true 
+var cool_started = false
 
 
 func get_input():
@@ -32,7 +25,9 @@ func get_input():
 			$AnimatedSprite2D.play("dash")
 	
 	if Globalvar.equip_arrow and Globalvar.ready_arrow:
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_just_pressed("attack") and not cool_started:
+			cool_started = true
+			$Cooldown.start(0.7)
 			is_attacking = true
 			$AnimatedSprite2D.play("attack")
 			arrow()
@@ -44,7 +39,9 @@ func get_input():
 	
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("attack") and not is_attacking:
+		if Input.is_action_just_pressed("attack") and not is_attacking and not cool_started:
+			cool_started = true
+			$Cooldown.start(1)
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
@@ -180,3 +177,7 @@ func _on_death_timer_timeout():
 
 func _on_ghost_timer_timeout():
 	add_ghost()
+
+
+func _on_cooldown_timeout():
+	cool_started = false

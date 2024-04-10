@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712781502
+::res://::1712781816
 48x48 trees.png::CompressedTexture2D::3927734489141092342::1711732721::1711732889::1::::<><>::
 animated_sprite_2d.gd::GDScript::-1::1712779754::0::1::::<>CharacterBody2D<>::
 armorkey.gd::GDScript::-1::1712699017::0::1::::<>Sprite2D<>::
@@ -12,7 +12,7 @@ demon.tscn::PackedScene::91531116436368667::1712779627::0::1::::<><>::res://MobD
 Dragon.gd::GDScript::-1::1712699013::0::1::::<>AnimatedSprite2D<>::
 dummy.gd::GDScript::-1::1712779627::0::1::::<>RigidBody2D<>::
 dummy_play.gd::GDScript::-1::1712727171::0::1::::<>Node<>::
-dummy_play.tscn::PackedScene::7850658879870925528::1712778981::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://dummy_play.gd<>uid://cx7hoydklqtkp::::res://mob_dummy.tscn<>uid://be3pnj5onpfin::::res://game_hud.tscn
+dummy_play.tscn::PackedScene::7850658879870925528::1712781527::0::1::::<><>::uid://5dawxk67ob32::::res://player.tscn<>res://dummy_play.gd<>uid://cx7hoydklqtkp::::res://mob_dummy.tscn<>uid://be3pnj5onpfin::::res://game_hud.tscn
 dungeon.gd::GDScript::-1::1712699017::0::1::::<>Node<>::
 dungeon.tscn::PackedScene::5245159648629839723::1712779754::0::1::::<><>::uid://borrord8mmkau::::res://art/map art/cottage.png<>res://dungeon.gd<>uid://b3cwolewqbfq0::::res://art/map art/Dream_Island/cave.png<>uid://88givuk35ta7::::res://art/map art/Dream_Island/village.png<>uid://bnfta2n3gw2p4::::res://art/map art/dungeon_tiles.png<>uid://cdrn6qpj2gier::::res://art/map art/dungeon.png<>uid://cfcboc6gldqww::::res://art/misc/armorysprite.png<>uid://dg0h45u0st6r0::::res://art/map art/wall2.png<>uid://qwysfi1boic3::::res://art/misc/torch_1.png<>uid://cxj4i6h3i5xa3::::res://art/map art/stone_stairs.png<>uid://bfjo1rnxe6vss::::res://art/npc/Male2.png<>uid://8heprxq46ik8::::res://art/map art/stone_ground.png<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://bujdwnum2bsdg::::res://art/misc/mainlevbuild.png<>uid://0eaqof6inety::::res://art/npc/doctor.png<>uid://b4r48jdoaurt1::::res://armory.tscn<>uid://btcd7jlbsnohb::::res://art/font/Born2bSportyV10.ttf<>uid://co25s856y4mdc::::res://art/misc/decorative.png<>uid://dwjxo2o6l6ecf::::res://art/npc/Female1.png<>uid://cl1mpawxjkch4::::res://art/misc/lock.png<>uid://bjimviw1i0c2x::::res://art/npc/Male4.png<>uid://chpnfnyrv0lda::::res://art/misc/armorykey.png<>uid://c8cwhbr0dre1k::::res://icon.svg<>uid://qemu03d8ar8f::::res://art/npc/Female2.png<>uid://cs14uuwnqvty4::::res://art/npc/Male3.png<>uid://6wuhfq722ctj::::res://art/misc/bundle.png<>uid://c8an3xg1nxewm::::res://art/misc/diamondsword.png
 enchanted_spawner.gd::GDScript::-1::1712779627::0::1::::<>Node2D<>::
@@ -499,7 +499,7 @@ mute_button.tscn::PackedScene::8677757892917328444::1712687618::0::1::::<><>::ui
 next_level.gd::GDScript::-1::1710788227::0::1::::<>Area2D<>::
 next_level.tscn::PackedScene::8453309320156836099::1710912217::0::1::::<><>::res://general/next_level.gd<>uid://c8cwhbr0dre1k::::res://icon.svg
 player_health.tscn::PackedScene::5516406173760257235::1712768141::0::1::::<><>::uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf
-::res://intro/::1712336831
+::res://intro/::1712781729
 begingame.gd::GDScript::-1::1709580017::0::1::::<>Area2D<>::
 Control.gd::GDScript::-1::1711386276::0::1::::<>Control<>::
 goblinarea.gd::GDScript::-1::1710966723::0::1::::<>Area2D<>::
@@ -507,8 +507,8 @@ opening_cutscene.gd::GDScript::-1::1711387178::0::1::::<>Node2D<>::
 opening_cutscene.tscn::PackedScene::7399110798549858148::1711944856::0::1::::<><>::res://intro/Control.gd<>res://intro/opening_cutscene.gd<>uid://nf5wnen7byh5::::res://art/font/upheaval/upheavtt.ttf<>uid://74sf4lb1ej0v::::res://art/Untitled design (5).png<>res://intro/Textbox.gd<>uid://d142es0kvvs7q::::res://art/prison.png<>uid://btcd7jlbsnohb::::res://art/font/Born2bSportyV10.ttf<>uid://dtviin2b7s0ql::::res://art/crown.png<>uid://c08y4dp1ernjw::::res://art/tree.png
 storearea.gd::GDScript::-1::1710966723::0::1::::<>Area2D<>::
 Textbox.gd::GDScript::-1::1711499338::0::1::::<>CanvasLayer<>::
-tutorial_steps.gd::GDScript::-1::1710790422::0::1::::<>CanvasLayer<>::
-tutorial_steps.tscn::PackedScene::6123859872531676901::1712336831::0::1::::<><>::res://intro/tutorial_steps.gd<>uid://btcd7jlbsnohb::::res://art/Born2bSportyV10.ttf
+tutorial_steps.gd::GDScript::-1::1712781729::0::1::::<>CanvasLayer<>::
+tutorial_steps.tscn::PackedScene::6123859872531676901::1712781729::0::1::::<><>::res://intro/tutorial_steps.gd<>uid://btcd7jlbsnohb::::res://art/font/Born2bSportyV10.ttf
 tut_player.tscn::PackedScene::4719045920306069902::1710913888::0::1::::<><>::res://player.gd<>uid://dakm6hwpigtq3::::res://art/Player Art/attack_0.png<>uid://dp03l8tqxkqr6::::res://art/Player Art/attack_1.png<>uid://ccihnk2hcyoce::::res://art/Player Art/attack_2.png<>uid://dn21yhkyw46tx::::res://art/Player Art/basic_melee0.png<>uid://cnw378iukpr38::::res://art/Player Art/basic_melee1.png<>uid://cpvwcckchoert::::res://art/Player Art/basic_melee2.png<>uid://cm27cer1adbni::::res://art/Player Art/basic_melee3.png<>uid://b35dip2wba5s8::::res://art/Player Art/idle_0.png<>uid://dwcrolybcefmf::::res://art/Player Art/idle_2.png<>uid://b62p52ljv0ti7::::res://art/Player Art/idle_1.png<>uid://bs5ydcuwnmc25::::res://art/Player Art/idle_3.png<>uid://dpcjwifb5ocd4::::res://art/Player Art/run_0.png<>uid://bx4m21vs7vghf::::res://art/Player Art/run_1.png<>uid://bnocuqsp5n8lu::::res://art/Player Art/run_2.png<>uid://bqju0gnrwy5py::::res://art/Player Art/run_3.png<>uid://eitwksaky742::::res://art/Player Art/run_4.png<>uid://cpk7iga3sofl4::::res://art/Player Art/run_5.png<>uid://clamsb4csfkhl::::res://music/sfx_step_grass_l.wav
 ::res://level_1_files/::1712699017
 blacksmith.gd::GDScript::-1::1709948462::0::1::::<>Area2D<>::

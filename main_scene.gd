@@ -3,6 +3,7 @@ extends Node
 
 func _ready():
 	$Player.scale *= .6
+	Globalvar.in_tut = true
 
 func _process(delta):
 	pass
