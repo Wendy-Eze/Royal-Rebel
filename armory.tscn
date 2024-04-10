@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b4r48jdoaurt1"]
 
-[ext_resource type="Texture2D" uid="uid://160tx4r7lgfb" path="res://art/npc/armory.png" id="1_cmks4"]
+[ext_resource type="Texture2D" uid="uid://160tx4r7lgfb" path="res://art/npc/armory.png" id="1_fvm24"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ibqj"]
 radius = 14.0
@@ -14,4 +14,4 @@ shape = SubResource("CapsuleShape2D_1ibqj")
 
 [node name="Armory" type="Sprite2D" parent="."]
 position = Vector2(3, -21)
-texture = ExtResource("1_cmks4")
+texture = ExtResource("1_fvm24")

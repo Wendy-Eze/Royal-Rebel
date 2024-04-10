@@ -13,6 +13,7 @@ var key_scene = preload("res://key.tscn")
 var arrow_hit = false
 var is_hit = false
 var key_instance = 0
+var cool_started = false
 @onready var player = get_parent().get_node("Player")
 
 

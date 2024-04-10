@@ -31,6 +31,10 @@ var use_potion = false
 var has_goldsword = false
 var has_diamondsword = false
 
+var has_arrow = false
+var has_sword = false
+var in_tut = false
+
 #Arrow level
 var asilver = true
 var agold = false

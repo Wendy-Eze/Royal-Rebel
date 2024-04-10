@@ -24,8 +24,12 @@ func _process(delta):
 	
 	if Globalvar.has_armor:
 		$Container/Armor/Sprite2D.show()
+	if Globalvar.has_arrow:
+		$Container/Arrow/Sprite2D.show()
+	if Globalvar.has_sword:
+		$Container/Sword/Sprite2D.show()
 		
-	if Input.is_action_pressed("arrow"):
+	if Input.is_action_pressed("arrow") and Globalvar.has_arrow:
 		Globalvar.equip_arrow = true
 		Globalvar.equip_sword = false
 		Globalvar.equip_gold = false 
@@ -55,7 +59,7 @@ func _process(delta):
 		gold.border_width_left = 0
 		add_theme_stylebox_override("panel", gold)
 
-	if Input.is_action_just_pressed("sword"):
+	if Input.is_action_just_pressed("sword") and Globalvar.has_sword:
 		Globalvar.equip_arrow = false
 		Globalvar.equip_sword = true
 		Globalvar.equip_gold = false 
@@ -85,36 +89,6 @@ func _process(delta):
 		gold.border_width_left = 0
 		add_theme_stylebox_override("panel", gold)
 		
-	if Input.is_action_just_pressed("gold") and Globalvar.has_goldsword:
-		print("pressed gold")
-		Globalvar.equip_arrow = false
-		Globalvar.equip_sword = false
-		Globalvar.equip_gold = true 
-		Globalvar.equip_diamond = false 
-		gold.border_color = Color(255,255,255)
-		gold.border_width_bottom = 5
-		gold.border_width_top = 5
-		gold.border_width_right = 5
-		gold.border_width_left = 5
-		add_theme_stylebox_override("panel", gold)
-		
-		arrow.border_width_bottom = 0
-		arrow.border_width_top = 0
-		arrow.border_width_right = 0
-		arrow.border_width_left = 0
-		add_theme_stylebox_override("panel", arrow)
-		
-		sword.border_width_bottom = 0
-		sword.border_width_top = 0
-		sword.border_width_right = 0
-		sword.border_width_left = 0
-		add_theme_stylebox_override("panel", sword)
-		
-		diamond.border_width_bottom = 0
-		diamond.border_width_top = 0
-		diamond.border_width_right = 0
-		diamond.border_width_left = 0
-		add_theme_stylebox_override("panel", diamond)
 	
 	if Input.is_action_just_pressed("diamond") and Globalvar.has_diamondsword:
 		Globalvar.equip_arrow = false
@@ -170,10 +144,6 @@ func _process(delta):
 			$Container/Armor/Timer.show()
 			$Container/Armor/Timer2.start()
 			
-	#else:
-		#$Container/Potion/Sprite2D.hide()
-		#$Container/Potion/Label.text = " "
-	#$Container/Potion/Timer.text = str($Container/Potion/Timer2.time_left)
 	$Container/Armor/Timer.text = "%d" % [int($Container/Armor/Timer2.time_left)]
 
 
@@ -185,20 +155,4 @@ func _on_timer_2_timeout():
 	$Container/Armor/Countdown.hide()
 	$Container/Armor/Timer.hide()
 	Globalvar.armor_equipped = false
-	#if not Globalvar.equip_potion and Globalvar.i_num == 0:
-	#$Container/Potion/Sprite2D.hide()
-
-#func startcooldown():
-	#cooldownactive = true
-	##if cooldownactive:
-	#$Container/Arrow/ArrowCooldown.start()
-	#$Container/Arrow/Cooldown.show()
-	#print($Container/Arrow/ArrowCooldown.time_left)
-	#$Container/Arrow/Cooldown.text = "%d" % [int($Container/Arrow/ArrowCooldown.time_left)]
-#
-#func _on_arrow_cooldown_timeout():
-	##Globalvar.arrow_num = 15
-	#$Container/Arrow/Cooldown.hide()
-	#print("Arrow cooldown timer completed.")
-	#$Container/Arrow/Cooldown.text = " "
-	#cooldownactive = false
+	

@@ -323,7 +323,7 @@ wait_time = 0.5
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"attack"
+animation = &"basic_melee"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
@@ -385,9 +385,12 @@ volume_db = -20.0
 stream = ExtResource("47_48hqm")
 volume_db = -20.0
 
+[node name="Cooldown" type="Timer" parent="."]
+
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="body_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_body_entered"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

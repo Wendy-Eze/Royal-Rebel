@@ -14,14 +14,7 @@ signal death_over
 var facing
 @export var ghost_node : PackedScene
 @onready var ghost_timer = $GhostTimer
-
-#Some signal is emitted
-# is knight = false (every regular animation should have not is_knight in if statement)
-#	for example: if signal emit:
-#		$AnimatedSprite2D.hide()
-#		$AnimatedSprite2D/SwordHit/CollisionShape2D2.diabled = true
-#		$Knight.show()
-#		is_knight = true 
+var cool_started = false
 
 
 func get_input():
@@ -32,7 +25,9 @@ func get_input():
 			$AnimatedSprite2D.play("dash")
 	
 	if Globalvar.equip_arrow and Globalvar.ready_arrow:
-		if Input.is_action_just_pressed("attack"):
+		if Input.is_action_just_pressed("attack") and not cool_started:
+			cool_started = true
+			$Cooldown.start(0.7)
 			is_attacking = true
 			$AnimatedSprite2D.play("attack")
 			arrow()
@@ -44,7 +39,9 @@ func get_input():
 	
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("attack") and not is_attacking:
+		if Input.is_action_just_pressed("attack") and not is_attacking and not cool_started:
+			cool_started = true
+			$Cooldown.start(1)
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
@@ -134,19 +131,23 @@ func add_ghost():
 
 
 func arrow():
+	#if arrow_cooldown.is_stopped():
+		#pass
 	var arrow = preload("res://general/arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
-	var direction_to_mouse
 	
+	var target = get_global_mouse_position()
+	var direction_to_mouse 
+	#= arrow.global_position.direction_to(target).normalized()
+#
 	if $AnimatedSprite2D.flip_h:
-		arrow.global_position.x = end_of_bow.global_position.x - 180
-		direction_to_mouse = Vector2.LEFT # Shoot left if player is flipped
+		direction_to_mouse = Vector2.LEFT
+		#Vector2.LEFT.rotated(rotation)
+		# Shoot left if player is flipped
 		print("facing left")
 	else:
-		arrow.global_position = end_of_bow.global_position
 		direction_to_mouse = Vector2.RIGHT  # Shoot right if player is not flipped
-		print("facing right")
 
 	arrow.set_direction(direction_to_mouse)
 
@@ -176,3 +177,7 @@ func _on_death_timer_timeout():
 
 func _on_ghost_timer_timeout():
 	add_ghost()
+
+
+func _on_cooldown_timeout():
+	cool_started = false

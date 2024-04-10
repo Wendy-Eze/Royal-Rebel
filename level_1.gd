@@ -6,6 +6,10 @@ func _ready():
 	$Player.scale *= 0.6
 	Globalvar.level = 1
 	Goblinkill.num = 0
+	Globalvar.has_arrow = true 
+	Globalvar.has_sword = true 
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
 	#Globalvar.is_invisible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

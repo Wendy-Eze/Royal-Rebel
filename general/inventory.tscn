@@ -164,6 +164,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_cdw8x")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Container/Arrow"]
+visible = false
 position = Vector2(34.875, 42.625)
 scale = Vector2(1.63281, 1.60157)
 texture = ExtResource("2_i7pps")
@@ -229,6 +230,7 @@ disabled = true
 shortcut = SubResource("Shortcut_75k0p")
 
 [node name="Sprite2D" type="Sprite2D" parent="Container/Sword"]
+visible = false
 texture_filter = 1
 position = Vector2(41, 39)
 scale = Vector2(1.891, 1.891)
