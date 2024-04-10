@@ -53,6 +53,7 @@ func _physics_process(delta):
 			pass
 		else:
 			speed = 10
+			Livecounter.num = 0
 			$DamageTimer.start()
 		
 	if Globalvar.in_dungeon:

@@ -1,4 +1,5 @@
 res://mob_knight.tscn
+res://animated_sprite_2d.gd
 res://main_scene.tscn
 res://level_3.tscn
 res://level_2.tscn
@@ -12,6 +13,5 @@ res://level_1.tscn
 res://mob_goblin.tscn
 res://mob_dog.tscn
 res://mob_bat.tscn
-res://player.gd
 res://general/arrow.tscn
 res://training_dummy.tscn
