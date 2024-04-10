@@ -52,3 +52,9 @@ func _on_timer_timeout():
 func _on_button_pressed():
 	dialogue()
 	#index += 1
+
+
+func _on_portal_body_entered(body):
+	if body.is_in_group("player"):
+		print("detected")
+		get_tree().change_scene_to_file("res://final_boss.tscn")
