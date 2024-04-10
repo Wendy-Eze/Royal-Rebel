@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj36g7xyvgksm"]
+[gd_scene load_steps=5 format=3 uid="uid://dj36g7xyvgksm"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_1sxid"]
+[ext_resource type="Script" path="res://dummy_play.gd" id="1_iynfo"]
 [ext_resource type="PackedScene" uid="uid://cx7hoydklqtkp" path="res://mob_dummy.tscn" id="2_bqe44"]
 [ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="3_gg3a2"]
 
 [node name="DummyPlay" type="Node"]
+script = ExtResource("1_iynfo")
 
 [node name="Player" parent="." instance=ExtResource("1_1sxid")]
 position = Vector2(463, 567)

@@ -80,10 +80,11 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("deaddrop")
 		set_linear_velocity(Vector2.ZERO)
 		#$DeathTimer.start()
-		#if not rtimer_started:
-			#$RespawnTimer.start()
-			#$Deathsound.play()
-			#rtimer_started = true
+		if not rtimer_started:
+			$RespawnTimer.start()
+			$Deathsound.play()
+			#await $Deathsound.finished
+			rtimer_started = true
 
 #func _on_visible_on_screen_notifier_2d_screen_exited():
 	#queue_free()
@@ -128,19 +129,19 @@ func _hit_by_sword():
 	$HealthBar.show()
 	print("goblin was hit! ", health)
 
-#func _on_respawn_timer_timeout():
-	##health = 100
-		##set_linear_velocity(Vector2.ZERO)
-		##position = Vector2(1769, 822)
-		##target_position = (player.position - position).normalized()
-		##$AnimatedSprite2D.play("idle")
-		##rtimer_started = false
-		##$RespawnTimer.stop()
-	#queue_free()
-	#Globalvar.gaurd_dead = true
-	#Goblinkill.num += 1
-	##add function like num += 1 goblinkill.num += 1
-	#drop_coin()
+func _on_respawn_timer_timeout():
+	#health = 100
+		#set_linear_velocity(Vector2.ZERO)
+		#position = Vector2(1769, 822)
+		#target_position = (player.position - position).normalized()
+		#$AnimatedSprite2D.play("idle")
+		#rtimer_started = false
+		#$RespawnTimer.stop()
+	queue_free()
+	Globalvar.gaurd_dead = true
+	Goblinkill.num += 1
+	#add function like num += 1 goblinkill.num += 1
+	drop_coin()
 
 	
 func drop_coin():
@@ -174,10 +175,10 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
 		print("hit recognized")
-	if $AnimatedSprite2D.animation == ("deaddrop"):
-		Globalvar.gaurd_dead = true
-		Goblinkill.num += 1
-		drop_coin()
-		$Deathsound.play()
-		await $Deathsound.finished
-		queue_free()
+	#if $AnimatedSprite2D.animation == ("deaddrop"):
+		#Globalvar.gaurd_dead = true
+		#Goblinkill.num += 1
+		#drop_coin()
+		#$Deathsound.play()
+		#await $Deathsound.finished
+		#queue_free()

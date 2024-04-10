@@ -149,7 +149,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 9.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2lao")
 }],
-"loop": false,
+"loop": true,
 "name": &"deaddrop",
 "speed": 5.0
 }, {
@@ -229,7 +229,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"take_hit",
-"speed": 13.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
@@ -254,8 +254,8 @@ texture_filter = 1
 position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"take_hit"
-frame = 3
+animation = &"attack"
+frame = 7
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

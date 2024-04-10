@@ -72,9 +72,14 @@ func _physics_process(delta):
 			$HealthBar.show()
 			$HealthTimer.start()
 			print("Goblin was hit! Health:", health)
-		if position.distance_to(player_position) <= 250 and position.distance_to(player_position) >= 100 and not is_hit:
+		if position.distance_to(player_position) <= 250 and not is_hit:
 			#pass
 			$AnimatedSprite2D.play("attack")
+	#for i in get_collision_layer_value():
+		#var c = get_collision_layer_value(i)
+		#if c.get_collider().collision_layer == 1:
+			#$AnimatedSprite2D.play("attack")
+				
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")
@@ -153,3 +158,13 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
 		print("hit recognized")
+
+
+#func _on_body_entered(body):
+	#if body.is_in_group("player"):
+		#set_linear_velocity(Vector2.ZERO)
+#
+#
+#func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	#if body.is_in_group("player"):
+		#set_linear_velocity(Vector2.ZERO)
