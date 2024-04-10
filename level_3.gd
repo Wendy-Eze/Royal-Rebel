@@ -17,6 +17,10 @@ func _ready():
 	$CanvasLayer/WitchDialogue.show()
 	$CanvasLayer/WitchIcon.show()
 	Globalvar.blindknight = false
+	Globalvar.has_arrow = true 
+	Globalvar.has_sword = true 
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
 	#pass # Replace with function body.
 
 

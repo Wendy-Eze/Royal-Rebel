@@ -13,6 +13,10 @@ func _ready():
 	Globalvar.has_diamondsword = false
 	Globalvar.gaurd_dead = false
 	Globalvar.has_armor = true
+	Globalvar.has_arrow = true 
+	Globalvar.has_sword = true 
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
 	#pass # Replace with function body.
 
 
