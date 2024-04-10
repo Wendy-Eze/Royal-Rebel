@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=55 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://dm6jmr232q1jb" path="res://art/map art/tilemap.png" id="26_pergr"]
 [ext_resource type="Texture2D" uid="uid://djwhxmh5l84sr" path="res://art/map art/MasterSimple.png" id="27_porre"]
 [ext_resource type="Script" path="res://Walk tut.gd" id="28_f2ydt"]
+[ext_resource type="PackedScene" uid="uid://cl4ra1npuv3u5" path="res://level_1_files/market.tscn" id="29_u6etd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngmmr"]
 texture = ExtResource("5_wp5el")
@@ -11116,6 +11117,7 @@ position = Vector2(994, -321)
 shape = SubResource("RectangleShape2D_2jsca")
 
 [node name="Fence" type="TileMap" parent="StoreArea"]
+visible = false
 texture_filter = 1
 scale = Vector2(7, 7)
 tile_set = SubResource("TileSet_kxrlp")
@@ -11123,12 +11125,14 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-65534, 1, 1, -65533, 65537, 1, -65532, 65537, 1, -65531, 65537, 1, -65530, 65537, 1, -131066, 131073, 1, -196602, 131073, 1, -262138, 131073, 1, -327674, 65537, 1, -327675, 65537, 1, -327676, 65537, 1, -327677, 65537, 1, -327678, 65537, 1, -327679, 65537, 1, -262145, 65537, 1, -327680, 65537, 1, -262146, 131073, 0, -196610, 131073, 0, -131074, 131073, 1, -65538, 131073, 0, -2, 131073, 1)
 
 [node name="House" type="TileMap" parent="StoreArea"]
+visible = false
 scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_gy7pg")
 format = 2
 layer_0/tile_data = PackedInt32Array(-589819, 0, 10, -524283, 0, 11, -458747, 0, 12, -393211, 0, 13, -589818, 65536, 10, -524282, 65536, 11, -458746, 65536, 12, -393210, 65536, 13, -589817, 131072, 10, -524281, 131072, 11, -458745, 131072, 12, -393209, 131072, 13, -589816, 196608, 10, -524280, 196608, 11, -458744, 196608, 12, -393208, 196608, 13, -589815, 262144, 10, -524279, 262144, 11, -458743, 262144, 12, -393207, 262144, 13, -589814, 327680, 10, -524278, 327680, 11, -458742, 327680, 12, -393206, 327680, 13, -655355, 0, 8, -655354, 65536, 8, -655353, 131072, 8, -655352, 196608, 8, -655351, 262144, 8, -655350, 327680, 8, -786427, 393216, 14, -720891, 393216, 15, -786426, 458752, 14, -720890, 458752, 15, -786425, 524288, 14, -720889, 524288, 15, -786424, 589824, 14, -720888, 589824, 15, -786423, 655360, 14, -720887, 655360, 15, -786422, 720896, 14, -720886, 720896, 15, -851962, 851968, 15, -917497, 917504, 14, -851961, 917504, 15, -917496, 983040, 14, -851960, 983040, 15, -851959, 1048576, 15)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="StoreArea"]
+visible = false
 texture_filter = 1
 position = Vector2(33, -359)
 scale = Vector2(6, 5.815)
@@ -11137,6 +11141,7 @@ autoplay = "default"
 frame_progress = 0.462366
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StoreArea"]
+visible = false
 texture_filter = 1
 position = Vector2(603, -243)
 scale = Vector2(6, 6)
@@ -11145,14 +11150,14 @@ autoplay = "default"
 frame_progress = 0.730669
 
 [node name="Collider" type="StaticBody2D" parent="StoreArea"]
-position = Vector2(595, -223)
+position = Vector2(-388, -321)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoreArea/Collider"]
 position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_ss60b")
 
 [node name="Collider2" type="StaticBody2D" parent="StoreArea"]
-position = Vector2(33, -354)
+position = Vector2(-385, -510)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoreArea/Collider2"]
 position = Vector2(-8, 0)
@@ -11167,6 +11172,10 @@ script = ExtResource("28_f2ydt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walk tut"]
 position = Vector2(778, 329)
 shape = SubResource("RectangleShape2D_1wcmo")
+
+[node name="Market" parent="." instance=ExtResource("29_u6etd")]
+position = Vector2(893, 1793)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]
 [connection signal="player_near" from="BeginGame" to="." method="begin_game"]

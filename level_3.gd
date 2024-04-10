@@ -35,6 +35,13 @@ func dialogue():
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	
+	if Goblinkill.num >= 10:
+		$Portal/CollisionShape2D.disabled = false
+		$Portal.show()
+	else:
+		$Portal/CollisionShape2D.disabled = true
+		
 
 #
 func _on_timer_timeout():

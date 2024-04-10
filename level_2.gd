@@ -12,6 +12,7 @@ func _ready():
 	$KnightKey.hide()
 	Globalvar.has_diamondsword = false
 	Globalvar.gaurd_dead = false
+	Globalvar.has_armor = true
 	#pass # Replace with function body.
 
 
