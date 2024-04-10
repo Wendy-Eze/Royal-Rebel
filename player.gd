@@ -134,23 +134,19 @@ func add_ghost():
 
 
 func arrow():
-	#if arrow_cooldown.is_stopped():
-		#pass
 	var arrow = preload("res://general/arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
+	var direction_to_mouse
 	
-	var target = get_global_mouse_position()
-	var direction_to_mouse 
-	#= arrow.global_position.direction_to(target).normalized()
-#
 	if $AnimatedSprite2D.flip_h:
-		direction_to_mouse = Vector2.LEFT
-		#Vector2.LEFT.rotated(rotation)
-		# Shoot left if player is flipped
+		arrow.global_position.x = end_of_bow.global_position.x - 180
+		direction_to_mouse = Vector2.LEFT # Shoot left if player is flipped
 		print("facing left")
 	else:
+		arrow.global_position = end_of_bow.global_position
 		direction_to_mouse = Vector2.RIGHT  # Shoot right if player is not flipped
+		print("facing right")
 
 	arrow.set_direction(direction_to_mouse)
 
