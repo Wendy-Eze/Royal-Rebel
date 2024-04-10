@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctipcvp4xho2p"]
 
 [ext_resource type="Script" path="res://intro/tutorial_steps.gd" id="1_t87l0"]
-[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/Born2bSportyV10.ttf" id="2_n8dcl"]
+[ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="2_n8dcl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxu2y"]
 bg_color = Color(0.784314, 0.596078, 0.34902, 0.811765)
@@ -75,7 +75,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("2_n8dcl")
 theme_override_font_sizes/font_size = 50
-text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack. "
+text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack. Press ESC if you forget!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
