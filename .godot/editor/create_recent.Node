@@ -1,10 +1,10 @@
-Timer
 Node
 Label
 TextureRect
 CanvasLayer
 Button
 Sprite2D
+Timer
 CollisionShape2D
 Label
 Area2D
@@ -12,3 +12,4 @@ AnimatedSprite2D
 TileMap
 AudioStreamPlayer
 Sprite2D
+Timer

@@ -136,7 +136,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 12.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -230,7 +230,7 @@ texture_filter = 1
 position = Vector2(-18.3382, -5.27777)
 scale = Vector2(4.27046, 4.27046)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"attack"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-18.25, 17.5)
@@ -266,8 +266,6 @@ wait_time = 0.6
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fpxwy")
 volume_db = -30.0
-
-[node name="Cooldown" type="Timer" parent="."]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

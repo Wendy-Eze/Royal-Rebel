@@ -12,8 +12,6 @@ var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
 signal death_over
 var facing
-var cool_started = false
-var can_attack
 @export var ghost_node : PackedScene
 @onready var ghost_timer = $GhostTimer
 
@@ -46,19 +44,16 @@ func get_input():
 	
 	
 	if Globalvar.equip_sword:
-		if Input.is_action_just_pressed("attack") and not is_attacking and not cool_started:
+		if Input.is_action_just_pressed("attack") and not is_attacking:
 			print("melee")
 			is_attacking = true
-			cool_started = true
-			$Cooldown.start(1)
 			$AnimatedSprite2D.play("basic_melee")
 			$SwordSound.play()
 			
 			
 	if Globalvar.has_armor:
 		if Input.is_action_just_pressed("knight"):
-			Globalvar.armor_equipped = not Globalvar.armor_equipped
-			#Globalvar.armor_equipped = true  # Toggle armor equipped status
+			Globalvar.armor_equipped = not Globalvar.armor_equipped  # Toggle armor equipped status
 			if Globalvar.armor_equipped:
 			# Armor is now equipped
 				$AnimatedSprite2D.hide()  # Hide the default character sprite
@@ -67,9 +62,6 @@ func get_input():
 			# Armor is now unequipped
 				$AnimatedSprite2D.show()  # Show the default character sprite
 				$Knight.hide()
-	if not Globalvar.armor_equipped:
-		$AnimatedSprite2D.show()  # Show the default character sprite
-		$Knight.hide()
 			#if Globalvar.armor_equipped:
 				#Globalvar.armor_equipped = true
 				#$AnimatedSprite2D.hide()
@@ -123,7 +115,6 @@ func _input(event):
 
 func _physics_process(delta):
 	get_input()
-	#move_and_collide(velocity*delta)
 	move_and_slide()
 	var pos = position
 	pos.x = clamp(pos.x, minpos.x, maxpos.x)
@@ -175,11 +166,10 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("basic_melee"):
 		print("Stopping attack animation")
 		is_attacking = false
-		can_attack = false
 
 func _on_sword_hit_body_entered(body):
-	if body.has_method("_hit_by_sword"):
-		$AnimatedSprite2D/SwordHit/CollisionShape2D2.disabled = false 
+	if body.is_in_group("enemy"):
+		$AnimatedSprite2D/SwordHit/CollisionShape2D2.disable = false 
 		body._hit_by_sword()
 		print("touched enemy")
 		goblin_hit.emit()
@@ -190,16 +180,3 @@ func _on_death_timer_timeout():
 
 func _on_ghost_timer_timeout():
 	add_ghost()
-
-
-func _on_sword_hit_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	if body.is_in_group("enemy"):
-		$AnimatedSprite2D/SwordHit/CollisionShape2D2.disabled = false 
-		body._hit_by_sword()
-		print("touched enemy")
-		goblin_hit.emit() # Replace with function body.
-
-
-
-func _on_cooldown_timeout():
-	cool_started = false

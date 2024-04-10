@@ -24,6 +24,7 @@ func set_health_bar():
 	$HealthBar.value = health
 
 func _physics_process(delta):
+	
 	if Globalvar.equip_arrow:
 		damage = 8
 	if Globalvar.equip_arrow and Globalvar.level == 2:

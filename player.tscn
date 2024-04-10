@@ -53,7 +53,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 12.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -80,7 +80,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("12_c5r18")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": ExtResource("13_y82so")
 }, {
 "duration": 1.0,
@@ -91,7 +91,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"basic_melee",
-"speed": 12.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -324,8 +324,6 @@ texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
 animation = &"basic_melee"
-frame = 10
-frame_progress = 1.0
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
@@ -387,13 +385,9 @@ volume_db = -20.0
 stream = ExtResource("47_48hqm")
 volume_db = -20.0
 
-[node name="Cooldown" type="Timer" parent="."]
-
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="body_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_body_entered"]
-[connection signal="body_shape_entered" from="AnimatedSprite2D/SwordHit" to="." method="_on_sword_hit_body_shape_entered"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
-[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
