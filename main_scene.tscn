@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=54 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cffjxcg5i7y50" path="res://art/TilesetFloor.png" id="5_wp5el"]
 [ext_resource type="Texture2D" uid="uid://yhgqt5n0cerc" path="res://mystic_woods_free_2.1/Forest.png" id="6_8x1et"]
 [ext_resource type="PackedScene" uid="uid://d0ucso2y2x77o" path="res://hud.tscn" id="6_jebqx"]
+[ext_resource type="PackedScene" uid="uid://cviwi16h7v1c1" path="res://mob_goblin.tscn" id="6_nhbrn"]
 [ext_resource type="Script" path="res://intro/begingame.gd" id="7_udl4h"]
+[ext_resource type="Script" path="res://intro/goblinarea.gd" id="9_3nqaa"]
 [ext_resource type="PackedScene" uid="uid://ctipcvp4xho2p" path="res://intro/tutorial_steps.tscn" id="10_nlptt"]
 [ext_resource type="Script" path="res://intro/storearea.gd" id="11_j1ide"]
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="13_lrebr"]
@@ -5600,6 +5602,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ojfmi")
 sources/1 = SubResource("TileSetAtlasSource_anw5y")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7xv0"]
+size = Vector2(310, 247)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jsca"]
 size = Vector2(372, 316.5)
 
@@ -11083,6 +11088,17 @@ layer_0/tile_data = PackedInt32Array(655383, 0, 0, 720919, 0, 1, 786455, 0, 2, 8
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
 
+[node name="Goblin" parent="." instance=ExtResource("6_nhbrn")]
+position = Vector2(2480, 1528)
+
+[node name="GoblinArea" type="Area2D" parent="."]
+position = Vector2(2463, 1567)
+script = ExtResource("9_3nqaa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinArea"]
+position = Vector2(-346, -894)
+shape = SubResource("RectangleShape2D_h7xv0")
+
 [node name="TutorialSteps" parent="." instance=ExtResource("10_nlptt")]
 
 [node name="GoblinStepTime" type="Timer" parent="."]
@@ -11156,6 +11172,10 @@ shape = SubResource("RectangleShape2D_1wcmo")
 [connection signal="player_near" from="BeginGame" to="." method="begin_game"]
 [connection signal="start_tut" from="opening_cutscene" to="." method="game_begins"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="body_entered" from="GoblinArea" to="GoblinArea" method="_on_body_entered"]
+[connection signal="body_exited" from="GoblinArea" to="GoblinArea" method="_on_body_exited"]
+[connection signal="player_near" from="GoblinArea" to="." method="goblin_step"]
+[connection signal="player_out" from="GoblinArea" to="." method="goblin_out"]
 [connection signal="timeout" from="GoblinStepTime" to="." method="_on_goblin_step_time_timeout"]
 [connection signal="timeout" from="WalkStepTime" to="." method="_on_walk_step_time_timeout"]
 [connection signal="body_entered" from="StoreArea" to="StoreArea" method="_on_body_entered"]

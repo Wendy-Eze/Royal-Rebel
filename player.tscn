@@ -323,7 +323,7 @@ wait_time = 0.5
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"attack"
+animation = &"basic_melee"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 

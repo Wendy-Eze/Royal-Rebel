@@ -12,6 +12,5 @@ res://level_1.tscn
 res://mob_goblin.tscn
 res://mob_dog.tscn
 res://mob_bat.tscn
-res://player.gd
-res://general/arrow.tscn
-res://training_dummy.tscn
+res://mob_goblin.gd
+res://general/inventory.gd
