@@ -255,8 +255,6 @@ position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
 animation = &"attack"
-frame = 7
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
@@ -277,7 +275,7 @@ offset_top = -136.0
 offset_right = 53.0
 offset_bottom = -109.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_54e4p")
-step = 20.0
+step = 10.0
 show_percentage = false
 
 [node name="HealthTimer" type="Timer" parent="."]
@@ -292,6 +290,8 @@ wait_time = 0.6
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m67p")
 volume_db = -30.0
+
+[node name="Cooldown" type="Timer" parent="."]
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

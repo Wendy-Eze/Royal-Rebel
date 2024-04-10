@@ -3,6 +3,8 @@ extends Node
 #Stealth Purposes
 var is_invisible = false
 
+var attack_done = false
+
 #Arrow Functionality
 var ready_arrow = false
 var arrow_num = 30 
@@ -49,6 +51,7 @@ var playertimerout = false
 var witch_shown = false
 var witch_done = false
 
+signal attack
 
 #levels
 var level = 0 

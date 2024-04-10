@@ -149,7 +149,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 11.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -252,9 +252,7 @@ texture_filter = 1
 position = Vector2(-40, -28)
 scale = Vector2(3.9675, 3.9675)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"take_hit"
-frame = 3
-frame_progress = 1.0
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-40, 3.5)
@@ -290,6 +288,8 @@ wait_time = 0.6
 stream = ExtResource("7_pgqu1")
 volume_db = -30.0
 
+[node name="Cooldown" type="Timer" parent="."]
+
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
@@ -298,3 +298,4 @@ volume_db = -30.0
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

@@ -1,10 +1,11 @@
+res://player.tscn
+res://player.gd
 res://mob_knight.tscn
 res://main_scene.tscn
 res://level_3.tscn
 res://level_2.tscn
 res://mob_mushroom.tscn
 res://general/coin.tscn
-res://player.tscn
 res://mob_dummy.tscn
 res://dummy_play.tscn
 res://general/player_health.tscn
@@ -12,5 +13,12 @@ res://level_1.tscn
 res://mob_goblin.tscn
 res://mob_dog.tscn
 res://mob_bat.tscn
+res://demon.tscn
+res://final_boss.tscn
+res://dummy.gd
 res://mob_goblin.gd
-res://general/inventory.gd
+res://level_3.gd
+res://final_boss.gd
+res://autoload/globalvar.gd
+res://enchanted_spawner.gd
+res://enchanted_spawner.tscn

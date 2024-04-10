@@ -13,9 +13,8 @@ var key_scene = preload("res://key.tscn")
 var arrow_hit = false
 var key_instance = 0
 var is_hit = false
+var cool_started = false 
 @onready var player = get_parent().get_node("Player")
-
-
 
 func _ready():
 	pass
@@ -27,17 +26,23 @@ func _physics_process(delta):
 	
 	if Globalvar.equip_arrow:
 		damage = 8
+		$HealthBar.step = 8
 	if Globalvar.equip_arrow and Globalvar.level == 2:
 		damage = 5
+		$HealthBar.step = 5
 	if Globalvar.equip_arrow and Globalvar.level == 3:
 		damage = 3
+		$HealthBar.step = 3
 		
 	if Globalvar.level == 2:
 		damage = 10
+		$HealthBar.step = 10
 	if Globalvar.level == 3:
-		damage = 3
+		damage = 10
+		$HealthBar.step = 10
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
-		damage = 7
+		damage = 10
+		$HealthBar.step = 10
 		
 	player_position = player.position
 	target_position = (player.position - position).normalized()
@@ -62,8 +67,10 @@ func _physics_process(delta):
 			$Timer.start(1)
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
-		if Input.is_action_just_pressed("basic_melee"):
+		if Input.is_action_just_pressed("basic_melee") and position.distance_to(player_position) <= 300 and not cool_started:
 			#$AnimatedSprite2D.play("take_hit")
+			$Cooldown.start(1)
+			cool_started = true
 			health -= damage
 			is_hit = true
 			$AnimatedSprite2D.stop()
@@ -72,9 +79,10 @@ func _physics_process(delta):
 			$HealthBar.show()
 			$HealthTimer.start()
 			print("Goblin was hit! Health:", health)
-		if position.distance_to(player_position) <= 250 and position.distance_to(player_position) >= 100 and not is_hit:
+		if position.distance_to(player_position) <= 250 and not is_hit:
 			#pass
 			$AnimatedSprite2D.play("attack")
+			#and position.distance_to(player_position) >= 100
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")
@@ -123,7 +131,7 @@ func _hit_by_sword():
 	is_hit = true
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("take_hit")
-	$AnimatedSprite2D.play("take_hit")
+	#$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
 	$HealthTimer.start()
 	$HealthBar.show()
@@ -168,17 +176,17 @@ func _on_health_timer_timeout():
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("attack"):
 		print("attack finished")
-		#print("Current Livecounter.num:", Livecounter.num)
-		Livecounter.num -= 10
-		#print("After subtraction, Livecounter.num:", Livecounter.num)
-		#$AnimatedSprite2D.play("attack")
+		if Globalvar.level == 1:
+			Livecounter.num -= 5 
+		if Globalvar.level == 2:
+			Livecounter.num -= 8 
+		if Globalvar.level == 3:
+			Livecounter.num -= 10
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
 		print("hit recognized")
-	#if $AnimatedSprite2D.animation == ("deaddrop"):
-		#Globalvar.gaurd_dead = true
-		#Goblinkill.num += 1
-		#drop_coin()
-		#$Deathsound.play()
-		#await $Deathsound.finished
-		#queue_free()
+
+
+
+func _on_cooldown_timeout():
+	cool_started = false

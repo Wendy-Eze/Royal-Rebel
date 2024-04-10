@@ -11168,6 +11168,8 @@ script = ExtResource("28_f2ydt")
 position = Vector2(778, 329)
 shape = SubResource("RectangleShape2D_1wcmo")
 
+[node name="Keep" type="Node" parent="."]
+
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]
 [connection signal="player_near" from="BeginGame" to="." method="begin_game"]
 [connection signal="start_tut" from="opening_cutscene" to="." method="game_begins"]

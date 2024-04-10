@@ -7036,6 +7036,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("13_p21nb")
 
 [node name="Portal" type="Area2D" parent="."]
+visible = false
 position = Vector2(11462, 2961)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Portal"]

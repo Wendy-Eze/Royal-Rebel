@@ -13,6 +13,7 @@ func _ready():
 	$Player.scale *= 0.6
 	Globalvar.level = 3
 	Globalvar.witch_shown = false 
+	Goblinkill.num = 0
 	$CanvasLayer/Timer.start()
 	$CanvasLayer/WitchDialogue.show()
 	$CanvasLayer/WitchIcon.show()
@@ -35,6 +36,13 @@ func dialogue():
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	
+	if Goblinkill.num >= 10:
+		$Portal/CollisionShape2D.disabled = false
+		$Portal.show() 
+		$Portal/Sound.play()
+	else:
+		$Portal/CollisionShape2D.disabled = true
 
 #
 func _on_timer_timeout():
