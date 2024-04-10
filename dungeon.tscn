@@ -15,7 +15,7 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="11_0l0ce"]
 [ext_resource type="Texture2D" uid="uid://bujdwnum2bsdg" path="res://art/misc/mainlevbuild.png" id="12_4ojen"]
 [ext_resource type="Texture2D" uid="uid://0eaqof6inety" path="res://art/npc/doctor.png" id="12_qs4e0"]
-[ext_resource type="PackedScene" uid="uid://b4r48jdoaurt1" path="res://armory.tscn" id="13_ae1bk"]
+[ext_resource type="PackedScene" uid="uid://b4r48jdoaurt1" path="res://training_dummy.tscn" id="13_ae1bk"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_ai01h"]
 [ext_resource type="Texture2D" uid="uid://co25s856y4mdc" path="res://art/misc/decorative.png" id="13_mku7i"]
 [ext_resource type="Texture2D" uid="uid://dwjxo2o6l6ecf" path="res://art/npc/Female1.png" id="13_xfunr"]
