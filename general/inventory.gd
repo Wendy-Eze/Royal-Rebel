@@ -184,6 +184,7 @@ func _on_timer_2_timeout():
 	
 	$Container/Armor/Countdown.hide()
 	$Container/Armor/Timer.hide()
+	Globalvar.armor_equipped = false
 	#if not Globalvar.equip_potion and Globalvar.i_num == 0:
 	#$Container/Potion/Sprite2D.hide()
 
