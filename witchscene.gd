@@ -39,6 +39,7 @@ func _on_timer_timeout():
 		$Timer.stop()
 		$WitchDialogue/Talk.hide()
 		$Portal.show()
+		$Portal/Sound.play()
 		$Portal/CollisionShape2D.disabled = false
 		
 func _on_portal_body_entered(body):

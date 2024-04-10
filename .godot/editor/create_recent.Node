@@ -1,3 +1,4 @@
+Node
 Label
 TextureRect
 CanvasLayer
@@ -5,10 +6,9 @@ Button
 Sprite2D
 Timer
 CollisionShape2D
+Label
 Area2D
-StaticBody2D
-Node
-TileMap
 AnimatedSprite2D
-RigidBody2D
-NavigationLink2D
+TileMap
+AudioStreamPlayer
+Sprite2D

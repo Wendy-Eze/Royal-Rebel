@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
 [ext_resource type="PackedScene" uid="uid://ckugnyx88umid" path="res://general/player_health.tscn" id="3_0ws11"]
+[ext_resource type="Texture2D" uid="uid://crhws4g5r8prh" path="res://art/misc/menu.png" id="3_5yac2"]
 [ext_resource type="PackedScene" uid="uid://da2qdynvsop07" path="res://game_over_screen.tscn" id="4_r3yx1"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="5_xqipu"]
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="6_nqeuc"]
@@ -10,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://pye3lymjy8ky" path="res://general/inventory.tscn" id="8_7m88t"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="9_ops20"]
 [ext_resource type="Texture2D" uid="uid://bu8t2h6vpjo8f" path="res://art/Player Art/arrow.png" id="10_o36cw"]
-[ext_resource type="Texture2D" uid="uid://c02klxxt6nqfq" path="res://art/setting.png" id="11_m028w"]
 [ext_resource type="Texture2D" uid="uid://dier36a3dmis" path="res://art/misc/spacebar.png" id="12_14nk3"]
 [ext_resource type="Texture2D" uid="uid://c5num5vcy1txr" path="res://art/arrow/iron arrow.png" id="12_if1a4"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
@@ -95,13 +95,35 @@ offset_bottom = 96.0
 
 [node name="MenuButton" type="TextureButton" parent="."]
 texture_filter = 1
-offset_left = 1836.0
-offset_top = 33.0
-offset_right = 1868.0
-offset_bottom = 66.0
-scale = Vector2(1.5, 1.5)
+offset_left = 1831.0
+offset_top = 26.0
+offset_right = 1863.0
+offset_bottom = 59.0
+scale = Vector2(1.8, 1.8)
 shortcut = SubResource("Shortcut_1wsp2")
-texture_normal = ExtResource("11_m028w")
+texture_normal = ExtResource("3_5yac2")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1842.0
+offset_top = 83.0
+offset_right = 1882.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 30
+text = "ESC"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1767.0
+offset_top = 83.0
+offset_right = 1790.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 30
+text = "M"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayerHealth" parent="." instance=ExtResource("3_0ws11")]
 texture_filter = 1
@@ -140,10 +162,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -336.0
-offset_top = -166.0
-offset_right = -336.0
-offset_bottom = -166.0
+offset_left = -248.0
+offset_top = -174.0
+offset_right = -248.0
+offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -171,11 +193,63 @@ metadata/_edit_use_anchors_ = true
 [node name="Menu" type="Panel" parent="."]
 process_mode = 2
 visible = false
+z_index = 2
 offset_left = 137.0
 offset_top = 155.0
 offset_right = 1784.0
 offset_bottom = 861.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
+
+[node name="Lvl1Obj" type="Label" parent="Menu"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = 101.0
+offset_right = 715.0
+offset_bottom = 600.0
+theme_override_constants/line_spacing = 35
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 50
+text = "Objective:
+ After speaking with the mayor, you were tasked to kill all the goblins to receive a reward that will help your journey."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lvl2Obj" type="Label" parent="Menu"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = 101.0
+offset_right = 715.0
+offset_bottom = 600.0
+theme_override_constants/line_spacing = 35
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 50
+text = "Objective:
+Interacting with citizens, you find yourself looking for the doctor and helping him out. Do so carefully, as knights are on patrol."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Lvl3Obj" type="Label" parent="Menu"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 143.0
+offset_top = 63.0
+offset_right = 715.0
+offset_bottom = 646.0
+theme_override_constants/line_spacing = 35
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 50
+text = "Objective:
+You’ve made it to the enchanted forest, kill all the monsters so that you may reach the artifact. Be wary, a dragon controlled by the king protects the artifact."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="ExitButton" type="Button" parent="Menu"]
 layout_mode = 0
@@ -187,21 +261,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ed1sp")
 shortcut = SubResource("Shortcut_wpgax")
 
 [node name="Space" type="Sprite2D" parent="Menu"]
-position = Vector2(350.5, 363)
-scale = Vector2(0.640833, 0.601667)
+position = Vector2(1117, 167)
+scale = Vector2(0.389583, 0.365773)
 texture = ExtResource("12_14nk3")
 
 [node name="wasd" type="Sprite2D" parent="Menu"]
-position = Vector2(1076, 187)
-scale = Vector2(0.766, 0.766)
+position = Vector2(1117, 367)
+scale = Vector2(0.555, 0.555)
 texture = ExtResource("13_vxy7y")
 
 [node name="Label" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 610.5
-offset_top = 342.0
-offset_right = 765.5
-offset_bottom = 393.0
+offset_left = 1366.0
+offset_top = 147.0
+offset_right = 1521.0
+offset_bottom = 198.0
 theme_override_fonts/font = SubResource("FontVariation_gebma")
 theme_override_font_sizes/font_size = 50
 text = "- Attack"
@@ -209,9 +283,9 @@ text = "- Attack"
 [node name="Label2" type="Label" parent="Menu"]
 layout_mode = 0
 offset_left = 1366.0
-offset_top = 178.0
+offset_top = 367.0
 offset_right = 1521.0
-offset_bottom = 229.0
+offset_bottom = 418.0
 theme_override_fonts/font = SubResource("FontVariation_gebma")
 theme_override_font_sizes/font_size = 50
 text = "- Walk
@@ -220,17 +294,17 @@ text = "- Walk
 [node name="Label3" type="Label" parent="Menu"]
 layout_mode = 0
 offset_left = 1366.0
-offset_top = 465.0
+offset_top = 549.0
 offset_right = 1521.0
-offset_bottom = 516.0
+offset_bottom = 600.0
 theme_override_fonts/font = SubResource("FontVariation_gebma")
 theme_override_font_sizes/font_size = 50
 text = "- Dash
 "
 
 [node name="Shift" type="Sprite2D" parent="Menu"]
-position = Vector2(1076, 494)
-scale = Vector2(0.287143, 0.23)
+position = Vector2(1117, 582)
+scale = Vector2(0.191875, 0.15369)
 texture = ExtResource("15_v6gqu")
 
 [node name="Level1" type="Label" parent="."]
@@ -285,7 +359,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="LevelTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 1.5
 
 [node name="Coin_collected" type="Label" parent="."]
 visible = false

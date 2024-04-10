@@ -3883,8 +3883,6 @@ texture = ExtResource("3_3kvvo")
 10:28/0 = 0
 11:28/0 = 0
 12:28/0 = 0
-13:28/0 = 0
-14:28/0 = 0
 15:28/0 = 0
 16:28/0 = 0
 17:28/0 = 0
@@ -3917,8 +3915,6 @@ texture = ExtResource("3_3kvvo")
 10:29/0 = 0
 11:29/0 = 0
 12:29/0 = 0
-13:29/0 = 0
-14:29/0 = 0
 15:29/0 = 0
 16:29/0 = 0
 17:29/0 = 0
@@ -4040,6 +4036,10 @@ texture = ExtResource("3_3kvvo")
 35:33/0 = 0
 21:34/0 = 0
 21:35/0 = 0
+13:29/0 = 0
+13:28/0 = 0
+14:28/0 = 0
+14:29/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_nxix6"]
 sources/0 = SubResource("TileSetAtlasSource_54tx4")
@@ -11066,10 +11066,10 @@ layer_0/tile_data = PackedInt32Array(786444, 0, 3, 786445, 65536, 3, 786446, 131
 
 [node name="tutorial signs" type="TileMap" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
+scale = Vector2(7, 7)
 tile_set = SubResource("TileSet_nxix6")
 format = 2
-layer_0/tile_data = PackedInt32Array(196622, 851970, 28, 262158, 851970, 29, 196623, 917506, 28, 262159, 917506, 29, 1966101, 851970, 28, 2031637, 851970, 29, 1966102, 917506, 28, 2031638, 917506, 29, 786462, 851970, 28, 851998, 851970, 29, 786463, 917506, 28, 851999, 917506, 29)
+layer_0/tile_data = PackedInt32Array(1966101, 851970, 28, 2031637, 851970, 29, 1966102, 917506, 28, 2031638, 917506, 29, 786462, 851970, 28, 851998, 851970, 29, 786463, 917506, 28, 851999, 917506, 29, 131078, 851970, 28, 196614, 851970, 29, 131079, 917506, 28, 196615, 917506, 29, 327698, 851970, 28, 393234, 851970, 29, 327699, 917506, 28, 393235, 917506, 29, 1114124, 851970, 28, 1179660, 851970, 29, 1114125, 917506, 28, 1179661, 917506, 29)
 
 [node name="Player" parent="." instance=ExtResource("1_2mtfd")]
 position = Vector2(504, 249)
@@ -11096,7 +11096,7 @@ position = Vector2(2463, 1567)
 script = ExtResource("9_3nqaa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoblinArea"]
-position = Vector2(-513, -736)
+position = Vector2(-346, -894)
 shape = SubResource("RectangleShape2D_h7xv0")
 
 [node name="TutorialSteps" parent="." instance=ExtResource("10_nlptt")]
@@ -11112,7 +11112,7 @@ position = Vector2(471, 2353)
 script = ExtResource("11_j1ide")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StoreArea"]
-position = Vector2(951, -398.75)
+position = Vector2(994, -321)
 shape = SubResource("RectangleShape2D_2jsca")
 
 [node name="Fence" type="TileMap" parent="StoreArea"]
@@ -11165,7 +11165,7 @@ wait_time = 5.0
 script = ExtResource("28_f2ydt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walk tut"]
-position = Vector2(931.25, 247)
+position = Vector2(778, 329)
 shape = SubResource("RectangleShape2D_1wcmo")
 
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]

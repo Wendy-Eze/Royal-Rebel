@@ -104,4 +104,4 @@ func _on_timer_timeout():
 
 
 func _on_damage_timer_timeout():
-	Livecounter.num -= 20
+	Livecounter.num = 0

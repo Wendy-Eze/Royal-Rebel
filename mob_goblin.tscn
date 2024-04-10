@@ -147,9 +147,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cedcf")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 9.0
+"speed": 13.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -227,9 +227,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gk45a")
 }],
-"loop": true,
+"loop": false,
 "name": &"take_hit",
-"speed": 9.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
@@ -254,7 +254,9 @@ texture_filter = 1
 position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"deaddrop"
+animation = &"attack"
+frame = 7
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-30, -15)
@@ -285,7 +287,7 @@ wait_time = 2.0
 wait_time = 3.0
 
 [node name="DamageTimer" type="Timer" parent="."]
-wait_time = 0.7
+wait_time = 0.6
 
 [node name="Deathsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1m67p")
@@ -293,6 +295,7 @@ volume_db = -30.0
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]

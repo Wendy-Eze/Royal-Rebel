@@ -9,12 +9,17 @@ var in_area = false
 func _ready():
 	$PotionMenu/Health/Limit.text = str(hmaxlimit)
 	$PotionMenu/Invisibility/Limit.text = str(imaxlimit)
+	if Globalvar.level == 3:
+		imaxlimit = 3
+		hmaxlimit = 4
+	
 	
 #func _physics_process(_delta):
 
 			
 func _process(delta):
 	#if in_area == true:
+
 	if Input.is_action_just_released("shop") and in_area: 
 			$PotionMenu.show()
 			$talk1.hide()
@@ -33,7 +38,7 @@ func _on_witch_body_exited(body):
 		$PotionMenu.hide()
 
 func _on_health_button_pressed():
-	if (hbase < hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num >= 20):
+	if (hbase <= hmaxlimit) and ((Livecounter.num + 25) < 100) and (Coincounter.num >= 20):
 		Coincounter.num -= 20 
 		Livecounter.num += 25
 		hbase += 1
@@ -48,7 +53,7 @@ func _on_exit_pressed():
 
 
 func _on_invisibility_button_pressed():
-	if (ibase < imaxlimit) and (Coincounter.num >= 30):
+	if (ibase <= imaxlimit) and (Coincounter.num >= 30):
 		Coincounter.num -= 30 
 		ibase += 1
 		Globalvar.equip_potion = true

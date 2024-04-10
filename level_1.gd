@@ -13,6 +13,9 @@ func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
 	
+	if Globalvar.lvl1_done:
+		$NextLevMission/Knight.show()
+	
 	if Globalvar.armor_equipped:
 		$GameHUD/WTimer.stop()
 		$NextLevMission/Convo.hide()
@@ -27,19 +30,28 @@ func _process(delta):
 	##$GameHUD.show()
 
 func _on_armor_check_body_entered(body):
-	if body.is_in_group("player") and not Globalvar.armor_equipped:
+	if body.is_in_group("player") and not Globalvar.armor_equipped and Globalvar.lvl1_done:
 		$GameHUD/WTimer.start()
 		$NextLevMission/Convo.show()
 		$GameHUD/Warning.show()
 		$GameHUD/Warning_Message.show()
 		$GameHUD/WarningTimer.show()
 		#$GameHUD/WarningTimer.text = str($GameHUD/WTimer.time_left)
+	if body.is_in_group("player") and not Globalvar.lvl1_done:
+		$GameHUD/Mission.show()
 
 func _on_w_timer_timeout():
-	$GameHUD/PlayerHealth.value = 0
+	#$GameHUD/PlayerHealth.value = 0
+	$GameHUD/GameOverScreen.show()
+	print("timer works")
 	
 
 
 func _on_player_death_over():
 	$GameHUD/GameOverScreen.show()
 	$GameHUD/PlayerHealth.hide()
+
+
+func _on_armor_check_body_exited(body):
+	if body.is_in_group("player") and not Globalvar.lvl1_done:
+		$GameHUD/Mission.hide()

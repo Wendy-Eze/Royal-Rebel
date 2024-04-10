@@ -5,13 +5,14 @@ var player_position
 var target_position
 var timer_started = false
 var health: int = 100
-var damage: int = 15
+var damage: int = 10
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")
 var arrow_scene = preload("res://general/arrow.tscn")
 var key_scene = preload("res://key.tscn")
 var arrow_hit = false
 var key_instance = 0
+var is_hit = false
 @onready var player = get_parent().get_node("Player")
 
 
@@ -25,28 +26,29 @@ func set_health_bar():
 func _physics_process(delta):
 	
 	if Globalvar.equip_arrow:
-		damage = 10
-	if Globalvar.equip_arrow and Globalvar.level == 2:
 		damage = 8
+	if Globalvar.equip_arrow and Globalvar.level == 2:
+		damage = 5
 	if Globalvar.equip_arrow and Globalvar.level == 3:
-		damage = 6
+		damage = 3
 		
 	if Globalvar.level == 2:
 		damage = 10
 	if Globalvar.level == 3:
-		damage = 5
+		damage = 3
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
-		damage = 10
+		damage = 7
 		
 	player_position = player.position
 	target_position = (player.position - position).normalized()
 	if (position.distance_to(player_position) > 250 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
 		speed = min(speed * 1.5, 400)
 		set_linear_velocity(target_position * speed)
-		if target_position.x > 0:
+		if target_position.x > 0 and not is_hit:
 			$AnimatedSprite2D.play("run")
 			$AnimatedSprite2D.flip_h = false
-		else:
+		#else:
+		if target_position.x < 0 and not is_hit:
 			$AnimatedSprite2D.play("run")
 			$AnimatedSprite2D.flip_h = true
 		timer_started = false
@@ -57,16 +59,22 @@ func _physics_process(delta):
 	else:
 		set_linear_velocity(Vector2.ZERO)
 		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
-			$Timer.start()
+			$Timer.start(1)
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
 		if Input.is_action_just_pressed("basic_melee"):
 			#$AnimatedSprite2D.play("take_hit")
 			health -= damage
+			is_hit = true
+			$AnimatedSprite2D.stop()
+			$AnimatedSprite2D.play("take_hit")
 			set_health_bar()
 			$HealthBar.show()
 			$HealthTimer.start()
 			print("Goblin was hit! Health:", health)
+		if position.distance_to(player_position) <= 250 and position.distance_to(player_position) >= 100 and not is_hit:
+			#pass
+			$AnimatedSprite2D.play("attack")
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")
@@ -75,24 +83,33 @@ func _physics_process(delta):
 		if not rtimer_started:
 			$RespawnTimer.start()
 			$Deathsound.play()
+			#await $Deathsound.finished
 			rtimer_started = true
 
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
-	
-func _on_timer_timeout():
-	$AnimatedSprite2D.play("attack")
-	#Livecounter.num -= 10
-	if position.distance_to(player_position) <= 250:
-		$DamageTimer.start()
-		print("timer started")
-	$Timer.stop()
-	
-func _on_damage_timer_timeout():
-	Livecounter.num -= 10 
+#func _on_visible_on_screen_notifier_2d_screen_exited():
+	#queue_free()
+	#
+#func _on_timer_timeout():
+	#$AnimatedSprite2D.play("attack")
+	##if not $AnimatedSprite2D.is_playing():
+	##Livecounter.num -= 10
+	#if position.distance_to(player_position) <= 250:
+		#$DamageTimer.start(1)
+		#print("timer started")
+	#$Timer.stop()
+	#
+#func _on_damage_timer_timeout():
+	#if Globalvar.level == 1:
+		#Livecounter.num -= 5 
+	#if Globalvar.level == 2:
+		#Livecounter.num -= 8 
+	#if Globalvar.level == 3:
+		#Livecounter.num -= 10 
 	
 func _hit_by_arrow():
 	health -= damage
+	is_hit = true
+	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
 	$HealthTimer.start()
@@ -103,6 +120,9 @@ func _hit_by_arrow():
 #
 func _hit_by_sword():
 	health -= damage
+	is_hit = true
+	$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.play("take_hit")
 	$AnimatedSprite2D.play("take_hit")
 	set_health_bar()
 	$HealthTimer.start()
@@ -118,7 +138,7 @@ func _on_respawn_timer_timeout():
 		#rtimer_started = false
 		#$RespawnTimer.stop()
 	queue_free()
-	
+	Globalvar.gaurd_dead = true
 	Goblinkill.num += 1
 	#add function like num += 1 goblinkill.num += 1
 	drop_coin()
@@ -145,10 +165,20 @@ func drop_coin():
 func _on_health_timer_timeout():
 	$HealthBar.hide()
 
-
-#func _on_death_timer_timeout():
-	#queue_free()
-
-
-#Knight
-#
+func _on_animated_sprite_2d_animation_finished():
+	if $AnimatedSprite2D.animation == ("attack"):
+		print("attack finished")
+		#print("Current Livecounter.num:", Livecounter.num)
+		Livecounter.num -= 10
+		#print("After subtraction, Livecounter.num:", Livecounter.num)
+		#$AnimatedSprite2D.play("attack")
+	if $AnimatedSprite2D.animation == ("take_hit"):
+		is_hit = false
+		print("hit recognized")
+	#if $AnimatedSprite2D.animation == ("deaddrop"):
+		#Globalvar.gaurd_dead = true
+		#Goblinkill.num += 1
+		#drop_coin()
+		#$Deathsound.play()
+		#await $Deathsound.finished
+		#queue_free()
