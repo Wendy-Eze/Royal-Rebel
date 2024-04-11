@@ -14,6 +14,12 @@ position = Vector2(463, 567)
 [node name="Dummy" parent="." instance=ExtResource("2_bqe44")]
 position = Vector2(1575, 651)
 
+[node name="Dummy2" parent="." instance=ExtResource("2_bqe44")]
+position = Vector2(1115, 827)
+
+[node name="Dummy3" parent="." instance=ExtResource("2_bqe44")]
+position = Vector2(1069, 274)
+
 [node name="GameHUD" parent="." instance=ExtResource("3_gg3a2")]
 
 [node name="Node" type="Node" parent="."]

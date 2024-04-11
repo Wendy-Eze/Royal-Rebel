@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://c05spceg5h51g"]
+
+[ext_resource type="Texture2D" uid="uid://be43ds5hl0rac" path="res://art/tutorial/step1.png" id="1_chwfv"]
+[ext_resource type="Script" path="res://stepbystep.gd" id="1_imq3a"]
+[ext_resource type="Texture2D" uid="uid://2amd7uhe7xh8" path="res://art/tutorial/7.png" id="3_xksn0"]
+[ext_resource type="Texture2D" uid="uid://da2bcdv44vem1" path="res://art/tutorial/8.png" id="4_b05m6"]
+[ext_resource type="Texture2D" uid="uid://bbpjr33cg7qi" path="res://art/tutorial/10.png" id="5_yk0k5"]
+[ext_resource type="Texture2D" uid="uid://cpjmnosl3c7oa" path="res://art/tutorial/11.png" id="6_xauyu"]
+[ext_resource type="Texture2D" uid="uid://drfg6n78c2ck2" path="res://art/tutorial/12.png" id="7_2uutc"]
+[ext_resource type="Texture2D" uid="uid://46bpts4hcd4d" path="res://art/tutorial/end.png" id="8_e408j"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_geb8b"]
+device = -1
+physical_keycode = 66
+unicode = 98
+
+[sub_resource type="Shortcut" id="Shortcut_jgn2e"]
+events = [SubResource("InputEventKey_geb8b")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_f2dt7"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_r7l8s"]
+events = [SubResource("InputEventKey_f2dt7")]
+
+[node name="Stepbystep" type="Node"]
+script = ExtResource("1_imq3a")
+
+[node name="Step1" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("1_chwfv")
+
+[node name="Step2" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("3_xksn0")
+
+[node name="Step3" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("4_b05m6")
+
+[node name="Step4" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("5_yk0k5")
+
+[node name="Step5" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("6_xauyu")
+
+[node name="Step6" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("7_2uutc")
+
+[node name="Step7" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(958, 536)
+scale = Vector2(0.99854, 0.998541)
+texture = ExtResource("8_e408j")
+
+[node name="BackButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_jgn2e")
+
+[node name="NextButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_r7l8s")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

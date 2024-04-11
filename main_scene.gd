@@ -21,14 +21,26 @@ func new_game():
 
 func game_begins():
 	$opening_cutscene.queue_free()
+	Globalvar.opening_done = true
+	#$Stepbystep.show()
+	#$Player.start()
+	#$Trees.show()
+	#$HUD/Inventory.show()
+	#$Player/TutCam.enabled = true
+	#print("tutorial begins")
+	#$HUD/PlayerHealth.show()
+	#$HUD.show_message("Get Ready")
+
+func game():
+	$Stepbystep.queue_free()
 	$Player.start()
 	$Trees.show()
-	$HUD/Inventory.show()
+	#$HUD/Inventory.show()
 	$Player/TutCam.enabled = true
 	print("tutorial begins")
-	$HUD/PlayerHealth.show()
+	$GameHUD.show()
+	#$HUD/PlayerHealth.show()
 	$HUD.show_message("Get Ready")
-
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()

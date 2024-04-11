@@ -1,5 +1,8 @@
 extends Node
 
+
+#tutorial 
+var opening_done = false 
 #Stealth Purposes
 var is_invisible = false
 
