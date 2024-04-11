@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://bjaxeg0hin5mq"]
+[gd_scene load_steps=57 format=3 uid="uid://bjaxeg0hin5mq"]
 
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_2mtfd"]
 [ext_resource type="Script" path="res://main_scene.gd" id="1_lodcs"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" path="res://intro/begingame.gd" id="7_udl4h"]
 [ext_resource type="Script" path="res://intro/goblinarea.gd" id="9_3nqaa"]
 [ext_resource type="PackedScene" uid="uid://ctipcvp4xho2p" path="res://intro/tutorial_steps.tscn" id="10_nlptt"]
+[ext_resource type="PackedScene" uid="uid://c05spceg5h51g" path="res://stepbystep.tscn" id="10_o52ks"]
 [ext_resource type="Script" path="res://intro/storearea.gd" id="11_j1ide"]
+[ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="11_pfd12"]
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="13_lrebr"]
 [ext_resource type="Texture2D" uid="uid://bgctgpe3qyo4w" path="res://art/map art/fence_00.png" id="14_ef5o4"]
 [ext_resource type="Texture2D" uid="uid://wfjyytnec0x5" path="res://art/blacksmith/tile000.png" id="15_ew1at"]
@@ -11085,9 +11087,14 @@ format = 2
 layer_0/z_index = 1
 layer_0/tile_data = PackedInt32Array(655383, 0, 0, 720919, 0, 1, 786455, 0, 2, 851991, 131072, 4, 655384, 65536, 0, 720920, 65536, 1, 786456, 65536, 2, 655385, 131072, 0, 720921, 131072, 1, 786457, 131072, 2, 720895, 0, 0, 786431, 0, 1, 851967, 0, 2, 917503, 0, 0, 655360, 65536, 0, 720896, 65536, 1, 786432, 65536, 2, 851968, 65536, 0, 655361, 131072, 0, 720897, 131072, 1, 786433, 131072, 2, 851969, 131072, 0, 1376265, 131072, 4, 1245209, 0, 0, 1310745, 0, 1, 1376281, 0, 2, 1245210, 65536, 0, 1310746, 65536, 1, 1376282, 65536, 2, 1245211, 131072, 0, 1310747, 131072, 1, 1376283, 131072, 2, 983039, 0, 1, 1048575, 0, 2, 1114111, 0, 0, 917504, 65536, 1, 983040, 65536, 2, 1048576, 65536, 0, 917505, 131072, 1, 983041, 131072, 2, 1048577, 131072, 0, 1179647, 0, 1, 1245183, 0, 2, 1114112, 65536, 1, 1179648, 65536, 2, 1114113, 131072, 1, 1179649, 131072, 2, 1245185, 131072, 4, 131086, 0, 0, 196622, 0, 1, 262158, 0, 2, 131087, 65536, 0, 196623, 65536, 1, 262159, 65536, 2, 131088, 131072, 0, 196624, 131072, 1, 262160, 131072, 2, -65519, 0, 0, 17, 0, 1, 65553, 0, 2, -65518, 65536, 0, 18, 65536, 1, 65554, 65536, 2, -65517, 131072, 0, 19, 131072, 1, 65555, 131072, 2, -65511, 0, 0, 25, 0, 1, 65561, 0, 2, -65510, 65536, 0, 26, 65536, 1, 65562, 65536, 2, -65509, 131072, 0, 27, 131072, 1, 65563, 131072, 2, 131071, 0, 0, 196607, 0, 1, 262143, 0, 2, 65536, 65536, 0, 131072, 65536, 1, 196608, 65536, 2, 65537, 131072, 0, 131073, 131072, 1, 196609, 131072, 2, 589836, 0, 0, 655372, 0, 1, 720908, 0, 2, 589837, 65536, 0, 655373, 65536, 1, 589838, 131072, 0, 655374, 131072, 1, 720910, 131072, 2, 1048581, 131072, 4, 1245201, 65536, 5, 1179674, 65536, 5, 1114138, 65536, 5, 1376257, 65536, 5, 1376258, 65536, 5, 1441793, 65536, 5, 1441810, 65536, 5, 1441813, 65536, 5, 786435, 65536, 5, 524288, 65536, 5, 327680, 65536, 5, 2, 65536, 5, 16, 65536, 5, 21, 65536, 5, 22, 65536, 5, 983066, 131072, 4, 983042, 131072, 4, 1441794, 131072, 4, 1310733, 0, 5, 1310734, 0, 5, 917516, 0, 5, 917517, 0, 5, 524291, 0, 5, 524292, 0, 5, 9, 0, 5, 10, 0, 5, 11, 0, 5, 458770, 0, 5, 458771, 0, 5, 458772, 0, 5, 458773, 0, 5, 458774, 0, 5, 720909, 65536, 2)
 
+[node name="Stepbystep" parent="." instance=ExtResource("10_o52ks")]
+
 [node name="opening_cutscene" parent="." instance=ExtResource("2_6rwx2")]
 
 [node name="HUD" parent="." instance=ExtResource("6_jebqx")]
+
+[node name="GameHUD" parent="." instance=ExtResource("11_pfd12")]
+visible = false
 
 [node name="Goblin" parent="." instance=ExtResource("6_nhbrn")]
 position = Vector2(2480, 1528)
@@ -11179,6 +11186,7 @@ scale = Vector2(0.7, 0.7)
 
 [connection signal="body_entered" from="BeginGame" to="BeginGame" method="_on_body_entered"]
 [connection signal="player_near" from="BeginGame" to="." method="begin_game"]
+[connection signal="start" from="Stepbystep" to="." method="game"]
 [connection signal="start_tut" from="opening_cutscene" to="." method="game_begins"]
 [connection signal="start_game" from="HUD" to="." method="new_game"]
 [connection signal="body_entered" from="GoblinArea" to="GoblinArea" method="_on_body_entered"]

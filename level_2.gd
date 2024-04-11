@@ -14,10 +14,7 @@ func _ready():
 	Globalvar.gaurd_dead = false
 	Globalvar.has_armor = true
 	Globalvar.has_arrow = true 
-	Globalvar.has_sword = true 
-	Globalvar.equip_arrow = false
-	Globalvar.equip_sword = false
-	#pass # Replace with function body.
+	Globalvar.has_sword = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
