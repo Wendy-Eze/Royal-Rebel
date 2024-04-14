@@ -5,25 +5,34 @@ var hbase = 0
 var ibase = 0
 var imaxlimit = 1
 var in_area = false
+var index = 0
 
 func _ready():
-	$PotionMenu/Health/Limit.text = str(hmaxlimit)
-	$PotionMenu/Invisibility/Limit.text = str(imaxlimit)
 	if Globalvar.level == 3:
 		imaxlimit = 3
 		hmaxlimit = 4
+	$PotionMenu/Health/Limit.text = str(hmaxlimit)
+	$PotionMenu/Invisibility/Limit.text = str(imaxlimit)
 	
-	
-#func _physics_process(_delta):
 
-			
 func _process(delta):
-	#if in_area == true:
+	
+	if index == 0:
+		$PotionMenu/Hback.show()
+		$PotionMenu/Iback.hide()
+		$PotionMenu/Right.disabled = false 
+		$PotionMenu/Left.disabled = true
+	if index == 1:
+		$PotionMenu/Iback.show()
+		$PotionMenu/Hback.hide()
+		$PotionMenu/Right.disabled = true
+		$PotionMenu/Left.disabled = false 
+	
 
-	if Input.is_action_just_released("shop") and in_area: 
-			$PotionMenu.show()
-			$talk1.hide()
-			print("Shop action released")
+	#if Input.is_action_just_released("shop") and in_area: 
+			#$PotionMenu.show()
+			#$talk1.hide()
+			#print("Shop action released")
 
 func _on_witch_body_entered(body):
 	if body.is_in_group("player"):
@@ -50,6 +59,7 @@ func _on_health_button_pressed():
 func _on_exit_pressed():
 	$PotionMenu.hide()
 	$talk1.show()
+	get_tree().paused = false
 
 
 func _on_invisibility_button_pressed():
@@ -61,3 +71,31 @@ func _on_invisibility_button_pressed():
 		$PotionMenu/Invisibility/Limit.text = str(imaxlimit-1)
 	else:
 		print("cannot purchase ghost")
+
+
+func _on_open_button_pressed():
+	if in_area:
+		get_tree().paused = true
+		$PotionMenu.show()
+
+
+func _on_right_pressed():
+	index += 1
+	print("right is pressed")
+	$PotionMenu/Iback.show()
+	$PotionMenu/Hback.hide()
+	$PotionMenu/Right.disabled = true
+	$PotionMenu/Left.disabled = false 
+	$PotionMenu/Invisibility/InvisibilityButton.disabled = false
+	$PotionMenu/Health/HealthButton.disabled = true
+
+
+func _on_left_pressed():
+	index -= 1
+	print("left is pressed")
+	$PotionMenu/Hback.show()
+	$PotionMenu/Iback.hide()
+	$PotionMenu/Right.disabled = false 
+	$PotionMenu/Left.disabled = true
+	$PotionMenu/Invisibility/InvisibilityButton.disabled = true
+	$PotionMenu/Health/HealthButton.disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cx7hoydklqtkp"]
+[gd_scene load_steps=41 format=3 uid="uid://cx7hoydklqtkp"]
 
 [ext_resource type="Script" path="res://dummy.gd" id="1_hlh41"]
 [ext_resource type="Texture2D" uid="uid://dj3d43fjmbqf4" path="res://art/Mob Art/goblin1/Attack.png" id="2_q7sgy"]
@@ -183,7 +183,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -212,7 +212,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -233,17 +233,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
-size = Vector2(17.2, 17.5)
+size = Vector2(17.2, 19.3)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54e4p"]
 bg_color = Color(0.854902, 0.133333, 0, 1)
 
-[node name="Dummy" type="RigidBody2D" groups=["enemy"]]
-collision_layer = 12
-collision_mask = 12
-lock_rotation = true
-max_contacts_reported = 1
-contact_monitor = true
+[sub_resource type="CircleShape2D" id="CircleShape2D_slujj"]
+radius = 800.211
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwmp6"]
+radius = 151.99
+
+[node name="Dummy" type="CharacterBody2D" groups=["enemy"]]
+collision_layer = 4
 script = ExtResource("1_hlh41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -251,11 +253,11 @@ texture_filter = 1
 position = Vector2(-23, -49)
 scale = Vector2(4.36967, 4.36967)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"deaddrop"
+animation = &"idle"
 speed_scale = 2.3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-19, -14.5)
+position = Vector2(-19, -5.5)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_76sq3")
 
@@ -289,6 +291,22 @@ wait_time = 0.6
 stream = ExtResource("7_1osg5")
 volume_db = -30.0
 
+[node name="Detect" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect"]
+shape = SubResource("CircleShape2D_slujj")
+
+[node name="Attack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+shape = SubResource("CircleShape2D_hwmp6")
+
+[node name="Cooldown" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
+[connection signal="body_entered" from="Detect" to="." method="_on_DetectRadius_body_entered"]
+[connection signal="body_exited" from="Detect" to="." method="_on_DetectRadius_body_exited"]
+[connection signal="body_entered" from="Attack" to="." method="_on_attack_body_entered"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

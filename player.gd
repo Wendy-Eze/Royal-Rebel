@@ -112,7 +112,17 @@ func _input(event):
 
 func _physics_process(delta):
 	get_input()
+	#move_and_collide(delta * velocity)
+	#move_and_slide()
+	var collision = move_and_collide(delta * velocity)
+	if collision:
+		print(collision.get_collider().name.contains("ummy"))
+		print(collision.get_collider().name)
+		if collision.get_collider().name.contains("ummy"):
+			print("dummy")
+			velocity = Vector2.ZERO
 	move_and_slide()
+		#print("I collided with", collision.get_collider().name)
 	var pos = position
 	pos.x = clamp(pos.x, minpos.x, maxpos.x)
 	pos.y = clamp(pos.y, minpos.y, maxpos.y)
