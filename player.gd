@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 
-@onready var speed = 700
+@onready var speed = 500
 var walking = false
 var is_attacking = false
 signal goblin_hit
@@ -163,7 +163,6 @@ func arrow():
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()
-
 func start():
 	show()
 	$CollisionShape2D.disabled = false

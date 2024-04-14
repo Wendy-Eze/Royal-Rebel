@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=67 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://cp4jhie4flgcp" path="res://art/map art/mystic1.png" id="7_0gki0"]
 [ext_resource type="PackedScene" uid="uid://x800nd0xaqm7" path="res://enchanted_spawner.tscn" id="10_vlcv1"]
 [ext_resource type="Texture2D" uid="uid://cdejx8qiwn6wv" path="res://art/reddragonfly.png" id="12_tn814"]
-[ext_resource type="Script" path="res://level_1_files/potionscene.gd" id="12_y8j6q"]
 [ext_resource type="Texture2D" uid="uid://e2gljrtjsa6u" path="res://art/npc/Witch/Idle/Idle1.png" id="13_p21nb"]
 [ext_resource type="Texture2D" uid="uid://doielf060eipx" path="res://art/npc/Witch/Idle/Idle2.png" id="14_ivdwd"]
 [ext_resource type="Texture2D" uid="uid://dth2mi2kvfnw" path="res://art/dragon.png" id="14_oun1c"]
@@ -24,12 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://caogt280xnoq" path="res://art/npc/Witch/Idle/Idle7.png" id="19_uy4s6"]
 [ext_resource type="Texture2D" uid="uid://b4o20m72jd03u" path="res://art/npc/Witch/Idle/Idle8.png" id="20_8ykjk"]
 [ext_resource type="Texture2D" uid="uid://k4ewl3fy8ev5" path="res://art/npc/Witch/Idle/Idle9.png" id="21_mvmt1"]
-[ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="22_gnsls"]
-[ext_resource type="Texture2D" uid="uid://ddv85fb7fq3hw" path="res://art/potion/wprof.png" id="23_seelp"]
-[ext_resource type="Texture2D" uid="uid://dx1lr1st35pmh" path="res://art/exit.png" id="24_cokm5"]
-[ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="25_lixw8"]
-[ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="26_mdq05"]
-[ext_resource type="Texture2D" uid="uid://n5t1ldraxqe2" path="res://art/health1.png" id="27_vqpim"]
 [ext_resource type="Texture2D" uid="uid://4cslfxce4i2e" path="res://art/map art/mystic tree1.png" id="29_6xl08"]
 [ext_resource type="Texture2D" uid="uid://bo13v4svby7ym" path="res://art/map art/mystic tree 2.png" id="30_r8iw0"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="32_5uffa"]
@@ -6568,57 +6561,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgq6h"]
-size = Vector2(21.7778, 25.8889)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5xa8"]
-size = Vector2(30, 39.2222)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dbvsi"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-expand_margin_left = 90.0
-expand_margin_top = 15.0
-expand_margin_right = 90.0
-expand_margin_bottom = 15.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11nqj"]
-bg_color = Color(0.164706, 0.164706, 0.164706, 1)
-border_width_left = 20
-border_width_top = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color(0.419608, 0.258824, 0.0862745, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5j3h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s0d84"]
-bg_color = Color(0.929412, 0.839216, 0.376471, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wa5im"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8516n"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8thu"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q30if"]
-bg_color = Color(0.929412, 0.839216, 0.376471, 1)
-corner_radius_top_left = 15
-corner_radius_top_right = 15
-corner_radius_bottom_right = 15
-corner_radius_bottom_left = 15
-
 [sub_resource type="FontVariation" id="FontVariation_7bk23"]
 base_font = ExtResource("32_5uffa")
 spacing_glyph = 3
@@ -6760,234 +6702,6 @@ sprite_frames = SubResource("SpriteFrames_t2nw2")
 autoplay = "default"
 script = ExtResource("16_8gbbk")
 
-[node name="PotionScene" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 4896.0
-offset_top = 733.0
-offset_right = 4936.0
-offset_bottom = 773.0
-script = ExtResource("12_y8j6q")
-
-[node name="Collider" type="StaticBody2D" parent="PotionScene"]
-texture_filter = 1
-position = Vector2(335, 191)
-scale = Vector2(9, 9)
-
-[node name="Witch2" type="AnimatedSprite2D" parent="PotionScene/Collider"]
-texture_filter = 1
-position = Vector2(-3.00002, 5.55555)
-scale = Vector2(0.8073, 0.8073)
-sprite_frames = SubResource("SpriteFrames_wpby7")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PotionScene/Collider"]
-position = Vector2(-3, 2.94444)
-shape = SubResource("RectangleShape2D_bgq6h")
-
-[node name="Witch" type="Area2D" parent="PotionScene/Collider"]
-texture_filter = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PotionScene/Collider/Witch"]
-position = Vector2(-0.333328, 9.61111)
-shape = SubResource("RectangleShape2D_f5xa8")
-
-[node name="talk1" type="Label" parent="PotionScene"]
-visible = false
-z_index = 1
-texture_filter = 1
-layout_mode = 0
-offset_left = -196.0
-offset_top = -35.0
-offset_right = 850.0
-offset_bottom = 161.0
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 90
-theme_override_styles/normal = SubResource("StyleBoxFlat_dbvsi")
-text = "Looking for potions?
-Press P to shop"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="PotionScene/talk1"]
-texture_filter = 1
-position = Vector2(1265, 39)
-scale = Vector2(23.5278, 23.5278)
-texture = ExtResource("23_seelp")
-
-[node name="PotionMenu" type="Panel" parent="PotionScene"]
-visible = false
-z_index = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -12.025
-anchor_right = -12.025
-offset_left = -369.0
-offset_top = -330.0
-offset_right = 931.0
-offset_bottom = 70.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_11nqj")
-metadata/_edit_use_anchors_ = true
-
-[node name="Exit" type="TextureButton" parent="PotionScene/PotionMenu"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.920089
-anchor_top = 0.237375
-anchor_right = 0.920089
-anchor_bottom = 0.237375
-offset_left = -48.116
-offset_top = -47.95
-offset_right = -16.116
-offset_bottom = -15.95
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-texture_normal = ExtResource("24_cokm5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Invisibility" type="Panel" parent="PotionScene/PotionMenu"]
-layout_mode = 0
-offset_left = 409.0
-offset_top = 47.0
-offset_right = 650.0
-offset_bottom = 347.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_i5j3h")
-
-[node name="InvisibilityButton" type="Button" parent="PotionScene/PotionMenu/Invisibility"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 200.0
-offset_right = 228.0
-offset_bottom = 287.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_s0d84")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_wa5im")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_8516n")
-text = "
-BUY"
-
-[node name="Ghost" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
-position = Vector2(113, 84.8387)
-scale = Vector2(7.5, 7.74194)
-texture = ExtResource("25_lixw8")
-
-[node name="Text" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 155.0
-offset_right = 224.0
-offset_bottom = 183.0
-theme_override_colors/font_color = Color(0, 0.768627, 0.972549, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 30
-text = "Ghost 30 sec"
-
-[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
-layout_mode = 0
-offset_left = 184.0
-offset_right = 224.0
-offset_bottom = 54.0
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 60
-text = "0
-"
-
-[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
-texture_filter = 1
-position = Vector2(102, 225)
-scale = Vector2(1.75, 1.65625)
-texture = ExtResource("26_mdq05")
-
-[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Invisibility/CoinDisplay"]
-texture_filter = 3
-offset_left = 16.0
-offset_top = -9.20755
-offset_right = 40.0
-offset_bottom = 8.79245
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 20
-text = "30"
-
-[node name="Health" type="Panel" parent="PotionScene/PotionMenu"]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 47.0
-offset_right = 351.0
-offset_bottom = 347.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_a8thu")
-
-[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Health"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -65.0
-offset_right = -29.0
-offset_bottom = 54.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 60
-text = "0
-"
-
-[node name="Heart" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
-texture_filter = 1
-position = Vector2(120, 88.25)
-scale = Vector2(7.28125, 7.28125)
-texture = ExtResource("27_vqpim")
-
-[node name="Label" type="Label" parent="PotionScene/PotionMenu/Health"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 35.0
-offset_top = 155.25
-offset_right = 209.0
-offset_bottom = 189.25
-theme_override_colors/font_color = Color(1, 0.337255, 0.270588, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 30
-text = "25% Health"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="HealthButton" type="Button" parent="PotionScene/PotionMenu/Health"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 18.0
-offset_top = 200.25
-offset_right = 231.0
-offset_bottom = 287.25
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_q30if")
-text = "
-BUY"
-
-[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
-texture_filter = 1
-position = Vector2(98, 226.25)
-scale = Vector2(1.75, 1.65625)
-texture = ExtResource("26_mdq05")
-
-[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Health/CoinDisplay"]
-texture_filter = 3
-offset_left = 16.0
-offset_top = -9.20755
-offset_right = 40.0
-offset_bottom = 8.79245
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("22_gnsls")
-theme_override_font_sizes/font_size = 20
-text = "20"
-
 [node name="Witch2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1614, 945)
@@ -7055,11 +6769,6 @@ volume_db = -20.853
 position = Vector2(-14, -35)
 shape = SubResource("RectangleShape2D_bm2h8")
 
-[connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
-[connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/WitchDialogue/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Portal" to="." method="_on_portal_body_entered"]

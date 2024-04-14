@@ -41,6 +41,7 @@ func game():
 	$GameHUD.show()
 	#$HUD/PlayerHealth.show()
 	$HUD.show_message("Get Ready")
+	$Market.show()
 
 func goblin_step():
 	$TutorialSteps/GoblinStep.show()
