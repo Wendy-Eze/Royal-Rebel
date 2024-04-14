@@ -1,7 +1,6 @@
-res://level_1_files/potionscene.gd
-res://level_1_files/market.tscn
 res://mob_knight.tscn
 res://main_scene.tscn
+res://level_1_files/market.tscn
 res://knightkey.tscn
 res://player.tscn
 res://general/inventory.tscn
@@ -9,5 +8,12 @@ res://dummy_play.tscn
 res://mob_dummy.tscn
 res://game_hud.tscn
 res://stepbystep.tscn
-res://dummy.gd
 res://mob_goblin.tscn
+res://player.gd
+res://intro/opening_cutscene.tscn
+res://level_2.tscn
+res://intro/tutorial_steps.tscn
+res://main_scene.gd
+res://level_3.tscn
+res://final_boss.tscn
+res://demon.tscn

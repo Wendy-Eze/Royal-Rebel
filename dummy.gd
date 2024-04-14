@@ -48,7 +48,7 @@ func _physics_process(delta):
 	get_input()
 	velocity = Vector2.ZERO
 	#$AnimatedSprite2D.play("idle")
-	if player:
+	if player or arrow_hit:
 		velocity = position.direction_to(player.position) * run_speed
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")

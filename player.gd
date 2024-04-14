@@ -1,7 +1,7 @@
 
 extends CharacterBody2D
 
-@onready var speed = 700
+@onready var speed = 500
 var walking = false
 var is_attacking = false
 signal goblin_hit
@@ -59,10 +59,10 @@ func get_input():
 			# Armor is now unequipped
 				$AnimatedSprite2D.show()  # Show the default character sprite
 				$Knight.hide()
-			#if Globalvar.armor_equipped:
-				#Globalvar.armor_equipped = true
-				#$AnimatedSprite2D.hide()
-				#$Knight.show()
+	if not Globalvar.armor_equipped:
+		#Globalvar.armor_equipped = true
+		$AnimatedSprite2D.show()
+		$Knight.hide()
 			
 #armor equipped
 		
@@ -114,13 +114,13 @@ func _physics_process(delta):
 	get_input()
 	#move_and_collide(delta * velocity)
 	#move_and_slide()
-	var collision = move_and_collide(delta * velocity)
-	if collision:
-		print(collision.get_collider().name.contains("ummy"))
-		print(collision.get_collider().name)
-		if collision.get_collider().name.contains("ummy"):
-			print("dummy")
-			velocity = Vector2.ZERO
+	#var collision = move_and_collide(delta * velocity)
+	#if collision:
+		#print(collision.get_collider().name.contains("ummy"))
+		#print(collision.get_collider().name)
+		#if collision.get_collider().name.contains("ummy"):
+			#print("dummy")
+			#velocity = Vector2.ZERO
 	move_and_slide()
 		#print("I collided with", collision.get_collider().name)
 	var pos = position
@@ -163,7 +163,6 @@ func arrow():
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()
-
 func start():
 	show()
 	$CollisionShape2D.disabled = false

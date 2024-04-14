@@ -37,7 +37,7 @@ visible = false
 offset_left = 348.0
 offset_top = 809.0
 offset_right = 1641.0
-offset_bottom = 1002.0
+offset_bottom = 1051.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
 metadata/_edit_group_ = true
 
@@ -52,7 +52,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("2_n8dcl")
 theme_override_font_sizes/font_size = 49
-text = "Before we send you off, it's best that you learn the basics. To walk around, use the WASD or arrow keys. Go ahead and explore."
+text = "Before we send you off, it's best that you practice the basics. To walk around, use the WASD or arrow keys. Go ahead and explore and find more signs."
 horizontal_alignment = 1
 autowrap_mode = 2
 
@@ -61,7 +61,7 @@ visible = false
 offset_left = 348.0
 offset_top = 809.0
 offset_right = 1641.0
-offset_bottom = 1002.0
+offset_bottom = 1066.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
 metadata/_edit_group_ = true
 
@@ -75,16 +75,16 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("2_n8dcl")
 theme_override_font_sizes/font_size = 50
-text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack. Press ESC if you forget!"
+text = "Be on the look out for enemies, if you spot one, press 1 or 2 to select your weapon. Then use the spacebar key to attack. Press ESC if you forget the controls!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="StoreStep" type="Panel" parent="."]
 visible = false
-offset_left = 348.0
-offset_top = 809.0
-offset_right = 1641.0
-offset_bottom = 1070.0
+offset_left = 343.0
+offset_top = 750.0
+offset_right = 1636.0
+offset_bottom = 1067.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxu2y")
 metadata/_edit_group_ = true
 
@@ -98,7 +98,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 20
 theme_override_fonts/font = ExtResource("2_n8dcl")
 theme_override_font_sizes/font_size = 50
-text = "You have come across the market! Here you are able to buy health and potions. You can gain money by defeating enemies or collecting coins. (This shop is closed)."
+text = "You have come across the market! Here you are able to buy health and potions. You can gain money by defeating enemies and collecting coins. Go ahead and grab your weapons from the blacksmith. "
 horizontal_alignment = 1
 autowrap_mode = 2
 
