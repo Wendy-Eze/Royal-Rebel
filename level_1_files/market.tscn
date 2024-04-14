@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cl4ra1npuv3u5"]
+[gd_scene load_steps=77 format=3 uid="uid://cl4ra1npuv3u5"]
 
 [ext_resource type="Script" path="res://level_1_files/market.gd" id="1_5s35o"]
 [ext_resource type="Texture2D" uid="uid://d4yn4vvp0bgj" path="res://art/store1.png" id="1_cdg3n"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="4_82il2"]
 [ext_resource type="Texture2D" uid="uid://b3cwolewqbfq0" path="res://art/map art/Dream_Island/cave.png" id="4_e0bx8"]
 [ext_resource type="Texture2D" uid="uid://88givuk35ta7" path="res://art/map art/Dream_Island/village.png" id="5_rvaus"]
-[ext_resource type="Texture2D" uid="uid://dx1lr1st35pmh" path="res://art/exit.png" id="6_5xujd"]
 [ext_resource type="Texture2D" uid="uid://wfjyytnec0x5" path="res://art/blacksmith/tile000.png" id="8_7l8rn"]
 [ext_resource type="Script" path="res://level_1_files/blacksmith.gd" id="9_4d0ds"]
 [ext_resource type="Texture2D" uid="uid://ga462sjbk4px" path="res://art/blacksmith/tile001.png" id="9_mqqvp"]
@@ -6849,19 +6848,19 @@ texture = ExtResource("4_e0bx8")
 7:15/0 = 0
 7:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 7:15/0/physics_layer_0/angular_velocity = 0.0
-7:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.125, -8, -2.25)
 8:15/0 = 0
 8:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:15/0/physics_layer_0/angular_velocity = 0.0
-8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.125, -8, -2.25)
 9:15/0 = 0
 9:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:15/0/physics_layer_0/angular_velocity = 0.0
-9:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.125, -8, -2.25)
 10:15/0 = 0
 10:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 10:15/0/physics_layer_0/angular_velocity = 0.0
-10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.125, -8, -2.25)
 0:16/0 = 0
 0:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:16/0/physics_layer_0/angular_velocity = 0.0
@@ -10195,6 +10194,36 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="InputEventKey" id="InputEventKey_06tlw"]
+device = -1
+physical_keycode = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_wc2ha"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="Shortcut" id="Shortcut_wbxg3"]
+events = [SubResource("InputEventKey_06tlw"), SubResource("InputEventKey_wc2ha")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_fwqsd"]
+device = -1
+physical_keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_31ago"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="Shortcut" id="Shortcut_7h5hg"]
+events = [SubResource("InputEventKey_fwqsd"), SubResource("InputEventKey_31ago")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02m7n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6ovw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4qjlk"]
+
 [sub_resource type="InputEventKey" id="InputEventKey_5sry4"]
 device = -1
 physical_keycode = 80
@@ -10202,6 +10231,20 @@ unicode = 112
 
 [sub_resource type="Shortcut" id="Shortcut_ne2cd"]
 events = [SubResource("InputEventKey_5sry4")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1cow"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnfqu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n580k"]
 
@@ -10216,7 +10259,15 @@ corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8inx0"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5u2lm"]
+[sub_resource type="InputEventKey" id="InputEventKey_ucgy7"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="Shortcut" id="Shortcut_6bf38"]
+events = [SubResource("InputEventKey_ucgy7")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xt87v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xuvoh"]
 bg_color = Color(0.929412, 0.839216, 0.376471, 1)
@@ -10224,6 +10275,17 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+
+[sub_resource type="Shortcut" id="Shortcut_g87j8"]
+events = [SubResource("InputEventKey_ucgy7")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_1bxlr"]
+device = -1
+physical_keycode = 80
+unicode = 112
+
+[sub_resource type="Shortcut" id="Shortcut_8n28i"]
+events = [SubResource("InputEventKey_1bxlr")]
 
 [node name="Market" type="Node2D"]
 texture_filter = 1
@@ -10444,82 +10506,125 @@ scale = Vector2(23.5278, 23.5278)
 texture = ExtResource("23_kfras")
 
 [node name="PotionMenu" type="Panel" parent="PotionScene"]
+process_mode = 2
 visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -12.025
-anchor_right = -12.025
+anchor_left = 25.2
+anchor_top = 16.3
+anchor_right = 25.2
+anchor_bottom = 17.969
 offset_left = -369.0
 offset_top = -330.0
-offset_right = 931.0
-offset_bottom = 70.0
+offset_right = 413.0
+offset_bottom = 65.2399
 theme_override_styles/panel = SubResource("StyleBoxFlat_ouvyo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Exit" type="TextureButton" parent="PotionScene/PotionMenu"]
+[node name="Right" type="Button" parent="PotionScene/PotionMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_wbxg3")
+
+[node name="Left" type="Button" parent="PotionScene/PotionMenu"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_7h5hg")
+
+[node name="Exit" type="Button" parent="PotionScene/PotionMenu"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.920089
-anchor_top = 0.237375
-anchor_right = 0.920089
-anchor_bottom = 0.237375
+anchor_left = 0.988639
+anchor_top = 0.168723
+anchor_right = 0.957949
+anchor_bottom = 0.119481
 offset_left = -48.116
 offset_top = -47.95
 offset_right = -16.116
-offset_bottom = -15.95
+offset_bottom = -16.2
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_02m7n")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d6ovw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4qjlk")
+button_mask = 0
 shortcut = SubResource("Shortcut_ne2cd")
-texture_normal = ExtResource("6_5xujd")
 metadata/_edit_use_anchors_ = true
+
+[node name="Hback" type="Panel" parent="PotionScene/PotionMenu"]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = 48.0
+offset_right = 361.0
+offset_bottom = 362.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w1cow")
+
+[node name="Iback" type="Panel" parent="PotionScene/PotionMenu"]
+visible = false
+layout_mode = 0
+offset_left = 409.0
+offset_top = 49.0
+offset_right = 666.0
+offset_bottom = 364.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_bnfqu")
 
 [node name="Invisibility" type="Panel" parent="PotionScene/PotionMenu"]
 layout_mode = 0
 offset_left = 409.0
-offset_top = 47.0
-offset_right = 650.0
+offset_top = 49.0
+offset_right = 667.0
 offset_bottom = 347.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_n580k")
 
 [node name="InvisibilityButton" type="Button" parent="PotionScene/PotionMenu/Invisibility"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 200.0
-offset_right = 228.0
-offset_bottom = 287.0
+layout_mode = 2
+offset_left = 16.0
+offset_top = 196.0
+offset_right = 241.0
+offset_bottom = 281.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_v7pju")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_doc4n")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_8inx0")
+disabled = true
+button_mask = 0
+shortcut = SubResource("Shortcut_6bf38")
 text = "
-BUY"
+BUY (X)"
 
 [node name="Ghost" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
-position = Vector2(113, 84.8387)
-scale = Vector2(7.5, 7.74194)
+position = Vector2(113, 83.9516)
+scale = Vector2(7.5, 7.63105)
 texture = ExtResource("25_2nh3i")
 
 [node name="Text" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
 texture_filter = 1
-layout_mode = 0
-offset_left = 23.0
-offset_top = 155.0
-offset_right = 224.0
-offset_bottom = 183.0
+layout_mode = 2
+offset_left = 4.0
+offset_top = 153.0
+offset_right = 245.0
+offset_bottom = 181.0
 theme_override_colors/font_color = Color(0, 0.768627, 0.972549, 1)
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 30
 text = "Ghost 30 sec"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Limit" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
-layout_mode = 0
-offset_left = 184.0
-offset_right = 224.0
+layout_mode = 2
+offset_left = 200.0
+offset_right = 237.0
 offset_bottom = 54.0
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 60
@@ -10547,9 +10652,9 @@ text = "30"
 layout_mode = 0
 offset_left = 108.0
 offset_top = 47.0
-offset_right = 351.0
-offset_bottom = 347.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_5u2lm")
+offset_right = 363.0
+offset_bottom = 363.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xt87v")
 
 [node name="Limit" type="Label" parent="PotionScene/PotionMenu/Health"]
 texture_filter = 1
@@ -10597,8 +10702,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_xuvoh")
+button_mask = 0
+shortcut = SubResource("Shortcut_g87j8")
 text = "
-BUY"
+BUY (X)"
 
 [node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
 texture_filter = 1
@@ -10617,12 +10724,34 @@ theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 20
 text = "20"
 
+[node name="Label" type="Label" parent="PotionScene/PotionMenu"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 376.0
+offset_right = 504.0
+offset_bottom = 427.0
+theme_override_fonts/font = ExtResource("21_674y0")
+theme_override_font_sizes/font_size = 50
+text = "(P) to Exit"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PotionScene"]
+
+[node name="OpenButton" type="Button" parent="PotionScene"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_8n28i")
+
 [connection signal="body_entered" from="WeaponScene/Collider/Blacksmith" to="WeaponScene" method="_on_blacksmith_body_entered"]
 [connection signal="body_exited" from="WeaponScene/Collider/Blacksmith" to="WeaponScene" method="_on_blacksmith_body_exited"]
 [connection signal="pressed" from="WeaponScene/Tutorial_Weapon/Arrow" to="WeaponScene" method="_on_arrow_pressed"]
 [connection signal="pressed" from="WeaponScene/Tutorial_Weapon/Sword" to="WeaponScene" method="_on_sword_pressed"]
 [connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
 [connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
+[connection signal="pressed" from="PotionScene/PotionMenu/Right" to="PotionScene" method="_on_right_pressed"]
+[connection signal="pressed" from="PotionScene/PotionMenu/Left" to="PotionScene" method="_on_left_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
 [connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
+[connection signal="pressed" from="PotionScene/OpenButton" to="PotionScene" method="_on_open_button_pressed"]
