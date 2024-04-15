@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=31 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -16,6 +16,7 @@
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
+[ext_resource type="PackedScene" uid="uid://cor0c34w07xx1" path="res://end_screen.tscn" id="17_o8swj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
@@ -480,6 +481,9 @@ position = Vector2(-64, 18)
 rotation = -0.689405
 scale = Vector2(1.1875, 1.15357)
 texture = ExtResource("12_if1a4")
+
+[node name="EndScreen" parent="." instance=ExtResource("17_o8swj")]
+visible = false
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
