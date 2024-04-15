@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=41 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -16,6 +16,16 @@
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
+[ext_resource type="PackedScene" uid="uid://cor0c34w07xx1" path="res://end_screen.tscn" id="17_o8swj"]
+[ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="17_7qpgc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibrft"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(1, 0.00392157, 0.00392157, 1)
+shadow_size = 190
+
+[sub_resource type="FontVariation" id="FontVariation_lhf18"]
+base_font = ExtResource("13_fd44j")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2cqi"]
 bg_color = Color(0.172549, 0.172549, 0.172549, 0.235294)
@@ -79,8 +89,68 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ujy60"]
+bg_color = Color(0.0588235, 0.0588235, 0.0588235, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.301961, 0.156863, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_ifc8x"]
+base_font = ExtResource("13_fd44j")
+spacing_glyph = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5jn7p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pesgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w331w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0dq0"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_aiv6p"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_hua60"]
+events = [SubResource("InputEventKey_aiv6p")]
+
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
+
+[node name="LowHealth1" type="Panel" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = -188.0
+offset_right = 2024.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ibrft")
+
+[node name="Label" type="Label" parent="LowHealth1"]
+layout_mode = 0
+offset_left = 665.0
+offset_top = 348.0
+offset_right = 1279.0
+offset_bottom = 467.0
+theme_override_fonts/font = SubResource("FontVariation_lhf18")
+theme_override_font_sizes/font_size = 70
+text = "Warning: Low Health!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="LowHealth2" type="Panel" parent="."]
+visible = false
+offset_left = -27.0
+offset_top = 1043.0
+offset_right = 2024.0
+offset_bottom = 1241.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ibrft")
 
 [node name="Panel" type="Panel" parent="."]
 offset_right = 1920.0
@@ -481,8 +551,61 @@ rotation = -0.689405
 scale = Vector2(1.1875, 1.15357)
 texture = ExtResource("12_if1a4")
 
+[node name="EndScreen" parent="." instance=ExtResource("17_o8swj")]
+visible = false
+[node name="CollectedArmor" type="Panel" parent="."]
+visible = false
+offset_left = 528.0
+offset_top = 353.0
+offset_right = 1380.0
+offset_bottom = 682.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujy60")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollectedArmor"]
+texture_filter = 1
+position = Vector2(159, 133)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("17_7qpgc")
+
+[node name="Label" type="Label" parent="CollectedArmor"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 57.0
+offset_right = 794.0
+offset_bottom = 226.0
+theme_override_fonts/font = SubResource("FontVariation_ifc8x")
+theme_override_font_sizes/font_size = 40
+text = "You've received armor!
+
+Use armor to proceed to next level."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CollectedArmor"]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 267.0
+offset_right = 501.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5jn7p")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_pesgx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w331w")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_y0dq0")
+button_mask = 0
+shortcut = SubResource("Shortcut_hua60")
+text = "(Enter) to Skip"
+
+[node name="ArmorTime" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
 [connection signal="timeout" from="Story2/Story2Timer" to="." method="_on_story_2_timer_timeout"]
+[connection signal="pressed" from="CollectedArmor/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="ArmorTime" to="." method="_on_armor_time_timeout"]

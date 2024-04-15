@@ -5,6 +5,7 @@ extends Control
 @onready var gold = $Container/GoldSword.get_theme_stylebox("panel")
 @onready var diamond = $Container/DiamondSword.get_theme_stylebox("panel")
 var cooldownactive = false
+var armorcool = false
 
 func _ready():
 	$Container/Potion/Label.text = " "
@@ -136,16 +137,24 @@ func _process(delta):
 	#$Container/Potion/Timer.text = str($Container/Potion/Timer2.time_left)
 	$Container/Potion/Timer.text = "%d" % [int($Container/Potion/Timer2.time_left)]
 	
-	if Globalvar.armor_equipped and Globalvar.level == 2:
+	if Globalvar.has_armor and Globalvar.level == 2 and not armorcool:
 		if Input.is_action_just_pressed("knight"):
 			#Globalvar.i_num -= 1
+			#armorcool = true
 			Globalvar.is_invisible = true
+			Globalvar.armor_equipped = true
 			$Container/Armor/Countdown.show()
 			$Container/Armor/Timer.show()
-			$Container/Armor/Timer2.start()
+			$Container/Armor/Timer2.start(6)
 			
 	$Container/Armor/Timer.text = "%d" % [int($Container/Armor/Timer2.time_left)]
-
+	
+	if armorcool:
+		$Container/Armor/Hide.show()
+		#$Container/Armor/Cool.start(5)
+	else:
+		$Container/Armor/Hide.hide()
+		#$Container/Armor/Cool.stop()
 
 func _on_timer_2_timeout():
 	Globalvar.is_invisible = false
@@ -155,4 +164,11 @@ func _on_timer_2_timeout():
 	$Container/Armor/Countdown.hide()
 	$Container/Armor/Timer.hide()
 	Globalvar.armor_equipped = false
+	armorcool = true
+	$Container/Armor/Cool.start(5)
 	
+	print("timer2 done")
+
+func _on_cool_timeout():
+	armorcool = false
+	print("cool done")

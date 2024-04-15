@@ -1,14 +1,2 @@
-res://mob_knight.tscn
-res://dummy.gd
-res://main_scene.tscn
-res://player.tscn
-res://intro/opening_cutscene.tscn
-res://level_2.tscn
-res://intro/tutorial_steps.tscn
-res://level_3.tscn
-res://final_boss.tscn
-res://demon.tscn
-res://dummy_play.tscn
-res://mob_dummy.tscn
-res://general/arrow.tscn
-res://MobDemon.gd
+res://game_hud.tscn
+res://begingame.gd

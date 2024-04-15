@@ -16,14 +16,18 @@ var key_instance = 0
 var cool_started = false
 @onready var player1 = get_parent().get_node("Player")
 
-#var run_speed = 100
+var run_speed = 100
 var player = null
 var is_running = false
 var in_area = false
 
 
 func get_input():
-	pass
+	if velocity.x != 0:
+		$AnimatedSprite2D.animation = "run"
+		$AnimatedSprite2D.flip_v = false
+		$AnimatedSprite2D.flip_h = velocity.x < 0
+		
 func _input(event):
 	pass
 
@@ -32,51 +36,52 @@ func _on_cooldown_timeout():
 	
 func _physics_process(delta):
 	get_input()
-	#velocity = Vector2.ZERO
-	#$AnimatedSprite2D.play("idle")
-	#if player:
-		#velocity = position.direction_to(player.position) * run_speed
-		
-	#move_and_slide()
 	
-	player_position = player1.position
-	target_position = (player1.position - position).normalized()
-	if (position.distance_to(player_position) > 280 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
-		velocity = position.direction_to(player_position) * speed
-		move_and_collide(velocity*delta)
-		if target_position.x > 0 and not is_hit:
-			$AnimatedSprite2D.play("run")
-			$AnimatedSprite2D.flip_h = false
-		#else:
-		if target_position.x < 0 and not is_hit:
-			$AnimatedSprite2D.play("run")
-			$AnimatedSprite2D.flip_h = true
-		timer_started = false
-	elif position.distance_to(player_position) > 800:
-		move_and_collide(Vector2.ZERO)
-		$AnimatedSprite2D.play("idle")
-		timer_started = false
-	else:
-		move_and_collide(Vector2.ZERO)
-		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
-			$Timer.start(1)
-			timer_started = true
-			$AnimatedSprite2D.play("idle")
-		if position.distance_to(player_position) <= 280 and not is_hit:
-			#pass
-			$AnimatedSprite2D.play("attack")
-		if Input.is_action_just_pressed("basic_melee") and not cool_started:
-			#$AnimatedSprite2D.play("take_hit")
-			#is_hit = true
-			cool_started = true
-			$Cooldown.start(1)
-			$AnimatedSprite2D.stop()
-			$AnimatedSprite2D.play("take_hit")
-			health -= damage
-			set_health_bar()
-			$HealthBar.show()
-			$HealthTimer.start()
-			print("Goblin was hit! Health:", health)
+	velocity = Vector2.ZERO
+	$AnimatedSprite2D.play("idle")
+	if player:
+		velocity = position.direction_to(player.position) * run_speed
+		
+	move_and_collide(velocity*delta)
+	
+	#player_position = player1.position
+	#target_position = (player1.position - position).normalized()
+	#if (position.distance_to(player_position) > 280 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
+		#velocity = position.direction_to(player_position) * speed
+		#move_and_collide(velocity*delta)
+		#if target_position.x > 0 and not is_hit:
+			#$AnimatedSprite2D.play("run")
+			#$AnimatedSprite2D.flip_h = false
+		##else:
+		#if target_position.x < 0 and not is_hit:
+			#$AnimatedSprite2D.play("run")
+			#$AnimatedSprite2D.flip_h = true
+		#timer_started = false
+	#elif position.distance_to(player_position) > 800:
+		#move_and_collide(Vector2.ZERO)
+		#$AnimatedSprite2D.play("idle")
+		#timer_started = false
+	#else:
+		#move_and_collide(Vector2.ZERO)
+		#if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
+			#$Timer.start(1)
+			#timer_started = true
+			#$AnimatedSprite2D.play("idle")
+		#if position.distance_to(player_position) <= 280 and not is_hit:
+			##pass
+			#$AnimatedSprite2D.play("attack")
+	if Input.is_action_just_pressed("basic_melee") and not cool_started and in_area:
+		#$AnimatedSprite2D.play("take_hit")
+		#is_hit = true
+		cool_started = true
+		$Cooldown.start(1)
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("take_hit")
+		health -= damage
+		set_health_bar()
+		$HealthBar.show()
+		$HealthTimer.start()
+		print("Goblin was hit! Health:", health)
 			
 	if health <= 0:
 		$AnimatedSprite2D.play("deaddrop")
@@ -87,34 +92,34 @@ func _physics_process(delta):
 			$Deathsound.play()
 			rtimer_started = true
 
-#func _on_DetectRadius_body_entered(body):
-	#if body.is_in_group("player"):
-		#player = body
-		#run_speed = 50
-		#$AnimatedSprite2D.stop()
-		#$AnimatedSprite2D.play("run")
-	#if body.is_in_group("arrow"):
-		#player = body
-		#run_speed = 50
-#
-#func _on_DetectRadius_body_exited(body):
-	#if body.is_in_group("player"):
-		#player = null
-		#$AnimatedSprite2D.stop()
-		#$AnimatedSprite2D.play("idle")
-#
-#func _on_attack_body_entered(body):
-	#if body.is_in_group("player"):
-		#player = body
-		#in_area = true
-		#run_speed = 0 
-		#$AnimatedSprite2D.play("attack")
-		#
-#func _on_attack_body_exited(body):
-	#if body.is_in_group("player"):
-		#player = null
-		##run_speed = 50 
-		#$AnimatedSprite2D.stop()
+func _on_DetectRadius_body_entered(body):
+	if body.is_in_group("player"):
+		player = body
+		run_speed = 50
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("run")
+	if body.is_in_group("arrow"):
+		player = body
+		run_speed = 50
+
+func _on_DetectRadius_body_exited(body):
+	if body.is_in_group("player"):
+		player = null
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.play("idle")
+
+func _on_attack_body_entered(body):
+	if body.is_in_group("player"):
+		player = body
+		in_area = true
+		run_speed = 0 
+		$AnimatedSprite2D.play("attack")
+		
+func _on_attack_body_exited(body):
+	if body.is_in_group("player"):
+		player = null
+		#run_speed = 50 
+		$AnimatedSprite2D.stop()
 		
 func _on_respawn_timer_timeout():
 	queue_free()
@@ -142,23 +147,23 @@ func _on_health_timer_timeout():
 	$HealthBar.hide()
 
 func _on_animated_sprite_2d_animation_finished():
-	if $AnimatedSprite2D.animation == ("attack"):
-		print("attack finished")
-		Livecounter.num -= 10
-	if $AnimatedSprite2D.animation == ("take_hit"):
-		is_hit = false
-		print("hit recognized")
 	#if $AnimatedSprite2D.animation == ("attack"):
 		#print("attack finished")
 		#Livecounter.num -= 10
-		#$AnimatedSprite2D.play("attack")
 	#if $AnimatedSprite2D.animation == ("take_hit"):
-		#is_hit = true
+		#is_hit = false
 		#print("hit recognized")
-		#if is_hit:
-			#$AnimatedSprite2D.play("attack")
-		#else:
-			#$AnimatedSprite2D.play("idle")
+	if $AnimatedSprite2D.animation == ("attack"):
+		print("attack finished")
+		Livecounter.num -= 10
+		$AnimatedSprite2D.play("attack")
+	if $AnimatedSprite2D.animation == ("take_hit"):
+		is_hit = true
+		print("hit recognized")
+		if is_hit:
+			$AnimatedSprite2D.play("attack")
+		else:
+			$AnimatedSprite2D.play("idle")
 		
 func set_health_bar():
 	$HealthBar.value = health

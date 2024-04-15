@@ -62,6 +62,10 @@ func _on_d_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 0
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 0
 		$MainMap/Fountain/StaticBody2D.collision_layer = 0
+		$MainMap/Fountain/StaticBody2D.collision_mask = 0
+		$MainMap/Kingdom/CastleEntrance.collision_layer = 0
+		$MainMap/Kingdom/CastleEntrance.collision_mask = 0
+		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = true
 		if not Globalvar.gaurd_dead:
 			$KnightKey.show()
 		else:
@@ -92,6 +96,10 @@ func _on_k_area_body_entered(body):
 		$MainMap/WitchScene/StaticBody2D.collision_layer = 1
 		$MainMap/WitchScene/StaticBody2D.collision_mask = 1
 		$MainMap/Fountain/StaticBody2D.collision_layer = 1
+		$MainMap/Fountain/StaticBody2D.collision_mask = 1
+		$MainMap/Kingdom/CastleEntrance.collision_layer = 1
+		$MainMap/Kingdom/CastleEntrance.collision_mask = 1
+		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = false
 		#$KnightKey/CollisionShape2D.disabled = true
 		Globalvar.blindknight = true
 		

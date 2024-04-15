@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=150 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -42140,6 +42140,25 @@ animations = [{
 radius = 141.0
 height = 502.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utlpq"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hh8d3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y7ma"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_80xv0"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_k2tcc"]
+events = [SubResource("InputEventKey_80xv0")]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birl7"]
 size = Vector2(2030, 1735.5)
 
@@ -42206,6 +42225,7 @@ visible = false
 
 [node name="Kingdom" type="TileMap" parent="MainMap"]
 texture_filter = 1
+position = Vector2(1, 0)
 scale = Vector2(7, 7)
 tile_set = SubResource("TileSet_hqt7y")
 format = 2
@@ -42577,6 +42597,22 @@ position = Vector2(-79, 87)
 scale = Vector2(3.84375, 3.84375)
 texture = ExtResource("19_tjdst")
 
+[node name="Button" type="Button" parent="MainMap/WitchScene/WitchDialogue"]
+visible = false
+texture_filter = 1
+offset_left = 1265.0
+offset_top = 628.0
+offset_right = 1427.0
+offset_bottom = 659.0
+theme_override_fonts/font = ExtResource("33_mlvms")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_utlpq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hh8d3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7y7ma")
+shortcut = SubResource("Shortcut_k2tcc")
+text = "(Enter) to skip
+"
+
 [node name="PlayerScene" type="Node2D" parent="MainMap"]
 script = ExtResource("28_stpk0")
 
@@ -42760,6 +42796,7 @@ text = "Complete the mission to proceed!"
 [connection signal="body_entered" from="MainMap/WitchScene/Area2D" to="MainMap/WitchScene" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MainMap/WitchScene/Timer" to="MainMap/WitchScene" method="_on_timer_timeout"]
 [connection signal="body_entered" from="MainMap/WitchScene/Portal" to="MainMap/WitchScene" method="_on_portal_body_entered"]
+[connection signal="pressed" from="MainMap/WitchScene/WitchDialogue/Button" to="MainMap/WitchScene" method="_on_button_pressed"]
 [connection signal="body_entered" from="MainMap/PlayerScene/Area2D" to="MainMap/PlayerScene" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MainMap/PlayerScene/Timer" to="MainMap/PlayerScene" method="_on_timer_timeout"]
 [connection signal="timeout" from="MainMap/PlayerScene/Timer2" to="MainMap/PlayerScene" method="_on_timer_2_timeout"]

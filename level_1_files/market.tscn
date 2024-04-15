@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cl4ra1npuv3u5"]
+[gd_scene load_steps=95 format=3 uid="uid://cl4ra1npuv3u5"]
 
 [ext_resource type="Script" path="res://level_1_files/market.gd" id="1_5s35o"]
 [ext_resource type="Texture2D" uid="uid://d4yn4vvp0bgj" path="res://art/store1.png" id="1_cdg3n"]
@@ -27,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://2wslsobg5oup" path="res://art/misc/sword.png" id="20_4mhls"]
 [ext_resource type="Texture2D" uid="uid://cqy4o8jhd1nsr" path="res://art/potion/tile002.png" id="20_r2aa7"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="21_674y0"]
+[ext_resource type="Texture2D" uid="uid://6wuhfq722ctj" path="res://art/misc/bundle.png" id="22_15uot"]
 [ext_resource type="Texture2D" uid="uid://ddv85fb7fq3hw" path="res://art/potion/wprof.png" id="23_kfras"]
+[ext_resource type="Texture2D" uid="uid://c8an3xg1nxewm" path="res://art/misc/diamondsword.png" id="24_io802"]
 [ext_resource type="Texture2D" uid="uid://b34escpc2qv5k" path="res://art/invisibility2.png" id="25_2nh3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h8ll2"]
@@ -10156,6 +10158,83 @@ corner_radius_bottom_left = 10
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xuig"]
 bg_color = Color(0, 0, 0, 0.698039)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q80l6"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.286275, 0.160784, 0.00784314, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_xk2fr"]
+device = -1
+physical_keycode = 80
+unicode = 112
+
+[sub_resource type="Shortcut" id="Shortcut_fahjb"]
+events = [SubResource("InputEventKey_xk2fr")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nffgv"]
+device = -1
+keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_cljag"]
+device = -1
+physical_keycode = 65
+unicode = 97
+
+[sub_resource type="Shortcut" id="Shortcut_puxh4"]
+events = [SubResource("InputEventKey_nffgv"), SubResource("InputEventKey_cljag")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_xaak1"]
+device = -1
+keycode = 4194321
+physical_keycode = 4194321
+key_label = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_ws7o2"]
+device = -1
+physical_keycode = 68
+unicode = 100
+
+[sub_resource type="Shortcut" id="Shortcut_6xit5"]
+events = [SubResource("InputEventKey_xaak1"), SubResource("InputEventKey_ws7o2")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_b43rv"]
+device = -1
+physical_keycode = 88
+unicode = 120
+
+[sub_resource type="Shortcut" id="Shortcut_bi28j"]
+events = [SubResource("InputEventKey_b43rv")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4aeb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="FontVariation" id="FontVariation_qxcfs"]
+base_font = ExtResource("21_674y0")
+spacing_glyph = 5
+
+[sub_resource type="FontVariation" id="FontVariation_2o5wu"]
+base_font = ExtResource("21_674y0")
+spacing_glyph = 3
+
+[sub_resource type="InputEventKey" id="InputEventKey_8rnl5"]
+device = -1
+physical_keycode = 80
+unicode = 112
+
+[sub_resource type="Shortcut" id="Shortcut_mo41o"]
+events = [SubResource("InputEventKey_8rnl5")]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8htg7"]
 animations = [{
 "frames": [{
@@ -10288,6 +10367,7 @@ unicode = 112
 events = [SubResource("InputEventKey_1bxlr")]
 
 [node name="Market" type="Node2D"]
+process_mode = 3
 texture_filter = 1
 script = ExtResource("1_5s35o")
 
@@ -10338,21 +10418,20 @@ script = ExtResource("12_tpgaw")
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = -1240.0
-offset_top = -247.0
-offset_right = -194.0
-offset_bottom = -142.0
+offset_left = -1266.0
+offset_top = -231.0
+offset_right = -489.0
+offset_bottom = -126.0
 theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/normal = SubResource("StyleBoxFlat_8r1iv")
-text = "Looking for weapons?
-Press U to shop"
+text = "Press P to shop"
 vertical_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="WeaponScene/talk"]
 texture_filter = 1
-position = Vector2(-248, 18)
-scale = Vector2(23.5278, 23.5278)
+position = Vector2(-190, -13)
+scale = Vector2(17.1713, 17.1713)
 texture = ExtResource("18_4s5jr")
 
 [node name="Collider" type="StaticBody2D" parent="WeaponScene"]
@@ -10452,6 +10531,269 @@ offset_right = 504.0
 offset_bottom = 233.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_8xuig")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="WeaponScene"]
+
+[node name="Arrow_Shop" type="Panel" parent="WeaponScene/CanvasLayer"]
+process_mode = 2
+offset_left = 472.0
+offset_top = 274.0
+offset_right = 1523.0
+offset_bottom = 775.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q80l6")
+
+[node name="exit" type="Button" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+disabled = true
+button_mask = 0
+shortcut = SubResource("Shortcut_fahjb")
+
+[node name="back" type="Button" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+disabled = true
+button_mask = 0
+shortcut = SubResource("Shortcut_puxh4")
+
+[node name="front" type="Button" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+disabled = true
+button_mask = 0
+shortcut = SubResource("Shortcut_6xit5")
+
+[node name="Buy" type="Button" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+button_mask = 0
+shortcut = SubResource("Shortcut_bi28j")
+
+[node name="ABack" type="Panel" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+visible = false
+layout_mode = 0
+offset_left = 93.0
+offset_top = 47.0
+offset_right = 353.0
+offset_bottom = 375.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4aeb")
+
+[node name="IBack" type="Panel" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+visible = false
+layout_mode = 0
+offset_left = 414.0
+offset_top = 47.0
+offset_right = 674.0
+offset_bottom = 375.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4aeb")
+
+[node name="DBack" type="Panel" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+visible = false
+layout_mode = 0
+offset_left = 728.0
+offset_top = 51.0
+offset_right = 988.0
+offset_bottom = 379.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4aeb")
+
+[node name="AUpgrade" type="Control" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+anchors_preset = 0
+
+[node name="Arrow" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/AUpgrade"]
+position = Vector2(210, 160)
+rotation = -0.804597
+scale = Vector2(2.76563, 1.51712)
+texture = ExtResource("22_15uot")
+
+[node name="Text" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/AUpgrade"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 99.0
+offset_top = 247.0
+offset_right = 340.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(1, 0.847059, 0.823529, 1)
+theme_override_fonts/font = SubResource("FontVariation_qxcfs")
+theme_override_font_sizes/font_size = 35
+text = "+10% Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Limit" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/AUpgrade"]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 55.0
+offset_right = 332.0
+offset_bottom = 109.0
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 60
+text = "1
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinDisplay" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/AUpgrade"]
+texture_filter = 1
+position = Vector2(176, 328)
+scale = Vector2(3, 3)
+texture = ExtResource("4_82il2")
+
+[node name="CoinDisplay" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/AUpgrade/CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -9.20755
+offset_right = 40.0
+offset_bottom = 8.79245
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 17
+text = "30"
+metadata/_edit_use_anchors_ = true
+
+[node name="IUpgrade" type="Control" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+anchors_preset = 0
+
+[node name="Iron" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/IUpgrade"]
+texture_filter = 1
+position = Vector2(513, 161)
+scale = Vector2(4.78125, 4.78125)
+texture = ExtResource("20_4mhls")
+
+[node name="Text" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/IUpgrade"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 430.0
+offset_top = 245.0
+offset_right = 658.0
+offset_bottom = 286.0
+theme_override_colors/font_color = Color(1, 0.847059, 0.823529, 1)
+theme_override_fonts/font = SubResource("FontVariation_qxcfs")
+theme_override_font_sizes/font_size = 35
+text = "+10% Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Limit" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/IUpgrade"]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 57.0
+offset_right = 660.0
+offset_bottom = 111.0
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 60
+text = "1
+"
+horizontal_alignment = 1
+
+[node name="CoinDisplay" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/IUpgrade"]
+texture_filter = 1
+position = Vector2(504, 330)
+scale = Vector2(3, 3)
+texture = ExtResource("4_82il2")
+
+[node name="CoinDisplay" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/IUpgrade/CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -9.20755
+offset_right = 40.0
+offset_bottom = 8.79245
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 17
+text = "50"
+metadata/_edit_use_anchors_ = true
+
+[node name="DUpgrade" type="Control" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+anchors_preset = 0
+
+[node name="Diamond" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/DUpgrade"]
+texture_filter = 1
+position = Vector2(838, 167)
+scale = Vector2(4.78125, 4.78125)
+texture = ExtResource("24_io802")
+
+[node name="Text" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/DUpgrade"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 737.0
+offset_top = 252.0
+offset_right = 978.0
+offset_bottom = 288.0
+theme_override_colors/font_color = Color(1, 0.847059, 0.823529, 1)
+theme_override_fonts/font = SubResource("FontVariation_qxcfs")
+theme_override_font_sizes/font_size = 35
+text = "+10% Damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Limit" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/DUpgrade"]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 64.0
+offset_right = 977.0
+offset_bottom = 118.0
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 60
+text = "1
+"
+horizontal_alignment = 1
+
+[node name="CoinDisplay" type="Sprite2D" parent="WeaponScene/CanvasLayer/Arrow_Shop/DUpgrade"]
+texture_filter = 1
+position = Vector2(811, 337)
+scale = Vector2(3, 3)
+texture = ExtResource("4_82il2")
+
+[node name="CoinDisplay" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop/DUpgrade/CoinDisplay"]
+texture_filter = 3
+offset_left = 16.0
+offset_top = -9.20755
+offset_right = 40.0
+offset_bottom = 8.79245
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gom7a")
+theme_override_font_sizes/font_size = 17
+text = "70"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="WeaponScene/CanvasLayer/Arrow_Shop"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 425.0
+offset_right = 755.0
+offset_bottom = 476.0
+theme_override_fonts/font = ExtResource("21_674y0")
+theme_override_font_sizes/font_size = 50
+text = "(X) to Buy  |  (P) to Exit"
+
+[node name="NoCoins" type="Label" parent="WeaponScene/CanvasLayer"]
+visible = false
+offset_left = 720.0
+offset_top = 168.0
+offset_right = 1269.0
+offset_bottom = 246.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_2o5wu")
+theme_override_font_sizes/font_size = 50
+text = "Not enough coins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Open" type="Button" parent="WeaponScene"]
+process_mode = 1
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+disabled = true
+shortcut = SubResource("Shortcut_mo41o")
+
+[node name="NocoinTimer" type="Timer" parent="WeaponScene"]
+one_shot = true
+
 [node name="PotionScene" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -10505,60 +10847,64 @@ position = Vector2(1265, 39)
 scale = Vector2(23.5278, 23.5278)
 texture = ExtResource("23_kfras")
 
-[node name="PotionMenu" type="Panel" parent="PotionScene"]
+[node name="CanvasLayer" type="CanvasLayer" parent="PotionScene"]
+
+[node name="PotionMenu" type="Panel" parent="PotionScene/CanvasLayer"]
 process_mode = 2
 visible = false
 z_index = 1
-layout_mode = 1
 anchors_preset = -1
 anchor_left = 25.2
 anchor_top = 16.3
 anchor_right = 25.2
-anchor_bottom = 17.969
-offset_left = -369.0
-offset_top = -330.0
-offset_right = 413.0
-offset_bottom = 65.2399
+anchor_bottom = 16.3822
+offset_left = -47745.0
+offset_top = -17282.0
+offset_right = -46963.0
+offset_bottom = -16886.8
 theme_override_styles/panel = SubResource("StyleBoxFlat_ouvyo")
 metadata/_edit_use_anchors_ = true
 
-[node name="Right" type="Button" parent="PotionScene/PotionMenu"]
+[node name="Right" type="Button" parent="PotionScene/CanvasLayer/PotionMenu"]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+disabled = true
 button_mask = 0
 shortcut = SubResource("Shortcut_wbxg3")
 
-[node name="Left" type="Button" parent="PotionScene/PotionMenu"]
+[node name="Left" type="Button" parent="PotionScene/CanvasLayer/PotionMenu"]
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+disabled = true
 button_mask = 0
 shortcut = SubResource("Shortcut_7h5hg")
 
-[node name="Exit" type="Button" parent="PotionScene/PotionMenu"]
+[node name="Exit" type="Button" parent="PotionScene/CanvasLayer/PotionMenu"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.957949
-anchor_top = 0.119481
-anchor_right = 0.957949
-anchor_bottom = 0.119481
-offset_left = -48.116
-offset_top = -47.95
-offset_right = -16.116
-offset_bottom = -16.2
+anchor_left = 0.927558
+anchor_top = 0.149116
+anchor_right = 0.927558
+anchor_bottom = 0.149116
+offset_left = -22.35
+offset_top = -30.172
+offset_right = -7.35004
+offset_bottom = -10.172
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_02m7n")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_d6ovw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_4qjlk")
+disabled = true
 button_mask = 0
 shortcut = SubResource("Shortcut_ne2cd")
 metadata/_edit_use_anchors_ = true
 
-[node name="Hback" type="Panel" parent="PotionScene/PotionMenu"]
+[node name="Hback" type="Panel" parent="PotionScene/CanvasLayer/PotionMenu"]
 visible = false
 layout_mode = 0
 offset_left = 108.0
@@ -10567,7 +10913,7 @@ offset_right = 361.0
 offset_bottom = 362.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w1cow")
 
-[node name="Iback" type="Panel" parent="PotionScene/PotionMenu"]
+[node name="Iback" type="Panel" parent="PotionScene/CanvasLayer/PotionMenu"]
 visible = false
 layout_mode = 0
 offset_left = 409.0
@@ -10576,7 +10922,7 @@ offset_right = 666.0
 offset_bottom = 364.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bnfqu")
 
-[node name="Invisibility" type="Panel" parent="PotionScene/PotionMenu"]
+[node name="Invisibility" type="Panel" parent="PotionScene/CanvasLayer/PotionMenu"]
 layout_mode = 0
 offset_left = 409.0
 offset_top = 49.0
@@ -10584,7 +10930,7 @@ offset_right = 667.0
 offset_bottom = 347.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_n580k")
 
-[node name="InvisibilityButton" type="Button" parent="PotionScene/PotionMenu/Invisibility"]
+[node name="InvisibilityButton" type="Button" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility"]
 layout_mode = 2
 offset_left = 16.0
 offset_top = 196.0
@@ -10602,12 +10948,13 @@ shortcut = SubResource("Shortcut_6bf38")
 text = "
 BUY (X)"
 
-[node name="Ghost" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
+[node name="Ghost" type="Sprite2D" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility"]
+texture_filter = 1
 position = Vector2(113, 83.9516)
 scale = Vector2(7.5, 7.63105)
 texture = ExtResource("25_2nh3i")
 
-[node name="Text" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
+[node name="Text" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility"]
 texture_filter = 1
 layout_mode = 2
 offset_left = 4.0
@@ -10621,7 +10968,7 @@ text = "Ghost 30 sec"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Invisibility"]
+[node name="Limit" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility"]
 layout_mode = 2
 offset_left = 200.0
 offset_right = 237.0
@@ -10631,13 +10978,13 @@ theme_override_font_sizes/font_size = 60
 text = "0
 "
 
-[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Invisibility"]
+[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility"]
 texture_filter = 1
 position = Vector2(102, 225)
 scale = Vector2(1.75, 1.65625)
 texture = ExtResource("4_82il2")
 
-[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Invisibility/CoinDisplay"]
+[node name="CoinDisplay" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Invisibility/CoinDisplay"]
 texture_filter = 3
 offset_left = 16.0
 offset_top = -9.20755
@@ -10648,7 +10995,7 @@ theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 20
 text = "30"
 
-[node name="Health" type="Panel" parent="PotionScene/PotionMenu"]
+[node name="Health" type="Panel" parent="PotionScene/CanvasLayer/PotionMenu"]
 layout_mode = 0
 offset_left = 108.0
 offset_top = 47.0
@@ -10656,7 +11003,7 @@ offset_right = 363.0
 offset_bottom = 363.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_xt87v")
 
-[node name="Limit" type="Label" parent="PotionScene/PotionMenu/Health"]
+[node name="Limit" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Health"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 1
@@ -10671,13 +11018,13 @@ theme_override_font_sizes/font_size = 60
 text = "0
 "
 
-[node name="Heart" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
+[node name="Heart" type="Sprite2D" parent="PotionScene/CanvasLayer/PotionMenu/Health"]
 texture_filter = 1
 position = Vector2(120, 88.25)
 scale = Vector2(7.28125, 7.28125)
 texture = ExtResource("3_p3iaf")
 
-[node name="Label" type="Label" parent="PotionScene/PotionMenu/Health"]
+[node name="Label" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Health"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 35.0
@@ -10691,7 +11038,7 @@ text = "25% Health"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HealthButton" type="Button" parent="PotionScene/PotionMenu/Health"]
+[node name="HealthButton" type="Button" parent="PotionScene/CanvasLayer/PotionMenu/Health"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 18.0
@@ -10707,13 +11054,13 @@ shortcut = SubResource("Shortcut_g87j8")
 text = "
 BUY (X)"
 
-[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/PotionMenu/Health"]
+[node name="CoinDisplay" type="Sprite2D" parent="PotionScene/CanvasLayer/PotionMenu/Health"]
 texture_filter = 1
 position = Vector2(98, 226.25)
 scale = Vector2(1.75, 1.65625)
 texture = ExtResource("4_82il2")
 
-[node name="CoinDisplay" type="Label" parent="PotionScene/PotionMenu/Health/CoinDisplay"]
+[node name="CoinDisplay" type="Label" parent="PotionScene/CanvasLayer/PotionMenu/Health/CoinDisplay"]
 texture_filter = 3
 offset_left = 16.0
 offset_top = -9.20755
@@ -10724,7 +11071,7 @@ theme_override_fonts/font = ExtResource("2_gom7a")
 theme_override_font_sizes/font_size = 20
 text = "20"
 
-[node name="Label" type="Label" parent="PotionScene/PotionMenu"]
+[node name="Label" type="Label" parent="PotionScene/CanvasLayer/PotionMenu"]
 layout_mode = 0
 offset_left = 317.0
 offset_top = 376.0
@@ -10734,12 +11081,12 @@ theme_override_fonts/font = ExtResource("21_674y0")
 theme_override_font_sizes/font_size = 50
 text = "(P) to Exit"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PotionScene"]
-
 [node name="OpenButton" type="Button" parent="PotionScene"]
+process_mode = 1
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 8.0
+disabled = true
 button_mask = 0
 shortcut = SubResource("Shortcut_8n28i")
 
@@ -10747,11 +11094,17 @@ shortcut = SubResource("Shortcut_8n28i")
 [connection signal="body_exited" from="WeaponScene/Collider/Blacksmith" to="WeaponScene" method="_on_blacksmith_body_exited"]
 [connection signal="pressed" from="WeaponScene/Tutorial_Weapon/Arrow" to="WeaponScene" method="_on_arrow_pressed"]
 [connection signal="pressed" from="WeaponScene/Tutorial_Weapon/Sword" to="WeaponScene" method="_on_sword_pressed"]
+[connection signal="pressed" from="WeaponScene/CanvasLayer/Arrow_Shop/exit" to="WeaponScene" method="_on_exit_pressed"]
+[connection signal="pressed" from="WeaponScene/CanvasLayer/Arrow_Shop/back" to="WeaponScene" method="_on_back_pressed"]
+[connection signal="pressed" from="WeaponScene/CanvasLayer/Arrow_Shop/front" to="WeaponScene" method="_on_front_pressed"]
+[connection signal="pressed" from="WeaponScene/CanvasLayer/Arrow_Shop/Buy" to="WeaponScene" method="_on_buy_pressed"]
+[connection signal="pressed" from="WeaponScene/Open" to="WeaponScene" method="_on_open_pressed"]
+[connection signal="timeout" from="WeaponScene/NocoinTimer" to="WeaponScene" method="_on_nocoin_timer_timeout"]
 [connection signal="body_entered" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_entered"]
 [connection signal="body_exited" from="PotionScene/Collider/Witch" to="PotionScene" method="_on_witch_body_exited"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Right" to="PotionScene" method="_on_right_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Left" to="PotionScene" method="_on_left_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
-[connection signal="pressed" from="PotionScene/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
+[connection signal="pressed" from="PotionScene/CanvasLayer/PotionMenu/Right" to="PotionScene" method="_on_right_pressed"]
+[connection signal="pressed" from="PotionScene/CanvasLayer/PotionMenu/Left" to="PotionScene" method="_on_left_pressed"]
+[connection signal="pressed" from="PotionScene/CanvasLayer/PotionMenu/Exit" to="PotionScene" method="_on_exit_pressed"]
+[connection signal="pressed" from="PotionScene/CanvasLayer/PotionMenu/Invisibility/InvisibilityButton" to="PotionScene" method="_on_invisibility_button_pressed"]
+[connection signal="pressed" from="PotionScene/CanvasLayer/PotionMenu/Health/HealthButton" to="PotionScene" method="_on_health_button_pressed"]
 [connection signal="pressed" from="PotionScene/OpenButton" to="PotionScene" method="_on_open_button_pressed"]

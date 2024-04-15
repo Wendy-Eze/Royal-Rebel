@@ -26,9 +26,22 @@ func _on_area_2d_body_entered(body):
 		if not talk_started:
 			talk_started = true
 			$WitchDialogue/Talk.show()
+			$WitchDialogue/Button.show()
 			$Timer.start()
 
-
+func message():
+	if index < dialogue.size():
+		$WitchDialogue/Talk.text = dialogue[index]
+		$Timer.start(5)
+		index += 1
+	else:
+		$Timer.stop()
+		$WitchDialogue/Talk.hide()
+		$WitchDialogue/Button.hide()
+		$Portal.show()
+		$Portal/Sound.play()
+		$Portal/CollisionShape2D.disabled = false
+		
 func _on_timer_timeout():
 	#index += 1
 	if index < dialogue.size():
@@ -38,6 +51,7 @@ func _on_timer_timeout():
 	else:
 		$Timer.stop()
 		$WitchDialogue/Talk.hide()
+		$WitchDialogue/Button.hide()
 		$Portal.show()
 		$Portal/Sound.play()
 		$Portal/CollisionShape2D.disabled = false
@@ -45,3 +59,7 @@ func _on_timer_timeout():
 func _on_portal_body_entered(body):
 	if body.is_in_group("player"):
 		get_tree().change_scene_to_file("res://level_3.tscn")
+
+
+func _on_button_pressed():
+	message()
