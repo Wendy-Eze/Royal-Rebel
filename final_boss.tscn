@@ -489,6 +489,6 @@ position = Vector2(177, 481)
 scale = Vector2(1, 1)
 
 [node name="Demon" parent="." instance=ExtResource("3_5ky2x")]
-position = Vector2(1864, 393)
+position = Vector2(1831, 383)
 
 [node name="GameHUD" parent="." instance=ExtResource("6_ptvgl")]
