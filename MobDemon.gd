@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @export var speed = 50
 var player_position
@@ -6,6 +6,7 @@ var target_position
 var timer_started = false
 var health: int = 100
 var damage: int = 15
+var is_hit = false
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")
 var arrow_scene = preload("res://general/arrow.tscn")
@@ -43,9 +44,12 @@ func _physics_process(delta):
 		target_position = (player.position - position).normalized()
 	else:
 		print("Player node not found or not initialized.")
-	if (position.distance_to(player_position) > 250 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
-		speed = min(speed * 1.5, 400)
-		set_linear_velocity(target_position * speed)
+	if (position.distance_to(player_position) > 400 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
+		speed = 50
+		velocity = position.direction_to(player_position) * speed
+		move_and_collide(velocity*delta)
+		#speed = min(speed * 1.5, 400)
+		#move_and_collide(target_position * speed)
 		if target_position.x > 0:
 			$AnimatedSprite2D.play("walk")
 			$AnimatedSprite2D.flip_h = true
@@ -54,11 +58,13 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 		timer_started = false
 	elif position.distance_to(player_position) > 800:
-		set_linear_velocity(Vector2.ZERO)
+		#move_and_collide(Vector2.ZERO)
+		speed = 0
 		$AnimatedSprite2D.play("idle")
 		timer_started = false
 	else:
-		set_linear_velocity(Vector2.ZERO)
+		#move_and_collide(Vector2.ZERO)
+		speed = 0
 		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
 			$Timer.start()
 			timer_started = true
@@ -70,10 +76,14 @@ func _physics_process(delta):
 			$HealthBar.show()
 			$HealthTimer.start()
 			print("demon was hit! Health:", health)
+		if position.distance_to(player_position) <= 400:
+			#and not is_hit
+			#pass
+			$AnimatedSprite2D.play("attack")
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("death")
-		set_linear_velocity(Vector2.ZERO)
+		move_and_collide(Vector2.ZERO)
 		#$DeathTimer.start()
 		if not rtimer_started:
 			$RespawnTimer.start() 
@@ -86,7 +96,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_timer_timeout():
 	$AnimatedSprite2D.play("attack")
 	#Livecounter.num -= 10
-	if position.distance_to(player_position) <= 250:
+	if position.distance_to(player_position) <= 400:
 		$DamageTimer.start()
 		print("timer started")
 	$Timer.stop()

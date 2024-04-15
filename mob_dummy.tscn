@@ -245,7 +245,6 @@ radius = 570.789
 radius = 151.99
 
 [node name="Dummy" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 4
 script = ExtResource("1_hlh41")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
