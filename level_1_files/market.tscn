@@ -10535,6 +10535,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8xuig")
 
 [node name="Arrow_Shop" type="Panel" parent="WeaponScene/CanvasLayer"]
 process_mode = 2
+visible = false
 offset_left = 472.0
 offset_top = 274.0
 offset_right = 1523.0
