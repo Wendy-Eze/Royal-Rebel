@@ -1,6 +1,5 @@
-res://mob_knight.tscn
-res://dummy.gd
 res://main_scene.tscn
+res://mob_knight.tscn
 res://player.tscn
 res://intro/opening_cutscene.tscn
 res://level_2.tscn
@@ -11,4 +10,7 @@ res://demon.tscn
 res://dummy_play.tscn
 res://mob_dummy.tscn
 res://general/arrow.tscn
-res://MobDemon.gd
+res://training_dummy.tscn
+res://TrainingDummySpriteSheet.gd
+res://training_dummy.gd
+res://level_1.tscn
