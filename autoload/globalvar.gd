@@ -11,7 +11,9 @@ var ready_arrow = false
 var arrow_num = 30 
 var has_armor = false
 var armor_equipped = false
-
+var adamage = 0
+var idamage = 0
+var ddamage = 0
 #Dungeon + Kingdom 
 var in_dungeon = false
 var mission_done = false

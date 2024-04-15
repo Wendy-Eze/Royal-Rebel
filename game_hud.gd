@@ -3,6 +3,7 @@ var attempts = 0
 var instance = 0 
 #var first = 0 
 var first_done = false
+var armor = 0
 
 func _ready():
 	pass # Replace with function body.
@@ -11,6 +12,17 @@ func _process(delta):
 	set_health()
 	add_coin()
 	add_arrow()
+	
+	if Globalvar.has_armor and armor == 0:
+		armor += 1
+		$ArmorTime.start(2)
+	
+	if $PlayerHealth.value <= 40:
+		$LowHealth1.show()
+		$LowHealth2.show()
+	else:
+		$LowHealth1.hide()
+		$LowHealth2.hide()
 	
 	if Globalvar.entered_kingdom:
 		$Story2/Label.show()
@@ -116,3 +128,11 @@ func _on_collect_timer_timeout():
 	#$Story2/Label.hide()
 	#Globalvar.entered_kingdom = false 
 
+
+
+func _on_armor_time_timeout():
+	$CollectedArmor.hide()
+
+
+func _on_button_pressed():
+	_on_armor_time_timeout()

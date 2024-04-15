@@ -35,6 +35,7 @@ func _process(delta):
 		$Prisoners/P6/NPCArea/CollisionShape2D.disabled = true
 		$Prisoners/P8/NPCArea/CollisionShape2D.disabled = true
 		$Prisoners/P1/NPCArea/CollisionShape2D.disabled = true
+		$Node/CoinButton.hide()
 	if Globalvar.in_dungeon:
 		$TileMap.tile_set.set_physics_layer_collision_mask(0,1)
 		$TileMap.tile_set.set_physics_layer_collision_layer(0,1)
@@ -46,6 +47,7 @@ func _process(delta):
 		$Prisoners/P6/NPCArea/CollisionShape2D.disabled = false
 		$Prisoners/P8/NPCArea/CollisionShape2D.disabled = false
 		$Prisoners/P1/NPCArea/CollisionShape2D.disabled = false
+		$Node/CoinButton.show()
 		
 	if Globalvar.mission_done:
 		$TileMap/Open.show()

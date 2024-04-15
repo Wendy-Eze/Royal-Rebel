@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://cgy2apekwckpv"]
+[gd_scene load_steps=121 format=3 uid="uid://cgy2apekwckpv"]
 
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="1_bi10q"]
 [ext_resource type="Script" path="res://dungeon.gd" id="1_t1scc"]
@@ -15,7 +15,6 @@
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="11_0l0ce"]
 [ext_resource type="Texture2D" uid="uid://bujdwnum2bsdg" path="res://art/misc/mainlevbuild.png" id="12_4ojen"]
 [ext_resource type="Texture2D" uid="uid://0eaqof6inety" path="res://art/npc/doctor.png" id="12_qs4e0"]
-[ext_resource type="PackedScene" uid="uid://b4r48jdoaurt1" path="res://armory.tscn" id="13_ae1bk"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_ai01h"]
 [ext_resource type="Texture2D" uid="uid://co25s856y4mdc" path="res://art/misc/decorative.png" id="13_mku7i"]
 [ext_resource type="Texture2D" uid="uid://dwjxo2o6l6ecf" path="res://art/npc/Female1.png" id="13_xfunr"]
@@ -19353,30 +19352,6 @@ text = "(Enter) to skip"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 
-[node name="Armory" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(7484, 829)
-
-[node name="Armory2" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(9863, 834)
-
-[node name="Armory3" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(9826, 2855)
-
-[node name="Armory4" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(11022, 2833)
-
-[node name="Armory5" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(7470, 4118)
-
-[node name="Armory6" parent="." instance=ExtResource("13_ae1bk")]
-visible = false
-position = Vector2(9860, 4083)
-
 [node name="Prisoners" type="Node" parent="."]
 
 [node name="P1" type="AnimatedSprite2D" parent="Prisoners"]
@@ -19592,6 +19567,7 @@ shortcut = SubResource("Shortcut_s4mo2")
 text = "E"
 
 [node name="CoinButton" type="Button" parent="Node"]
+visible = false
 z_index = 1
 z_as_relative = false
 offset_left = 5266.0

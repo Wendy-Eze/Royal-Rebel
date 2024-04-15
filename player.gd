@@ -34,21 +34,18 @@ func get_input():
 			$ArrowSound.play()
 			Globalvar.arrow_num -= 1
 			print(Globalvar.arrow_num)
-			
-	
-	
 	
 	if Globalvar.equip_sword:
 		if Input.is_action_just_pressed("attack") and not is_attacking and not cool_started:
 			cool_started = true
-			$Cooldown.start(1)
+			$Cooldown.start(0.7)
 			print("melee")
 			is_attacking = true
 			$AnimatedSprite2D.play("basic_melee")
 			$SwordSound.play()
 			
 			
-	if Globalvar.has_armor:
+	if Globalvar.has_armor and Globalvar.level == 1:
 		if Input.is_action_just_pressed("knight"):
 			Globalvar.armor_equipped = not Globalvar.armor_equipped  # Toggle armor equipped status
 			if Globalvar.armor_equipped:
@@ -59,10 +56,16 @@ func get_input():
 			# Armor is now unequipped
 				$AnimatedSprite2D.show()  # Show the default character sprite
 				$Knight.hide()
-	if not Globalvar.armor_equipped:
-		#Globalvar.armor_equipped = true
-		$AnimatedSprite2D.show()
-		$Knight.hide()
+				
+	if Globalvar.has_armor and Globalvar.level == 2:
+		if Globalvar.armor_equipped:
+			# Armor is now equipped
+				$AnimatedSprite2D.hide()  # Hide the default character sprite
+				$Knight.show()
+		if not Globalvar.armor_equipped:
+			#Globalvar.armor_equipped = true
+			$AnimatedSprite2D.show()
+			$Knight.hide()
 			
 #armor equipped
 		
@@ -108,6 +111,7 @@ func dash():
 func _input(event):
 	if event.is_action_pressed("dash"):
 		dash()
+		$DashSound.play()
 
 
 func _physics_process(delta):
@@ -190,3 +194,13 @@ func _on_ghost_timer_timeout():
 
 func _on_cooldown_timeout():
 	cool_started = false
+
+
+func _on_enemy_body_entered(body):
+	if body.is_in_group("enemy"):
+		$Warning.show()
+
+
+func _on_enemy_body_exited(body):
+	if body.is_in_group("enemy"):
+		$Warning.hide()

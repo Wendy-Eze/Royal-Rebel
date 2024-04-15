@@ -216,13 +216,7 @@ size = Vector2(17.05, 19.1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54e4p"]
 bg_color = Color(0.854902, 0.133333, 0, 1)
 
-[node name="Bat" type="RigidBody2D" groups=["enemy"]]
-collision_layer = 12
-collision_mask = 0
-gravity_scale = 0.0
-continuous_cd = 1
-max_contacts_reported = 1
-contact_monitor = true
+[node name="Bat" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_fooqj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -269,12 +263,10 @@ volume_db = -30.0
 
 [node name="Cooldown" type="Timer" parent="."]
 
-[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
-[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]
+[node name="Arrow" type="Timer" parent="."]
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
-[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]
-[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Arrow" to="." method="_on_arrow_timeout"]

@@ -24,11 +24,11 @@ func _ready():
 	
 func _physics_process(delta):
 
-	#match current:
-		#enemy_state.RIGHT:
-			#move_right()
-		#enemy_state.LEFT:
-			#move_left()
+	match current:
+		enemy_state.RIGHT:
+			move_right()
+		enemy_state.LEFT:
+			move_left()
 		#enemy_state.UP:
 			#move_up()
 		#enemy_state.DOWN:
@@ -66,7 +66,7 @@ func _physics_process(delta):
 		show()
 
 func random_gen():
-	dir = randi() % 4 + 1
+	dir = randi() % 2 + 1
 	random_dir()
 	
 func random_dir():
@@ -76,9 +76,13 @@ func random_dir():
 		1: 
 			current = enemy_state.LEFT
 		2:
-			current = enemy_state.UP
+			current = enemy_state.RIGHT
 		3:
-			current = enemy_state.DOWN
+			current = enemy_state.LEFT
+		#2:
+			#current = enemy_state.UP
+		#3:
+			#current = enemy_state.DOWN
 
 func move_right():
 	velocity = Vector2.RIGHT * speed2 

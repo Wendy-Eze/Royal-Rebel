@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=36 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://general/inventory.gd" id="1_jhhv0"]
@@ -87,6 +87,9 @@ bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t4n6c"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vgohs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5usa"]
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.8)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kpub"]
 animations = [{
@@ -352,6 +355,15 @@ position = Vector2(40, 40)
 scale = Vector2(1.1875, 1.1875)
 texture = ExtResource("11_0ft5n")
 
+[node name="Hide" type="Panel" parent="Container/Armor"]
+visible = false
+layout_mode = 0
+offset_left = 4.92309
+offset_top = 4.53846
+offset_right = 74.9231
+offset_bottom = 76.5385
+theme_override_styles/panel = SubResource("StyleBoxFlat_p5usa")
+
 [node name="0" type="Label" parent="Container/Armor"]
 texture_filter = 1
 layout_mode = 0
@@ -389,6 +401,10 @@ vertical_alignment = 1
 
 [node name="Timer2" type="Timer" parent="Container/Armor"]
 wait_time = 16.0
+one_shot = true
+
+[node name="Cool" type="Timer" parent="Container/Armor"]
+one_shot = true
 
 [node name="GoldSword" type="Panel" parent="Container"]
 visible = false
@@ -466,3 +482,4 @@ vertical_alignment = 1
 [connection signal="timeout" from="Container/Arrow/ArrowCooldown" to="." method="_on_arrow_cooldown_timeout"]
 [connection signal="timeout" from="Container/Potion/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Container/Armor/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Container/Armor/Cool" to="." method="_on_cool_timeout"]
