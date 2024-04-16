@@ -156,6 +156,7 @@ func arrow():
 	#= arrow.global_position.direction_to(target).normalized()
 #
 	if $AnimatedSprite2D.flip_h:
+		arrow.global_position.x = end_of_bow.global_position.x - 150
 		direction_to_mouse = Vector2.LEFT
 		#Vector2.LEFT.rotated(rotation)
 		# Shoot left if player is flipped

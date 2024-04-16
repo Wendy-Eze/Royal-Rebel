@@ -313,7 +313,6 @@ scale = Vector2(7, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHit"]
 position = Vector2(-90.2857, 34.2857)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o5yi1")
 
 [node name="ColorRect" type="ColorRect" parent="SwordHit"]

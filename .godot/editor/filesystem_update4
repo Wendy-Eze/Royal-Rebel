@@ -1,1 +1,21 @@
+<<<<<<< Updated upstream
 res://level_1_files/market.tscn
+=======
+res://mob_knight.tscn
+res://main_scene.tscn
+res://player.tscn
+res://intro/opening_cutscene.tscn
+res://level_2.tscn
+res://intro/tutorial_steps.tscn
+res://level_3.tscn
+res://final_boss.tscn
+res://demon.tscn
+res://dummy_play.tscn
+res://mob_dummy.tscn
+res://general/arrow.tscn
+res://training_dummy.tscn
+res://level_1.tscn
+res://end_screen.tscn
+res://game_hud.tscn
+res://player.gd
+>>>>>>> Stashed changes
