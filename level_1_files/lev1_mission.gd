@@ -16,7 +16,8 @@ func _process(delta):
 			Globalvar.lvl1_done = true
 			$MissionDetect/CollisionShape2D.disabled = true
 	else:
-		pass
+		$EndMission/CollisionShape2D.disabled = true
+		#pass
 		#done = true
 
 func _on_mission_detect_body_entered(body):
@@ -49,6 +50,7 @@ func _on_armor_body_entered(body):
 		print("Knight armor collected")
 		$Armor.queue_free()
 		$Armor/CollisionShape2D.disabled = true
+		$EndMission/CollisionShape2D.disabled = true
 
 
 func _on_mission_detect_body_exited(body):
