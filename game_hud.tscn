@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=42 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -16,8 +16,8 @@
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="13_fd44j"]
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
-[ext_resource type="PackedScene" uid="uid://cor0c34w07xx1" path="res://end_screen.tscn" id="17_o8swj"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="17_7qpgc"]
+[ext_resource type="PackedScene" uid="uid://cor0c34w07xx1" path="res://end_screen.tscn" id="17_o8swj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibrft"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -553,6 +553,7 @@ texture = ExtResource("12_if1a4")
 
 [node name="EndScreen" parent="." instance=ExtResource("17_o8swj")]
 visible = false
+
 [node name="CollectedArmor" type="Panel" parent="."]
 visible = false
 offset_left = 528.0

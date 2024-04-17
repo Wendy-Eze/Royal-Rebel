@@ -132,7 +132,7 @@ func _physics_process(delta):
 		#player = null
 		##run_speed = 50 
 		#$AnimatedSprite2D.stop()
-		
+	
 func _on_respawn_timer_timeout():
 	queue_free()
 	Globalvar.gaurd_dead = true
