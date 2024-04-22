@@ -2,8 +2,10 @@ extends TextureButton
 
 var isMuted = false
 
+
 func _ready():
 	$Music.play()
+		
 
 func _process(delta):
 	pass

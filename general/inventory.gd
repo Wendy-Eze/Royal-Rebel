@@ -16,6 +16,8 @@ func _process(delta):
 	
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
+	else:
+		Globalvar.ready_arrow = true
 	
 	#if Globalvar.has_goldsword:
 		#$Container/GoldSword/Sprite2D.show()
@@ -29,7 +31,21 @@ func _process(delta):
 		$Container/Arrow/Sprite2D.show()
 	if Globalvar.has_sword:
 		$Container/Sword/Sprite2D.show()
+	
+	
+	if not Globalvar.equip_arrow and not Globalvar.equip_sword:
+		arrow.border_width_bottom = 0
+		arrow.border_width_top = 0
+		arrow.border_width_right = 0
+		arrow.border_width_left = 0
+		add_theme_stylebox_override("panel", arrow)
 		
+		sword.border_width_bottom = 0
+		sword.border_width_top = 0
+		sword.border_width_right = 0
+		sword.border_width_left = 0
+		add_theme_stylebox_override("panel", sword)
+			
 	if Input.is_action_pressed("arrow") and Globalvar.has_arrow:
 		Globalvar.equip_arrow = true
 		Globalvar.equip_sword = false

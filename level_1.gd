@@ -12,7 +12,8 @@ func _ready():
 	Globalvar.has_sword = true 
 	Globalvar.equip_arrow = false
 	Globalvar.equip_sword = false
-	$mob_spawner.delete_first_and_last_spawned_enemies()
+	get_tree().paused = false
+	#$mob_spawner.delete_first_and_last_spawned_enemies()
 	#Globalvar.is_invisible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

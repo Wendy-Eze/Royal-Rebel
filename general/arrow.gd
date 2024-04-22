@@ -1,3 +1,4 @@
+
 extends Area2D
 
 var speed = 30
@@ -32,8 +33,8 @@ func _on_body_entered(body):
 		body._hit_by_arrow()
 		body.arrow_hit = true
 		queue_free()
-	if body.is_in_group("player"):
-		print("arrow collected")
-		Globalvar.arrow_num += 2
-		#Globalvar.first += 1
-		queue_free()
+	#if body.is_in_group("player"):
+		#print("arrow collected")
+		#Globalvar.arrow_num += 2
+		##Globalvar.first += 1
+		#queue_free()

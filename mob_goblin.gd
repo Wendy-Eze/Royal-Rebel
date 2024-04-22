@@ -63,10 +63,13 @@ func _physics_process(delta):
 		move_and_collide(velocity*delta)
 		if target_position.x > 0 and not is_hit:
 			$AnimatedSprite2D.play("run")
+			#$Goblin.play()
+			#await $Goblin.finished
 			$AnimatedSprite2D.flip_h = false
 		#else:
 		if target_position.x < 0 and not is_hit:
 			$AnimatedSprite2D.play("run")
+			#$Goblin.play()
 			$AnimatedSprite2D.flip_h = true
 		timer_started = false
 	elif position.distance_to(player_position) > 800:
@@ -82,6 +85,7 @@ func _physics_process(delta):
 		if position.distance_to(player_position) <= 280 and not is_hit:
 			#pass
 			$AnimatedSprite2D.play("attack")
+			#$Goblin.play()
 		if Input.is_action_just_pressed("basic_melee") and not cool_started:
 			#$AnimatedSprite2D.play("take_hit")
 			#is_hit = true
@@ -141,12 +145,12 @@ func _on_respawn_timer_timeout():
 	
 func drop_coin():
 	var coin = coin_scene.instantiate()
-	var arrow = arrow_scene.instantiate()
+	#var arrow = arrow_scene.instantiate()
 	coin.position = position
-	arrow.position = position
+	#arrow.position = position
 	
 	get_parent().add_child(coin)
-	get_parent().add_child(arrow)
+	#get_parent().add_child(arrow)
 	
 	if Globalvar.is_guard and key_instance == 0:
 		var key = key_scene.instantiate()
@@ -164,18 +168,8 @@ func _on_animated_sprite_2d_animation_finished():
 		Livecounter.num -= 10
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
+		#$Hurt.stop()
 		print("hit recognized")
-	#if $AnimatedSprite2D.animation == ("attack"):
-		#print("attack finished")
-		#Livecounter.num -= 10
-		#$AnimatedSprite2D.play("attack")
-	#if $AnimatedSprite2D.animation == ("take_hit"):
-		#is_hit = true
-		#print("hit recognized")
-		#if is_hit:
-			#$AnimatedSprite2D.play("attack")
-		#else:
-			#$AnimatedSprite2D.play("idle")
 		
 func set_health_bar():
 	$HealthBar.value = health
@@ -187,6 +181,7 @@ func _hit_by_arrow():
 	is_hit = true
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("take_hit")
+	#$Hurt.play() 
 	set_health_bar()
 	$HealthTimer.start()
 	$HealthBar.show()

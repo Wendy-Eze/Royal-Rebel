@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=50 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -55,6 +55,50 @@ events = [SubResource("InputEventAction_islaw")]
 
 [sub_resource type="FontVariation" id="FontVariation_gebma"]
 base_font = ExtResource("13_fd44j")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7frk"]
+bg_color = Color(0.883182, 0.104791, 5.77569e-07, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4e1ia"]
+bg_color = Color(0.882353, 0.105882, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa8n8"]
+bg_color = Color(0.882353, 0.105882, 0, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_1kdbf"]
+device = -1
+physical_keycode = 82
+unicode = 114
+
+[sub_resource type="Shortcut" id="Shortcut_mse78"]
+events = [SubResource("InputEventKey_1kdbf")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d51nk"]
+bg_color = Color(0.234724, 0.225103, 0.215289, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="InputEventKey" id="InputEventKey_o63or"]
+device = -1
+physical_keycode = 81
+unicode = 113
+
+[sub_resource type="Shortcut" id="Shortcut_ib5iq"]
+events = [SubResource("InputEventKey_o63or")]
 
 [sub_resource type="FontVariation" id="FontVariation_6cfyf"]
 base_font = ExtResource("6_nqeuc")
@@ -227,6 +271,7 @@ offset_right = 902.0
 offset_bottom = 62.0
 
 [node name="Inventory" parent="." instance=ExtResource("8_7m88t")]
+process_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -274,10 +319,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_njrsr")
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 143.0
-offset_top = 101.0
-offset_right = 715.0
-offset_bottom = 600.0
+offset_left = 127.0
+offset_top = 100.0
+offset_right = 699.0
+offset_bottom = 599.0
 theme_override_constants/line_spacing = 35
 theme_override_fonts/font = ExtResource("13_fd44j")
 theme_override_font_sizes/font_size = 50
@@ -291,10 +336,10 @@ autowrap_mode = 2
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 143.0
-offset_top = 101.0
-offset_right = 715.0
-offset_bottom = 600.0
+offset_left = 127.0
+offset_top = 100.0
+offset_right = 699.0
+offset_bottom = 599.0
 theme_override_constants/line_spacing = 35
 theme_override_fonts/font = ExtResource("13_fd44j")
 theme_override_font_sizes/font_size = 50
@@ -308,10 +353,10 @@ autowrap_mode = 2
 visible = false
 texture_filter = 1
 layout_mode = 0
-offset_left = 143.0
-offset_top = 63.0
-offset_right = 715.0
-offset_bottom = 646.0
+offset_left = 127.0
+offset_top = 62.0
+offset_right = 699.0
+offset_bottom = 645.0
 theme_override_constants/line_spacing = 35
 theme_override_fonts/font = ExtResource("13_fd44j")
 theme_override_font_sizes/font_size = 50
@@ -331,51 +376,81 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ed1sp")
 shortcut = SubResource("Shortcut_wpgax")
 
 [node name="Space" type="Sprite2D" parent="Menu"]
-position = Vector2(1117, 167)
-scale = Vector2(0.389583, 0.365773)
+position = Vector2(1109, 116)
+scale = Vector2(0.323333, 0.304167)
 texture = ExtResource("12_14nk3")
 
 [node name="wasd" type="Sprite2D" parent="Menu"]
-position = Vector2(1117, 367)
-scale = Vector2(0.555, 0.555)
+position = Vector2(1097.5, 253.143)
+scale = Vector2(0.418001, 0.416572)
 texture = ExtResource("13_vxy7y")
 
 [node name="Label" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 1366.0
-offset_top = 147.0
-offset_right = 1521.0
-offset_bottom = 198.0
+offset_left = 1270.0
+offset_top = 96.0
+offset_right = 1425.0
+offset_bottom = 147.0
 theme_override_fonts/font = SubResource("FontVariation_gebma")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "- Attack"
 
 [node name="Label2" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 1366.0
-offset_top = 367.0
-offset_right = 1521.0
-offset_bottom = 418.0
+offset_left = 1269.5
+offset_top = 252.143
+offset_right = 1424.5
+offset_bottom = 303.143
 theme_override_fonts/font = SubResource("FontVariation_gebma")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "- Walk
 "
 
 [node name="Label3" type="Label" parent="Menu"]
 layout_mode = 0
-offset_left = 1366.0
-offset_top = 549.0
-offset_right = 1521.0
-offset_bottom = 600.0
+offset_left = 1266.0
+offset_top = 410.0
+offset_right = 1421.0
+offset_bottom = 461.0
 theme_override_fonts/font = SubResource("FontVariation_gebma")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 text = "- Dash
 "
 
 [node name="Shift" type="Sprite2D" parent="Menu"]
-position = Vector2(1117, 582)
-scale = Vector2(0.191875, 0.15369)
+position = Vector2(1108, 434)
+scale = Vector2(0.142813, 0.0988187)
 texture = ExtResource("15_v6gqu")
+
+[node name="Restart" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 1233.0
+offset_top = 557.0
+offset_right = 1439.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_f7frk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4e1ia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pa8n8")
+button_mask = 0
+shortcut = SubResource("Shortcut_mse78")
+text = "Restart (R)
+"
+
+[node name="Quit" type="Button" parent="Menu"]
+layout_mode = 0
+offset_left = 954.0
+offset_top = 557.0
+offset_right = 1160.0
+offset_bottom = 636.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_d51nk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4e1ia")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pa8n8")
+shortcut = SubResource("Shortcut_ib5iq")
+text = "Quit (Q)"
 
 [node name="Level1" type="Label" parent="."]
 visible = false
@@ -605,6 +680,8 @@ one_shot = true
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Menu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Menu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
 [connection signal="timeout" from="CollectTimer" to="." method="_on_collect_timer_timeout"]
 [connection signal="timeout" from="Story2/Story2Timer" to="." method="_on_story_2_timer_timeout"]

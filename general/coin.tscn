@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://d00eqvq5mds0s"]
+[gd_scene load_steps=13 format=3 uid="uid://d00eqvq5mds0s"]
 
 [ext_resource type="Script" path="res://general/coin.gd" id="1_jgbcy"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="2_8qvyl"]
 [ext_resource type="Texture2D" uid="uid://bj5blov1f1tfa" path="res://art/misc/spr_coin.png" id="2_shbro"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="3_gfkli"]
+[ext_resource type="Texture2D" uid="uid://6wuhfq722ctj" path="res://art/misc/bundle.png" id="5_k6qne"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ganrs"]
 atlas = ExtResource("2_shbro")
@@ -75,5 +76,11 @@ texture = ExtResource("2_8qvyl")
 [node name="Collect" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gfkli")
 volume_db = -30.0
+
+[node name="Arrow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(39, 29)
+rotation = -0.71733
+texture = ExtResource("5_k6qne")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

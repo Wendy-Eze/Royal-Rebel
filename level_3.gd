@@ -20,9 +20,10 @@ func _ready():
 	Globalvar.has_armor = true
 	Globalvar.has_arrow = true 
 	Globalvar.has_sword = true
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
+	get_tree().paused = false
 	#pass # Replace with function body.
-
-
 
 func dialogue():
 	if index < bdialogue.size():
@@ -39,9 +40,11 @@ func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
 	
-	if Goblinkill.num >= 10:
+	if Goblinkill.num >= Globalvar.max:
 		$Portal/CollisionShape2D.disabled = false
 		$Portal.show()
+		$Portal/Sound.play()
+		$CanvasLayer/Label.show()
 	else:
 		$Portal/CollisionShape2D.disabled = true
 		

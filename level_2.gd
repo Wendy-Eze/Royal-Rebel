@@ -1,6 +1,6 @@
 extends Node
 
-
+var attempt = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.scale *= 0.6
@@ -15,12 +15,20 @@ func _ready():
 	Globalvar.has_armor = true
 	Globalvar.has_arrow = true 
 	Globalvar.has_sword = true
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
+	get_tree().paused = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	
+	if Globalvar.mission_done and not Globalvar.in_dungeon and attempt == 0:
+		$Dialogue/Mission.show()
+		$Dialogue/Timer.start()
+		attempt = 1
 	
 	if Globalvar.mission_done:
 			$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = true
@@ -123,3 +131,7 @@ func _on_area_2d_body_entered(body):
 func _on_area_2d_body_exited(body):
 	if body.is_in_group("player"):
 		$Dialogue/Confirm.hide()
+
+
+func _on_timer_timeout():
+	$Dialogue/Mission.hide()
