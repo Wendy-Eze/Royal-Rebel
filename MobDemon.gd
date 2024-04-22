@@ -39,47 +39,47 @@ func _physics_process(delta):
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
 		damage = 10
 		
-	#if player:
-		#player_position = player.position
-		#target_position = (player.position - position).normalized()
-	#else:
-		#print("Player node not found or not initialized.")
-	#if (position.distance_to(player_position) > 400 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
-		#speed = 50
-		#velocity = position.direction_to(player_position) * speed
-		#move_and_collide(velocity*delta)
-		##speed = min(speed * 1.5, 400)
-		##move_and_collide(target_position * speed)
-		#if target_position.x > 0:
-			#$AnimatedSprite2D.play("walk")
-			#$AnimatedSprite2D.flip_h = true
-		#else:
-			#$AnimatedSprite2D.play("walk")
-			#$AnimatedSprite2D.flip_h = false
-		#timer_started = false
-	#elif position.distance_to(player_position) > 800:
-		##move_and_collide(Vector2.ZERO)
-		#speed = 0
-		#$AnimatedSprite2D.play("idle")
-		#timer_started = false
-	#else:
-		##move_and_collide(Vector2.ZERO)
-		#speed = 0
-		#if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
-			#$Timer.start()
-			#timer_started = true
-			#$AnimatedSprite2D.play("idle")
-		#if Input.is_action_just_pressed("basic_melee"):
-			#$AnimatedSprite2D.play("damage")
-			#health -= damage
-			#set_health_bar()
-			#$HealthBar.show()
-			#$HealthTimer.start()
-			#print("demon was hit! Health:", health)
-		#if position.distance_to(player_position) <= 400:
-			##and not is_hit
-			##pass
-			#$AnimatedSprite2D.play("attack")
+	if player:
+		player_position = player.position
+		target_position = (player.position - position).normalized()
+	else:
+		print("Player node not found or not initialized.")
+	if (position.distance_to(player_position) > 400 and position.distance_to(player_position) <= 800 and not Globalvar.is_invisible and not Globalvar.blindknight) or arrow_hit:
+		speed = 50
+		velocity = position.direction_to(player_position) * speed
+		move_and_collide(velocity*delta)
+		#speed = min(speed * 1.5, 400)
+		#move_and_collide(target_position * speed)
+		if target_position.x > 0:
+			$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.flip_h = false
+		timer_started = false
+	elif position.distance_to(player_position) > 800:
+		#move_and_collide(Vector2.ZERO)
+		speed = 0
+		$AnimatedSprite2D.play("idle")
+		timer_started = false
+	else:
+		#move_and_collide(Vector2.ZERO)
+		speed = 0
+		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
+			$Timer.start()
+			timer_started = true
+			$AnimatedSprite2D.play("idle")
+		if Input.is_action_just_pressed("basic_melee"):
+			$AnimatedSprite2D.play("damage")
+			health -= damage
+			set_health_bar()
+			$HealthBar.show()
+			$HealthTimer.start()
+			print("demon was hit! Health:", health)
+		if position.distance_to(player_position) <= 400:
+			#and not is_hit
+			#pass
+			$AnimatedSprite2D.play("attack")
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("death")

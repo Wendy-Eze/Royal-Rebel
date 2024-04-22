@@ -1,4 +1,7 @@
+res://main_scene.tscn
+res://MobDemon.gd
 res://general/next_level.tscn
-res://begingame.gd
-res://general/next_level.gd
 res://level_1.tscn
+res://level_2.tscn
+res://demon.tscn
+res://final_boss.tscn
