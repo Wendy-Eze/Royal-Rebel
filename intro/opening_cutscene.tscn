@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddogjkss48hui"]
+[gd_scene load_steps=16 format=3 uid="uid://ddogjkss48hui"]
 
 [ext_resource type="Script" path="res://intro/Control.gd" id="1_pudhr"]
 [ext_resource type="Script" path="res://intro/opening_cutscene.gd" id="1_vvooe"]
@@ -15,6 +15,14 @@ bg_color = Color(0.854902, 0, 0.12549, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvrbc"]
 bg_color = Color(0.505882, 0.00392157, 0.0588235, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_hcnx0"]
+device = -1
+physical_keycode = 83
+unicode = 115
+
+[sub_resource type="Shortcut" id="Shortcut_s6fel"]
+events = [SubResource("InputEventKey_hcnx0")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxsly"]
 bg_color = Color(0, 0, 0, 1)
@@ -55,7 +63,8 @@ theme_override_fonts/font = ExtResource("5_7e8p4")
 theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_ikwqn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gvrbc")
-text = "Skip >>>"
+shortcut = SubResource("Shortcut_s6fel")
+text = "Skip (S) >>>"
 
 [node name="TextboxContainer" type="MarginContainer" parent="Control/Textbox"]
 anchors_preset = 12
@@ -114,6 +123,15 @@ size_flags_vertical = 8
 theme_override_fonts/font = ExtResource("5_7e8p4")
 theme_override_font_sizes/font_size = 75
 text = "->"
+
+[node name="Label" type="Label" parent="Control/Textbox"]
+offset_left = 1540.0
+offset_top = 984.0
+offset_right = 1917.0
+offset_bottom = 1185.0
+theme_override_fonts/font = ExtResource("5_7e8p4")
+theme_override_font_sizes/font_size = 37
+text = "ENTER / SPACE"
 
 [node name="One" type="TextureRect" parent="Control"]
 layout_mode = 0

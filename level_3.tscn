@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=71 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
@@ -11626,6 +11626,9 @@ physical_keycode = 4194309
 [sub_resource type="Shortcut" id="Shortcut_lk5hr"]
 events = [SubResource("InputEventKey_37tup")]
 
+[sub_resource type="FontVariation" id="FontVariation_n2734"]
+base_font = ExtResource("32_5uffa")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gxcew"]
 atlas = ExtResource("32_oih1s")
 region = Rect2(0, 0, 32, 32)
@@ -11786,9 +11789,9 @@ autowrap_mode = 2
 [node name="Button" type="Button" parent="CanvasLayer/WitchDialogue"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 593.0
+offset_left = 521.0
 offset_top = -77.0
-offset_right = 817.0
+offset_right = 812.0
 offset_bottom = -31.0
 theme_override_fonts/font = ExtResource("32_5uffa")
 theme_override_font_sizes/font_size = 40
@@ -11797,7 +11800,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_fsnk7")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mpcgx")
 button_mask = 0
 shortcut = SubResource("Shortcut_lk5hr")
-text = "(Enter) to skip"
+text = "(Enter) to continue"
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
@@ -11807,6 +11810,23 @@ texture_filter = 1
 position = Vector2(491, 743)
 scale = Vector2(4, 4)
 texture = ExtResource("13_p21nb")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -664.0
+offset_top = 225.0
+offset_right = 664.0
+offset_bottom = 281.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_n2734")
+theme_override_font_sizes/font_size = 49
+text = "You have eliminated all goblins! A portal has appeared, head towards it!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Portal" type="Area2D" parent="."]
 visible = false
@@ -11822,7 +11842,6 @@ frame_progress = 0.579296
 
 [node name="Sound" type="AudioStreamPlayer" parent="Portal"]
 stream = ExtResource("33_8mikj")
-volume_db = -20.853
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
 position = Vector2(-14, -35)

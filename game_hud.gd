@@ -13,9 +13,19 @@ func _process(delta):
 	add_coin()
 	add_arrow()
 	
-	if Globalvar.has_armor and armor == 0:
+	if Globalvar.level == 1:
+		$Collected.text = "10"
+	if Globalvar.level == 2:
+		$Collected.text = "15"
+		$Collected2.text = "3"
+	if Globalvar.level == 3:
+		$Collected.text = "20"
+		$Collected2.text = "3"
+	
+	if Globalvar.has_armor and armor == 0 and Globalvar.level == 1:
 		armor += 1
-		$ArmorTime.start(2)
+		$CollectedArmor.show()
+		$ArmorTime.start(3)
 	
 	if $PlayerHealth.value <= 40:
 		$LowHealth1.show()
@@ -136,3 +146,24 @@ func _on_armor_time_timeout():
 
 func _on_button_pressed():
 	_on_armor_time_timeout()
+
+
+func _on_restart_pressed():
+	Livecounter.num = 100
+	if Globalvar.level == 1:
+		get_tree().change_scene_to_file("res://level_1.tscn")
+		#get_tree().reload_current_scene()
+		Goblinkill.num = 0
+		Globalvar.has_armor = false 
+		Globalvar.armor_equipped = false
+	if Globalvar.level == 2:
+		get_tree().change_scene_to_file("res://level_2.tscn")
+		#get_tree().reload_current_scene()
+	if Globalvar.level == 3:
+		get_tree().change_scene_to_file("res://level_3.tscn")
+		#get_tree().reload_current_scene()
+		Goblinkill.num = 0
+
+
+func _on_quit_pressed():
+	get_tree().change_scene_to_file("res://main_scene.tscn")

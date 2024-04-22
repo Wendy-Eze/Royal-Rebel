@@ -381,8 +381,6 @@ size = Vector2(13.7, 22.9)
 bg_color = Color(0.854902, 0.133333, 0, 1)
 
 [node name="KnightKey" type="CharacterBody2D" groups=["enemy"]]
-collision_layer = 12
-collision_mask = 12
 script = ExtResource("1_mftpg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -440,6 +438,10 @@ volume_db = -30.0
 
 [node name="Cooldown" type="Timer" parent="."]
 
+[node name="Arrow" type="Timer" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="timeout" from="HealthTimer" to="." method="_on_health_timer_timeout"]
 [connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
+[connection signal="timeout" from="Arrow" to="." method="_on_arrow_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c05spceg5h51g"]
+[gd_scene load_steps=16 format=3 uid="uid://c05spceg5h51g"]
 
 [ext_resource type="Texture2D" uid="uid://be43ds5hl0rac" path="res://art/tutorial/step1.png" id="1_chwfv"]
 [ext_resource type="Script" path="res://stepbystep.gd" id="1_imq3a"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cpjmnosl3c7oa" path="res://art/tutorial/11.png" id="6_xauyu"]
 [ext_resource type="Texture2D" uid="uid://drfg6n78c2ck2" path="res://art/tutorial/12.png" id="7_2uutc"]
 [ext_resource type="Texture2D" uid="uid://46bpts4hcd4d" path="res://art/tutorial/end.png" id="8_e408j"]
+[ext_resource type="Texture2D" uid="uid://cqy4o8jhd1nsr" path="res://art/potion/tile002.png" id="8_wth7s"]
+[ext_resource type="Texture2D" uid="uid://c3c6t4krqunoa" path="res://art/potion/bprof.png" id="9_svvwd"]
+[ext_resource type="Texture2D" uid="uid://doielf060eipx" path="res://art/npc/Witch/Idle/Idle2.png" id="10_xj5tc"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_geb8b"]
 device = -1
@@ -68,6 +71,21 @@ texture_filter = 1
 position = Vector2(958, 536)
 scale = Vector2(0.99854, 0.998541)
 texture = ExtResource("7_2uutc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Step6"]
+position = Vector2(-214.313, 86.1257)
+scale = Vector2(7.69801, 7.69801)
+texture = ExtResource("8_wth7s")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Step6"]
+position = Vector2(-540.79, 134.196)
+scale = Vector2(10.5242, 10.5242)
+texture = ExtResource("9_svvwd")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Step6"]
+position = Vector2(-380.02, -135.663)
+scale = Vector2(5.3974, 5.3974)
+texture = ExtResource("10_xj5tc")
 
 [node name="Step7" type="Sprite2D" parent="."]
 visible = false

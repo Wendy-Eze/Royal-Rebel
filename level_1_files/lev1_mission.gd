@@ -8,12 +8,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not done:
-		if Goblinkill.num < 10:
+		if Goblinkill.num < Globalvar.max:
 			$EndMission/CollisionShape2D.disabled = true
 			$Armor/CollisionShape2D.disabled = true 
 		else:
 			$EndMission/CollisionShape2D.disabled = false
 			Globalvar.lvl1_done = true
+			$Message/Alldead.show()
 			$MissionDetect/CollisionShape2D.disabled = true
 	else:
 		$EndMission/CollisionShape2D.disabled = true
@@ -32,6 +33,7 @@ func _on_mission_detect_body_entered(body):
 func _on_end_mission_body_entered(body):
 	if body.is_in_group("player"):
 		$OutroTimer.start()
+		$Message/Alldead.hide()
 		$Outro.show()
 		$Armor.show()
 		$EndMission/CollisionShape2D.disabled = true
@@ -47,6 +49,8 @@ func _on_outro_timer_timeout():
 func _on_armor_body_entered(body):
 	if body.is_in_group("player"):
 		Globalvar.has_armor = true
+		$Message/Cross.show()
+		$Message/Timer.start()
 		print("Knight armor collected")
 		$Armor.queue_free()
 		$Armor/CollisionShape2D.disabled = true
@@ -56,3 +60,7 @@ func _on_armor_body_entered(body):
 func _on_mission_detect_body_exited(body):
 	if body.is_in_group("player"):
 		$Intro.hide()
+
+
+func _on_timer_timeout():
+	$Message/Cross.hide()

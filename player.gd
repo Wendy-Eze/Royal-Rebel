@@ -6,12 +6,13 @@ var walking = false
 var is_attacking = false
 signal goblin_hit
 @onready var end_of_bow = $Marker2D
-@onready var arrow_cooldown = $Marker2D
+#@onready var end_of_bow = $AnimatedSprite2D/Marker2D
+#@onready var arrow_cooldown = $Marker2D
 var is_knight = false
 var minpos = Vector2(0,15)
 var maxpos = Vector2(12620, 4235)
 signal death_over
-var facing
+#var facing
 @export var ghost_node : PackedScene
 @onready var ghost_timer = $GhostTimer
 var cool_started = false
@@ -77,7 +78,6 @@ func get_input():
 		if not walking:
 			$WalkTimer.start()
 			walking = true
-
 	else:
 		if not is_attacking and not Globalvar.equip_sword and not Globalvar.equip_arrow:
 			$AnimatedSprite2D.play("idle")
@@ -145,26 +145,20 @@ func add_ghost():
 
 
 func arrow():
-	#if arrow_cooldown.is_stopped():
-		#pass
 	var arrow = preload("res://general/arrow.tscn").instantiate()
 	add_child(arrow)
 	arrow.global_position = end_of_bow.global_position  # Set the bullet's position
-	
-	var target = get_global_mouse_position()
-	var direction_to_mouse 
-	#= arrow.global_position.direction_to(target).normalized()
 #
 	if $AnimatedSprite2D.flip_h:
-		arrow.global_position.x = end_of_bow.global_position.x - 150
-		direction_to_mouse = Vector2.LEFT
-		#Vector2.LEFT.rotated(rotation)
+		arrow.global_position.x = end_of_bow.global_position.x - 190
+		arrow.set_direction(Vector2.LEFT)
 		# Shoot left if player is flipped
 		print("facing left")
 	else:
-		direction_to_mouse = Vector2.RIGHT  # Shoot right if player is not flipped
+		arrow.set_direction(Vector2.RIGHT) 
+		print("facing right") # Shoot right if player is not flipped
 
-	arrow.set_direction(direction_to_mouse)
+	#arrow.set_direction(direction_to_mouse)
 
 func _on_walk_timer_timeout():
 	$walk_sound.play()

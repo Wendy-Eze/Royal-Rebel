@@ -5,6 +5,7 @@ extends Node
 var opening_done = false 
 #Stealth Purposes
 var is_invisible = false
+var max = 5
 
 #Arrow Functionality
 var ready_arrow = false

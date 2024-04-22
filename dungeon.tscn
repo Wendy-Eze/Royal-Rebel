@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://cgy2apekwckpv"]
+[gd_scene load_steps=122 format=3 uid="uid://cgy2apekwckpv"]
 
 [ext_resource type="Texture2D" uid="uid://borrord8mmkau" path="res://art/map art/cottage.png" id="1_bi10q"]
 [ext_resource type="Script" path="res://dungeon.gd" id="1_t1scc"]
@@ -19188,6 +19188,9 @@ action = &"add"
 [sub_resource type="Shortcut" id="Shortcut_wn8ou"]
 events = [SubResource("InputEventAction_1wn8l")]
 
+[sub_resource type="FontVariation" id="FontVariation_55tlx"]
+base_font = ExtResource("13_ai01h")
+
 [node name="Dungeon" type="Node2D"]
 script = ExtResource("1_t1scc")
 
@@ -19347,7 +19350,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hhqhy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m40e7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vv5ee")
 shortcut = SubResource("Shortcut_h47yu")
-text = "(Enter) to skip"
+text = "(Enter) to continue"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
@@ -19581,6 +19584,31 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_cxv2p")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_qy8e3")
 shortcut = SubResource("Shortcut_wn8ou")
 text = "E"
+
+[node name="Message" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Message"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.5
+offset_top = 225.0
+offset_right = 641.5
+offset_bottom = 281.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_55tlx")
+theme_override_font_sizes/font_size = 49
+text = "You now have the armor key! Find the armory in the dungeon."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Armory" type="Sprite2D" parent="Message/Label"]
+texture_filter = 1
+position = Vector2(860.5, -53)
+scale = Vector2(3.375, 3.375)
+texture = ExtResource("14_g7ysr")
 
 [connection signal="body_entered" from="TileMap/ArmoryClosed/Sprite2D/Lock" to="." method="_on_lock_body_entered"]
 [connection signal="body_entered" from="DocArea" to="." method="_on_doc_area_body_entered"]

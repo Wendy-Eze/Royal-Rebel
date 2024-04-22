@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://v6iejn0563cr"]
+[gd_scene load_steps=35 format=3 uid="uid://v6iejn0563cr"]
 
 [ext_resource type="Script" path="res://animated_sprite_2d.gd" id="1_5wet1"]
 [ext_resource type="Texture2D" uid="uid://db3ed5yciuoy3" path="res://art/knight-sprite.png" id="2_yp4ew"]
@@ -199,6 +199,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjqht"]
 size = Vector2(40, 40)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiqxt"]
+size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tko5o"]
+size = Vector2(40, 40)
+
 [node name="mob_knight" type="CharacterBody2D"]
 position = Vector2(280, 266)
 script = ExtResource("1_5wet1")
@@ -225,13 +231,23 @@ animation = &"run"
 autoplay = "idle"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 2.5
 autostart = true
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(7, 12)
 shape = SubResource("RectangleShape2D_hjqht")
-target_position = Vector2(0, 63)
+target_position = Vector2(-1, 75)
+
+[node name="ShapeCast2D2" type="ShapeCast2D" parent="."]
+position = Vector2(7, 12)
+shape = SubResource("RectangleShape2D_uiqxt")
+target_position = Vector2(58, 49)
+
+[node name="ShapeCast2D3" type="ShapeCast2D" parent="."]
+position = Vector2(7, 12)
+shape = SubResource("RectangleShape2D_tko5o")
+target_position = Vector2(-51, 49)
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.1

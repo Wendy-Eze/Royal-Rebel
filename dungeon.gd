@@ -54,6 +54,7 @@ func _process(delta):
 		$TileMap/Closed.hide()
 
 
+
 func _on_doc_area_body_entered(body):
 	if body.is_in_group("player"):
 		if not talk_started and not Globalvar.has_key:
@@ -93,6 +94,7 @@ func _on_timer_timeout():
 			$Timer.stop()
 			$DoctorDialogue/Text2.hide()
 			$DoctorDialogue/NPC.hide()
+			$Message/Label.show()
 			Globalvar.mission_done = true
 
 
@@ -104,6 +106,7 @@ func _on_lock_body_entered(body):
 			$TileMap/ArmoryClosed.tile_set.set_physics_layer_collision_mask(0,0)
 			$TileMap/ArmoryClosed.tile_set.set_physics_layer_collision_layer(0,0)
 			Globalvar.unlocked_armory = true
+			$Message/Label.hide()
 
 
 func _on_arrows_button_pressed():
@@ -145,7 +148,7 @@ func _on_doc_area_body_exited(body):
 		index = 5
 		talk_started = false
 		$DoctorDialogue/Text.hide()
-		$DoctorDialogue/Text.hide()
+		$DoctorDialogue/Text2.hide()
 		$DoctorDialogue/Button.hide()
 		$DoctorDialogue/NPC.hide()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=68 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -14190,6 +14190,12 @@ size = Vector2(1484, 543)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fllth"]
 size = Vector2(75, 83)
 
+[sub_resource type="FontVariation" id="FontVariation_qqyw8"]
+base_font = ExtResource("9_k1uxt")
+
+[sub_resource type="FontVariation" id="FontVariation_t508g"]
+base_font = ExtResource("9_k1uxt")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_p80jh"]
 atlas = ExtResource("19_fexkt")
 region = Rect2(40, 40, 40, 40)
@@ -14522,6 +14528,46 @@ texture = ExtResource("19_ix8kl")
 position = Vector2(-18.5, 9.5)
 shape = SubResource("RectangleShape2D_fllth")
 
+[node name="Message" type="CanvasLayer" parent="Lev1_Mission"]
+
+[node name="Alldead" type="Label" parent="Lev1_Mission/Message"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.5
+offset_top = 225.0
+offset_right = 641.5
+offset_bottom = 281.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_qqyw8")
+theme_override_font_sizes/font_size = 49
+text = "You have eliminated all goblins! Head back to the mayor!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Cross" type="Label" parent="Lev1_Mission/Message"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -641.5
+offset_top = 225.0
+offset_right = 641.5
+offset_bottom = 281.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_t508g")
+theme_override_font_sizes/font_size = 49
+text = "Mission Completed: Cross Bridge at the end of map"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="Lev1_Mission/Message"]
+wait_time = 5.0
+one_shot = true
+
 [node name="NextLevMission" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -14598,6 +14644,7 @@ one_shot = true
 [connection signal="body_entered" from="Lev1_Mission/EndMission" to="Lev1_Mission" method="_on_end_mission_body_entered"]
 [connection signal="timeout" from="Lev1_Mission/OutroTimer" to="Lev1_Mission" method="_on_outro_timer_timeout"]
 [connection signal="body_entered" from="Lev1_Mission/Armor" to="Lev1_Mission" method="_on_armor_body_entered"]
+[connection signal="timeout" from="Lev1_Mission/Message/Timer" to="Lev1_Mission" method="_on_timer_timeout"]
 [connection signal="body_entered" from="NextLevMission/ArmorCheck" to="." method="_on_armor_check_body_entered"]
 [connection signal="body_exited" from="NextLevMission/ArmorCheck" to="." method="_on_armor_check_body_exited"]
 [connection signal="timeout" from="MissionTimer" to="." method="_on_mission_timer_timeout"]
