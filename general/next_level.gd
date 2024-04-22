@@ -12,7 +12,7 @@ func _on_body_entered(body):
 		get_tree().change_scene_to_file(next_level_path)
 
 func _process(delta):
-	if Goblinkill.num < 10:
+	if Goblinkill.num < Globalvar.max:
 		$CollisionShape2D.disabled = true
 	else:
 		$CollisionShape2D.disabled = false 

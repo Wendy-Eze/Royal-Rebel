@@ -13,6 +13,7 @@ func _process(delta):
 	add_coin()
 	add_arrow()
 	
+	
 	if Globalvar.level == 1:
 		$Collected.text = "10"
 	if Globalvar.level == 2:
@@ -27,7 +28,7 @@ func _process(delta):
 		$CollectedArmor.show()
 		$ArmorTime.start(3)
 	
-	if $PlayerHealth.value <= 40:
+	if $PlayerHealth.value <= 40 and Goblinkill.num < Globalvar.max:
 		$LowHealth1.show()
 		$LowHealth2.show()
 	else:
