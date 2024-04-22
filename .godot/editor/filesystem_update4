@@ -1,4 +1,5 @@
 res://main_scene.tscn
+<<<<<<< Updated upstream
 res://general/arrow.tscn
 res://player.tscn
 res://general/coin.tscn
@@ -28,3 +29,9 @@ res://level_1_files/market.tscn
 res://level_1_files/potionscene.gd
 res://stepbystep.tscn
 res://intro/opening_cutscene.tscn
+=======
+res://player.gd
+res://player.tscn
+res://level_1.tscn
+res://level_2.tscn
+>>>>>>> Stashed changes

@@ -43,7 +43,7 @@ _data = {
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4q4io"]
 height = 22.0
 
-[node name="training_dummy" type="RigidBody2D"]
+[node name="training_dummy" type="RigidBody2D" groups=["enemy"]]
 gravity_scale = 0.0
 script = ExtResource("1_ov3bt")
 
@@ -58,6 +58,7 @@ scale = Vector2(6, 6)
 shape = SubResource("CapsuleShape2D_4q4io")
 
 [node name="TrainingDummySpriteSheet" type="Sprite2D" parent="."]
+texture_filter = 1
 scale = Vector2(6, 6)
 texture = ExtResource("1_q7jjh")
 hframes = 8

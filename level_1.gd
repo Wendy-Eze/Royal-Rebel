@@ -8,6 +8,7 @@ func _ready():
 	Goblinkill.num = 0
 	Coincounter.num = 0
 	Globalvar.arrow_num = 30
+	Globalvar.in_tut = false
 	Globalvar.has_arrow = true 
 	Globalvar.has_sword = true 
 	Globalvar.equip_arrow = false

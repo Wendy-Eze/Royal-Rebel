@@ -209,7 +209,7 @@ animations = [{
 size = Vector2(21.6773, 3.8203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ru3nh"]
-size = Vector2(140, 180.5)
+size = Vector2(140, 127.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2vvhi"]
 atlas = ExtResource("47_yxfyc")
@@ -365,7 +365,7 @@ disabled = true
 position = Vector2(81.5, -29.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(12, 15)
+position = Vector2(12, 41.375)
 shape = SubResource("RectangleShape2D_ru3nh")
 
 [node name="walk_sound" type="AudioStreamPlayer" parent="."]
