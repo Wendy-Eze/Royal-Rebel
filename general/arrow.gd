@@ -30,8 +30,9 @@ func _on_body_entered(body):
 	if body.is_in_group("enemy"):
 		print("touched enemy")
 		goblin_hit.emit()
-		body._hit_by_arrow()
-		body.arrow_hit = true
+		if not Globalvar.in_tut:
+			body._hit_by_arrow()
+			body.arrow_hit = true
 		queue_free()
 	#if body.is_in_group("player"):
 		#print("arrow collected")
