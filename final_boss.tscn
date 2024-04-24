@@ -492,3 +492,6 @@ scale = Vector2(1, 1)
 position = Vector2(1831, 383)
 
 [node name="GameHUD" parent="." instance=ExtResource("6_ptvgl")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1079, 542)
