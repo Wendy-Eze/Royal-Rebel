@@ -36,11 +36,11 @@ func dialogue():
 		$CanvasLayer/WitchIcon.hide()
 		$Witch2.hide()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
 	
-	if Goblinkill.num >= Globalvar.max:
+	if Goblinkill.num >= Globalvar.limit:
 		$Portal/CollisionShape2D.disabled = false
 		$Portal.show()
 		$Portal/Sound.play()

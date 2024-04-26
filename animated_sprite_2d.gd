@@ -40,7 +40,7 @@ func _physics_process(delta):
 	target_position = (player.position - position).normalized()
 
 
-	if ($ShapeCast2D.is_colliding() or $ShapeCast2D2.is_colliding() or $ShapeCast2D3.is_colliding()) and not Globalvar.is_invisible:
+	if ($ShapeCast2D.is_colliding() or $ShapeCast2D2.is_colliding() or $ShapeCast2D3.is_colliding()) and not Globalvar.is_invisible and Globalvar.blindknight:
 		if position.distance_to(player_position) > 200 and position.distance_to(player_position) <= 1000:
 			speed = 200
 			position += target_position * speed * delta

@@ -64,7 +64,7 @@
 [ext_resource type="AudioStream" uid="uid://btk4r3v8s0puo" path="res://music/goblindeath.mp3" id="62_jfmi7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5yi1"]
-size = Vector2(59.4286, 22.1429)
+size = Vector2(66.1429, 22.1429)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g27pa"]
 animations = [{
@@ -116,7 +116,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -293,13 +293,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("61_8fkkv")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
-"speed": 10.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7kbk"]
-size = Vector2(84.1429, 76.1429)
+size = Vector2(78.5, 76.1429)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3062y"]
 bg_color = Color(0.854902, 0.133333, 0, 1)
@@ -312,7 +312,7 @@ position = Vector2(-33, -93.5002)
 scale = Vector2(7, 7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SwordHit"]
-position = Vector2(-90.2857, 34.2857)
+position = Vector2(-84.7143, 33.0715)
 shape = SubResource("RectangleShape2D_o5yi1")
 
 [node name="ColorRect" type="ColorRect" parent="SwordHit"]
@@ -327,12 +327,12 @@ texture_filter = 1
 position = Vector2(-5, -339)
 scale = Vector2(7, 7)
 sprite_frames = SubResource("SpriteFrames_g27pa")
-animation = &"attack"
-frame = 14
+animation = &"walk"
+frame = 11
 frame_progress = 1.0
 
 [node name="DemonCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-13, -39.5)
+position = Vector2(-32.7501, -39.5)
 scale = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_b7kbk")
 

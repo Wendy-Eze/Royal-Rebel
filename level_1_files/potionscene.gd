@@ -63,7 +63,7 @@ func _on_health_button_pressed():
 		Coincounter.num -= 20 
 		Livecounter.num += 25
 		hbase += 1
-		$CanvasLayer/PotionMenu/Health/Limit.text = str(hmaxlimit-1)
+		$CanvasLayer/PotionMenu/Health/Limit.text = str(hmaxlimit-hbase)
 	else:
 		print("cannot purchase health")
 
@@ -80,7 +80,7 @@ func _on_invisibility_button_pressed():
 		ibase += 1
 		Globalvar.equip_potion = true
 		Globalvar.i_num += 1
-		$CanvasLayer/PotionMenu/Invisibility/Limit.text = str(imaxlimit-1)
+		$CanvasLayer/PotionMenu/Invisibility/Limit.text = str(imaxlimit-ibase)
 	else:
 		print("cannot purchase ghost")
 
