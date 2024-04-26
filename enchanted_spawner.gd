@@ -6,7 +6,7 @@ var mob_scene = [
 	preload("res://mob_dog.tscn")
 ] 
 var mob = null
-var spawn_num = Globalvar.max
+var spawn_num = Globalvar.limit
 var distance = 100
 
 func _ready():
@@ -26,7 +26,7 @@ func spawn():
 			
 			var random_x = randi_range(min_x, max_x)
 			var random_y = randi_range(min_y, max_y)
-			while random_x > (min_x - distance) and random_x < (max_x + distance) and random_y > (min_y - distance) and random_y < (max_y + distance):
+			while not (random_x > (min_x - distance) and random_x < (max_x + distance) and random_y > (min_y - distance) and random_y < (max_y + distance)):
 				random_x = randi_range(min_x, max_x)
 				random_y = randi_range(min_y, max_y)
 			#var random_x = randi_range(3000, 10500)

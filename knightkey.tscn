@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qyx7b")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 9.0
 }, {
@@ -388,8 +388,7 @@ texture_filter = 1
 position = Vector2(88.9099, -39.3934)
 scale = Vector2(5.98483, 5.98484)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
-frame_progress = 0.0185839
+animation = &"attack"
 
 [node name="Key" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 texture_filter = 1

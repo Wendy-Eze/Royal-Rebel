@@ -28,7 +28,7 @@ func _process(delta):
 		$CollectedArmor.show()
 		$ArmorTime.start(3)
 	
-	if $PlayerHealth.value <= 40 and Goblinkill.num < Globalvar.max:
+	if $PlayerHealth.value <= 40 and Goblinkill.num < Globalvar.limit:
 		$LowHealth1.show()
 		$LowHealth2.show()
 	else:
@@ -69,11 +69,11 @@ func _process(delta):
 		$LevelTimer.start()
 		$Level1.show()
 		attempts += 1
-	if Globalvar.level == 2 and attempts == 0:
+	if Globalvar.level == 2 and attempts == 1:
 		$LevelTimer.start()
 		$Level2.show()
 		attempts += 1
-	if Globalvar.level == 3 and attempts == 0:
+	if Globalvar.level == 3 and attempts == 2:
 		$LevelTimer.start()
 		$Level3.show()
 		attempts += 1
@@ -117,7 +117,7 @@ func _on_level_timer_timeout():
 	$Level1.hide()
 	$Level2.hide()
 	$Level3.hide()
-	attempts == 0
+	#attempts = 0
 	#if Globalvar.level == 1:
 		#$Level1.hide()
 	#if Globalvar.level == 2:
