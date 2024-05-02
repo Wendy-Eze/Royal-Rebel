@@ -1,9 +1,8 @@
-[gd_scene load_steps=107 format=3 uid="uid://dyk4q6c01jgiw"]
+[gd_scene load_steps=111 format=3 uid="uid://dyk4q6c01jgiw"]
 
 [ext_resource type="Script" path="res://final_boss.gd" id="1_etyua"]
 [ext_resource type="Texture2D" uid="uid://dk5q5qkwag37j" path="res://art/enchan1.png" id="1_sel38"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="2_hm7r4"]
-[ext_resource type="PackedScene" uid="uid://bklre0y2wo7d" path="res://demon.tscn" id="3_5ky2x"]
 [ext_resource type="Texture2D" uid="uid://b5whvmjth6b2v" path="res://art/map art/BaseSet.png" id="3_qjrl4"]
 [ext_resource type="Texture2D" uid="uid://cp4jhie4flgcp" path="res://art/map art/mystic1.png" id="4_mrq4n"]
 [ext_resource type="Texture2D" uid="uid://b3cwolewqbfq0" path="res://art/map art/Dream_Island/cave.png" id="5_hhtqr"]
@@ -15,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dncgui6k47a11" path="res://art/new_art/Slime_Medium_Blue.png" id="12_anskj"]
 [ext_resource type="Texture2D" uid="uid://be6tua0ib47ql" path="res://art/new_art/flames.png" id="13_yljmr"]
 [ext_resource type="Texture2D" uid="uid://nxfitmglroxk" path="res://art/new_art/fire_skull.png" id="15_3as68"]
+[ext_resource type="PackedScene" uid="uid://clf4m4d6htd52" path="res://general/book.tscn" id="15_4wopf"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="16_cbasx"]
 [ext_resource type="PackedScene" uid="uid://ij6ne864af7" path="res://king.tscn" id="16_qbkho"]
 [ext_resource type="Texture2D" uid="uid://n4d4nvq8l1pa" path="res://art/king/k_idle.png" id="18_sttwf"]
@@ -8193,6 +8193,122 @@ sources/0 = SubResource("TileSetAtlasSource_ph2ag")
 sources/1 = SubResource("TileSetAtlasSource_vxetx")
 sources/2 = SubResource("TileSetAtlasSource_xoor4")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgyoe"]
+texture = ExtResource("6_i5phg")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+21:0/0 = 0
+22:0/0 = 0
+23:0/0 = 0
+24:0/0 = 0
+25:0/0 = 0
+26:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+8:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+22:2/0 = 0
+0:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+0:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+8:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+18:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+22:4/0 = 0
+24:4/0 = 0
+25:4/0 = 0
+0:5/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+22:5/0 = 0
+24:5/0 = 0
+25:5/0 = 0
+0:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+8:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+22:6/0 = 0
+24:6/0 = 0
+25:6/0 = 0
+0:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+0:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+8:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+22:8/0 = 0
+0:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+22:9/0 = 0
+0:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_al14i"]
+sources/0 = SubResource("TileSetAtlasSource_cgyoe")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ei8m3"]
 atlas = ExtResource("10_c5fu7")
 region = Rect2(0, 0, 16, 16)
@@ -8650,6 +8766,12 @@ events = [SubResource("InputEventKey_37tup")]
 [sub_resource type="FontVariation" id="FontVariation_1h1ju"]
 base_font = ExtResource("16_cbasx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jy8w"]
+size = Vector2(1309, 741)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0llk"]
+radius = 291.87
+
 [node name="Final Boss" type="Node2D"]
 script = ExtResource("1_etyua")
 
@@ -8686,12 +8808,15 @@ tile_set = SubResource("TileSet_kfre2")
 format = 2
 layer_0/tile_data = PackedInt32Array(1769542, 1, 5, 1769543, 65537, 5, 1704006, 1, 5, 1704007, 65537, 5, 1638470, 1, 5, 1638471, 65537, 5, 1507398, 1, 5, 1507399, 65537, 5, 1572934, 1, 5, 1572935, 65537, 5, 1441862, 1, 5, 1441863, 65537, 5, 1376326, 1, 5, 1376327, 65537, 5, 1310790, 1, 5, 1310791, 65537, 5, 1245254, 1, 5, 1245255, 65537, 5, 1179718, 1, 5, 1179719, 65537, 5, 1114182, 1, 5, 1114183, 65537, 5, 1048646, 1, 5, 1048647, 65537, 5, 983110, 1, 5, 983111, 65537, 5, 917574, 1, 5, 917575, 65537, 5, 852038, 1, 5, 852039, 65537, 5, 786502, 1, 5, 786503, 65537, 5, 720966, 1, 5, 720967, 65537, 5, 720968, 196609, 4, 786504, 196609, 5, 852040, 196609, 4, 917576, 196609, 5, 983112, 196609, 4, 1048648, 196609, 5, 1114184, 196609, 4, 1179720, 196609, 5, 1245256, 196609, 4, 1310792, 196609, 5, 1376328, 196609, 4, 1441864, 196609, 4, 1507400, 196609, 5, 1572936, 196609, 4, 1638472, 196609, 5, 1704008, 196609, 4, 1769544, 196609, 4)
 
+[node name="Artifact" type="TileMap" parent="Map"]
+scale = Vector2(2.8, 2.8)
+tile_set = SubResource("TileSet_al14i")
+format = 2
+layer_0/tile_data = PackedInt32Array(196629, 917504, 4, 262165, 917504, 5, 196630, 983040, 4, 262166, 983040, 5)
+
 [node name="Player" parent="." instance=ExtResource("2_hm7r4")]
 position = Vector2(258, 1165)
 scale = Vector2(1, 1)
-
-[node name="Demon" parent="." instance=ExtResource("3_5ky2x")]
-position = Vector2(6474, 1254)
 
 [node name="GameHUD" parent="." instance=ExtResource("6_ptvgl")]
 
@@ -9027,6 +9152,10 @@ sprite_frames = SubResource("SpriteFrames_0j1x1")
 autoplay = "default"
 frame_progress = 0.290059
 
+[node name="book" parent="." instance=ExtResource("15_4wopf")]
+position = Vector2(6922, 809)
+scale = Vector2(2, 2)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(7789, 317)
 
@@ -9082,9 +9211,10 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 8
+theme_override_constants/line_spacing = 8
 theme_override_fonts/font = SubResource("FontVariation_cuqi7")
 theme_override_font_sizes/font_size = 49
-text = "You have come across the artifact's protector! Defeat it!"
+text = "The King has made it to the artifact! Eliminate the KING! Hurry!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -9092,8 +9222,7 @@ autowrap_mode = 2
 [node name="GoalT" type="Timer" parent="Message"]
 
 [node name="King" parent="." instance=ExtResource("16_qbkho")]
-visible = false
-position = Vector2(4305, 1153)
+position = Vector2(5903, 1187)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -9157,8 +9286,23 @@ stream = ExtResource("19_6uxjd")
 volume_db = -20.0
 mix_target = 1
 
+[node name="KingArea" type="Area2D" parent="."]
+position = Vector2(6672, 1338)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KingArea"]
+position = Vector2(207.5, -14)
+shape = SubResource("RectangleShape2D_6jy8w")
+
+[node name="Block" type="StaticBody2D" parent="."]
+position = Vector2(6798, 1221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
+position = Vector2(111, 86)
+shape = SubResource("CircleShape2D_d0llk")
+
 [connection signal="body_entered" from="trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="timeout" from="Message/GoalT" to="." method="_on_goal_t_timeout"]
 [connection signal="pressed" from="CanvasLayer/KingDialogue/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
 [connection signal="finished" from="Suspense" to="." method="_on_suspense_finished"]
+[connection signal="body_entered" from="KingArea" to="." method="_on_king_area_body_entered"]

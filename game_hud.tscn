@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=62 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -17,7 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="17_7qpgc"]
-[ext_resource type="PackedScene" uid="uid://cor0c34w07xx1" path="res://end_screen.tscn" id="17_o8swj"]
+[ext_resource type="AudioStream" uid="uid://8qp7v3k52gle" path="res://music/level_done.mp3" id="19_3tw8o"]
+[ext_resource type="Texture2D" uid="uid://2hadwm7emdjv" path="res://art/new_art/book2.png" id="19_ahcf1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibrft"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -167,6 +168,57 @@ events = [SubResource("InputEventKey_aiv6p")]
 [sub_resource type="FontVariation" id="FontVariation_dkttc"]
 base_font = ExtResource("13_fd44j")
 spacing_glyph = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ef4s"]
+bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm6nm"]
+atlas = ExtResource("19_ahcf1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daam0"]
+atlas = ExtResource("19_ahcf1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p7sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm6nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daam0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_nd6tt"]
+base_font = ExtResource("13_fd44j")
+spacing_glyph = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8erkh"]
+bg_color = Color(0.748247, 0.208983, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo3mm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gop3k"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_x0v3g"]
+device = -1
+physical_keycode = 4194309
+
+[sub_resource type="Shortcut" id="Shortcut_h3o5f"]
+events = [SubResource("InputEventKey_x0v3g")]
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -630,9 +682,6 @@ rotation = -0.689405
 scale = Vector2(1.1875, 1.15357)
 texture = ExtResource("12_if1a4")
 
-[node name="EndScreen" parent="." instance=ExtResource("17_o8swj")]
-visible = false
-
 [node name="CollectedArmor" type="Panel" parent="."]
 visible = false
 offset_left = 528.0
@@ -694,6 +743,72 @@ theme_override_fonts/font = SubResource("FontVariation_dkttc")
 theme_override_font_sizes/font_size = 80
 text = "+5"
 
+[node name="GameDone" type="Panel" parent="."]
+visible = false
+offset_left = 165.0
+offset_top = 141.0
+offset_right = 1763.0
+offset_bottom = 879.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ef4s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GameDone"]
+texture_filter = 1
+position = Vector2(340.25, 320.25)
+scale = Vector2(9.85938, 9.85938)
+sprite_frames = SubResource("SpriteFrames_4p7sf")
+autoplay = "default"
+frame_progress = 0.530443
+speed_scale = 0.5
+
+[node name="Lvl2Obj" type="Label" parent="GameDone"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 617.0
+offset_top = 55.0
+offset_right = 1540.0
+offset_bottom = 538.0
+theme_override_constants/line_spacing = 22
+theme_override_fonts/font = SubResource("FontVariation_nd6tt")
+theme_override_font_sizes/font_size = 46
+text = "You defeated the King and saved HISTORY!
+
+The people thank you for all you did! I assume you will move onward to new journeys! Hope to meet again!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Done" type="Button" parent="GameDone"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 558.0
+offset_top = 584.0
+offset_right = 1077.0
+offset_bottom = 646.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8erkh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jo3mm")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gop3k")
+shortcut = SubResource("Shortcut_h3o5f")
+text = "Onto New Adventures "
+
+[node name="Label" type="Label" parent="GameDone/Done"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 101.0
+offset_right = 342.0
+offset_bottom = 132.0
+theme_override_fonts/font = ExtResource("13_fd44j")
+theme_override_font_sizes/font_size = 30
+text = "Press ENTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="DoneSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_3tw8o")
+volume_db = -12.356
+
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Menu/Restart" to="." method="_on_restart_pressed"]
@@ -703,3 +818,4 @@ text = "+5"
 [connection signal="timeout" from="Story2/Story2Timer" to="." method="_on_story_2_timer_timeout"]
 [connection signal="pressed" from="CollectedArmor/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="ArmorTime" to="." method="_on_armor_time_timeout"]
+[connection signal="pressed" from="GameDone/Done" to="." method="_on_done_pressed"]
