@@ -5,7 +5,7 @@ var attempt = 0
 var talk_started = false
 var bdialogue = [
 	"YOU WILL NOT TAKE THIS ARTIFACT FROM ME!",
-	"We know fight, victory to the one still alive!!",
+	"We will now fight to the death puny adventurer!",
 ]
 
 func _ready():
