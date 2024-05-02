@@ -6,3 +6,6 @@ res://level_3.tscn
 res://final_boss.tscn
 res://player.tscn
 res://final_boss.gd
+res://end_screen.tscn
+res://ColorRect.gd
+res://end_screen.gd
