@@ -5,6 +5,5 @@ res://level_3.tscn
 res://final_boss.tscn
 res://player.tscn
 res://intro/opening_cutscene.tscn
-res://hud.tscn
 res://intro/tutorial_steps.tscn
-res://level_2.gd
+res://end_screen.tscn

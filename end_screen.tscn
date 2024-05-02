@@ -1,16 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://cor0c34w07xx1"]
+[gd_scene load_steps=4 format=3 uid="uid://cor0c34w07xx1"]
 
+[ext_resource type="Script" path="res://end_screen.gd" id="1_4aw1w"]
 [ext_resource type="Texture2D" uid="uid://vshxj5xr21il" path="res://art/startscreen.png" id="1_nxxx8"]
 [ext_resource type="FontFile" uid="uid://btcd7jlbsnohb" path="res://art/font/Born2bSportyV10.ttf" id="2_flc42"]
 
 [node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_4aw1w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("1_nxxx8")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -29,3 +32,45 @@ text = "THE END"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 112.0
+offset_right = 512.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("2_flc42")
+theme_override_font_sizes/font_size = 140
+text = "CREDITS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 296.0
+offset_right = 1865.0
+offset_bottom = 874.0
+theme_override_fonts/font = ExtResource("2_flc42")
+theme_override_font_sizes/font_size = 80
+text = "DR. PAUL TOPRAC       PRODUCER
+DWEEP TRIVEDI          ASSISTANT PRODUCER
+
+WENDY EZEADIKWA      GAMEPLAY/UI PROGRAMMER
+CHANDANA AKASAPU     NARRATIVE + LEVEL DESIGNER
+JOY EKECHUKWU         ANIMATOR + GAMEPLAY PROGRAMMER
+EVAN NGUYEN            GAMEPLAY + ENEMY AI PROGRAMMER"
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
