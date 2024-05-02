@@ -5742,6 +5742,7 @@ position = Vector2(-109, -232)
 shape = SubResource("RectangleShape2D_h7xv0")
 
 [node name="TutorialSteps" parent="." instance=ExtResource("10_nlptt")]
+visible = true
 
 [node name="GoblinStepTime" type="Timer" parent="."]
 wait_time = 5.0
