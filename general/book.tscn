@@ -1,9 +1,31 @@
-[gd_scene load_steps=6 format=3 uid="uid://clf4m4d6htd52"]
+[gd_scene load_steps=9 format=3 uid="uid://clf4m4d6htd52"]
 
 [ext_resource type="Script" path="res://general/book.gd" id="1_wdd6w"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="3_ef4mp"]
-[ext_resource type="Texture2D" uid="uid://cb8pmyv14c1rf" path="res://art/misc/book.png" id="4_7pa3q"]
+[ext_resource type="Texture2D" uid="uid://2hadwm7emdjv" path="res://art/new_art/book2.png" id="3_evg2k"]
 [ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="4_jo3ss"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6imm"]
+atlas = ExtResource("3_evg2k")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cbaw"]
+atlas = ExtResource("3_evg2k")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6by6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6imm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cbaw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eua35"]
 radius = 26.8038
@@ -12,16 +34,20 @@ radius = 26.8038
 script = ExtResource("1_wdd6w")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(-2.5, -0.5)
 scale = Vector2(5.21875, 5.21875)
 texture = ExtResource("3_ef4mp")
 
-[node name="Arrow" type="Sprite2D" parent="."]
+[node name="Arrow" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-10.1412, 0.858784)
 scale = Vector2(4.25883, 4.25883)
-texture = ExtResource("4_7pa3q")
+sprite_frames = SubResource("SpriteFrames_s6by6")
+autoplay = "default"
+frame_progress = 0.388102
+speed_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, 1)

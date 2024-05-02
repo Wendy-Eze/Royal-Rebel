@@ -1,6 +1,6 @@
 [gd_scene load_steps=41 format=3 uid="uid://ij6ne864af7"]
 
-[ext_resource type="Script" path="res://mob_goblin.gd" id="1_8nxcn"]
+[ext_resource type="Script" path="res://king_ai.gd" id="1_8bgff"]
 [ext_resource type="Texture2D" uid="uid://dbjl8r3qteu4m" path="res://art/king/k_attack.png" id="2_v4cxw"]
 [ext_resource type="Texture2D" uid="uid://cl4dwdhmlq370" path="res://art/king/k_death.png" id="3_n2yc3"]
 [ext_resource type="Texture2D" uid="uid://n4d4nvq8l1pa" path="res://art/king/k_idle.png" id="4_e08ar"]
@@ -145,7 +145,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"attack",
-"speed": 9.0
+"speed": 12.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -241,9 +241,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oou7v")
 }],
-"loop": true,
+"loop": false,
 "name": &"take_hit",
-"speed": 9.0
+"speed": 20.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_76sq3"]
@@ -253,15 +253,14 @@ size = Vector2(16.15, 28.15)
 bg_color = Color(0.854902, 0.133333, 0, 1)
 
 [node name="King" type="CharacterBody2D" groups=["enemy"]]
-script = ExtResource("1_8nxcn")
+script = ExtResource("1_8bgff")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["enemy"]]
 texture_filter = 1
 position = Vector2(-63, -66)
 scale = Vector2(4.94594, 4.94595)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"idle"
-frame_progress = 0.262361
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4.99997, 16)

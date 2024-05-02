@@ -2,8 +2,10 @@ extends CanvasLayer
 var attempts = 0
 var instance = 0 
 #var first = 0 
+var index = 0
 var first_done = false
 var armor = 0
+var end_game = false
 
 func _ready():
 	pass # Replace with function body.
@@ -12,6 +14,17 @@ func _process(delta):
 	set_health()
 	add_coin()
 	add_arrow()
+	
+	if Globalvar.game_over:
+		$GameDone.show()
+		$LowHealth1.hide()
+		$LowHealth2.hide()
+		if index == 0:
+			$DoneSound.play()
+			index += 1
+		
+	if end_game:
+		get_tree().change_scene_to_file("res://end_screen.tscn")
 	
 	
 	if Globalvar.level == 1:
@@ -28,7 +41,7 @@ func _process(delta):
 		$CollectedArmor.show()
 		$ArmorTime.start(3)
 	
-	if $PlayerHealth.value <= 40 and Goblinkill.num < Globalvar.limit:
+	if $PlayerHealth.value <= 40 and Goblinkill.num < Globalvar.limit and not Globalvar.game_over:
 		$LowHealth1.show()
 		$LowHealth2.show()
 	else:
@@ -174,3 +187,7 @@ func _on_restart_pressed():
 
 func _on_quit_pressed():
 	get_tree().change_scene_to_file("res://main_scene.tscn")
+
+
+func _on_done_pressed():
+	end_game = true

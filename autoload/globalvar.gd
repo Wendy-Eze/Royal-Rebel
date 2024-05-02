@@ -8,8 +8,10 @@ var is_invisible = false
 var limit = 5
 var apple = 0
 var health = false
-var demon_dead = false
+var knights_dead = false
 var king_dead = false
+var blindking = false
+var game_over = false 
 
 #Arrow Functionality
 var ready_arrow = false
