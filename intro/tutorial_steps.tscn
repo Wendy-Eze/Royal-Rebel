@@ -30,6 +30,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="TutorialSteps" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_t87l0")
 
 [node name="WalkStep" type="Panel" parent="."]

@@ -42494,14 +42494,14 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = SubResource("FontVariation_tbk0h")
 theme_override_font_sizes/font_size = 49
-text = "Look for Dungeon. This is the entrance "
+text = "Avoid Knights and look for Dungeon. This is the entrance "
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="MainMap/MessengerScene/MessengerDialogue/Mission2"]
 texture_filter = 1
-position = Vector2(1207, 18)
+position = Vector2(859, 91)
 scale = Vector2(0.64876, 0.64876)
 texture = ExtResource("21_cvuwp")
 

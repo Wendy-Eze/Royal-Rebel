@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed = 300
+@export var speed = 400
 var init_speed = speed 
 var player_position
 var target_position
@@ -58,9 +58,6 @@ func _physics_process(delta):
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
 		damage = 7 + Globalvar.ddamage
 		$HealthBar.step = 7
-		
-	if Globalvar.is_guard and Globalvar.level == 4:
-		$AnimatedSprite2D/Key.hide()
 	
 	player_position = player1.position
 	target_position = (player1.position - position).normalized()

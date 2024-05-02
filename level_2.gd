@@ -19,6 +19,7 @@ func _ready():
 	Globalvar.equip_sword = false
 	get_tree().paused = false
 	Globalvar.in_dungeon = false
+	Globalvar.armor_equipped = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
