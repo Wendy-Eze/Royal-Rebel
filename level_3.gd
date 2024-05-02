@@ -47,8 +47,10 @@ func _process(_delta):
 		$Portal.show()
 		$Portal/Sound.play()
 		$CanvasLayer/Label.show()
+		$level_done_sound.play()
 	else:
 		$Portal/CollisionShape2D.disabled = true
+		$level_done_sound.play()
 		
 
 #
@@ -73,3 +75,6 @@ func _on_portal_body_entered(body):
 	if body.is_in_group("player"):
 		print("detected")
 		get_tree().change_scene_to_file("res://final_boss.tscn")
+		
+func play_next_level_sound():
+	$next_level_sound.play()

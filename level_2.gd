@@ -34,6 +34,7 @@ func _process(delta):
 	
 	if Globalvar.mission_done:
 			$MainMap/Kingdom/CastleEntrance/CollisionShape2D.disabled = true
+			$level_done_sound.play()
 	
 	if Globalvar.has_key:
 		$Dialogue/CollectedKey.show()
@@ -44,6 +45,7 @@ func _process(delta):
 	if Globalvar.mission_done:
 		$Dialogue/Key.show()
 		$Dialogue/CollectedKey.hide()
+		$level_done_sound.play()
 	
 	if not Globalvar.mission_done:
 		$Dialogue/Key.hide()
@@ -140,3 +142,6 @@ func _on_area_2d_body_exited(body):
 
 func _on_timer_timeout():
 	$Dialogue/Mission.hide()
+	
+func play_next_level_sound():
+	$next_level_sound.play()

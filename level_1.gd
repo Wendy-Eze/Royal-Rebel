@@ -1,6 +1,7 @@
 extends Node
 
-
+#var level_done_sound
+#var next_level_sound
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.scale *= 0.6
@@ -14,6 +15,9 @@ func _ready():
 	Globalvar.equip_arrow = false
 	Globalvar.equip_sword = false
 	get_tree().paused = false
+	#level_done_sound = $level_done_sound
+	#next_level_sound = $next_level_sound # Replace AudioStreamPlayer2 with the appropriate node name
+  # Assuming the AudioStreamPlayer is named accordingly
 	#$mob_spawner.delete_first_and_last_spawned_enemies()
 	#Globalvar.is_invisible = false
 
@@ -25,6 +29,7 @@ func _process(delta):
 	
 	if Globalvar.lvl1_done:
 		$NextLevMission/Knight.show()
+		$level_done_sound.play()
 	
 	if Globalvar.armor_equipped:
 		$GameHUD/WTimer.stop()
@@ -65,3 +70,6 @@ func _on_player_death_over():
 func _on_armor_check_body_exited(body):
 	if body.is_in_group("player") and not Globalvar.lvl1_done:
 		$GameHUD/Mission.hide()
+		
+func play_next_level_sound():
+	$next_level_sound.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=155 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://chpnfnyrv0lda" path="res://art/misc/armorykey.png" id="39_ngr4y"]
 [ext_resource type="Texture2D" uid="uid://bdwvpmx36uau" path="res://art/npc/key-white.png" id="40_6fti0"]
 [ext_resource type="Script" path="res://armorkey.gd" id="40_y1agp"]
+[ext_resource type="AudioStream" uid="uid://dgc035rghwbg6" path="res://music/next_level.mp3" id="45_gq6jx"]
+[ext_resource type="AudioStream" uid="uid://8qp7v3k52gle" path="res://music/level_done.mp3" id="46_e6sq4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6djjy"]
 texture = ExtResource("5_x4u0f")
@@ -42876,6 +42878,12 @@ one_shot = true
 [node name="Statue" type="Sprite2D" parent="."]
 position = Vector2(7767, 639)
 texture = ExtResource("21_cvuwp")
+
+[node name="next_level_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("45_gq6jx")
+
+[node name="level_done_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_e6sq4")
 
 [connection signal="body_entered" from="MainMap/Kingdom/CastleEntrance/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="MainMap/Kingdom/CastleEntrance/Area2D" to="." method="_on_area_2d_body_exited"]

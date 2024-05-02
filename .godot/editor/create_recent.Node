@@ -1,6 +1,6 @@
+AudioStreamPlayer
 Panel
 Timer
-AudioStreamPlayer
 CanvasLayer
 CollisionShape2D
 Area2D
@@ -12,4 +12,3 @@ PointLight2D
 Label
 TileMap
 Node2D
-StaticBody2D
