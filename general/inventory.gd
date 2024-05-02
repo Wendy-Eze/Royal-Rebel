@@ -20,9 +20,11 @@ func _process(delta):
 	
 	if Globalvar.apple > 0:
 		$Container/Apple/Sprite2D.show()
+		$Container/Apple/Label.show()
 		$Container/Apple/Label.text = str(Globalvar.apple)
 	else:
 		$Container/Apple/Sprite2D.hide()
+		$Container/Apple/Label.hide()
 	
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
@@ -201,6 +203,7 @@ func _on_cool_timeout():
 
 func _on_apple_button_pressed():
 	if Globalvar.apple > 0:
+		Globalvar.apple -= 1
 		$Container/Apple/Eat.play()
 		await $Container/Apple/Eat.finished
 		Globalvar.health = true

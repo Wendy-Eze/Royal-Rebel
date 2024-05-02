@@ -84,8 +84,9 @@ func _process(delta):
 		
 	
 	if Globalvar.level == 1 and attempts == 0:
-		$LevelTimer.start()
+		$LevelTimer.start(3)
 		$Level1.show()
+		$Apples.show()
 		attempts += 1
 	if Globalvar.level == 2 and attempts == 1:
 		$LevelTimer.start()
@@ -134,6 +135,7 @@ func _on_exit_button_pressed():
 func _on_level_timer_timeout():
 	$Level1.hide()
 	$Level2.hide()
+	$Apples.hide()
 	$Level3.hide()
 	#attempts = 0
 	#if Globalvar.level == 1:
