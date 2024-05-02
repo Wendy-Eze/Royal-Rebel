@@ -94,7 +94,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"basic_melee",
-"speed": 13.0
+"speed": 16.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -352,7 +352,7 @@ wait_time = 0.5
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"idle with bow"
+animation = &"basic_melee"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
