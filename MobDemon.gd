@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed = 600
+@export var speed = 450
 var player_position
 var target_position
 var timer_started = false
@@ -8,11 +8,12 @@ var health: int = 100
 var damage: int = 15
 var is_hit = false
 var rtimer_started = false
-var coin_scene = preload("res://general/coin.tscn")
-var arrow_scene = preload("res://general/arrow.tscn")
-var key_scene = preload("res://key.tscn")
+var book_scene = preload("res://general/book.tscn")
+#var arrow_scene = preload("res://general/arrow.tscn")
+#var key_scene = preload("res://key.tscn")
 var arrow_hit = false
 var key_instance = 0
+var attempt = 0
 @onready var player = get_parent().get_node("Player")
 
 
@@ -78,20 +79,20 @@ func _physics_process(delta):
 
 
 	# Follow the player
-	if distance_to_player > 500 and distance_to_player <= 1500:
+	if distance_to_player > 500 and distance_to_player <= 1500 and health > 0:
 		speed = 600
 		velocity = target_position * speed
 		move_and_collide(velocity * delta)
 		# Play walk animation
-		$AnimatedSprite2D.play("walk")
-		if target_position.x > 0 and not is_hit:
+		#$AnimatedSprite2D.play("walk")
+		if target_position.x > 0 and not is_hit and health > 0:
 			$AnimatedSprite2D.play("walk")
 			#$Goblin.play()
 			#await $Goblin.finished
 			#to fliip demon
 			$AnimatedSprite2D.flip_h = true
 		#else:
-		if target_position.x < 0 and not is_hit:
+		if target_position.x < 0 and not is_hit and health > 0:
 			$AnimatedSprite2D.play("walk")
 			#$Goblin.play()
 			$AnimatedSprite2D.flip_h = false
@@ -113,40 +114,46 @@ func _physics_process(delta):
 		$AnimatedSprite2D.play("idle")
 
 	# Attack when close to the player and facing the player
-	elif distance_to_player <= 500 and Vector2.UP.dot(target_position): #> 0.9:
+	elif distance_to_player <= 500 and Vector2.UP.dot(target_position) and health > 0: #> 0.9:
 		# Adjust attack range and direction based on the dot product of vectors
 		$AnimatedSprite2D.play("attack")
 		#pass
 
 	# Otherwise, play idle animation
 	else:
-		move_and_collide(Vector2.ZERO)
-		speed = 0
-		$AnimatedSprite2D.play("idle")
+		if health > 0:
+			move_and_collide(Vector2.ZERO)
+			speed = 0
+			$AnimatedSprite2D.play("idle")
 		
-		if not timer_started and not Globalvar.is_invisible and not Globalvar.blindknight:
+		if not timer_started and not Globalvar.is_invisible and health > 0:
 			$Timer.start()
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
-		if Input.is_action_just_pressed("basic_melee"):
+		if Input.is_action_just_pressed("basic_melee") and health > 0:
 			$AnimatedSprite2D.play("damage")
 			health -= damage
 			set_health_bar()
 			$HealthBar.show()
 			$HealthTimer.start()
 			print("demon was hit! Health:", health)
-		if position.distance_to(player_position) <= 600:
+		if position.distance_to(player_position) <= 600 and health > 0:
 			#and not is_hit
 			pass
 			#$AnimatedSprite2D.play("attack")
 	
 	if health <= 0:
-		$AnimatedSprite2D.play("death")
+		#$AnimatedSprite2D.stop()
+		#$AnimatedSprite2D.play("death")
+		#await $AnimatedSprite2D.animation_finished
 		move_and_collide(Vector2.ZERO)
 		#$DeathTimer.start()
 		if not rtimer_started:
-			$RespawnTimer.start() 
+			#$RespawnTimer.start()
+			#$AnimatedSprite2D.stop() 
+			print("dead")
 			$Deathsound.play()
+			$AnimatedSprite2D.play("death")
 			rtimer_started = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
@@ -165,8 +172,9 @@ func _on_damage_timer_timeout():
 	
 func _hit_by_arrow():
 	health -= damage
-	$Arrow.start(1)
-	$AnimatedSprite2D.play("damage")
+	if health > 0:
+		$Arrow.start(1)
+		$AnimatedSprite2D.play("damage")
 	set_health_bar()
 	$HealthTimer.start()
 	$HealthBar.show()
@@ -176,7 +184,8 @@ func _hit_by_arrow():
 #
 func _hit_by_sword():
 	health -= damage
-	$AnimatedSprite2D.play("damage")
+	if health > 0:
+		$AnimatedSprite2D.play("damage")
 	set_health_bar()
 	$HealthTimer.start()
 	$HealthBar.show()
@@ -194,25 +203,26 @@ func _on_respawn_timer_timeout():
 	
 	Goblinkill.num += 1
 	#add function like num += 1 goblinkill.num += 1
-	drop_coin()
+	drop_book()
 
+
+func drop_book():
 	
-func drop_coin():
-	var coin = coin_scene.instantiate()
-	var arrow = arrow_scene.instantiate()
-	coin.position = position
-	arrow.position = position
-	
-	get_parent().add_child(coin)
-	get_parent().add_child(arrow)
-	#get_parent().add_child()
-	
-	if Globalvar.is_guard and key_instance == 0:
-		var key = key_scene.instantiate()
-		key.position = position
-		get_parent().add_child(key)
-		#Globalvar.has_key = true
-		key_instance += 1
+	var book = book_scene.instantiate()
+	#var arrow = arrow_scene.instantiate()
+	book.position = position
+	#arrow.position = position
+	#
+	get_parent().add_child(book)
+	#get_parent().add_child(arrow)
+	##get_parent().add_child()
+	#
+	#if Globalvar.is_guard and key_instance == 0:
+		#var key = key_scene.instantiate()
+		#key.position = position
+		#get_parent().add_child(key)
+		##Globalvar.has_key = true
+		#key_instance += 1
 
 
 func _on_health_timer_timeout():
@@ -248,3 +258,9 @@ func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
 		print("hit recognized")
+	if $AnimatedSprite2D.animation == ("death"):
+		queue_free()
+		Goblinkill.num += 1
+		drop_book()
+		Globalvar.demon_dead = true
+

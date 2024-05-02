@@ -28,6 +28,7 @@ func _on_area_2d_body_entered(body):
 			$WitchDialogue/Talk.show()
 			$WitchDialogue/Button.show()
 			$Timer.start()
+			$WitchDialogue/Direction.show()
 
 func message():
 	if index < dialogue.size():
@@ -63,3 +64,8 @@ func _on_portal_body_entered(body):
 
 func _on_button_pressed():
 	message()
+
+
+func _on_direction_body_entered(body):
+	if body.is_in_group("player"):
+		$WitchDialogue/Direction.hide()

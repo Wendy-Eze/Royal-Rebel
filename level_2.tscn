@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://cfopq7krxk8s"]
+[gd_scene load_steps=153 format=3 uid="uid://cfopq7krxk8s"]
 
 [ext_resource type="Script" path="res://level_2.gd" id="1_8qoml"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_dijaf"]
@@ -42163,6 +42163,13 @@ physical_keycode = 4194309
 [sub_resource type="Shortcut" id="Shortcut_k2tcc"]
 events = [SubResource("InputEventKey_80xv0")]
 
+[sub_resource type="FontVariation" id="FontVariation_2ld4g"]
+base_font = ExtResource("33_mlvms")
+spacing_glyph = 5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0dite"]
+size = Vector2(1669, 918.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_birl7"]
 size = Vector2(2030, 1735.5)
 
@@ -42216,10 +42223,6 @@ expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
-
-[sub_resource type="FontVariation" id="FontVariation_2ld4g"]
-base_font = ExtResource("33_mlvms")
-spacing_glyph = 5
 
 [node name="Level 2" type="Node"]
 script = ExtResource("1_8qoml")
@@ -42529,7 +42532,6 @@ position = Vector2(51.5, 111)
 shape = SubResource("RectangleShape2D_6vew1")
 
 [node name="WitchScene" type="Node2D" parent="MainMap"]
-visible = false
 script = ExtResource("19_us2jg")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="MainMap/WitchScene"]
@@ -42646,6 +42648,32 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7y7ma")
 shortcut = SubResource("Shortcut_k2tcc")
 text = "(Enter) to continue
 "
+
+[node name="Direction" type="Label" parent="MainMap/WitchScene/WitchDialogue"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -635.0
+offset_top = 170.0
+offset_right = 648.0
+offset_bottom = 226.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = SubResource("FontVariation_2ld4g")
+theme_override_font_sizes/font_size = 49
+text = "Someone has appeared. Go left!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Direction" type="Area2D" parent="MainMap/WitchScene"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainMap/WitchScene/Direction"]
+position = Vector2(9379.5, 1593.75)
+shape = SubResource("RectangleShape2D_0dite")
 
 [node name="PlayerScene" type="Node2D" parent="MainMap"]
 script = ExtResource("28_stpk0")
@@ -42859,6 +42887,7 @@ texture = ExtResource("21_cvuwp")
 [connection signal="timeout" from="MainMap/WitchScene/Timer" to="MainMap/WitchScene" method="_on_timer_timeout"]
 [connection signal="body_entered" from="MainMap/WitchScene/Portal" to="MainMap/WitchScene" method="_on_portal_body_entered"]
 [connection signal="pressed" from="MainMap/WitchScene/WitchDialogue/Button" to="MainMap/WitchScene" method="_on_button_pressed"]
+[connection signal="body_entered" from="MainMap/WitchScene/Direction" to="MainMap/WitchScene" method="_on_direction_body_entered"]
 [connection signal="body_entered" from="MainMap/PlayerScene/Area2D" to="MainMap/PlayerScene" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="MainMap/PlayerScene/Timer" to="MainMap/PlayerScene" method="_on_timer_timeout"]
 [connection signal="timeout" from="MainMap/PlayerScene/Timer2" to="MainMap/PlayerScene" method="_on_timer_2_timeout"]

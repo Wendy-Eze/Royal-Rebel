@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://general/coin.gd" id="1_jgbcy"]
 [ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="2_8qvyl"]
 [ext_resource type="Texture2D" uid="uid://bj5blov1f1tfa" path="res://art/misc/spr_coin.png" id="2_shbro"]
-[ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="3_gfkli"]
-[ext_resource type="Texture2D" uid="uid://6wuhfq722ctj" path="res://art/misc/bundle.png" id="5_k6qne"]
+[ext_resource type="AudioStream" uid="uid://c3w316jpf4roc" path="res://music/apple_s.mp3" id="4_yo1wr"]
+[ext_resource type="Texture2D" uid="uid://xq3b1gki0txj" path="res://art/misc/bundle2.png" id="5_nqicr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ganrs"]
 atlas = ExtResource("2_shbro")
@@ -74,13 +74,13 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_8qvyl")
 
 [node name="Collect" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_gfkli")
+stream = ExtResource("4_yo1wr")
 volume_db = -30.0
 
 [node name="Arrow" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(39, 29)
 rotation = -0.71733
-texture = ExtResource("5_k6qne")
+texture = ExtResource("5_nqicr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
