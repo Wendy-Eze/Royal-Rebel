@@ -55,6 +55,9 @@ func _physics_process(delta):
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
 		damage = 7 + Globalvar.ddamage
 		$HealthBar.step = 7
+		
+	if Globalvar.is_guard and Globalvar.level == 4:
+		$AnimatedSprite2D/Key.hide()
 	
 	player_position = player1.position
 	target_position = (player1.position - position).normalized()
@@ -152,12 +155,13 @@ func drop_coin():
 	get_parent().add_child(coin)
 	#get_parent().add_child(arrow)
 	
-	if Globalvar.is_guard and key_instance == 0:
+	if Globalvar.is_guard and key_instance == 0 and Globalvar.level == 2:
 		var key = key_scene.instantiate()
 		key.position = position
 		get_parent().add_child(key)
 		#Globalvar.has_key = true
 		key_instance += 1
+		
 
 func _on_health_timer_timeout():
 	$HealthBar.hide()

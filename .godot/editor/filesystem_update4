@@ -1,9 +1,4 @@
-res://main_scene.tscn
-res://general/next_level.tscn
 res://level_1.tscn
 res://level_2.tscn
-res://demon.tscn
-res://mob_dog.tscn
-res://final_boss.tscn
-res://level_3.tscn
-res://MobDemon.gd
+res://main_scene.tscn
+res://player.tscn

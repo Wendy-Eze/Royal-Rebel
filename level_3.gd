@@ -1,5 +1,6 @@
 extends Node
 
+
 var bdialogue = [
 	"We have arrived at the Enchanted Forest",
 	"There's a mystical tree at the end of the forest.",
@@ -39,6 +40,7 @@ func dialogue():
 func _process(_delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	$Player/Final.enabled = false
 	
 	if Goblinkill.num >= Globalvar.limit:
 		$Portal/CollisionShape2D.disabled = false
