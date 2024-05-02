@@ -1,3 +1,10 @@
+
+res://main_scene.tscn
+res://level_1.tscn
+res://level_2.tscn
+res://level_3.tscn
+res://final_boss.tscn
+
 res://final_boss.tscn
 res://general/book.tscn
 res://final_boss.gd
@@ -12,6 +19,7 @@ res://knightkey.tscn
 res://king.tscn
 res://mob_goblin.tscn
 res://level_3.tscn
+
 res://game_over_screen.tscn
 res://game_hud.tscn
 res://general/mute_button.tscn
@@ -19,9 +27,17 @@ res://general/arrow.tscn
 res://general/coin.tscn
 res://general/inventory.tscn
 res://apple.tscn
+
+res://level_1.gd
+res://player.tscn
+res://mob_goblin.gd
+res://level_2.gd
+res://level_3.gd
+
 res://king_ai.gd
 res://autoload/globalvar.gd
 res://mob_goblin.gd
 res://game_hud.gd
 res://end_screen.tscn
 res://general/mute_button.gd
+

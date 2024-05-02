@@ -17,8 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="17_7qpgc"]
+[ext_resource type="Texture2D" uid="uid://vfvl4mct6nny" path="res://art/misc/apple.png" id="18_j1viv"]
 [ext_resource type="AudioStream" uid="uid://8qp7v3k52gle" path="res://music/level_done.mp3" id="19_3tw8o"]
-[ext_resource type="Texture2D" uid="uid://2hadwm7emdjv" path="res://art/new_art/book2.png" id="19_ahcf1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ibrft"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -172,22 +172,15 @@ spacing_glyph = 30
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ef4s"]
 bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vm6nm"]
-atlas = ExtResource("19_ahcf1")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_daam0"]
-atlas = ExtResource("19_ahcf1")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpkq5"]
+atlas = ExtResource("18_j1viv")
+region = Rect2(70, 35, 35, 35)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4p7sf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vm6nm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_daam0")
+"texture": SubResource("AtlasTexture_fpkq5")
 }],
 "loop": true,
 "name": &"default",
@@ -219,6 +212,9 @@ physical_keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_h3o5f"]
 events = [SubResource("InputEventKey_x0v3g")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sutx0"]
+bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -801,6 +797,38 @@ offset_bottom = 132.0
 theme_override_fonts/font = ExtResource("13_fd44j")
 theme_override_font_sizes/font_size = 30
 text = "Press ENTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Apples" type="Panel" parent="."]
+visible = false
+offset_left = 409.0
+offset_top = 335.0
+offset_right = 1506.0
+offset_bottom = 783.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sutx0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Apples"]
+texture_filter = 1
+position = Vector2(222, 204)
+scale = Vector2(9.85938, 9.85938)
+sprite_frames = SubResource("SpriteFrames_4p7sf")
+autoplay = "default"
+frame_progress = 0.530443
+speed_scale = 0.5
+
+[node name="Lvl2Obj" type="Label" parent="Apples"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 435.0
+offset_top = 106.0
+offset_right = 1046.0
+offset_bottom = 367.0
+theme_override_constants/line_spacing = 22
+theme_override_fonts/font = SubResource("FontVariation_nd6tt")
+theme_override_font_sizes/font_size = 46
+text = "Look around for apples! Collect to add health!"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

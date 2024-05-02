@@ -5,7 +5,7 @@ var player_position
 var target_position
 var timer_started = false
 var health: int = 100
-var damage: int = 10
+var damage: int = 20
 var pdam: int = 5
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")

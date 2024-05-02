@@ -1,10 +1,12 @@
-[gd_scene load_steps=100 format=3 uid="uid://b6imisqk5wrn7"]
+[gd_scene load_steps=102 format=3 uid="uid://b6imisqk5wrn7"]
 
 [ext_resource type="Script" path="res://level_3.gd" id="1_pwsri"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_thxrg"]
 [ext_resource type="Texture2D" uid="uid://jy6q1o5ul4rv" path="res://art/enchan_village.png" id="2_gd88p"]
+[ext_resource type="AudioStream" uid="uid://dgc035rghwbg6" path="res://music/next_level.mp3" id="2_i1qrj"]
 [ext_resource type="Texture2D" uid="uid://dhw4opjga5pac" path="res://art/enchan_forest.png" id="2_qdmeo"]
 [ext_resource type="Texture2D" uid="uid://dae7bclapnfq0" path="res://art/reg_forest.png" id="3_385rh"]
+[ext_resource type="AudioStream" uid="uid://8qp7v3k52gle" path="res://music/level_done.mp3" id="3_sd0fh"]
 [ext_resource type="PackedScene" uid="uid://be3pnj5onpfin" path="res://game_hud.tscn" id="3_smjkn"]
 [ext_resource type="Texture2D" uid="uid://dk5q5qkwag37j" path="res://art/enchan1.png" id="5_7xa08"]
 [ext_resource type="Texture2D" uid="uid://c5x3x1mwug1vs" path="res://art/enchan_forest1.png" id="6_8p15n"]
@@ -11877,6 +11879,12 @@ animations = [{
 
 [node name="Level 3" type="Node"]
 script = ExtResource("1_pwsri")
+
+[node name="next_level_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_i1qrj")
+
+[node name="level_done_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sd0fh")
 
 [node name="EnchantedForest" type="TileMap" parent="."]
 texture_filter = 1
