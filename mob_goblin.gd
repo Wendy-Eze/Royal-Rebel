@@ -17,6 +17,7 @@ var key_instance = 0
 var cool_started = false
 @onready var player1 = get_parent().get_node("Player")
 var enemyID: int = 0
+var knights = 0
 #var run_speed = 100
 #var player = null
 #var is_running = false
@@ -36,6 +37,9 @@ func _on_cooldown_timeout():
 	
 func _physics_process(delta):
 	get_input()
+	
+	#if knights >= 3:
+		#Globalvar.knights_dead = true
 	
 	if Globalvar.equip_arrow:
 		damage = 8 + Globalvar.adamage
@@ -148,8 +152,8 @@ func _on_respawn_timer_timeout():
 	Globalvar.gaurd_dead = true
 	Goblinkill.num += 1
 	drop_coin()
-	if Globalvar.level == 4:
-		Globalvar.king_dead = true
+	#if Globalvar.level == 4:
+		#knights += 1
 	
 func drop_coin():
 	var coin = coin_scene.instantiate()
