@@ -25,6 +25,7 @@ func _ready():
 func _process(delta):
 	$Player/Camera2D.enabled = true
 	$Player/TutCam.enabled = false
+	$Player/Final.enabled = false
 	
 	if Globalvar.mission_done and not Globalvar.in_dungeon and attempt == 0:
 		$Dialogue/Mission.show()
