@@ -21,6 +21,7 @@ action = &"start_game"
 events = [SubResource("InputEventAction_1k7tw")]
 
 [node name="HUD" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_0k33q")
 
 [node name="Inventory" parent="." instance=ExtResource("6_76eap")]
