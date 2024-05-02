@@ -1,8 +1,10 @@
 res://main_scene.tscn
-res://begingame.gd
 res://level_1.tscn
 res://level_2.tscn
 res://level_3.tscn
 res://final_boss.tscn
 res://player.tscn
-res://final_boss.gd
+res://intro/opening_cutscene.tscn
+res://hud.tscn
+res://intro/tutorial_steps.tscn
+res://level_2.gd
