@@ -9,7 +9,7 @@ var dialogue = [
 ]
 var index = 0
 var talk_started = false
-
+var attempt = 0
 
 func _ready():
 	pass
@@ -82,6 +82,9 @@ func _on_start_body_exited(body):
 		$MessengerDialogue/Button.hide()
 		$MessengerDialogue/Statue.hide()
 		$Timer.stop()
+		if attempt == 0:
+			$MessengerDialogue/Mission2.show()
+			attempt += 1
 
 
 func _on_button_pressed():

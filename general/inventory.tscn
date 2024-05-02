@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=40 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://general/inventory.gd" id="1_jhhv0"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dbm43r0063j24" path="res://art/misc/5.png" id="10_pugcp"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="11_0ft5n"]
 [ext_resource type="Texture2D" uid="uid://c3r51bgklm5c5" path="res://art/misc/goldsword.png" id="12_5oivh"]
+[ext_resource type="Texture2D" uid="uid://vfvl4mct6nny" path="res://art/misc/apple.png" id="12_cltsr"]
+[ext_resource type="AudioStream" uid="uid://dakvs2ikpehkj" path="res://music/eating.mp3" id="13_4yjsu"]
 [ext_resource type="Texture2D" uid="uid://c8an3xg1nxewm" path="res://art/misc/diamondsword.png" id="13_mfufn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nbv3"]
@@ -79,6 +81,14 @@ expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
+[sub_resource type="InputEventKey" id="InputEventKey_55gfc"]
+device = -1
+physical_keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_wpwru"]
+events = [SubResource("InputEventKey_55gfc")]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wcid"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
@@ -143,7 +153,7 @@ script = ExtResource("1_jhhv0")
 [node name="Container" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_right = 373.0
+offset_right = 467.0
 offset_bottom = 91.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7nbv3")
 
@@ -331,6 +341,63 @@ vertical_alignment = 1
 [node name="Timer2" type="Timer" parent="Container/Potion"]
 wait_time = 21.0
 
+[node name="Apple" type="Panel" parent="Container"]
+layout_mode = 0
+offset_left = 373.0
+offset_top = 7.0
+offset_right = 458.0
+offset_bottom = 87.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ujd8b")
+
+[node name="U" type="Label" parent="Container/Apple"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 33.0
+offset_top = 62.0
+offset_right = 59.0
+offset_bottom = 98.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 40
+text = "5
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AppleButton" type="Button" parent="Container/Apple"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 65.0
+offset_bottom = 63.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_cu384")
+button_mask = 0
+shortcut = SubResource("Shortcut_wpwru")
+
+[node name="Sprite2D" type="Sprite2D" parent="Container/Apple"]
+visible = false
+position = Vector2(43.9231, 36.8462)
+scale = Vector2(1.94001, 1.94001)
+texture = ExtResource("12_cltsr")
+hframes = 5
+vframes = 4
+frame = 7
+
+[node name="Label" type="Label" parent="Container/Apple"]
+layout_mode = 0
+offset_left = 65.0
+offset_top = -2.0
+offset_right = 81.0
+offset_bottom = 26.0
+theme_override_fonts/font = ExtResource("1_cksf5")
+theme_override_font_sizes/font_size = 25
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Eat" type="AudioStreamPlayer" parent="Container/Apple"]
+stream = ExtResource("13_4yjsu")
+volume_db = -15.0
+
 [node name="Armor" type="Panel" parent="Container"]
 layout_mode = 0
 offset_left = 282.0
@@ -481,5 +548,6 @@ vertical_alignment = 1
 
 [connection signal="timeout" from="Container/Arrow/ArrowCooldown" to="." method="_on_arrow_cooldown_timeout"]
 [connection signal="timeout" from="Container/Potion/Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="pressed" from="Container/Apple/AppleButton" to="." method="_on_apple_button_pressed"]
 [connection signal="timeout" from="Container/Armor/Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Container/Armor/Cool" to="." method="_on_cool_timeout"]

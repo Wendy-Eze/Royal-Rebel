@@ -13,4 +13,4 @@ offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("1_fq7gm")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/fill = SubResource("StyleBoxFlat_x6f85")
-step = 10.0
+step = 1.0

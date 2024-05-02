@@ -237,17 +237,17 @@ autostart = true
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(7, 12)
 shape = SubResource("RectangleShape2D_hjqht")
-target_position = Vector2(-1, 75)
+target_position = Vector2(0, 67)
 
 [node name="ShapeCast2D2" type="ShapeCast2D" parent="."]
 position = Vector2(7, 12)
 shape = SubResource("RectangleShape2D_uiqxt")
-target_position = Vector2(58, 49)
+target_position = Vector2(18, 60)
 
 [node name="ShapeCast2D3" type="ShapeCast2D" parent="."]
 position = Vector2(7, 12)
 shape = SubResource("RectangleShape2D_tko5o")
-target_position = Vector2(-51, 49)
+target_position = Vector2(-18, 60)
 
 [node name="DamageTimer" type="Timer" parent="."]
 wait_time = 0.1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=51 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -163,6 +163,10 @@ physical_keycode = 4194309
 
 [sub_resource type="Shortcut" id="Shortcut_hua60"]
 events = [SubResource("InputEventKey_aiv6p")]
+
+[sub_resource type="FontVariation" id="FontVariation_dkttc"]
+base_font = ExtResource("13_fd44j")
+spacing_glyph = 30
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -677,6 +681,18 @@ text = "(Enter) to Skip"
 [node name="ArmorTime" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Health" type="Label" parent="."]
+visible = false
+offset_left = 321.0
+offset_top = 147.0
+offset_right = 429.0
+offset_bottom = 238.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_dkttc")
+theme_override_font_sizes/font_size = 80
+text = "+5"
 
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Menu/ExitButton" to="." method="_on_exit_button_pressed"]
