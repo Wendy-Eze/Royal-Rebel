@@ -5,6 +5,13 @@ var index = 0
 func _ready():
 	$StaticBody2D2.collision_layer = 0
 	$StaticBody2D2.collision_mask = 0
+	$GameHUD/KillCount_G.hide()
+	Globalvar.has_armor = true
+	Globalvar.has_arrow = true 
+	Globalvar.has_sword = true
+	Globalvar.equip_arrow = false
+	Globalvar.equip_sword = false
+	get_tree().paused = false
 
 
 func _process(delta):

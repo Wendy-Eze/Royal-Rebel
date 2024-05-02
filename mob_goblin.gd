@@ -6,6 +6,7 @@ var target_position
 var timer_started = false
 var health: int = 100
 var damage: int = 10
+var pdam: int = 5
 var rtimer_started = false
 var coin_scene = preload("res://general/coin.tscn")
 var arrow_scene = preload("res://general/arrow.tscn")
@@ -49,9 +50,11 @@ func _physics_process(delta):
 	if Globalvar.level == 2:
 		damage = 10 + Globalvar.idamage
 		$HealthBar.step = 10
+		pdam = 8
 	if Globalvar.level == 3:
 		damage = 3 + Globalvar.idamage
 		$HealthBar.step = 3
+		pdam = 10
 	if Globalvar.level == 3 and Globalvar.has_diamondsword:
 		damage = 7 + Globalvar.ddamage
 		$HealthBar.step = 7
@@ -169,7 +172,7 @@ func _on_health_timer_timeout():
 func _on_animated_sprite_2d_animation_finished():
 	if $AnimatedSprite2D.animation == ("attack"):
 		print("attack finished")
-		Livecounter.num -= 10
+		Livecounter.num -= pdam
 	if $AnimatedSprite2D.animation == ("take_hit"):
 		is_hit = false
 		#$Hurt.stop()

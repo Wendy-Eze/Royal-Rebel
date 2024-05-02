@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dqo8hjddhr0xj"]
+[gd_scene load_steps=69 format=3 uid="uid://dqo8hjddhr0xj"]
 
 [ext_resource type="Script" path="res://level_1.gd" id="1_c8meh"]
 [ext_resource type="PackedScene" uid="uid://5dawxk67ob32" path="res://player.tscn" id="1_g8i7q"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://level_1_files/lev1_mission.gd" id="16_i6hpv"]
 [ext_resource type="Texture2D" uid="uid://djir3et86inut" path="res://art/npc/_Idle.png" id="19_fexkt"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="19_ix8kl"]
+[ext_resource type="PackedScene" uid="uid://b1hb4f5hkrwi" path="res://apple_spawn.tscn" id="21_r7h17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qlsd7"]
 texture = ExtResource("1_wvcup")
@@ -14637,6 +14638,8 @@ autowrap_mode = 2
 [node name="MissionTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="apple_spawn" parent="." instance=ExtResource("21_r7h17")]
 
 [connection signal="timeout" from="GameHUD/WTimer" to="." method="_on_w_timer_timeout"]
 [connection signal="death_over" from="Player" to="." method="_on_player_death_over"]

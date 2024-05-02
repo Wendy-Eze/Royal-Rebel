@@ -76,6 +76,8 @@ func _on_d_area_body_entered(body):
 		$MainMap/Kingdom/CastleEntrance.collision_layer = 0
 		$MainMap/Kingdom/CastleEntrance.collision_mask = 0
 		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = true
+		$MainMap/MessengerScene/MessengerDialogue/Mission2.hide()
+		$Statue.hide()
 		if not Globalvar.gaurd_dead:
 			$KnightKey.show()
 		else:
@@ -110,6 +112,7 @@ func _on_k_area_body_entered(body):
 		$MainMap/Kingdom/CastleEntrance.collision_layer = 1
 		$MainMap/Kingdom/CastleEntrance.collision_mask = 1
 		$MainMap/Kingdom/CastleEntrance/Area2D/CollisionShape2D.disabled = false
+		$Statue.show()
 		#$KnightKey/CollisionShape2D.disabled = true
 		Globalvar.blindknight = true
 		

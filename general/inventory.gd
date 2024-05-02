@@ -10,9 +10,17 @@ var armorcool = false
 func _ready():
 	$Container/Potion/Label.text = " "
 	$Container/Arrow/Cooldown.text = " "
+	$Container/Apple/Label.text = " "
 
 func _process(delta):
 	$Container/Arrow/ArrowLimit.text = str(Globalvar.arrow_num)
+	
+	$Container/Apple/Label.text = str(Globalvar.apple)
+	
+	if Globalvar.apple > 0:
+		$Container/Apple/Sprite2D.show()
+	else:
+		$Container/Apple/Sprite2D.hide()
 	
 	if Globalvar.arrow_num == 0:
 		Globalvar.ready_arrow = false
@@ -182,9 +190,16 @@ func _on_timer_2_timeout():
 	Globalvar.armor_equipped = false
 	armorcool = true
 	$Container/Armor/Cool.start(5)
-	
 	print("timer2 done")
 
 func _on_cool_timeout():
 	armorcool = false
 	print("cool done")
+
+
+func _on_apple_button_pressed():
+	if Globalvar.apple > 0:
+		$Container/Apple/Eat.play()
+		await $Container/Apple/Eat.finished
+		Globalvar.health = true
+		Livecounter.num += 5

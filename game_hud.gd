@@ -57,6 +57,11 @@ func _process(delta):
 		$Collected.show()
 		$Collected2.show()
 		Globalvar.collected = false
+	
+	if Globalvar.health:
+		$Health.show()
+		$CollectTimer.start()
+		Globalvar.health = false
 
 	if $PlayerHealth.value == 0:
 		#get_tree().current_scene.pause()
@@ -131,6 +136,7 @@ func _on_collect_timer_timeout():
 	$Arrow_collected.hide()
 	$Collected.hide()
 	$Collected2.hide()
+	$Health.hide()
 	#Globalvar.collected = false
 	print("one")
 
