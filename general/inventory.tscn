@@ -435,6 +435,7 @@ offset_bottom = 76.5385
 theme_override_styles/panel = SubResource("StyleBoxFlat_p5usa")
 
 [node name="Panel" type="Panel" parent="Container/Armor"]
+visible = false
 layout_mode = 0
 offset_right = 80.0
 offset_bottom = 80.0

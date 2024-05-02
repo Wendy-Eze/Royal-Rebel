@@ -12,6 +12,7 @@ var index = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Player.scale *= 0.6
+	Goblinkill.num = 0
 	Globalvar.level = 3
 	Globalvar.witch_shown = false 
 	$CanvasLayer/Timer.start()
