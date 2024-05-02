@@ -352,7 +352,7 @@ wait_time = 0.5
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_uy2tr")
-animation = &"idle"
+animation = &"idle with bow"
 
 [node name="SwordHit" type="Area2D" parent="AnimatedSprite2D"]
 
@@ -396,7 +396,7 @@ editor_draw_limits = true
 
 [node name="Final" type="Camera2D" parent="."]
 enabled = false
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(0.6, 0.6)
 limit_left = 0
 limit_top = 0
 limit_right = 7625
@@ -442,6 +442,8 @@ frame_progress = 0.364061
 
 [node name="DashSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("47_8tnr2")
+volume_db = -25.0
+pitch_scale = 0.8
 
 [connection signal="timeout" from="GhostTimer" to="." method="_on_ghost_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

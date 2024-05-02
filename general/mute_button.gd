@@ -8,7 +8,8 @@ func _ready():
 		
 
 func _process(delta):
-	pass
+	if Globalvar.level == 4:
+		$Music.set_volume_db(-80)
 
 func _on_pressed():
 	_make_mute()

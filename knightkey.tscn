@@ -388,7 +388,7 @@ texture_filter = 1
 position = Vector2(88.9099, -39.3934)
 scale = Vector2(5.98483, 5.98484)
 sprite_frames = SubResource("SpriteFrames_mqffj")
-animation = &"attack"
+animation = &"deaddrop"
 
 [node name="Key" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 texture_filter = 1

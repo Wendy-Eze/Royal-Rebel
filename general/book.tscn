@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://clf4m4d6htd52"]
+
+[ext_resource type="Script" path="res://general/book.gd" id="1_wdd6w"]
+[ext_resource type="Texture2D" uid="uid://bm4maju0f733n" path="res://art/coin.png" id="3_ef4mp"]
+[ext_resource type="Texture2D" uid="uid://cb8pmyv14c1rf" path="res://art/misc/book.png" id="4_7pa3q"]
+[ext_resource type="AudioStream" uid="uid://gyekham7j1ij" path="res://music/collect.wav" id="4_jo3ss"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eua35"]
+radius = 26.8038
+
+[node name="book" type="Area2D"]
+script = ExtResource("1_wdd6w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-2.5, -0.5)
+scale = Vector2(5.21875, 5.21875)
+texture = ExtResource("3_ef4mp")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-10.1412, 0.858784)
+scale = Vector2(4.25883, 4.25883)
+texture = ExtResource("4_7pa3q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 1)
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_eua35")
+
+[node name="Collect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jo3ss")
+volume_db = -30.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

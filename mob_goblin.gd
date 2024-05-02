@@ -88,7 +88,7 @@ func _physics_process(delta):
 			$Timer.start(1)
 			timer_started = true
 			$AnimatedSprite2D.play("idle")
-		if position.distance_to(player_position) <= 280 and not is_hit:
+		if position.distance_to(player_position) <= 280 and not is_hit and not Globalvar.blindknight:
 			#pass
 			$AnimatedSprite2D.play("attack")
 			#$Goblin.play()
@@ -148,6 +148,8 @@ func _on_respawn_timer_timeout():
 	Globalvar.gaurd_dead = true
 	Goblinkill.num += 1
 	drop_coin()
+	if Globalvar.level == 4:
+		Globalvar.king_dead = true
 	
 func drop_coin():
 	var coin = coin_scene.instantiate()

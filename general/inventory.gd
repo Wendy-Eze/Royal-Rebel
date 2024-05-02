@@ -14,11 +14,13 @@ func _ready():
 
 func _process(delta):
 	$Container/Arrow/ArrowLimit.text = str(Globalvar.arrow_num)
+	if Globalvar.level > 2:
+		$Container/Armor/Panel.show()
 	
-	$Container/Apple/Label.text = str(Globalvar.apple)
 	
 	if Globalvar.apple > 0:
 		$Container/Apple/Sprite2D.show()
+		$Container/Apple/Label.text = str(Globalvar.apple)
 	else:
 		$Container/Apple/Sprite2D.hide()
 	

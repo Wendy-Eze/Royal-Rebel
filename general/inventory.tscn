@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://pye3lymjy8ky"]
+[gd_scene load_steps=41 format=3 uid="uid://pye3lymjy8ky"]
 
 [ext_resource type="FontFile" uid="uid://nf5wnen7byh5" path="res://art/font/upheaval/upheavtt.ttf" id="1_cksf5"]
 [ext_resource type="Script" path="res://general/inventory.gd" id="1_jhhv0"]
@@ -100,6 +100,9 @@ bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5usa"]
 bg_color = Color(0.0627451, 0.0627451, 0.0627451, 0.8)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4cmq"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 0.862745)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4kpub"]
 animations = [{
@@ -430,6 +433,12 @@ offset_top = 4.53846
 offset_right = 74.9231
 offset_bottom = 76.5385
 theme_override_styles/panel = SubResource("StyleBoxFlat_p5usa")
+
+[node name="Panel" type="Panel" parent="Container/Armor"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_c4cmq")
 
 [node name="0" type="Label" parent="Container/Armor"]
 texture_filter = 1

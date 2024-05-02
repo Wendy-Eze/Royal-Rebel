@@ -22,6 +22,9 @@ func _on_restart_button_pressed():
 	if Globalvar.level == 3:
 		get_tree().change_scene_to_file("res://level_3.tscn")
 		Goblinkill.num = 0
+	if Globalvar.level == 3:
+		get_tree().change_scene_to_file("res://level_3.tscn")
+		Goblinkill.num = 0
 
 
 func _on_quit_button_pressed():
