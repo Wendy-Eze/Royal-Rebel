@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://be3pnj5onpfin"]
+[gd_scene load_steps=66 format=3 uid="uid://be3pnj5onpfin"]
 
 [ext_resource type="Script" path="res://game_hud.gd" id="1_jl2e5"]
 [ext_resource type="PackedScene" uid="uid://dvvtn0102djbo" path="res://general/mute_button.tscn" id="1_nou5r"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dxts6spl8tvt3" path="res://art/misc/wasd.png" id="13_vxy7y"]
 [ext_resource type="Texture2D" uid="uid://bqne6cawbu074" path="res://art/misc/shift.jpg" id="15_v6gqu"]
 [ext_resource type="Texture2D" uid="uid://bmti7alvvs2ex" path="res://art/npc/ArmorT1.png" id="17_7qpgc"]
+[ext_resource type="Texture2D" uid="uid://2hadwm7emdjv" path="res://art/new_art/book2.png" id="18_16jxl"]
 [ext_resource type="Texture2D" uid="uid://vfvl4mct6nny" path="res://art/misc/apple.png" id="18_j1viv"]
 [ext_resource type="AudioStream" uid="uid://8qp7v3k52gle" path="res://music/level_done.mp3" id="19_3tw8o"]
 
@@ -172,15 +173,22 @@ spacing_glyph = 30
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ef4s"]
 bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fpkq5"]
-atlas = ExtResource("18_j1viv")
-region = Rect2(70, 35, 35, 35)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sifc"]
+atlas = ExtResource("18_16jxl")
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4p7sf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5jil"]
+atlas = ExtResource("18_16jxl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_takpy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fpkq5")
+"texture": SubResource("AtlasTexture_7sifc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5jil")
 }],
 "loop": true,
 "name": &"default",
@@ -215,6 +223,21 @@ events = [SubResource("InputEventKey_x0v3g")]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sutx0"]
 bg_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpkq5"]
+atlas = ExtResource("18_j1viv")
+region = Rect2(70, 35, 35, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p7sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpkq5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GameHUD" type="CanvasLayer"]
 script = ExtResource("1_jl2e5")
@@ -751,9 +774,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4ef4s")
 texture_filter = 1
 position = Vector2(340.25, 320.25)
 scale = Vector2(9.85938, 9.85938)
-sprite_frames = SubResource("SpriteFrames_4p7sf")
+sprite_frames = SubResource("SpriteFrames_takpy")
 autoplay = "default"
-frame_progress = 0.530443
 speed_scale = 0.5
 
 [node name="Lvl2Obj" type="Label" parent="GameDone"]

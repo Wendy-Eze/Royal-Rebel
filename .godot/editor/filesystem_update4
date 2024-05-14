@@ -1,3 +1,4 @@
+res://dungeon.tscn
 res://main_scene.tscn
 res://level_1.tscn
 res://level_2.tscn
@@ -8,3 +9,4 @@ res://intro/opening_cutscene.tscn
 res://intro/tutorial_steps.tscn
 res://end_screen.tscn
 res://stepbystep.tscn
+res://game_hud.tscn
